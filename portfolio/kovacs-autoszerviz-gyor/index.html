@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kovács Autószerviz Győr — Megbízható autószerelő, 22 éve</title>
+<meta name="description" content="Megbízható autószerviz Győrben. Időpontfoglalás 1 perc alatt, pontos készenlét, garanciás javítás. Hívjon vagy foglaljon online.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #F4EEE2;
+  --bg-card: #FFFFFF;
+  --bg-dark: #141414;
+  --ink: #0F0F0F;
+  --ink-dim: #5A5249;
+  --accent: #C8341B;
+  --accent-hover: #A92812;
+  --rule: #D9D2C2;
+  --rule-strong: #1A1A1A;
+  --gold: #8A6F47;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+.display { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: 0.005em; line-height: 0.95; text-transform: uppercase; }
+.mono { font-family: 'DM Mono', monospace; }
+
+.container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* ========== TOP BAR ========== */
+.topbar {
+  background: var(--bg-dark);
+  color: var(--bg);
+  font-size: 13px;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #2A2A2A;
+}
+.topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.topbar .left { display: flex; gap: 24px; align-items: center; }
+.topbar .left span { display: flex; align-items: center; gap: 8px; }
+.topbar .dot { width: 6px; height: 6px; background: #4ADE80; border-radius: 50%; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); animation: pulse 2s infinite; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+.topbar a.phone { font-weight: 700; color: var(--accent); transition: color 0.2s; }
+.topbar a.phone:hover { color: #FF6F4D; }
+
+/* ========== NAV ========== */
+nav.main {
+  padding: 22px 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+nav.main .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: baseline; gap: 12px; }
+.logo .mark { font-family: 'Anton', sans-serif; font-size: 28px; line-height: 1; letter-spacing: 0.01em; }
+.logo .est { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-dim); letter-spacing: 0.05em; }
+nav.main ul { display: flex; gap: 32px; list-style: none; font-size: 14px; font-weight: 500; }
+nav.main ul a { transition: color 0.2s; }
+nav.main ul a:hover { color: var(--accent); }
+.nav-cta { padding: 11px 22px; background: var(--rule-strong); color: var(--bg) !important; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+.nav-cta:hover { background: var(--accent) !important; }
+@media (max-width: 800px) {
+  nav.main ul { display: none; }
+}
+
+/* ========== HERO ========== */
+.hero {
+  padding: 72px 0 88px;
+  position: relative;
+  overflow: hidden;
+}
+.hero .container { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: end; }
+.hero .eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--ink-dim);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero .eyebrow::before {
+  content: ""; width: 36px; height: 1px; background: var(--ink); display: inline-block;
+}
+.hero h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(48px, 8vw, 104px);
+  line-height: 0.92;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.hero h1 .accent { color: var(--accent); }
+.hero h1 .underline { position: relative; display: inline-block; }
+.hero h1 .underline::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0.06em; height: 0.08em;
+  background: var(--accent);
+}
+.hero .lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-dim);
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+.hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  padding: 18px 32px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(200, 52, 27, 0.4);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--rule-strong);
+}
+.btn-secondary:hover {
+  background: var(--rule-strong);
+  color: var(--bg);
+}
+.btn .arrow { transition: transform 0.2s; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+.hero .visual {
+  position: relative;
+  background: var(--rule-strong);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.hero .visual::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent 0, transparent 10px, rgba(200, 52, 27, 0.04) 10px, rgba(200, 52, 27, 0.04) 11px);
+  pointer-events: none;
+}
+.hero .visual-card {
+  position: absolute; left: 24px; right: 24px; bottom: 24px;
+  background: var(--bg);
+  padding: 24px;
+  border: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 18px;
+  z-index: 2;
+}
+.hero .visual-card .num {
+  font-family: 'Anton', sans-serif;
+  font-size: 56px;
+  line-height: 0.85;
+  color: var(--accent);
+}
+.hero .visual-card .lbl {
+  font-size: 13px;
+  color: var(--ink-dim);
+  font-weight: 500;
+}
+.hero .visual-card .lbl strong { color: var(--ink); display: block; font-weight: 700; font-size: 15px; }
+.hero .visual svg.car {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76%;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  z-index: 1;
+}
+.hero .visual .city-stamp {
+  position: absolute; top: 24px; right: 24px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--bg);
+  letter-spacing: 0.2em;
+  border: 1px solid rgba(245, 239, 227, 0.3);
+  padding: 6px 12px;
+  z-index: 2;
+}
+@media (max-width: 900px) {
+  .hero { padding: 48px 0 56px; }
+  .hero .container { grid-template-columns: 1fr; gap: 40px; }
+  .hero .visual { aspect-ratio: 4 / 3; }
+}
+
+/* ========== TRUST STRIP ========== */
+.trust {
+  background: var(--rule-strong);
+  color: var(--bg);
+  padding: 28px 0;
+}
+.trust .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.trust .item { display: flex; gap: 14px; align-items: center; }
+.trust .num {
+  font-family: 'Anton', sans-serif;
+  font-size: 38px;
+  line-height: 0.9;
+  color: var(--accent);
+}
+.trust .lbl { font-size: 13px; color: #B8B0A2; line-height: 1.35; }
+.trust .lbl strong { color: var(--bg); font-weight: 700; display: block; }
+@media (max-width: 800px) {
+  .trust .container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+/* ========== SECTION HEADER ========== */
+.section { padding: 96px 0; }
+.section-header { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 56px; flex-wrap: wrap; }
+.section-header .left { max-width: 640px; }
+.section-header .eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--ink-dim);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-header .eyebrow .num {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 4px 8px;
+  font-weight: 700;
+}
+.section-header h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+}
+.section-header .right { font-size: 16px; color: var(--ink-dim); max-width: 380px; line-height: 1.55; }
+
+/* ========== SERVICES ========== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.service {
+  background: var(--bg);
+  padding: 36px 28px 32px;
+  position: relative;
+  transition: background 0.3s;
+}
+.service:hover { background: var(--bg-card); }
+.service .num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-dim);
+  letter-spacing: 0.1em;
+  margin-bottom: 28px;
+}
+.service .icon {
+  width: 44px; height: 44px;
+  margin-bottom: 24px;
+  color: var(--accent);
+}
+.service h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 0.005em;
+}
+.service p {
+  font-size: 14px;
+  color: var(--ink-dim);
+  line-height: 1.5;
+}
+@media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* ========== WHY US ========== */
+.whyus {
+  background: var(--bg-dark);
+  color: var(--bg);
+}
+.whyus .section-header h2 { color: var(--bg); }
+.whyus .section-header .eyebrow { color: #999488; }
+.whyus .section-header .right { color: #999488; }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #2A2A2A; border: 1px solid #2A2A2A; }
+.why-cell {
+  background: var(--bg-dark);
+  padding: 44px 36px;
+  display: flex;
+  gap: 28px;
+}
+.why-cell .num {
+  font-family: 'Anton', sans-serif;
+  font-size: 56px;
+  line-height: 0.85;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.why-cell h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  color: var(--bg);
+}
+.why-cell p {
+  font-size: 15px;
+  color: #B8B0A2;
+  line-height: 1.6;
+}
+@media (max-width: 800px) { .why-grid { grid-template-columns: 1fr; } .why-cell { padding: 32px 24px; gap: 20px; } }
+
+/* ========== PROCESS ========== */
+.process { background: var(--bg); }
+.process-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+.process-track::before {
+  content: ""; position: absolute; top: 60px; left: 12%; right: 12%;
+  height: 2px; background: var(--rule);
+}
+.process-step { position: relative; padding: 0 24px; }
+.process-step .circle {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--rule-strong);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  margin: 0 auto 28px;
+  position: relative;
+  transition: transform 0.3s;
+}
+.process-step:hover .circle { transform: translateY(-4px); background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.process-step h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.process-step p {
+  font-size: 15px;
+  color: var(--ink-dim);
+  text-align: center;
+  line-height: 1.55;
+}
+@media (max-width: 800px) {
+  .process-track { grid-template-columns: 1fr; gap: 40px; }
+  .process-track::before { display: none; }
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials { background: var(--rule-strong); color: var(--bg); }
+.testimonials .section-header h2 { color: var(--bg); }
+.testimonials .section-header .eyebrow { color: #999488; }
+.testimonials .section-header .right { color: #999488; }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.testi {
+  background: #1F1F1F;
+  padding: 36px 32px;
+  display: flex; flex-direction: column;
+  border-left: 3px solid var(--accent);
+}
+.testi .stars { color: var(--accent); margin-bottom: 18px; font-size: 18px; letter-spacing: 2px; }
+.testi blockquote {
+  font-size: 17px;
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--bg);
+  margin-bottom: 28px;
+  flex: 1;
+}
+.testi blockquote::before { content: "„"; font-family: 'Anton', sans-serif; font-size: 48px; line-height: 0.5; color: var(--accent); display: block; margin-bottom: 8px; }
+.testi cite {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bg);
+  display: block;
+}
+.testi cite small {
+  display: block;
+  color: #999488;
+  font-weight: 500;
+  font-size: 12px;
+  margin-top: 2px;
+}
+@media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+
+/* ========== LOCATION ========== */
+.location { background: var(--bg); }
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+.location-info {
+  padding: 56px 48px;
+  background: var(--bg-card);
+}
+.location-info h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.info-row { padding: 18px 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 24px; }
+.info-row:last-child { border-bottom: none; }
+.info-row .lbl {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-dim);
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+.info-row .val { font-size: 15px; font-weight: 600; text-align: right; }
+.info-row .val a { color: var(--accent); }
+.location-map {
+  background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location-map::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 239, 227, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 239, 227, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.location-map .pin {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--bg);
+}
+.location-map .pin svg {
+  width: 56px; height: 56px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  filter: drop-shadow(0 8px 24px rgba(200, 52, 27, 0.5));
+  animation: bounce 2s infinite;
+}
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.location-map .pin .addr { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #999488; }
+.location-map .pin .city { font-family: 'Anton', sans-serif; font-size: 24px; text-transform: uppercase; }
+@media (max-width: 800px) { .location-grid { grid-template-columns: 1fr; } .location-info { padding: 36px 28px; } }
+
+/* ========== FORM ========== */
+.form-section {
+  padding: 96px 0;
+  background: var(--bg-dark);
+  color: var(--bg);
+}
+.form-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+.form-wrap .eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 18px; }
+.form-wrap h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.form-wrap .lede { color: #B8B0A2; margin-bottom: 48px; font-size: 17px; }
+form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; text-align: left; }
+form .full { grid-column: 1 / -1; }
+form label {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #999488;
+  margin-bottom: 8px;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 16px 18px;
+  background: #1F1F1F;
+  border: 1px solid #2A2A2A;
+  color: var(--bg);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s, background 0.2s;
+}
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #252525;
+}
+form textarea { min-height: 110px; resize: vertical; }
+form button.submit {
+  width: 100%;
+  padding: 22px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  margin-top: 18px;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+form button.submit:hover { background: var(--accent-hover); transform: translateY(-2px); }
+.form-or {
+  margin-top: 32px;
+  font-size: 14px;
+  color: #999488;
+}
+.form-or a { color: var(--bg); font-weight: 700; border-bottom: 1px dotted var(--accent); }
+@media (max-width: 600px) { form .row { grid-template-columns: 1fr; } }
+
+/* ========== FOOTER ========== */
+footer {
+  background: #0A0A0A;
+  color: #999488;
+  padding: 56px 0 32px;
+  font-size: 14px;
+}
+footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+footer .brand h4 {
+  font-family: 'Anton', sans-serif;
+  font-size: 28px;
+  color: var(--bg);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+footer .brand p { line-height: 1.6; max-width: 320px; }
+footer h5 {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--bg);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+footer ul { list-style: none; }
+footer ul li { padding: 5px 0; }
+footer ul a:hover { color: var(--accent); }
+footer .legal {
+  border-top: 1px solid #1A1A1A;
+  padding-top: 24px;
+  display: flex; justify-content: space-between; gap: 16px;
+  font-size: 12px;
+  color: #555049;
+  flex-wrap: wrap;
+}
+@media (max-width: 800px) { footer .container { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { footer .container { grid-template-columns: 1fr; } }
+
+/* ========== STICKY MOBILE CTA ========== */
+.mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 16px 20px;
+  z-index: 50;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 -8px 24px -8px rgba(0,0,0,0.3);
+}
+@media (max-width: 700px) {
+  .mobile-cta { display: flex; align-items: center; justify-content: center; gap: 10px; }
+  body { padding-bottom: 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <span><span class="dot"></span> NYITVA — H–P 7:30–17:30</span>
+      <span class="hide-mobile">9024 Győr, Példa utca 12.</span>
+    </div>
+    <div>
+      <a href="tel:+36961234567" class="phone">+36 96 123 4567</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== NAV ========== -->
+<nav class="main">
+  <div class="container">
+    <a href="#" class="logo">
+      <span class="mark">Kovács Autószerviz</span>
+      <span class="est">— EST. 2002</span>
+    </a>
+    <ul>
+      <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="#miert-mi">Miért mi</a></li>
+      <li><a href="#velemenyek">Vélemények</a></li>
+      <li><a href="#kapcsolat">Kapcsolat</a></li>
+    </ul>
+    <a href="#foglalas" class="nav-cta">Időpont foglalás</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Győr · 22 éve a városért</div>
+      <h1>Megbízható<br>autószerelő<br><span class="underline accent">Győrben.</span></h1>
+      <p class="lede">Időpontfoglalás 1 perc alatt. Pontos érkezés, pontos készenlét. Garanciás szervizmunka, transzparens árak — meglepetések nélkül.</p>
+      <div class="ctas">
+        <a href="#foglalas" class="btn btn-primary">
+          Időpontot foglalok
+          <span class="arrow">→</span>
+        </a>
+        <a href="tel:+36961234567" class="btn btn-secondary">
+          Hívjon most
+        </a>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="city-stamp">№ 47 · GYŐR</div>
+      <svg class="car" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 140 L40 130 Q40 110 60 105 L120 95 Q140 70 175 65 L240 65 Q275 70 295 95 L355 105 Q375 110 375 130 L375 140 Z"/>
+        <line x1="135" y1="95" x2="155" y2="65"/>
+        <line x1="220" y1="65" x2="240" y2="95"/>
+        <circle cx="100" cy="148" r="22" fill="none"/>
+        <circle cx="315" cy="148" r="22" fill="none"/>
+        <circle cx="100" cy="148" r="9" fill="none"/>
+        <circle cx="315" cy="148" r="9" fill="none"/>
+      </svg>
+      <div class="visual-card">
+        <div class="num">22</div>
+        <div class="lbl"><strong>év szakmai tapasztalat</strong>1500+ elégedett ügyfél · 4.9★ Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRUST STRIP ========== -->
+<section class="trust">
+  <div class="container">
+    <div class="item">
+      <div class="num">22</div>
+      <div class="lbl"><strong>Év tapasztalat</strong>2002 óta a városban</div>
+    </div>
+    <div class="item">
+      <div class="num">4.9★</div>
+      <div class="lbl"><strong>Google értékelés</strong>158 vélemény alapján</div>
+    </div>
+    <div class="item">
+      <div class="num">12</div>
+      <div class="lbl"><strong>Hónap garancia</strong>Minden javítási munkára</div>
+    </div>
+    <div class="item">
+      <div class="num">24h</div>
+      <div class="lbl"><strong>Visszahívás</strong>Foglaláskérés után</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section" id="szolgaltatasok">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">01</span> Szolgáltatások</div>
+        <h2>Amit elvégzünk<br>Önnek</h2>
+      </div>
+      <div class="right">Műszaki vizsga felkészítéstől a klímaszervizig — minden szolgáltatás egy helyen, garanciával és írásos árajánlattal.</div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service">
+        <div class="num">01</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+        <h3>Olajcsere</h3>
+        <p>30 perc alatt, eredeti olajokkal és gyári szűrőkkel. Minden típushoz a megfelelő specifikáció.</p>
+      </div>
+      <div class="service">
+        <div class="num">02</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.137-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <h3>Fékrendszer</h3>
+        <p>Féktárcsa, fékbetét, féklámpa, fékfolyadék. Biztonságos megállás minden időben.</p>
+      </div>
+      <div class="service">
+        <div class="num">03</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>
+        <h3>Futómű</h3>
+        <p>Lengéscsillapító, kerékfutás, geometria beállítás. Egyenes vonal, stabil út.</p>
+      </div>
+      <div class="service">
+        <div class="num">04</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+        <h3>Klímaszerviz</h3>
+        <p>Klímatöltés, szűrőcsere, fertőtlenítés. Tiszta levegő, hűvös utazás.</p>
+      </div>
+      <div class="service">
+        <div class="num">05</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+        <h3>Műszaki vizsga</h3>
+        <p>Felkészítés és lebonyolítás. 100% átmenetel garancia — különben ingyen javítjuk.</p>
+      </div>
+      <div class="service">
+        <div class="num">06</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        <h3>Hibakód olvasás</h3>
+        <p>Modern diagnosztika minden márkához. Pontos hiba, pontos javítás.</p>
+      </div>
+      <div class="service">
+        <div class="num">07</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+        <h3>Gumiabroncs</h3>
+        <p>Csere, centrírozás, szezonális tárolás. Akciós nyári és téli gumiabroncsok.</p>
+      </div>
+      <div class="service">
+        <div class="num">08</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+        <h3>Kipufogó</h3>
+        <p>Hangtompító, katalizátor, lambda szonda. Halk működés, alacsony fogyasztás.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY US ========== -->
+<section class="section whyus" id="miert-mi">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">02</span> Miért minket választanak</div>
+        <h2>Négy ok,<br>amiért visszajönnek.</h2>
+      </div>
+      <div class="right">22 év alatt megtanultuk, mit várnak az autósok egy szerviztől. Ezeket adjuk meg minden ügyfelünknek, kivétel nélkül.</div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-cell">
+        <div class="num">01</div>
+        <div>
+          <h3>Pontos időpontok, várakozás nélkül</h3>
+          <p>Tudjuk, hogy az ideje érték. Ha délelőtt 9-re foglal, 9-re elkezdjük. A megbeszélt készre szerelési idő be van tartva, vagy szólunk előre.</p>
+        </div>
+      </div>
+      <div class="why-cell">
+        <div class="num">02</div>
+        <div>
+          <h3>Transzparens árajánlat előre</h3>
+          <p>Mielőtt bármit szétszerelnénk, megbeszéljük az árat. Nincs meglepetés, nincs „felülvizsgálati díj", nincs utólagos hozzátoldás. Amit aláír, annyi.</p>
+        </div>
+      </div>
+      <div class="why-cell">
+        <div class="num">03</div>
+        <div>
+          <h3>Eredeti vagy márkafüggetlen — Öné a választás</h3>
+          <p>Mi mindig megmondjuk, melyik alkatrész mit tud és mibe kerül. A döntés az Öné. Nem nyomjuk a drágábbat, és nem rejtjük el az olcsóbbat.</p>
+        </div>
+      </div>
+      <div class="why-cell">
+        <div class="num">04</div>
+        <div>
+          <h3>12 hónap garancia, írásban</h3>
+          <p>Minden javítási munkára 12 hónap garanciát vállalunk, minden számlán fel van tüntetve. Ha bármi probléma van a javítás után, ingyen rendbe tesszük.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section class="section process">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">03</span> Folyamat</div>
+        <h2>Hogyan dolgozunk.</h2>
+      </div>
+      <div class="right">Három lépés, semmi felesleges. Az első kapcsolatfelvételtől a kész autóig — átláthatóan, gyorsan.</div>
+    </div>
+
+    <div class="process-track">
+      <div class="process-step">
+        <div class="circle">1</div>
+        <h3>Foglalás</h3>
+        <p>Online vagy telefonon, 1 perc alatt. 24 órán belül visszahívjuk a részletekkel és a várható árral.</p>
+      </div>
+      <div class="process-step">
+        <div class="circle">2</div>
+        <h3>Diagnózis</h3>
+        <p>Pontos hibafelmérés a megbeszélt időpontban. Írásos árajánlatot adunk, mielőtt bármihez hozzákezdünk.</p>
+      </div>
+      <div class="process-step">
+        <div class="circle">3</div>
+        <h3>Javítás</h3>
+        <p>A megbeszélt időre készre szereljük az autót. 12 hónap garancia, írásban a számlán.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section testimonials" id="velemenyek">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">04</span> Vélemények</div>
+        <h2>Mit mondanak<br>az ügyfeleink.</h2>
+      </div>
+      <div class="right">158 Google értékelésből kiválasztva. Az összeset elolvashatja a Google térképen — ott a teljes lista.</div>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>Régi autóm volt a problémám, mások csak a fejüket csóválták. Itt elsőre megmondták mi a baj, és a megbeszélt időre kész is volt. Azóta csak ide járok.</blockquote>
+        <cite>Tóth László <small>Audi A4 tulajdonos · Győr</small></cite>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>Pontos időpont, korrekt árak, nincs felesleges húzás. A férjem is nyugodtan járhat ide, és én is megbízom bennük. Ennyi év után végre megbízható szerviz.</blockquote>
+        <cite>Nagyné Horváth Eszter <small>Toyota Yaris tulajdonos · Győr</small></cite>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>A műszaki előtt féltem, hogy találnak valamit feleslegesen. Itt mindent átnéztek, csak azt csinálták meg amit muszáj volt. Számláról is látszott, mi miért lett.</blockquote>
+        <cite>Kiss Péter <small>Volkswagen Golf tulajdonos · Győr</small></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LOCATION ========== -->
+<section class="section location" id="kapcsolat">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">05</span> Kapcsolat</div>
+        <h2>Itt talál<br>meg minket.</h2>
+      </div>
+      <div class="right">A 9-es út mellett, a Plus Áruháztól 200 méterre. Saját parkoló, akadálymentesített bejárat.</div>
+    </div>
+
+    <div class="location-grid">
+      <div class="location-info">
+        <h3>Műhely információk</h3>
+        <div class="info-row">
+          <span class="lbl">CÍM</span>
+          <span class="val">9024 Győr,<br>Példa utca 12.</span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">TELEFON</span>
+          <span class="val"><a href="tel:+36961234567">+36 96 123 4567</a></span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">EMAIL</span>
+          <span class="val"><a href="mailto:info@kovacsautoszerviz.hu">info@kovacsautoszerviz.hu</a></span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">H–P</span>
+          <span class="val">7:30 – 17:30</span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">SZOMBAT</span>
+          <span class="val">8:00 – 12:00</span>
+        </div>
+        <div class="info-row">
+          <span class="lbl">VASÁRNAP</span>
+          <span class="val">Zárva</span>
+        </div>
+      </div>
+      <div class="location-map">
+        <div class="pin">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <div class="city">Győr</div>
+          <div class="addr">PÉLDA UTCA 12.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FORM ========== -->
+<section class="form-section" id="foglalas">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="eyebrow">FOGLALÁS · VISSZAHÍVÁS 24 ÓRÁN BELÜL</div>
+      <h2>Foglaljon időpontot<br>most.</h2>
+      <p class="lede">Töltse ki az űrlapot, és még ma visszahívjuk. Pontos árajánlatot adunk, mielőtt bármi szétszerelnénk.</p>
+
+      <form>
+        <div class="row">
+          <div>
+            <label>Név</label>
+            <input type="text" placeholder="Pl. Tóth László" required>
+          </div>
+          <div>
+            <label>Telefonszám</label>
+            <input type="tel" placeholder="+36 30 123 4567" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="full">
+            <label>Autó típusa</label>
+            <input type="text" placeholder="Pl. Volkswagen Golf 1.4 TSI, 2014">
+          </div>
+        </div>
+        <div class="row">
+          <div class="full">
+            <label>Mire foglalna időpontot? Mi a probléma?</label>
+            <textarea placeholder="Pl. Olajcsere és műszaki vizsga felkészítés. Csikorog a fék, ha hidegen indítok."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="submit">
+          Visszahívást kérek
+          <span>→</span>
+        </button>
+      </form>
+
+      <div class="form-or">vagy hívjon közvetlenül: <a href="tel:+36961234567">+36 96 123 4567</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="brand">
+      <h4>Kovács Autószerviz</h4>
+      <p>Megbízható autószerviz Győrben 2002 óta. Műszaki vizsga felkészítés, általános szerviz, klíma, futómű — minden egy helyen, garanciával.</p>
+    </div>
+    <div>
+      <h5>Szolgáltatások</h5>
+      <ul>
+        <li><a href="#szolgaltatasok">Olajcsere</a></li>
+        <li><a href="#szolgaltatasok">Fékrendszer</a></li>
+        <li><a href="#szolgaltatasok">Futómű</a></li>
+        <li><a href="#szolgaltatasok">Klímaszerviz</a></li>
+        <li><a href="#szolgaltatasok">Műszaki vizsga</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Információ</h5>
+      <ul>
+        <li><a href="#miert-mi">Miért minket?</a></li>
+        <li><a href="#velemenyek">Vélemények</a></li>
+        <li><a href="#kapcsolat">Kapcsolat</a></li>
+        <li><a href="#foglalas">Időpont foglalás</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Kapcsolat</h5>
+      <ul>
+        <li>+36 96 123 4567</li>
+        <li>info@kovacsautoszerviz.hu</li>
+        <li>9024 Győr, Példa utca 12.</li>
+        <li>H–P 7:30–17:30, Szo 8–12</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="legal">
+      <span>© 2026 Kovács Autószerviz Kft. · Adószám: 12345678-2-08</span>
+      <span><a href="#">Adatkezelési tájékoztató</a> · <a href="#">ÁSZF</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== STICKY MOBILE CTA ========== -->
+<a href="tel:+36961234567" class="mobile-cta">
+  📞 Hívás: +36 96 123 4567
+</a>
+
+</body>
+</html>
