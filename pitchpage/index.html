@@ -987,11 +987,119 @@
       text-decoration: none;
     }
 
+    /* ── ANIMATIONS ── */
+    @keyframes heroIn {
+      from { opacity:0; transform:translateY(36px); }
+      to   { opacity:1; transform:none; }
+    }
+    @keyframes heroInRight {
+      from { opacity:0; transform:translateX(52px); }
+      to   { opacity:1; transform:none; }
+    }
+    @keyframes maskUp {
+      from { transform:translateY(112%); }
+      to   { transform:translateY(0); }
+    }
+    @keyframes floatY {
+      0%,100% { transform:translateY(0); }
+      50%     { transform:translateY(-11px); }
+    }
+    @keyframes limePulse {
+      0%,100% { text-shadow:none; }
+      50%     { text-shadow:0 0 36px rgba(200,255,0,0.6), 0 0 72px rgba(200,255,0,0.2); }
+    }
+    @keyframes shimmerSweep {
+      from { left:-80%; }
+      to   { left:130%; }
+    }
+
+    /* Page load sequence */
+    nav            { animation: heroIn 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-eyebrow  { animation: heroIn 0.7s  0.18s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-sub-wrap { animation: heroIn 0.7s  0.82s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-actions  { animation: heroIn 0.7s  0.98s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-trust    { animation: heroIn 0.7s  1.12s cubic-bezier(0.16,1,0.3,1) both; }
+    .site-preview  { animation: heroInRight 0.9s 0.45s cubic-bezier(0.16,1,0.3,1) both,
+                                floatY 5.5s 1.5s ease-in-out infinite; }
+
+    /* H1 mask-reveal lines */
+    .h1-line {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.06em;
+    }
+    .h1-line-inner {
+      display: block;
+      animation: maskUp 0.95s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .h1-line:nth-child(1) .h1-line-inner { animation-delay: 0.30s; }
+    .h1-line:nth-child(2) .h1-line-inner { animation-delay: 0.50s; }
+    .h1-line:nth-child(3) .h1-line-inner { animation-delay: 0.68s; }
+
+    /* Lime glow pulse on guarantee line */
+    .h1-guarantee { animation: limePulse 3.5s 2.4s ease-in-out infinite; }
+
+    /* Mobile-only line break for h1 */
+    .h1-first { display: inline; }
+
+    /* Button shimmer + lift */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      transition: opacity 0.15s, transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -80%;
+      width: 55%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.24), transparent);
+      transform: skewX(-16deg);
+      pointer-events: none;
+    }
+    .btn-primary:hover {
+      opacity: 1;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(200,255,0,0.25);
+    }
+    .btn-primary:hover::after { animation: shimmerSweep 0.55s ease forwards; }
+    .btn-ghost:hover { transform: translateY(-2px); transition: border-color 0.15s, color 0.15s, transform 0.2s; }
+
+    /* Card hover lift */
+    .pf-card      { transition: background 0.2s, transform 0.22s cubic-bezier(0.16,1,0.3,1); }
+    .pf-card:hover { transform: translateY(-4px); }
+    .pain-scenario { transition: background 0.2s, transform 0.22s cubic-bezier(0.16,1,0.3,1); }
+    .pain-scenario:hover { background: var(--bg-2); transform: translateY(-3px); }
+    .proc-step { transition: background 0.2s, transform 0.22s cubic-bezier(0.16,1,0.3,1); }
+    .proc-step:hover { background: var(--bg-2); }
+
+    /* Stagger delays — grid children */
+    .pain-scenario:nth-child(2) { transition-delay: 0.07s; }
+    .pain-scenario:nth-child(3) { transition-delay: 0.14s; }
+    .pain-scenario:nth-child(4) { transition-delay: 0.21s; }
+    .pain-scenario:nth-child(5) { transition-delay: 0.28s; }
+    .pain-scenario:nth-child(6) { transition-delay: 0.35s; }
+    .offer-check-item:nth-child(2)  { transition-delay: 0.06s; }
+    .offer-check-item:nth-child(3)  { transition-delay: 0.12s; }
+    .offer-check-item:nth-child(4)  { transition-delay: 0.18s; }
+    .offer-check-item:nth-child(5)  { transition-delay: 0.24s; }
+    .offer-check-item:nth-child(6)  { transition-delay: 0.30s; }
+    .offer-check-item:nth-child(7)  { transition-delay: 0.36s; }
+    .offer-check-item:nth-child(8)  { transition-delay: 0.42s; }
+    .offer-check-item:nth-child(9)  { transition-delay: 0.48s; }
+    .proc-step:nth-child(2) { transition-delay: 0.12s; }
+    .proc-step:nth-child(3) { transition-delay: 0.24s; }
+    .pf-card:nth-child(2)   { transition-delay: 0.10s; }
+    .pf-card:nth-child(3)   { transition-delay: 0.20s; }
+    .stat-cell:nth-child(2) { transition-delay: 0.08s; }
+    .stat-cell:nth-child(3) { transition-delay: 0.16s; }
+    .stat-cell:nth-child(4) { transition-delay: 0.24s; }
+
     /* ── REVEAL ── */
     .reveal {
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
+      transform: translateY(28px);
+      transition: opacity 0.72s cubic-bezier(0.16,1,0.3,1), transform 0.72s cubic-bezier(0.16,1,0.3,1);
     }
     .reveal.visible { opacity: 1; transform: none; }
 
@@ -1091,6 +1199,7 @@
       .form-inner { grid-template-columns: 1fr; gap: 56px; }
     }
     @media (max-width: 760px) {
+      .h1-first { display: block; }
       .hero { padding: 64px 20px 56px; }
       .section { padding: 64px 20px; }
       .form-section { padding: 64px 20px; }
@@ -1126,9 +1235,9 @@
       <div class="hero-left">
         <div class="hero-eyebrow">Landoló oldalak<span class="blink"></span></div>
         <h1>
-          Egy oldal. <span class="lime">20 000 Ft.</span><br>
-          12 óra alatt.<br>
-          <span class="h1-guarantee">Ha nem tetszik — nem fizetsz.</span>
+          <span class="h1-line"><span class="h1-line-inner"><span class="h1-first">Egy oldal.</span> <span class="lime">20 000 Ft.</span></span></span>
+          <span class="h1-line"><span class="h1-line-inner">12 óra alatt.</span></span>
+          <span class="h1-line"><span class="h1-line-inner"><span class="h1-guarantee">Ha nem tetszik — nem fizetsz.</span></span></span>
         </h1>
         <div class="hero-sub-wrap">
           <p class="hero-sub">Profi weboldal a vállalkozásodnak. Fizetsz egyszer — az oldal utána ingyen fut, örökre.</p>
@@ -1234,12 +1343,12 @@
   <div class="stat-strip">
     <div class="stat-strip-inner">
       <div class="stat-cell reveal">
-        <div class="stat-n">12h</div>
+        <div class="stat-n" data-count="12" data-suffix="h">12h</div>
         <div class="stat-l">átfutás az első verzióra</div>
       </div>
       <div class="stat-cell reveal">
-        <div class="stat-n">20&nbsp;000</div>
-        <div class="stat-l">Ft · egyszeri díj</div>
+        <div class="stat-n" data-count="20000" data-suffix=" Ft">0 Ft</div>
+        <div class="stat-l">egyszeri díj</div>
       </div>
       <div class="stat-cell reveal">
         <div class="stat-n">1×</div>
@@ -1514,17 +1623,49 @@
 
   <script>
     (function () {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+
+      /* ── Scroll reveal ── */
+      var revealObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            revealObs.unobserve(e.target);
           }
         });
       }, { threshold: 0.07 });
-      document.querySelectorAll('.reveal').forEach(function (el) {
-        observer.observe(el);
-      });
+      document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+
+      /* ── Counter animation ── */
+      function formatNum(n) {
+        /* Hungarian: space as thousands separator */
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      }
+      function runCounter(el) {
+        var target  = parseInt(el.getAttribute('data-count'), 10);
+        var suffix  = el.getAttribute('data-suffix') || '';
+        var dur     = target > 999 ? 1800 : 900;
+        var start   = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var pct    = Math.min((ts - start) / dur, 1);
+          /* ease-out expo */
+          var eased  = pct === 1 ? 1 : 1 - Math.pow(2, -10 * pct);
+          var cur    = Math.round(eased * target);
+          el.textContent = formatNum(cur) + suffix;
+          if (pct < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      var countObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            runCounter(e.target);
+            countObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      document.querySelectorAll('.stat-n[data-count]').forEach(function (el) { countObs.observe(el); });
+
     })();
   </script>
 
