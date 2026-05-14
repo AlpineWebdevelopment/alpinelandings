@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpine Studios — Landoló oldalak. 20 000 Ft.</title>
-  <meta name="description" content="Egyedi, mobiloptimalizált landoló oldal. 20 000 Ft egyszeri díj. 48 óra átfutás. HTML forrás átadva.">
+  <meta name="description" content="Profi landoló oldal kis vállalkozásoknak. 20 000 Ft egyszeri díj. 12 óra átfutás. Mobilra optimalizálva.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,82 +206,166 @@
       color: var(--lime);
     }
 
-    /* ── TERMINAL CARD ── */
-    .term-card {
-      background: var(--bg-3);
-      border: 1px solid var(--rule-2);
-      border-radius: 4px;
-      overflow: hidden;
+    /* ── SITE PREVIEW ── */
+    .site-preview {
       margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    .term-bar {
+    .sp-browser {
+      border: 1px solid var(--rule-2);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--bg-3);
+    }
+    .sp-bar {
       background: var(--bg-2);
       border-bottom: 1px solid var(--rule);
-      padding: 10px 14px;
+      padding: 9px 14px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
-    .term-dot {
-      width: 10px; height: 10px;
+    .sp-dots {
+      display: flex;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .sp-dots span {
+      display: block;
+      width: 9px; height: 9px;
       border-radius: 50%;
     }
-    .term-dot-r { background: #FF5F57; }
-    .term-dot-y { background: #FFBD2E; }
-    .term-dot-g { background: #28CA41; }
-    .term-title {
+    .sp-dots span:nth-child(1) { background: #FF5F57; }
+    .sp-dots span:nth-child(2) { background: #FFBD2E; }
+    .sp-dots span:nth-child(3) { background: #28CA41; }
+    .sp-url-pill {
+      flex: 1;
+      background: var(--bg-3);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 4px 10px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
+      font-size: 10px;
       color: var(--ink-3);
-      margin-left: 8px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .term-body {
-      padding: 20px;
+    .sp-live-badge {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-    .term-prompt { color: var(--lime); }
-    .term-cmd    { color: var(--ink); }
-    .term-ok     { color: #28CA41; }
-    .term-dim    { color: var(--ink-3); }
-    .term-val    { color: var(--lime); font-weight: 700; }
-    .term-divider {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 12px 0;
-    }
-    .term-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .term-input-row {
-      margin-top: 14px;
+      font-size: 10px;
+      color: #28CA41;
       display: flex;
       align-items: center;
       gap: 4px;
+      flex-shrink: 0;
     }
-    .term-fake-input {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--rule-2);
+    .sp-live-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #28CA41;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.35; }
+    }
+    .sp-page {
+      padding: 0;
+    }
+    .sp-mock-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .sp-mock-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
       color: var(--ink-2);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      padding: 4px 0;
-      flex: 1;
+      letter-spacing: 0.02em;
     }
-    .term-send {
+    .sp-mock-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
       background: var(--lime);
       color: var(--bg);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 2px;
       font-weight: 700;
-      padding: 5px 10px;
-      border: none;
-      cursor: pointer;
-      border-radius: 1px;
+    }
+    .sp-mock-hero {
+      padding: 20px 16px 16px;
+      background: var(--bg-3);
+    }
+    .sp-mock-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--ink-3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .sp-mock-h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 20px;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .sp-mock-h1 .sp-accent { color: var(--lime); font-style: normal; }
+    .sp-mock-cta {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      background: var(--lime);
+      color: var(--bg);
+      padding: 7px 13px;
+      border-radius: 2px;
+      letter-spacing: 0.02em;
+    }
+    .sp-mock-strip {
+      display: flex;
+      border-top: 1px solid var(--rule);
+    }
+    .sp-mock-strip-cell {
+      flex: 1;
+      padding: 10px 12px;
+      border-right: 1px solid var(--rule);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--ink-3);
+      text-align: center;
+      line-height: 1.4;
+    }
+    .sp-mock-strip-cell:last-child { border-right: none; }
+    .sp-mock-strip-val {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-2);
+      display: block;
+    }
+    .sp-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sp-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--ink-3);
+    }
+    .sp-caption strong {
+      color: var(--ink-2);
+      font-weight: 500;
     }
 
     /* ── STAT STRIP ── */
@@ -905,7 +989,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; }
-      .term-card { display: none; }
+      .site-preview { display: none; }
       .offer-grid { grid-template-columns: 1fr; gap: 48px; }
       .offer-sticky { position: static; }
       .form-inner { grid-template-columns: 1fr; gap: 56px; }
@@ -947,10 +1031,10 @@
         <h1>
           Egy oldal.<br>
           20 000 Ft.<br>
-          <span class="lime">48 óra alatt.</span>
+          <span class="lime">tizenkét óra alatt.</span>
         </h1>
         <div class="hero-sub-wrap">
-          <p class="hero-sub">Egyedi design, kézzel írt HTML. Egyszeri díj, előfizetés nélkül. Megkapod a fájlt.</p>
+          <p class="hero-sub">Profi weboldal a vállalkozásodnak. Egyszeri díj, előfizetés nélkül.</p>
         </div>
         <div class="hero-actions">
           <a href="#kapcsolat" class="btn-primary">Megrendelem</a>
@@ -963,38 +1047,41 @@
         </div>
       </div>
 
-      <div class="term-card">
-        <div class="term-bar">
-          <div class="term-dot term-dot-r"></div>
-          <div class="term-dot term-dot-y"></div>
-          <div class="term-dot term-dot-g"></div>
-          <span class="term-title">alpine-studio — bash</span>
+      <div class="site-preview">
+        <div class="sp-browser">
+          <div class="sp-bar">
+            <div class="sp-dots"><span></span><span></span><span></span></div>
+            <div class="sp-url-pill">kovacs-autoszerviz.hu</div>
+            <div class="sp-live-badge"><span class="sp-live-dot"></span>Élő</div>
+          </div>
+          <div class="sp-page">
+            <div class="sp-mock-nav">
+              <div class="sp-mock-logo">Kovács Autószerviz</div>
+              <div class="sp-mock-btn">Hívás →</div>
+            </div>
+            <div class="sp-mock-hero">
+              <div class="sp-mock-eyebrow">Győr · Autójavítás</div>
+              <div class="sp-mock-h1">Megbízható<br>autószerelő<br><span class="sp-accent">Győrben.</span></div>
+              <div class="sp-mock-cta">Időpontot kérek →</div>
+            </div>
+            <div class="sp-mock-strip">
+              <div class="sp-mock-strip-cell">
+                <span class="sp-mock-strip-val">★ 4.9</span>
+                értékelés
+              </div>
+              <div class="sp-mock-strip-cell">
+                <span class="sp-mock-strip-val">12h</span>
+                átfutás
+              </div>
+              <div class="sp-mock-strip-cell">
+                <span class="sp-mock-strip-val">20 éve</span>
+                tapasztalat
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="term-body">
-          <div><span class="term-prompt">$</span> <span class="term-cmd">alpine build kovacs-autoszerviz.hu</span></div>
-          <div>&nbsp;</div>
-          <div><span class="term-ok">✓</span> <span class="term-dim">build complete</span> <span class="term-val">0.4s</span></div>
-          <div><span class="term-ok">✓</span> <span class="term-dim">mobile ready</span></div>
-          <div><span class="term-ok">✓</span> <span class="term-dim">lighthouse</span> <span class="term-val">96/100</span></div>
-          <hr class="term-divider">
-          <div class="term-row">
-            <span class="term-dim">turnaround</span>
-            <span class="term-val">48h</span>
-          </div>
-          <div class="term-row">
-            <span class="term-dim">revisions</span>
-            <span class="term-val">1×</span>
-          </div>
-          <div class="term-row">
-            <span class="term-dim">format</span>
-            <span class="term-val">HTML</span>
-          </div>
-          <hr class="term-divider">
-          <div class="term-input-row">
-            <span class="term-prompt">&gt;</span>
-            <input class="term-fake-input" type="text" placeholder="megrendelem_" readonly>
-            <button class="term-send">→</button>
-          </div>
+        <div class="sp-bottom">
+          <span class="sp-caption">Így néz ki — <strong>a tiéd is ilyen lesz.</strong></span>
         </div>
       </div>
     </div>
@@ -1004,7 +1091,7 @@
   <div class="stat-strip">
     <div class="stat-strip-inner">
       <div class="stat-cell reveal">
-        <div class="stat-n">48h</div>
+        <div class="stat-n">12h</div>
         <div class="stat-l">átfutás az első verzióra</div>
       </div>
       <div class="stat-cell reveal">
@@ -1044,7 +1131,7 @@
           <div class="offer-item reveal">
             <div class="offer-arrow">→</div>
             <div>
-              <h4>48 órán belül az első verzió</h4>
+              <h4>12 órán belül az első verzió</h4>
             </div>
           </div>
           <div class="offer-item reveal">
@@ -1146,7 +1233,7 @@
           <hr class="price-hr">
           <ul class="price-feats">
             <li>Egyedi landoló oldal</li>
-            <li>48 órán belül első verzió</li>
+            <li>12 órán belül első verzió</li>
             <li>1 kör módosítás</li>
             <li>HTML forrás átadva</li>
             <li>Mobilra optimalizálva</li>
@@ -1172,8 +1259,8 @@
         <div class="proc-step reveal">
           <div class="proc-n">02</div>
           <h3>Megkapod az első verziót</h3>
-          <p>48 óra alatt elkészül. Preview linket küldök, visszajelzést várok.</p>
-          <div class="proc-badge">48 óra</div>
+          <p>12 óra alatt elkészül. Preview linket küldök, visszajelzést várok.</p>
+          <div class="proc-badge">12 óra</div>
         </div>
         <div class="proc-step reveal">
           <div class="proc-n">03</div>
