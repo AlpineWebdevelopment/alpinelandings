@@ -986,12 +986,99 @@
     }
     .reveal.visible { opacity: 1; transform: none; }
 
+    /* ── PAIN SCENARIOS ── */
+    .pain-scenarios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-top: 56px;
+    }
+    .pain-scenario {
+      background: var(--bg);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .pain-scen-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--lime);
+      padding-top: 4px;
+      letter-spacing: 0.04em;
+    }
+    .pain-scen-body h3 {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .pain-scen-body p {
+      font-size: 13px;
+      color: var(--ink-2);
+      line-height: 1.65;
+    }
+
+    /* ── OFFER FULL ── */
+    .offer-full {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 64px;
+      align-items: start;
+      margin-top: 56px;
+    }
+    .offer-check-list {
+      border-top: 1px solid var(--rule);
+    }
+    .offer-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .offer-check-mark {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--lime);
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .offer-check-text {
+      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .offer-check-sub {
+      display: block;
+      font-size: 12px;
+      color: var(--ink-3);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+    .offer-right-card {
+      background: var(--bg-2);
+      border: 1px solid var(--rule-2);
+      border-top: 2px solid var(--lime);
+      padding: 36px 32px;
+      position: sticky;
+      top: 76px;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; }
       .site-preview { display: none; }
       .offer-grid { grid-template-columns: 1fr; gap: 48px; }
       .offer-sticky { position: static; }
+      .offer-full { grid-template-columns: 1fr; gap: 48px; }
+      .offer-right-card { position: static; }
       .form-inner { grid-template-columns: 1fr; gap: 56px; }
     }
     @media (max-width: 760px) {
@@ -1002,6 +1089,7 @@
       .stat-strip-inner { grid-template-columns: 1fr 1fr; }
       .stat-cell { padding: 24px 20px; }
       .stat-cell:nth-child(2) { border-right: none; }
+      .pain-scenarios { grid-template-columns: 1fr; }
       .pf-grid { grid-template-columns: 1fr; }
       .pricing-wrap { grid-template-columns: 1fr; max-width: 100%; }
       .proc-grid { grid-template-columns: 1fr; }
@@ -1109,50 +1197,134 @@
     </div>
   </div>
 
+  <!-- PAIN SCENARIOS -->
+  <section class="section" id="felismered">
+    <div class="section-inner">
+      <div class="s-tag reveal">Felismered magad?</div>
+      <h2 class="s-title reveal">Ez a helyzeted?</h2>
+      <div class="pain-scenarios">
+
+        <div class="pain-scenario reveal">
+          <div class="pain-scen-num">01</div>
+          <div class="pain-scen-body">
+            <h3>„Csak Facebook-oldalam van"</h3>
+            <p>A Facebook jó, de Google-ben nem találnak. Ha valaki autószerelőt keres a közeledben, a versenytársad jelenik meg — nem te.</p>
+          </div>
+        </div>
+
+        <div class="pain-scenario reveal">
+          <div class="pain-scen-num">02</div>
+          <div class="pain-scen-body">
+            <h3>„Van egy régi oldalam, de lassú és mobilon szétesik"</h3>
+            <p>Valamikor megcsináltatták, azóta senki nem nyúlt hozzá. Telefonról szinte használhatatlan, és inkább árt mint használ.</p>
+          </div>
+        </div>
+
+        <div class="pain-scenario reveal">
+          <div class="pain-scen-num">03</div>
+          <div class="pain-scen-body">
+            <h3>„Egy weboldal drágának tűnik"</h3>
+            <p>A fejlesztők általában 150–400 ezertől indulnak. Egy egyszerű bemutatkozó oldalért ez sok — főleg ha nem tudod, fog-e ügyfeleket hozni.</p>
+          </div>
+        </div>
+
+        <div class="pain-scenario reveal">
+          <div class="pain-scen-num">04</div>
+          <div class="pain-scen-body">
+            <h3>„Nem akarok havonta fizetni semmire"</h3>
+            <p>WordPress tárhely, plugin előfizetés, karbantartás. Csak az oldal kellene — semmi más nem jön utána.</p>
+          </div>
+        </div>
+
+        <div class="pain-scenario reveal">
+          <div class="pain-scen-num">05</div>
+          <div class="pain-scen-body">
+            <h3>„Nem értek ehhez, és nem is akarok"</h3>
+            <p>Nem akarok tanulni semmit, nem akarok adminfelületet kezelni. Az oldal legyen kész — én végzem a dolgomat.</p>
+          </div>
+        </div>
+
+        <div class="pain-scenario reveal">
+          <div class="pain-scen-num">06</div>
+          <div class="pain-scen-body">
+            <h3>„A versenytársamnak van oldala, nekem nincs"</h3>
+            <p>Aki Google-ben keres autószerelőt a városban, azt találja meg. Téged nem.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- OFFER -->
   <section class="section" id="mit-kapsz">
     <div class="section-inner">
-      <div class="offer-grid">
-        <div class="offer-sticky">
-          <div class="s-tag reveal">Mit kapsz</div>
-          <h2 class="s-title reveal">20 000 Ft-ért.</h2>
-          <p class="s-lead reveal">Egyszeri fizetés. Semmi más nem jön utána.</p>
-          <div class="offer-cta reveal">
-            <a href="#kapcsolat" class="btn-primary">Megrendelem →</a>
+      <div class="s-tag reveal">Az ajánlat</div>
+      <h2 class="s-title reveal">Mit kapsz <span class="lime">20 000 Ft-ért.</span></h2>
+      <div class="offer-full">
+
+        <div class="offer-check-list">
+          <div class="offer-check-item reveal">
+            <span class="offer-check-mark">✓</span>
+            <div>
+              <span class="offer-check-text">Saját weboldal — megjelensz Google-ban is</span>
+              <span class="offer-check-sub">Nem csak Facebook. Aki keres, megtalál.</span>
+            </div>
+          </div>
+          <div class="offer-check-item reveal">
+            <span class="offer-check-mark">✓</span>
+            <div>
+              <span class="offer-check-text">Mobilon tökéletes megjelenés</span>
+              <span class="offer-check-sub">Az ügyfelek 80%-a telefonról nyit oldalt.</span>
+            </div>
+          </div>
+          <div class="offer-check-item reveal">
+            <span class="offer-check-mark">✓</span>
+            <div>
+              <span class="offer-check-text">Kattintható hívógomb — egy érintés, és csörögsz</span>
+              <span class="offer-check-sub">Telefonos érdeklődő azonnal elér.</span>
+            </div>
+          </div>
+          <div class="offer-check-item reveal">
+            <span class="offer-check-mark">✓</span>
+            <div>
+              <span class="offer-check-text">Kapcsolatfelvétel emailen — kérések a postaládádba</span>
+              <span class="offer-check-sub">Időpontfoglalás, ajánlatkérés mind emailen érkezik.</span>
+            </div>
+          </div>
+          <div class="offer-check-item reveal">
+            <span class="offer-check-mark">✓</span>
+            <div>
+              <span class="offer-check-text">Google Maps beágyazás — ügyfelek megtalálnak</span>
+              <span class="offer-check-sub">Pontos helyszín, navigáció egy kattintással.</span>
+            </div>
+          </div>
+          <div class="offer-check-item reveal">
+            <span class="offer-check-mark">✓</span>
+            <div>
+              <span class="offer-check-text">SEO alap — Google indexeli az oldalt</span>
+              <span class="offer-check-sub">Meta, Open Graph, sitemap — mind benne van.</span>
+            </div>
+          </div>
+          <div class="offer-check-item reveal">
+            <span class="offer-check-mark">✓</span>
+            <span class="offer-check-text">1 kör módosítás belefoglalva</span>
+          </div>
+          <div class="offer-check-item reveal">
+            <span class="offer-check-mark">✓</span>
+            <span class="offer-check-text">12 órán belül kész az első verzió</span>
           </div>
         </div>
-        <div class="offer-list">
-          <div class="offer-item reveal">
-            <div class="offer-arrow">→</div>
-            <div>
-              <h4>Egyedi, mobiloptimalizált design</h4>
-            </div>
-          </div>
-          <div class="offer-item reveal">
-            <div class="offer-arrow">→</div>
-            <div>
-              <h4>12 órán belül az első verzió</h4>
-            </div>
-          </div>
-          <div class="offer-item reveal">
-            <div class="offer-arrow">→</div>
-            <div>
-              <h4>1 kör módosítás belefoglalva</h4>
-            </div>
-          </div>
-          <div class="offer-item reveal">
-            <div class="offer-arrow">→</div>
-            <div>
-              <h4>HTML forrás átadva — tiéd a fájl</h4>
-            </div>
-          </div>
-          <div class="offer-item reveal">
-            <div class="offer-arrow">→</div>
-            <div>
-              <h4>SEO alap — meta, Open Graph, sitemap</h4>
-            </div>
-          </div>
+
+        <div class="offer-right-card reveal">
+          <div class="price-tag-mono">Egyszeri díj</div>
+          <div class="price-num" style="margin-bottom:8px;">20 000 <span class="unit">Ft</span></div>
+          <div class="price-sub">egyszer fizetsz · semmi más nem jön utána</div>
+          <hr class="price-hr">
+          <a href="#kapcsolat" class="price-btn price-btn-lime" style="margin-bottom:12px;">Megrendelem →</a>
+          <p class="f-note" style="margin-top:16px;">Vagy írj: hello@alpinestudios.hu</p>
         </div>
+
       </div>
     </div>
   </section>
@@ -1215,31 +1387,6 @@
           </div>
         </a>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="section" id="ar">
-    <div class="section-inner">
-      <div class="s-tag reveal">Ár</div>
-      <h2 class="s-title reveal">20 000 Ft.</h2>
-      <p class="s-lead reveal">Nincs előfizetés, nincs rejtett díj.</p>
-      <div class="pricing-wrap reveal" style="grid-template-columns:1fr; max-width:480px;">
-        <div class="price-card featured">
-          <div class="price-tag-mono">Egyszeri díj</div>
-          <div class="price-num">20 000 <span class="unit">Ft</span></div>
-          <div class="price-sub">egyszer fizetsz · semmi más</div>
-          <hr class="price-hr">
-          <ul class="price-feats">
-            <li>Egyedi landoló oldal</li>
-            <li>12 órán belül első verzió</li>
-            <li>1 kör módosítás</li>
-            <li>HTML forrás átadva</li>
-            <li>Mobilra optimalizálva</li>
-          </ul>
-          <a href="#kapcsolat" class="price-btn price-btn-lime">Megrendelem</a>
-        </div>
       </div>
     </div>
   </section>
