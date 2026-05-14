@@ -1116,7 +1116,7 @@
   <nav>
     <div class="nav-inner">
       <a href="#" class="nav-logo">Alpine<span>.</span></a>
-      <a href="#kapcsolat" class="nav-cta">Megrendelem</a>
+      <a href="tel:+3620XXXXXXX" class="nav-cta">Hívj fel</a><!-- TODO: replace number -->
     </div>
   </nav>
 
@@ -1135,12 +1135,12 @@
           <p class="hero-sub">Profi weboldal a vállalkozásodnak. Egyszeri díj, előfizetés nélkül.</p>
         </div>
         <div class="hero-actions">
-          <a href="#kapcsolat" class="btn-primary">Megrendelem</a>
+          <a href="tel:+3620XXXXXXX" class="btn-primary">📞 Hívj fel</a><!-- TODO: replace number -->
           <a href="#munkak" class="btn-ghost">A munkák</a>
         </div>
         <div class="hero-trust">
           <span class="hero-trust-item">20 000 Ft · egyszeri</span>
-          <span class="hero-trust-item">1 kör módosítás</span>
+          <span class="hero-trust-item">Ha nem tetszik — nem fizetsz</span>
           <span class="hero-trust-item">Nincs előfizetés</span>
         </div>
       </div>
@@ -1152,40 +1152,86 @@
             <div class="sp-url-pill">kovacs-autoszerviz.hu</div>
             <div class="sp-live-badge"><span class="sp-live-dot"></span>Élő</div>
           </div>
-          <!-- Light warm client page preview — intentionally different from pitchpage design -->
-          <div style="background:#FAF8F4;">
-            <!-- Client nav: dark warm bar -->
-            <div style="background:#1C1208; padding:10px 16px; display:flex; align-items:center; justify-content:space-between;">
-              <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; color:#F4EEE2; letter-spacing:0.04em; text-transform:uppercase;">Kovács Autószerviz</span>
-              <a href="tel:+36201234567" style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; background:#C8341B; color:#fff; padding:5px 11px; border-radius:2px; text-decoration:none; letter-spacing:0.02em;">Hívjon most →</a>
-            </div>
-            <!-- Client hero area -->
-            <div style="padding:24px 18px 18px; background:#FAF8F4;">
-              <div style="font-family:'DM Sans',sans-serif; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8B7355; margin-bottom:10px;">Győr · Autójavítás · Est. 2004</div>
-              <div style="font-family:Georgia,serif; font-size:22px; font-weight:700; color:#1C0F06; line-height:1.15; margin-bottom:14px; letter-spacing:-0.02em;">Megbízható<br>autószerelő<br><span style="color:#C8341B;">Győrben.</span></div>
-              <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
-                <span style="color:#C8341B; font-size:11px;">★★★★★</span>
-                <span style="font-family:'DM Sans',sans-serif; font-size:11px; color:#6B5744;">4.9 · 87 értékelés</span>
+
+          <!-- Premium dark-gold client page preview -->
+          <div style="background:#0D0B09; font-family:'DM Sans',sans-serif; overflow:hidden;">
+
+            <!-- Nav -->
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 16px; border-bottom:1px solid rgba(201,168,76,0.15);">
+              <div style="display:flex; align-items:center; gap:7px;">
+                <div style="width:5px; height:5px; background:#C9A84C; border-radius:50%;"></div>
+                <span style="font-size:10px; font-weight:600; color:#F5F0E8; letter-spacing:0.1em; text-transform:uppercase;">Kovács Autószerviz</span>
               </div>
-              <a href="tel:+36201234567" style="display:inline-flex; align-items:center; gap:8px; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; background:#C8341B; color:#fff; padding:10px 18px; border-radius:3px; text-decoration:none;">
-                📞 Hívjon most!
-              </a>
-            </div>
-            <!-- Client info strip -->
-            <div style="display:flex; border-top:1px solid #E8E0D5;">
-              <div style="flex:1; padding:10px 12px; border-right:1px solid #E8E0D5; text-align:center;">
-                <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#1C0F06;">Hétfő–Péntek</div>
-                <div style="font-family:'DM Sans',sans-serif; font-size:10px; color:#8B7355;">8:00–18:00</div>
-              </div>
-              <div style="flex:1; padding:10px 12px; border-right:1px solid #E8E0D5; text-align:center;">
-                <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#1C0F06;">+20 év</div>
-                <div style="font-family:'DM Sans',sans-serif; font-size:10px; color:#8B7355;">tapasztalat</div>
-              </div>
-              <div style="flex:1; padding:10px 12px; text-align:center;">
-                <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; color:#1C0F06;">Győr</div>
-                <div style="font-family:'DM Sans',sans-serif; font-size:10px; color:#8B7355;">Helyszín</div>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="font-size:8px; color:rgba(245,240,232,0.35); letter-spacing:0.08em; text-transform:uppercase;">Árak</span>
+                <span style="font-size:8px; color:rgba(245,240,232,0.35); letter-spacing:0.08em; text-transform:uppercase;">Rólunk</span>
+                <a href="#" style="font-size:8px; font-weight:700; color:#0D0B09; background:#C9A84C; padding:4px 9px; border-radius:1px; text-decoration:none; letter-spacing:0.06em; text-transform:uppercase;">Hívjon</a>
               </div>
             </div>
+
+            <!-- Hero — atmospheric gradient + decorative elements -->
+            <div style="position:relative; overflow:hidden; padding:22px 16px 18px; background:linear-gradient(135deg, #0D1810 0%, #152515 45%, #0D0B09 100%);">
+              <!-- Radial gold glow top-right -->
+              <div style="position:absolute; top:-30px; right:-30px; width:180px; height:180px; background:radial-gradient(circle, rgba(201,168,76,0.22) 0%, transparent 65%); pointer-events:none;"></div>
+              <!-- Subtle grid overlay -->
+              <div style="position:absolute; inset:0; background-image:repeating-linear-gradient(90deg,rgba(201,168,76,0.04) 0,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 44px),repeating-linear-gradient(0deg,rgba(201,168,76,0.04) 0,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 44px); pointer-events:none;"></div>
+              <!-- Vertical gold accent bar -->
+              <div style="position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, #C9A84C, transparent);"></div>
+
+              <div style="position:relative;">
+                <div style="display:flex; align-items:center; gap:6px; margin-bottom:12px;">
+                  <div style="width:16px; height:1px; background:#C9A84C;"></div>
+                  <span style="font-size:8px; letter-spacing:0.2em; text-transform:uppercase; color:#C9A84C; font-weight:500;">Győr · Est. 2004</span>
+                </div>
+                <div style="font-family:Georgia,serif; font-size:24px; font-weight:700; color:#F5F0E8; line-height:1.08; letter-spacing:-0.02em; margin-bottom:10px;">
+                  Megbízható<br>autószerelő<br><span style="color:#C9A84C; font-style:italic;">Győrben.</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:6px; margin-bottom:16px;">
+                  <span style="color:#C9A84C; font-size:9px; letter-spacing:2px;">★★★★★</span>
+                  <span style="font-size:9px; color:rgba(245,240,232,0.45);">4.9 · 87 értékelés</span>
+                </div>
+                <div style="display:flex; gap:7px;">
+                  <a href="#" style="display:inline-flex; align-items:center; gap:5px; font-size:9px; font-weight:700; background:#C9A84C; color:#0D0B09; padding:7px 12px; border-radius:1px; text-decoration:none; letter-spacing:0.04em; text-transform:uppercase;">📞 Hívjon most</a>
+                  <a href="#" style="display:inline-flex; align-items:center; font-size:9px; color:rgba(245,240,232,0.5); border:1px solid rgba(201,168,76,0.3); padding:7px 12px; border-radius:1px; text-decoration:none; letter-spacing:0.04em;">Áraink →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trust strip -->
+            <div style="display:flex; border-top:1px solid rgba(201,168,76,0.12); border-bottom:1px solid rgba(201,168,76,0.12);">
+              <div style="flex:1; padding:9px 10px; border-right:1px solid rgba(201,168,76,0.1); text-align:center;">
+                <div style="font-family:Georgia,serif; font-size:15px; font-weight:700; color:#C9A84C; line-height:1;">20+</div>
+                <div style="font-size:8px; color:rgba(245,240,232,0.35); margin-top:3px; text-transform:uppercase; letter-spacing:0.08em;">Év tapasztalat</div>
+              </div>
+              <div style="flex:1; padding:9px 10px; border-right:1px solid rgba(201,168,76,0.1); text-align:center;">
+                <div style="font-family:Georgia,serif; font-size:15px; font-weight:700; color:#C9A84C; line-height:1;">4.9★</div>
+                <div style="font-size:8px; color:rgba(245,240,232,0.35); margin-top:3px; text-transform:uppercase; letter-spacing:0.08em;">Google értékelés</div>
+              </div>
+              <div style="flex:1; padding:9px 10px; text-align:center;">
+                <div style="font-family:Georgia,serif; font-size:15px; font-weight:700; color:#C9A84C; line-height:1;">500+</div>
+                <div style="font-size:8px; color:rgba(245,240,232,0.35); margin-top:3px; text-transform:uppercase; letter-spacing:0.08em;">Elégedett ügyfél</div>
+              </div>
+            </div>
+
+            <!-- Services list -->
+            <div style="padding:12px 16px 14px;">
+              <div style="font-size:8px; color:rgba(201,168,76,0.5); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:8px;">// Szolgáltatások</div>
+              <div style="display:flex; flex-direction:column; gap:0;">
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:7px 0; border-bottom:1px solid rgba(245,240,232,0.06);">
+                  <span style="font-size:10px; color:rgba(245,240,232,0.75);">Autódiagnosztika</span>
+                  <span style="font-size:10px; color:#C9A84C;">→</span>
+                </div>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:7px 0; border-bottom:1px solid rgba(245,240,232,0.06);">
+                  <span style="font-size:10px; color:rgba(245,240,232,0.75);">Fék- és futómű javítás</span>
+                  <span style="font-size:10px; color:#C9A84C;">→</span>
+                </div>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:7px 0;">
+                  <span style="font-size:10px; color:rgba(245,240,232,0.75);">Klíma szerviz</span>
+                  <span style="font-size:10px; color:#C9A84C;">→</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
         <div class="sp-bottom">
@@ -1341,7 +1387,7 @@
           <div class="price-num" style="margin-bottom:8px;">20 000 <span class="unit">Ft</span></div>
           <div class="price-sub">egyszer fizetsz · semmi más nem jön utána</div>
           <hr class="price-hr">
-          <a href="#kapcsolat" class="price-btn price-btn-lime" style="margin-bottom:12px;">Megrendelem →</a>
+          <a href="tel:+3620XXXXXXX" class="price-btn price-btn-lime" style="margin-bottom:12px;">📞 Hívj fel →</a>
           <p class="f-note" style="margin-top:16px;">Vagy írj: hello@alpinestudios.hu</p>
         </div>
 
@@ -1483,7 +1529,7 @@
 
   <!-- MOBILE CTA -->
   <div class="mobile-cta">
-    <a href="#kapcsolat">Megrendelem →</a>
+    <a href="tel:+3620XXXXXXX">📞 Hívj fel →</a>
   </div>
 
   <script>
