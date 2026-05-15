@@ -3,67 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Duna Autószerviz Debrecen — Megbízható autójavítás 2010 óta</title>
-  <meta name="description" content="Duna Autószerviz Debrecen. Megbízható autójavítás, motor, fék, klíma, gumiszerelés. 16 éve a városban. Hívjon most: +36 52 555 1234">
-  <link rel="canonical" href="https://duna-autoszerviz.hu/">
-
+  <title>Duna Autószerviz — Debrecen | Megbízható autójavítás 2010 óta</title>
+  <meta name="description" content="Megbízható autószerviz Debrecenben. Motor, fék, diagnosztika, klíma — 16 év tapasztalattal. Foglaljon időpontot.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    /* ── TOKENS ─────────────────────────────────── */
     :root {
       --bg:        #FDFAF5;
-      --surface:   #F5EFE6;
-      --dark:      #1C0F06;
-      --dark-2:    #2E1A0C;
-      --dark-3:    #3F2813;
+      --bg-off:    #F5EFE6;
+      --bg-dark:   #1C0F06;
+      --bg-mid:    #2A1A0D;
+      --bg-deep:   #120A03;
+      --accent:    #B85C2A;
+      --accent-h:  #9C4D23;
+      --accent-dim:rgba(184,92,42,0.08);
+      --accent-bdr:rgba(184,92,42,0.22);
       --ink:       #1C0F06;
       --ink-2:     #4A3020;
       --ink-3:     #8B6F5A;
       --ink-4:     #B8A090;
-      --accent:    #B85C2A;
-      --accent-h:  #9C4D23;
-      --accent-bg: #FAF0E9;
-      --accent-bdr:#EDD5C0;
-      --border:    #E6DDD2;
-      --border-s:  #D0C2B4;
+      --ink-light: #FFFFFF;
+      --ink-light-2:rgba(253,245,235,0.70);
+      --ink-light-3:rgba(253,245,235,0.35);
+      --rule:      #E6DDD2;
+      --rule-dark: rgba(253,245,235,0.08);
+      --radius:    4px;
+      --radius-lg: 10px;
     }
 
+    /* ── RESET ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
       font-size: 16px;
       line-height: 1.65;
-      color: var(--ink);
-      background: var(--bg);
       -webkit-font-smoothing: antialiased;
     }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
 
-    /* ── NAV ── */
-    .nav {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 0 32px;
-    }
-    .nav-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      height: 68px;
+    /* ── TOPBAR ─────────────────────────────────── */
+    .topbar {
+      background: var(--bg-dark);
+      color: var(--ink-light-2);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 0 28px;
+      height: 38px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 1px solid rgba(253,245,235,0.06);
     }
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
+    .topbar-left { display: flex; align-items: center; gap: 20px; }
+    .topbar-right { display: flex; align-items: center; gap: 20px; }
+    .topbar-open { display: flex; align-items: center; gap: 6px; }
+    .dot-open {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #4ADE80;
+      box-shadow: 0 0 0 3px rgba(74,222,128,0.20);
+      flex-shrink: 0;
+      animation: breathe 2.8s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%,100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.20); }
+      50%      { box-shadow: 0 0 0 5px rgba(74,222,128,0.08); }
+    }
+    .topbar a { color: var(--ink-light-2); transition: color .2s; }
+    .topbar a:hover { color: var(--ink-light); }
+    .topbar-sep { opacity: 0.25; }
+    .topbar-phone {
+      color: var(--accent) !important;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── NAV ────────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 99;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      height: 64px;
+      display: flex; align-items: center;
+      padding: 0 28px;
+      transition: box-shadow .3s;
+    }
+    .nav-brand {
+      display: flex; flex-direction: column; gap: 1px;
       text-decoration: none;
     }
-    .nav-logo-main {
+    .nav-brand-main {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: 18px;
@@ -71,733 +105,781 @@
       letter-spacing: -0.01em;
       line-height: 1;
     }
-    .nav-logo-sub {
-      font-size: 11px;
+    .nav-brand-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
       font-weight: 500;
       color: var(--ink-3);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
     }
-    .nav-status {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--ink-3);
-    }
-    .nav-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: #22C55E;
-      box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
-      animation: breathe 2.5s ease-in-out infinite;
-    }
-    @keyframes breathe {
-      0%,100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
-      50%      { box-shadow: 0 0 0 5px rgba(34,197,94,0.08); }
-    }
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
+      display: flex; align-items: center; gap: 4px;
+      margin-left: auto;
+      margin-right: 24px;
     }
     .nav-links a {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       color: var(--ink-3);
-      text-decoration: none;
-      transition: color 0.15s;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      transition: color .2s, background .2s;
     }
-    .nav-links a:hover { color: var(--ink); }
-    .nav-phone {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--accent) !important;
-      letter-spacing: -0.01em;
+    .nav-links a:hover { color: var(--ink); background: var(--bg-off); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      transition: background .2s, transform .15s;
+      flex-shrink: 0;
     }
+    .nav-cta:hover { background: var(--accent-h); transform: translateY(-1px); }
 
-    /* ── HERO ── */
+    /* ── HERO ───────────────────────────────────── */
     .hero {
       background: var(--bg);
-      padding: 80px 32px 72px;
-      border-bottom: 1px solid var(--border);
+      padding: 80px 28px 80px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--rule);
     }
     .hero-inner {
-      max-width: 1140px;
+      max-width: 1120px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 460px;
-      gap: 80px;
+      grid-template-columns: 1fr 420px;
+      gap: 72px;
       align-items: center;
     }
     .hero-since {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 28px;
     }
-    .hero-since::before,
-    .hero-since::after {
-      content: '';
-      display: block;
-      height: 1px;
-      width: 28px;
-      background: var(--accent-bdr);
+    .hero-since-line {
+      width: 28px; height: 1px; background: var(--accent-bdr); flex-shrink: 0;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
       font-size: clamp(42px, 5vw, 66px);
-      line-height: 1.07;
+      line-height: 1.06;
       letter-spacing: -0.02em;
       color: var(--ink);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
+    .hero h1 .line { display: block; overflow: hidden; padding-bottom: 0.04em; }
+    .hero h1 .line-inner { display: block; animation: slideUp 0.95s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero h1 .line:nth-child(1) .line-inner { animation-delay: 0.20s; }
+    .hero h1 .line:nth-child(2) .line-inner { animation-delay: 0.36s; }
+    .hero h1 .line:nth-child(3) .line-inner { animation-delay: 0.50s; }
+    @keyframes slideUp {
+      from { transform: translateY(108%); }
+      to   { transform: translateY(0); }
     }
-    .hero-sub {
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-lede {
       font-size: 17px;
-      color: var(--ink-3);
       line-height: 1.75;
-      max-width: 480px;
-      margin-bottom: 40px;
+      color: var(--ink-3);
+      margin-bottom: 36px;
+      max-width: 460px;
+      animation: fadeUp 0.8s 0.65s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: flex; flex-wrap: wrap; gap: 12px;
       margin-bottom: 44px;
+      animation: fadeUp 0.8s 0.78s cubic-bezier(0.16,1,0.3,1) both;
     }
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      display: inline-flex; align-items: center; gap: 8px;
       background: var(--accent);
       color: #fff;
-      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
       font-size: 15px;
+      font-weight: 600;
       padding: 14px 26px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.15s;
+      border-radius: var(--radius);
+      border: none; cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      position: relative; overflow: hidden;
     }
-    .btn-primary:hover { background: var(--accent-h); }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .btn-primary::after {
+      content: '';
+      position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn-primary:hover { background: var(--accent-h); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,92,42,0.28); }
+    .btn-primary:hover::after { left: 160%; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
       background: transparent;
       color: var(--ink-2);
-      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
       font-size: 15px;
-      padding: 14px 26px;
-      border-radius: 4px;
-      border: 1px solid var(--border-s);
-      text-decoration: none;
-      transition: border-color 0.15s, color 0.15s;
+      font-weight: 600;
+      padding: 14px 22px;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--rule);
+      cursor: pointer;
+      transition: border-color .2s, color .2s, background .2s;
     }
-    .btn-secondary:hover { border-color: var(--ink-3); color: var(--ink); }
+    .btn-ghost:hover { border-color: var(--accent-bdr); color: var(--accent); background: var(--accent-dim); }
     .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
+      display: flex; flex-wrap: wrap; gap: 16px;
+      animation: fadeUp 0.8s 0.90s cubic-bezier(0.16,1,0.3,1) both;
     }
     .hero-badge {
-      display: flex;
-      align-items: center;
-      gap: 7px;
+      display: flex; align-items: center; gap: 7px;
       font-size: 13px;
       color: var(--ink-3);
     }
     .hero-badge svg { color: var(--accent); flex-shrink: 0; }
 
-    /* ── HERO STAMP ── */
-    .hero-stamp {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* ── HERO STAMP ─────────────────────────────── */
+    .hero-stamp-wrap {
+      display: flex; align-items: center; justify-content: center;
+      animation: heroSlide 0.9s 0.40s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes heroSlide {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .stamp-card {
+      background: var(--bg-off);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      width: 100%;
+      box-shadow: 0 24px 64px rgba(28,15,6,0.08);
     }
     .stamp-outer {
       position: relative;
-      width: 360px;
-      height: 360px;
+      width: 320px;
+      height: 320px;
+      margin: 0 auto 28px;
       border-radius: 50%;
-      border: 2px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: 2px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
     }
-    .stamp-ring {
-      position: absolute;
-      inset: 16px;
+    .stamp-ring-dashed {
+      position: absolute; inset: 14px;
       border-radius: 50%;
-      border: 1px dashed var(--border-s);
+      border: 1px dashed var(--accent-bdr);
     }
-    .stamp-inner-ring {
-      position: absolute;
-      inset: 32px;
+    .stamp-ring-inner {
+      position: absolute; inset: 28px;
       border-radius: 50%;
-      border: 1px solid var(--border);
+      border: 1px solid var(--rule);
+    }
+    /* Rotating text on circle */
+    .stamp-text-circle {
+      position: absolute; inset: 0;
+      animation: stampRotate 30s linear infinite;
+    }
+    @keyframes stampRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
     }
     .stamp-content {
       position: relative;
       text-align: center;
       z-index: 1;
+      padding: 24px;
     }
     .stamp-est {
+      font-family: 'DM Mono', monospace;
       font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-weight: 500;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--ink-3);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .stamp-year {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
-      font-size: 88px;
+      font-size: 58px;
       line-height: 1;
-      letter-spacing: -0.04em;
       color: var(--ink);
-      margin-bottom: 2px;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
     }
-    .stamp-rule {
-      width: 48px;
-      height: 1px;
+    .stamp-divider {
+      width: 40px; height: 2px;
       background: var(--accent);
-      margin: 10px auto;
+      margin: 12px auto;
     }
     .stamp-name {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 18px;
+      font-size: 17px;
       color: var(--ink-2);
       margin-bottom: 4px;
     }
     .stamp-city {
+      font-family: 'DM Mono', monospace;
       font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--ink-3);
     }
-    .stamp-tick {
+    .stamp-icon {
       position: absolute;
-      width: 8px;
-      height: 1px;
-      background: var(--border-s);
+      bottom: 36px;
+      left: 50%; transform: translateX(-50%);
     }
-    .stamp-tick-n { top: -1px; left: 50%; transform: translateX(-50%); }
-    .stamp-tick-s { bottom: -1px; left: 50%; transform: translateX(-50%); }
-    .stamp-tick-e { right: -1px; top: 50%; transform: translateY(-50%); }
-    .stamp-tick-w { left: -1px; top: 50%; transform: translateY(-50%); }
-
-    /* ── TRUST STRIP ── */
-    .trust-strip {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-    .trust-inner {
-      max-width: 1140px;
-      margin: 0 auto;
+    /* Stats below stamp */
+    .stamp-stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border-radius: var(--radius);
+      overflow: hidden;
     }
-    .trust-cell {
-      padding: 32px 24px;
-      border-right: 1px solid var(--border);
+    .sstат-cell {
+      background: var(--bg);
+      padding: 14px 10px;
       text-align: center;
     }
-    .trust-cell:last-child { border-right: none; }
+    .sstat-num {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .sstat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--ink-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    /* ── TRUST STRIP ────────────────────────────── */
+    .trust-strip {
+      background: var(--bg-dark);
+      padding: 48px 28px;
+    }
+    .trust-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--rule-dark);
+    }
+    .trust-cell {
+      background: var(--bg-dark);
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .trust-cell::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 24px; height: 2px;
+      background: var(--accent);
+    }
     .trust-n {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 36px;
-      line-height: 1;
-      color: var(--ink);
-      margin-bottom: 5px;
-    }
-    .trust-n-accent { color: var(--accent); }
-    .trust-l {
-      font-size: 12px;
-      color: var(--ink-3);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    /* ── SECTIONS ── */
-    .section { padding: 88px 32px; }
-    .section-surface { background: var(--surface); }
-    .section-dark { background: var(--dark); }
-    .section-inner { max-width: 1140px; margin: 0 auto; }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-    .eyebrow::before, .eyebrow::after {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--accent-bdr);
-    }
-    .eyebrow-light { color: rgba(184,92,42,0.6); }
-    .eyebrow-light::before, .eyebrow-light::after { background: rgba(184,92,42,0.25); }
-
-    .section-heading {
-      font-family: 'Playfair Display', serif;
       font-weight: 800;
-      font-size: clamp(30px, 3.5vw, 44px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      margin-bottom: 16px;
-    }
-    .section-heading em { font-style: italic; color: var(--accent); }
-    .section-heading-light { color: #fff; }
-    .section-lead {
-      font-size: 17px;
-      color: var(--ink-3);
-      line-height: 1.75;
-      max-width: 540px;
-    }
-    .section-lead-light { color: rgba(255,255,255,0.45); }
-
-    /* ── INTRO ── */
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .intro-text p {
-      font-size: 16px;
-      color: var(--ink-2);
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-    .intro-text p:last-child { margin-bottom: 0; }
-    .intro-text p em {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: var(--ink);
-    }
-    .intro-aside {
-      border-left: 3px solid var(--accent);
-      padding-left: 28px;
-    }
-    .intro-aside-quote {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 22px;
-      color: var(--ink);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-    .intro-aside-attr {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink-3);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .intro-stat-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-top: 32px;
-    }
-    .intro-stat {
-      background: var(--bg);
-      padding: 22px 20px;
-    }
-    .intro-stat-n {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 32px;
+      font-size: 46px;
+      letter-spacing: -0.03em;
+      color: var(--accent);
       line-height: 1;
-      color: var(--ink);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
-    .intro-stat-l {
-      font-size: 12px;
-      color: var(--ink-3);
+    .trust-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-light-2);
       line-height: 1.4;
     }
 
-    /* ── SERVICES ── */
-    .srv-grid {
+    /* ── SECTION SHELL ──────────────────────────── */
+    .section { padding: 96px 28px; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-off { background: var(--bg-off); }
+    .section-dark { background: var(--bg-dark); }
+
+    .s-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-dark .s-eyebrow { color: var(--ink-light-3); }
+    .s-eyebrow-rule {
+      width: 24px; height: 1px; background: currentColor; flex-shrink: 0;
+    }
+    .s-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: clamp(28px, 3.5vw, 42px);
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .s-title em { font-style: italic; color: var(--accent); }
+    .section-dark .s-title { color: #fff; }
+    .s-lead {
+      font-size: 17px;
+      color: var(--ink-3);
+      line-height: 1.70;
+      max-width: 540px;
+    }
+    .section-dark .s-lead { color: var(--ink-light-2); }
+    .s-header { margin-bottom: 56px; }
+    .s-header-flex {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    /* ── SERVICES ───────────────────────────────── */
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-top: 48px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
     }
-    .srv-card {
+    .service-card {
       background: var(--bg);
-      padding: 28px 24px 26px;
+      padding: 32px 28px;
       position: relative;
-      transition: background 0.2s;
+      overflow: hidden;
+      transition: background .2s, transform .25s cubic-bezier(0.16,1,0.3,1);
     }
-    .srv-card::after {
+    .service-card::after {
       content: '';
-      position: absolute;
-      left: 0; top: 0;
-      width: 3px; height: 100%;
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px;
       background: var(--accent);
       transform: scaleY(0);
       transform-origin: bottom;
-      transition: transform 0.22s ease;
+      transition: transform .3s cubic-bezier(0.16,1,0.3,1);
     }
-    .srv-card:hover { background: var(--accent-bg); }
-    .srv-card:hover::after { transform: scaleY(1); }
-    .srv-icon {
-      width: 40px; height: 40px;
-      border-radius: 8px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
+    .service-card:hover { background: var(--bg-off); transform: translateX(4px); }
+    .service-card:hover::after { transform: scaleY(1); }
+    .service-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--ink-4);
+      text-transform: uppercase;
       margin-bottom: 16px;
-      transition: background 0.2s, border-color 0.2s;
     }
-    .srv-card:hover .srv-icon {
-      background: var(--accent-bdr);
-      border-color: var(--accent-bdr);
-    }
-    .srv-card h3 {
+    .service-name {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 17px;
       color: var(--ink);
-      margin-bottom: 7px;
+      margin-bottom: 10px;
       line-height: 1.2;
     }
-    .srv-card p {
-      font-size: 13px;
+    .service-desc {
+      font-size: 14px;
       color: var(--ink-3);
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+    .service-badge {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      border: 1px solid var(--accent-bdr);
+      padding: 3px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
     }
 
-    /* ── WHY US (DARK) ── */
+    /* ── WHY US ─────────────────────────────────── */
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
-      margin-top: 56px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule-dark);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
     }
-    .why-item {}
-    .why-num {
+    .why-cell {
+      background: var(--bg-mid);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-quote {
+      position: absolute;
+      top: -16px; right: 24px;
       font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 48px;
-      font-weight: 400;
-      color: var(--accent);
-      opacity: 0.6;
+      font-size: 160px;
+      font-weight: 800;
       line-height: 1;
-      margin-bottom: 14px;
+      color: rgba(184,92,42,0.06);
+      pointer-events: none;
+      user-select: none;
     }
-    .why-rule {
-      width: 32px;
-      height: 1px;
-      background: rgba(255,255,255,0.12);
-      margin-bottom: 14px;
+    .why-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      opacity: 0.8;
     }
-    .why-item h3 {
+    .why-title {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: 20px;
-      color: #fff;
+      color: var(--ink-light);
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .why-text {
+      font-size: 15px;
+      color: var(--ink-light-2);
+      line-height: 1.7;
+      position: relative; z-index: 1;
+    }
+
+    /* ── PROCESS ────────────────────────────────── */
+    .process-wrap { position: relative; }
+    .process-line {
+      position: absolute;
+      top: 28px;
+      left: calc(100% / 6);
+      right: calc(100% / 6);
+      height: 1px;
+      background: var(--rule);
+    }
+    .process-line::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 33%;
+      height: 100%;
+      background: var(--accent);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative; z-index: 1;
+    }
+    .process-step {
+      text-align: center;
+      padding: 0 36px;
+    }
+    .process-index {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-3);
+      letter-spacing: 0.04em;
+      transition: border-color .3s, color .3s, background .3s;
+    }
+    .process-step.active .process-index,
+    .process-step:first-child .process-index {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .process-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--ink);
       margin-bottom: 10px;
     }
-    .why-item p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.4);
-      line-height: 1.75;
-    }
-
-    /* ── PROCESS ── */
-    .process-list {
-      margin-top: 56px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      max-width: 760px;
-    }
-    .proc-item {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      gap: 24px;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
-      align-items: start;
-    }
-    .proc-item:first-child { border-top: 1px solid var(--border); }
-    .proc-n {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 700;
-      font-size: 36px;
-      color: var(--border-s);
-      line-height: 1;
-      padding-top: 2px;
-    }
-    .proc-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-    .proc-body p {
+    .process-text {
       font-size: 14px;
       color: var(--ink-3);
-      line-height: 1.7;
+      line-height: 1.65;
     }
-    .proc-tag {
+    .process-badge {
       display: inline-block;
-      margin-top: 10px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      margin-top: 14px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
       color: var(--accent);
-      background: var(--accent-bg);
       border: 1px solid var(--accent-bdr);
       padding: 3px 10px;
-      border-radius: 3px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
     }
 
-    /* ── TESTIMONIALS ── */
+    /* ── TESTIMONIALS ───────────────────────────── */
     .testi-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 56px;
+      gap: 1px;
+      background: var(--rule-dark);
     }
     .testi-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--bg-mid);
       padding: 32px 28px;
-      position: relative;
+      border-left: 3px solid transparent;
+      transition: border-color .25s, background .25s;
     }
-    .testi-quote-mark {
-      font-family: 'Playfair Display', serif;
-      font-size: 72px;
-      line-height: 0.6;
-      color: var(--accent-bdr);
-      margin-bottom: 20px;
-      display: block;
+    .testi-card:hover { border-left-color: var(--accent); background: var(--bg-dark); }
+    .testi-stars {
+      color: #F59E0B;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
     }
     .testi-text {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 16px;
-      color: var(--ink-2);
+      font-size: 15px;
+      color: var(--ink-light-2);
       line-height: 1.7;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
-    .testi-divider {
-      width: 32px;
-      height: 1px;
-      background: var(--border-s);
-      margin-bottom: 16px;
-    }
-    .testi-name {
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(184,92,42,0.15);
+      border: 1px solid rgba(184,92,42,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
       font-size: 13px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 2px;
-    }
-    .testi-car {
-      font-size: 12px;
-      color: var(--ink-3);
-    }
-    .testi-stars {
+      font-weight: 700;
       color: var(--accent);
-      font-size: 13px;
-      margin-bottom: 14px;
+      flex-shrink: 0;
     }
+    .testi-name { font-size: 14px; font-weight: 600; color: var(--ink-light); }
+    .testi-meta { font-size: 12px; color: var(--ink-light-3); }
 
-    /* ── LOCATION ── */
+    /* ── LOCATION ───────────────────────────────── */
     .location-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      gap: 48px;
       align-items: start;
     }
-    .location-info { padding-top: 8px; }
     .location-detail {
-      display: flex;
-      gap: 16px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
+      display: flex; gap: 16px;
+      margin-bottom: 28px;
     }
-    .location-detail:first-child { border-top: 1px solid var(--border); }
     .location-icon {
-      flex-shrink: 0;
-      width: 36px; height: 36px;
-      border-radius: 6px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 42px; height: 42px;
+      background: var(--bg-off);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
       color: var(--accent);
-      margin-top: 1px;
+      flex-shrink: 0;
     }
-    .location-detail-body h4 {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .location-icon svg { width: 18px; height: 18px; }
+    .location-dtitle {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
       color: var(--ink-3);
-      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      margin-bottom: 5px;
     }
-    .location-detail-body p {
-      font-size: 14px;
-      color: var(--ink);
+    .location-dval {
+      font-size: 15px;
+      color: var(--ink-2);
       line-height: 1.5;
     }
-    .map-placeholder {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      height: 320px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    .hours-table tr {
+      border-bottom: 1px solid var(--rule);
+    }
+    .hours-table td {
+      font-size: 13px;
+      padding: 7px 0;
       color: var(--ink-3);
     }
-    .map-placeholder svg { color: var(--border-s); }
-    .map-placeholder p { font-size: 13px; }
-
-    /* ── FORM ── */
-    .form-section {
-      background: var(--dark);
-      padding: 88px 32px;
+    .hours-table td:first-child {
+      font-weight: 600;
+      color: var(--ink-2);
+      padding-right: 20px;
     }
-    .form-inner {
-      max-width: 1140px;
-      margin: 0 auto;
+    .location-map {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 360px;
+      position: relative;
+      border: 1px solid rgba(253,245,235,0.06);
+    }
+    .map-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(184,92,42,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,92,42,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .map-streets { position: absolute; inset: 0; }
+    .map-pin-wrap {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .map-pin {
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 4px rgba(184,92,42,0.25);
+      position: relative; z-index: 2;
+    }
+    .map-pulse {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: rgba(184,92,42,0.20);
+      animation: mapPulse 2.2s ease-out infinite;
+    }
+    @keyframes mapPulse {
+      0%   { transform: translate(-50%,-50%) scale(1); opacity: 0.8; }
+      100% { transform: translate(-50%,-50%) scale(4.5); opacity: 0; }
+    }
+    .map-label {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -230%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius);
+      white-space: nowrap;
+      z-index: 3;
+    }
+    .map-label::after {
+      content: '';
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: 4px solid transparent;
+      border-top-color: var(--accent);
+    }
+    .map-badge {
+      position: absolute; bottom: 16px; left: 16px;
+      background: rgba(28,15,6,0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--rule-dark);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      z-index: 3;
+    }
+    .map-badge-title { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+    .map-badge-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; color: var(--accent); letter-spacing: 0.06em;
+    }
+
+    /* ── FORM ───────────────────────────────────── */
+    .form-inner-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: start;
     }
-    .form-left h2 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      font-size: clamp(28px, 3vw, 40px);
-      color: #fff;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-    .form-left h2 em { font-style: italic; color: var(--accent); }
-    .form-left p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.35);
-      line-height: 1.75;
-      margin-bottom: 36px;
-    }
-    .form-contact-items {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .form-contact-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    .form-left h2 { margin-bottom: 14px; }
+    .form-left .s-lead { margin-bottom: 36px; }
+    .form-contacts { display: flex; flex-direction: column; gap: 16px; }
+    .form-contact-row {
+      display: flex; align-items: center; gap: 12px;
     }
     .form-contact-icon {
-      width: 38px; height: 38px;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 36px; height: 36px;
+      background: rgba(253,245,235,0.04);
+      border: 1px solid var(--rule-dark);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
       color: var(--accent);
       flex-shrink: 0;
     }
-    .form-contact-item a,
-    .form-contact-item span {
+    .form-contact-icon svg { width: 16px; height: 16px; }
+    .form-contact-text {
       font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      transition: color 0.15s;
+      color: var(--ink-light-2);
     }
-    .form-contact-item a:hover { color: #fff; }
-    form.contact {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 10px;
+    .form-contact-text a { color: var(--ink-light-2); transition: color .2s; }
+    .form-contact-text a:hover { color: #fff; }
+    .form-box {
+      background: rgba(253,245,235,0.03);
+      border: 1px solid var(--rule-dark);
+      border-radius: var(--radius-lg);
       padding: 36px;
     }
-    .field {
-      margin-bottom: 16px;
-    }
-    .field label {
-      display: block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .f-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .f-group:last-of-type { margin-bottom: 0; }
+    .f-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--ink-light-3);
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 7px;
     }
-    .field input,
-    .field textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 5px;
-      padding: 12px 14px;
+    .f-input, .f-select, .f-textarea {
+      background: rgba(253,245,235,0.05);
+      border: 1px solid rgba(253,245,235,0.10);
+      border-radius: var(--radius);
+      padding: 11px 13px;
       font-family: 'DM Sans', sans-serif;
       font-size: 14px;
       color: #fff;
       outline: none;
-      transition: border-color 0.15s;
-      resize: none;
-    }
-    .field input::placeholder,
-    .field textarea::placeholder { color: rgba(255,255,255,0.2); }
-    .field input:focus,
-    .field textarea:focus { border-color: var(--accent); }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-submit {
+      transition: border-color .2s, background .2s;
       width: 100%;
+    }
+    .f-input::placeholder, .f-textarea::placeholder { color: rgba(253,245,235,0.20); }
+    .f-input:focus, .f-select:focus, .f-textarea:focus {
+      border-color: var(--accent);
+      background: rgba(184,92,42,0.06);
+    }
+    .f-select option { background: var(--bg-dark); color: #fff; }
+    .f-textarea { resize: vertical; min-height: 110px; }
+    .f-submit {
+      width: 100%;
+      margin-top: 20px;
       background: var(--accent);
       color: #fff;
       font-family: 'DM Sans', sans-serif;
@@ -805,181 +887,266 @@
       font-size: 15px;
       padding: 14px;
       border: none;
-      border-radius: 5px;
+      border-radius: var(--radius);
       cursor: pointer;
-      margin-top: 6px;
-      transition: background 0.15s;
+      transition: background .2s, transform .15s, box-shadow .2s;
     }
-    .form-submit:hover { background: var(--accent-h); }
-    .form-note {
-      font-size: 12px;
-      color: rgba(255,255,255,0.2);
+    .f-submit:hover { background: var(--accent-h); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,92,42,0.32); }
+    .f-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--ink-light-3);
       text-align: center;
       margin-top: 12px;
-      line-height: 1.5;
+      letter-spacing: 0.04em;
     }
 
-    /* ── FOOTER ── */
+    /* ── FOOTER ─────────────────────────────────── */
     .footer {
-      background: var(--dark-2);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 40px 32px;
+      background: var(--bg-deep);
+      padding: 64px 28px 40px;
+      border-top: 1px solid rgba(253,245,235,0.04);
     }
-    .footer-inner {
-      max-width: 1140px;
-      margin: 0 auto;
+    .footer-inner { max-width: 1120px; margin: 0 auto; }
+    .footer-top {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 24px;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(253,245,235,0.06);
+      margin-bottom: 32px;
     }
-    .footer-logo {
+    .footer-brand {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 16px;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .footer-brand em { font-style: italic; color: var(--accent); }
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--ink-light-3);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .footer-col-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light-3);
+      margin-bottom: 16px;
+    }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 14px;
+      color: var(--ink-light-2);
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
     }
     .footer-copy {
       font-size: 12px;
-      color: rgba(255,255,255,0.2);
-      text-align: center;
+      color: var(--ink-light-3);
     }
-    .footer-right {
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
+    .footer-since {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      border: 1px solid rgba(184,92,42,0.22);
+      padding: 4px 10px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
     }
-    .footer-right a {
-      font-size: 12px;
-      color: rgba(255,255,255,0.2);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .footer-right a:hover { color: rgba(255,255,255,0.5); }
 
-    /* ── MOBILE CTA ── */
+    /* ── MOBILE CTA ─────────────────────────────── */
     .mobile-cta {
       display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      z-index: 99;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--bg-dark);
+      border-top: 1px solid rgba(253,245,235,0.08);
       padding: 12px 20px;
-      background: var(--bg);
-      border-top: 1px solid var(--border);
+      gap: 10px;
     }
     .mobile-cta a {
-      display: block;
-      text-align: center;
-      background: var(--accent);
-      color: #fff;
+      flex: 1;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
       font-weight: 600;
-      font-size: 15px;
-      padding: 14px;
-      border-radius: 4px;
-      text-decoration: none;
+      padding: 12px;
+      border-radius: var(--radius);
+    }
+    .mcta-primary { background: var(--accent); color: #fff; }
+    .mcta-secondary {
+      background: rgba(253,245,235,0.06);
+      color: var(--ink-light-2);
+      border: 1px solid var(--rule-dark);
     }
 
-    /* ── REVEAL ── */
+    /* ── REVEAL ─────────────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
     }
-    .reveal.visible { opacity: 1; transform: none; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.10s; }
+    .reveal-delay-2 { transition-delay: 0.20s; }
+    .reveal-delay-3 { transition-delay: 0.30s; }
+    .reveal-delay-4 { transition-delay: 0.40s; }
+    .reveal-delay-5 { transition-delay: 0.50s; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 980px) {
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 1000px) {
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-stamp { display: none; }
-      .intro-grid { grid-template-columns: 1fr; gap: 48px; }
-      .srv-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-      .testi-grid { grid-template-columns: 1fr; }
+      .hero-stamp-wrap { display: none; }
+      .trust-inner { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
       .location-grid { grid-template-columns: 1fr; }
-      .form-inner { grid-template-columns: 1fr; gap: 48px; }
+      .form-inner-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 680px) {
-      .section { padding: 64px 20px; }
-      .hero { padding: 56px 20px 52px; }
-      .form-section { padding: 64px 20px; }
-      .trust-inner { grid-template-columns: 1fr 1fr; }
-      .srv-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .field-row { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; text-align: center; }
-      .footer-right { justify-content: center; }
+    @media (max-width: 760px) {
+      .topbar { display: none; }
       .nav-links { display: none; }
-      .mobile-cta { display: block; }
-      form.contact { padding: 24px 20px; }
+      .hero { padding: 48px 20px 56px; }
+      .section { padding: 64px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; gap: 36px; }
+      .process-line { display: none; }
+      .testi-grid { grid-template-columns: 1fr; gap: 1px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .mobile-cta { display: flex; }
+      body { padding-bottom: 72px; }
+      .f-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="topbar-open">
+        <div class="dot-open"></div>
+        <span>Ma nyitva vagyunk</span>
+      </div>
+      <span class="topbar-sep">|</span>
+      <span>Hétfő–Péntek: 07:00–18:00 &nbsp;·&nbsp; Szombat: 08:00–13:00</span>
+    </div>
+    <div class="topbar-right">
+      <span>Kassai u. 34, Debrecen</span>
+      <span class="topbar-sep">|</span>
+      <a href="tel:+3652555234" class="topbar-phone">+36 52 555 234</a>
+    </div>
+  </div>
+
   <!-- NAV -->
   <nav class="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <span class="nav-logo-main">Duna Autószerviz</span>
-        <span class="nav-logo-sub">Debrecen — est. 2010</span>
-      </a>
-      <div class="nav-links">
-        <div class="nav-status">
-          <div class="nav-dot"></div>
-          Most nyitva
-        </div>
-        <a href="#szolgaltatasok">Szolgáltatások</a>
-        <a href="#rolunk">Rólunk</a>
-        <a href="#kapcsolat">Kapcsolat</a>
-        <a href="tel:+36525551234" class="nav-phone">+36 52 555 1234</a>
-      </div>
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-main">Duna Autószerviz</div>
+      <div class="nav-brand-sub">Debrecen · Est. 2010</div>
+    </a>
+    <div class="nav-links">
+      <a href="#szolgaltatasok">Szolgáltatások</a>
+      <a href="#rolunk">Rólunk</a>
+      <a href="#folyamat">Folyamat</a>
+      <a href="#velemenyek">Vélemények</a>
+      <a href="#helyszin">Helyszín</a>
     </div>
+    <a href="#idopont" class="nav-cta">Időpont foglalás</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-since">Debrecenben, 2010 óta</div>
-        <h1>Autószerelés,<br>amiben<br><em>megbízhatsz.</em></h1>
-        <p class="hero-sub">Tizenhat éve javítjuk Debrecen autósainak kocsiját — becsületes áron, megbeszélt határidőre. Minden munka mögött garanciát vállalunk.</p>
+      <div class="hero-content">
+        <div class="hero-since">
+          <div class="hero-since-line"></div>
+          Debrecen &nbsp;·&nbsp; 16 éve a városért
+          <div class="hero-since-line"></div>
+        </div>
+        <h1>
+          <span class="line"><span class="line-inner">Megbízható</span></span>
+          <span class="line"><span class="line-inner">autószerviz,</span></span>
+          <span class="line"><span class="line-inner"><em>Debrecenben.</em></span></span>
+        </h1>
+        <p class="hero-lede">
+          Hagyományos szakértelem, modern eszközökkel. Átlátható árak, 12 hónap garancia —
+          és mindig megmondjuk, mi van az autóddal, mielőtt hozzáfogunk.
+        </p>
         <div class="hero-ctas">
-          <a href="tel:+36525551234" class="btn-primary">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.22 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            Hívjon most
+          <a href="#idopont" class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Időpontot foglalok
           </a>
-          <a href="#kapcsolat" class="btn-secondary">Visszahívást kérek</a>
+          <a href="tel:+3652555234" class="btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>
+            Felhívom őket
+          </a>
         </div>
         <div class="hero-badges">
           <div class="hero-badge">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            12 hónapos munkajótállás
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            4.9 / 5 Google értékelés
           </div>
           <div class="hero-badge">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            4.9 ★ · 187 értékelés
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            12 hónap garancia
           </div>
           <div class="hero-badge">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            24 órán belül visszahívás
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Expressz szerviz: 1 munkanap
           </div>
         </div>
       </div>
-      <div class="hero-stamp">
-        <div class="stamp-outer">
-          <div class="stamp-ring"></div>
-          <div class="stamp-inner-ring"></div>
-          <div class="stamp-tick stamp-tick-n"></div>
-          <div class="stamp-tick stamp-tick-s"></div>
-          <div class="stamp-tick stamp-tick-e"></div>
-          <div class="stamp-tick stamp-tick-w"></div>
-          <div class="stamp-content">
-            <div class="stamp-est">Alapítva</div>
-            <div class="stamp-year">2010</div>
-            <div class="stamp-rule"></div>
-            <div class="stamp-name">Duna Autószerviz</div>
-            <div class="stamp-city">Debrecen · Magyarország</div>
+
+      <!-- Stamp card -->
+      <div class="hero-stamp-wrap">
+        <div class="stamp-card">
+          <div class="stamp-outer">
+            <div class="stamp-ring-dashed"></div>
+            <div class="stamp-ring-inner"></div>
+            <!-- Rotating text circle -->
+            <svg class="stamp-text-circle" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path id="circle-path" d="M 160,160 m -120,0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"/>
+              </defs>
+              <text fill="rgba(139,111,90,0.6)" font-family="DM Mono,monospace" font-size="11" letter-spacing="6" font-weight="500">
+                <textPath href="#circle-path">
+                  DUNA AUTÓSZERVIZ · DEBRECEN · MAGYARORSZÁG · EST. 2010 ·
+                </textPath>
+              </text>
+            </svg>
+            <div class="stamp-content">
+              <div class="stamp-est">Alapítva</div>
+              <div class="stamp-year">2010</div>
+              <div class="stamp-divider"></div>
+              <div class="stamp-name">Duna Autószerviz</div>
+              <div class="stamp-city">Debrecen</div>
+            </div>
+          </div>
+          <!-- Stats -->
+          <div class="stamp-stats">
+            <div class="sstат-cell">
+              <div class="sstat-num" data-count="16" data-suffix="">16</div>
+              <div class="sstat-label">év tapasz&shy;talat</div>
+            </div>
+            <div class="sstат-cell">
+              <div class="sstat-num">4.9★</div>
+              <div class="sstat-label">Google értékelés</div>
+            </div>
+            <div class="sstат-cell">
+              <div class="sstat-num">12</div>
+              <div class="sstat-label">hónap garancia</div>
+            </div>
           </div>
         </div>
       </div>
@@ -990,194 +1157,141 @@
   <div class="trust-strip">
     <div class="trust-inner">
       <div class="trust-cell reveal">
-        <div class="trust-n trust-n-accent">16</div>
-        <div class="trust-l">éve Debrecenben</div>
+        <div class="trust-n" data-count="16" data-suffix=" év">16 év</div>
+        <div class="trust-label">piaci jelenlét<br>Debrecenben</div>
       </div>
-      <div class="trust-cell reveal">
-        <div class="trust-n">4.9<span style="font-size:20px;color:var(--accent);">★</span></div>
-        <div class="trust-l">Google értékelés</div>
+      <div class="trust-cell reveal reveal-delay-1">
+        <div class="trust-n">4.9★</div>
+        <div class="trust-label">Google értékelés<br>280+ vélemény</div>
       </div>
-      <div class="trust-cell reveal">
-        <div class="trust-n trust-n-accent">1 400+</div>
-        <div class="trust-l">elvégzett munka</div>
+      <div class="trust-cell reveal reveal-delay-2">
+        <div class="trust-n">1 nap</div>
+        <div class="trust-label">expressz szerviz<br>átfutási idő</div>
       </div>
-      <div class="trust-cell reveal">
-        <div class="trust-n">12h</div>
-        <div class="trust-l">jótállás minden munkára</div>
+      <div class="trust-cell reveal reveal-delay-3">
+        <div class="trust-n" data-count="12" data-suffix=" hó">12 hó</div>
+        <div class="trust-label">garancia minden<br>elvégzett munkára</div>
       </div>
     </div>
   </div>
 
-  <!-- INTRO -->
-  <section class="section" id="rolunk">
-    <div class="section-inner">
-      <div class="intro-grid">
-        <div class="intro-text reveal">
-          <div class="eyebrow">Rólunk</div>
-          <h2 class="section-heading">Nem csupán egy szerviz.<br><em>Debrecen autószerelője.</em></h2>
-          <p>2010-ben nyitottuk meg műhelyünket a Péterfia utcán, azzal a céllal, hogy Debrecen autósai egy olyan helyre járhassanak, ahol nem kell félni a meglepetésektől. Nálunk minden munka előtt elmagyarázzuk, mi szükséges és miért — csak azt csináljuk meg, ami valóban kell.</p>
-          <p>Az évek alatt kialakult egy törzsközönségünk — sok ügyfelünk évek óta hozzánk jár, sőt, már gyerekeik autóját is mi szereljük. Ez számunkra a legjobb visszajelzés.</p>
-          <p><em>Minden munkára 12 hónap jótállást vállalunk</em> — mert mögöttük állunk.</p>
-        </div>
-        <div>
-          <div class="intro-aside reveal">
-            <div class="intro-aside-quote">"Ha nem tudjuk megjavítani, megmondjuk. Ha megcsináljuk, mögötte állunk."</div>
-            <div class="intro-aside-attr">Duna Autószerviz — alapelv 2010 óta</div>
-          </div>
-          <div class="intro-stat-row reveal">
-            <div class="intro-stat">
-              <div class="intro-stat-n">187</div>
-              <div class="intro-stat-l">Google értékelés<br>átlag 4.9 csillag</div>
-            </div>
-            <div class="intro-stat">
-              <div class="intro-stat-n">~85%</div>
-              <div class="intro-stat-l">visszatérő ügyfél<br>arány</div>
-            </div>
-            <div class="intro-stat">
-              <div class="intro-stat-n">24h</div>
-              <div class="intro-stat-l">visszahívási<br>garancia</div>
-            </div>
-            <div class="intro-stat">
-              <div class="intro-stat-n">2 nap</div>
-              <div class="intro-stat-l">átlagos átfutási<br>idő</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- SERVICES -->
-  <section class="section section-surface" id="szolgaltatasok">
+  <section class="section section-off" id="szolgaltatasok">
     <div class="section-inner">
-      <div class="eyebrow reveal">Szolgáltatások</div>
-      <h2 class="section-heading reveal">Mit vállalunk.</h2>
-      <p class="section-lead reveal">Személyautók és kisteherautók teljes körű szervizelése — márkafüggetlen, minden típusra.</p>
-      <div class="srv-grid">
-        <div class="srv-card reveal">
-          <div class="srv-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 014.93 19.07"/><path d="M4.93 4.93a10 10 0 0114.14 14.14"/></svg>
-          </div>
-          <h3>Motorreparáció</h3>
-          <p>Hibadiagnosztika, vezérlés, tömítőfej, olajfogyás — komplex motormunkák vállalása.</p>
+      <div class="s-header-flex">
+        <div>
+          <div class="s-eyebrow reveal"><span class="s-eyebrow-rule"></span>Szolgáltatások</div>
+          <h2 class="s-title reveal">Amiben segítünk.</h2>
+          <p class="s-lead reveal">Személyautók és kishaszon-járművek teljes körű szervize — Motor-<br>tól a karosszériáig.</p>
         </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3>Fékrendszer</h3>
-          <p>Fékbetét, féktárcsa, féknyereg, ABS szenzor csere és felülvizsgálat.</p>
+        <a href="#idopont" class="btn-primary reveal" style="flex-shrink:0;">Időpontot foglalok</a>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-num">// 01</div>
+          <div class="service-name">Motor & vezérlés</div>
+          <div class="service-desc">Motorjavítás, vezérműszíj csere, vezérlés beállítás — precíz diagnosztika alapján, felesleges beavatkozás nélkül.</div>
+          <div class="service-badge">Garancia: 12 hó</div>
         </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-          </div>
-          <h3>Gumiszerelés</h3>
-          <p>Szezonális csere, centrírozás, defektjavítás, keréknyomás ellenőrzés.</p>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-num">// 02</div>
+          <div class="service-name">Fékrendszer</div>
+          <div class="service-desc">Tárcsák, betétek, fékfolyadék, ABS-javítás. Minden munkát próbamenetes teszteléssel zárunk le.</div>
+          <div class="service-badge">Expressz elérhető</div>
         </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Klíma karbantartás</h3>
-          <p>Klímatöltés, fertőtlenítés, kompresszor felülvizsgálat és csere.</p>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-num">// 03</div>
+          <div class="service-name">Diagnosztika</div>
+          <div class="service-desc">Multi-márkás OBD diagnosztikai rendszer — pontosan megmondjuk, mi a baj, mielőtt bármit szétszednénk.</div>
+          <div class="service-badge">Azonnali</div>
         </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <h3>Diagnosztika</h3>
-          <p>Hibaolvasás, OBD vizsgálat, elektronika ellenőrzés minden gyártmányhoz.</p>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-num">// 04</div>
+          <div class="service-name">Olajcsere & karbantartás</div>
+          <div class="service-desc">Gyárspecifikus előírások szerint — olaj, szűrők, folyadékok. Időszakos szerviz 90 perc alatt.</div>
+          <div class="service-badge">90 perc</div>
         </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Olajcsere</h3>
-          <p>Motorolaj, szűrők, váltóolaj csere — márkafüggetlen, minden típushoz megfelelő olaj.</p>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-num">// 05</div>
+          <div class="service-name">Klíma & fűtés</div>
+          <div class="service-desc">Klímatöltés, szivárgásvizsgálat, fűtési rendszer javítás. Hűtőfolyadék csere, termosztát.</div>
+          <div class="service-badge">Szezonális</div>
         </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <h3>Karosszéria javítás</h3>
-          <p>Kisebb és nagyobb karosszéria munkák, ajtócsere, sárvédő javítás.</p>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Műszaki vizsga előkészítő</h3>
-          <p>Teljes átvizsgálás és felkészítés a műszaki vizsgára — elvégzett problémák javításával.</p>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-num">// 06</div>
+          <div class="service-name">Műszaki vizsgára előkészítés</div>
+          <div class="service-desc">Átfogó állapotfelmérés, hibák javítása — első próbálkozásra átmenjen a kötelező vizsgán.</div>
+          <div class="service-badge">Időponttal</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- WHY US -->
-  <section class="section section-dark">
+  <section class="section section-dark" id="rolunk">
     <div class="section-inner">
-      <div class="eyebrow eyebrow-light reveal">Miért válasszon minket</div>
-      <h2 class="section-heading section-heading-light reveal">Amit más<br><em>nem tud megadni.</em></h2>
-      <div class="why-grid">
-        <div class="why-item reveal">
-          <div class="why-num">01</div>
-          <div class="why-rule"></div>
-          <h3>Becsületes árak, meglepetés nélkül</h3>
-          <p>Minden munkát előzetesen árajánlattal kezdünk. Nem kerül többe, mint amiben megállapodtunk — ha változás adódik, azonnal szólunk.</p>
+      <div class="s-header" style="max-width:560px;">
+        <div class="s-eyebrow reveal"><span class="s-eyebrow-rule"></span>Miért mi?</div>
+        <h2 class="s-title reveal">16 év. Nem <em>véletlenül.</em></h2>
+        <p class="s-lead reveal">Debrecenben vagyunk, itt élünk — ezért minden munkát úgy végzünk el, mintha a saját autónk lenne.</p>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-cell">
+          <div class="why-quote">"</div>
+          <div class="why-num">// 01</div>
+          <div class="why-title">Elmondják, mi van — előre</div>
+          <div class="why-text">Diagnosztika után pontos árajánlatot adunk. Nem kezdjük el a munkát, amíg bele nem egyezel. Semmi meglepetés a számla végén.</div>
         </div>
-        <div class="why-item reveal">
-          <div class="why-num">02</div>
-          <div class="why-rule"></div>
-          <h3>Személyes kapcsolat, nem szalagmunka</h3>
-          <p>Ismerjük az ügyfeleinket és az ő autóikat. Nem egy anonim javítóműhely vagyunk — egy arcot kap, akitől kérdezhet.</p>
+        <div class="why-cell">
+          <div class="why-quote">"</div>
+          <div class="why-num">// 02</div>
+          <div class="why-title">Profi eszközpark, tapasztalt kezek</div>
+          <div class="why-text">Több mint 200 márkát lefedő diagnosztika, mérlegelt geometria-állítás, nitrogénes töltés — és 16 év rutin mögötte.</div>
         </div>
-        <div class="why-item reveal">
-          <div class="why-num">03</div>
-          <div class="why-rule"></div>
-          <h3>12 hónapos jótállás minden munkára</h3>
-          <p>Ha valami problémát okoz, amit mi csináltunk, visszajön és mi megoldjuk. Ez egyszerű, és mögötte állunk.</p>
+        <div class="why-cell">
+          <div class="why-quote">"</div>
+          <div class="why-num">// 03</div>
+          <div class="why-title">Garancia, nem ígéret</div>
+          <div class="why-text">Minden elvégzett munkára 12 hónap írott garanciát vállalunk. Ha valami nem stimmel — visszajössz, megcsináljuk.</div>
+        </div>
+        <div class="why-cell">
+          <div class="why-quote">"</div>
+          <div class="why-num">// 04</div>
+          <div class="why-title">Helyi és megbízható</div>
+          <div class="why-text">Nem franchise, nem lánc. Egy debreceni csapat, akik 16 éve ugyanott vannak. A 4.9 csillag nem marketingfogás — azt az ügyfelek adták.</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROCESS -->
-  <section class="section">
+  <section class="section" id="folyamat">
     <div class="section-inner">
-      <div class="eyebrow reveal">Hogyan zajlik</div>
-      <h2 class="section-heading reveal">Az első látogatástól<br><em>a kulcsátadásig.</em></h2>
-      <div class="process-list">
-        <div class="proc-item reveal">
-          <div class="proc-n">1</div>
-          <div class="proc-body">
-            <h3>Hívjon vagy írjon — egyeztetünk időpontot</h3>
-            <p>Telefonon vagy a kapcsolati formon keresztül bejelentkezhet. Sürgős esetben általában aznap is tudunk foglalkozni az autójával.</p>
-            <span class="proc-tag">24 órán belül visszahívás</span>
+      <div class="s-header" style="text-align:center; max-width:520px; margin-left:auto; margin-right:auto;">
+        <div class="s-eyebrow reveal" style="justify-content:center;"><span class="s-eyebrow-rule"></span>Hogyan dolgozunk</div>
+        <h2 class="s-title reveal" style="text-align:center;">Három lépés,<br><em>egyszerűen.</em></h2>
+        <p class="s-lead reveal" style="margin:0 auto;">Nincs felesleges bonyodalom. Hozod az autót — mi elvégezzük a munkát.</p>
+      </div>
+      <div class="process-wrap" style="margin-top:64px;">
+        <div class="process-line"></div>
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <div class="process-index">01</div>
+            <div class="process-title">Foglalj időpontot</div>
+            <div class="process-text">Online vagy telefonon — pontosan tudod, mikor hozd az autót. Nincs sorban állás.</div>
+            <div class="process-badge">5 perc</div>
           </div>
-        </div>
-        <div class="proc-item reveal">
-          <div class="proc-n">2</div>
-          <div class="proc-body">
-            <h3>Átvizsgáljuk és árajánlatot adunk</h3>
-            <p>Az autó megérkezése után elvégezzük a diagnosztikát. Elmagyarázzuk mi a probléma, mi szükséges — és mibe kerül. Csak ezután kezdünk a munkához.</p>
-            <span class="proc-tag">Ingyenes előzetes felmérés</span>
+          <div class="process-step reveal reveal-delay-2">
+            <div class="process-index">02</div>
+            <div class="process-title">Diagnosztika & árajánlat</div>
+            <div class="process-text">Megvizsgáljuk az autót, pontos árajánlatot adunk. Csak beleegyezés után kezdjük el a munkát.</div>
+            <div class="process-badge">Aznap</div>
           </div>
-        </div>
-        <div class="proc-item reveal">
-          <div class="proc-n">3</div>
-          <div class="proc-body">
-            <h3>Elvégezzük a munkát, megbeszélt határidőre</h3>
-            <p>A legtöbb munkát 1–2 munkanap alatt elvégezzük. Ha valami változik — például váratlan alkatrész szükséges — azonnal értesítjük.</p>
-            <span class="proc-tag">Átlagos átfutás: 1–2 nap</span>
-          </div>
-        </div>
-        <div class="proc-item reveal">
-          <div class="proc-n">4</div>
-          <div class="proc-body">
-            <h3>Kulcsátadás — és utána is elérhetőek vagyunk</h3>
-            <p>Átadjuk az autót, elmagyarázzuk mi történt. Ha bármi kérdése van a munkával kapcsolatban — hívjon, szívesen válaszolunk.</p>
-            <span class="proc-tag">12 hónap jótállás</span>
+          <div class="process-step reveal reveal-delay-4">
+            <div class="process-index">03</div>
+            <div class="process-title">Átadás & garancia</div>
+            <div class="process-text">Teszteljük, és garanciával adjuk vissza. Az autó úgy jön ki, ahogy el kellett volna mennie.</div>
+            <div class="process-badge">12 hó garancia</div>
           </div>
         </div>
       </div>
@@ -1185,87 +1299,117 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="section section-surface">
+  <section class="section section-dark" id="velemenyek">
     <div class="section-inner">
-      <div class="eyebrow reveal">Ügyfeleink mondják</div>
-      <h2 class="section-heading reveal">Nem mi mondjuk —<br><em>ők mondják.</em></h2>
-      <div class="testi-grid">
-        <div class="testi-card reveal">
-          <span class="testi-quote-mark">"</span>
+      <div class="s-header" style="max-width:560px;">
+        <div class="s-eyebrow reveal"><span class="s-eyebrow-rule"></span>Ügyfelek mondják</div>
+        <h2 class="s-title reveal">4.9 / 5 — <em>Google</em></h2>
+        <p class="s-lead reveal">280+ valódi értékelés debreceni autósoktól.</p>
+      </div>
+      <div class="testi-grid reveal">
+        <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Évek óta ide járok minden autómmal. Sosem volt meglepetés az ár, sosem csúsztak a határidőkkel. Ritka ma már ez.</p>
-          <div class="testi-divider"></div>
-          <div class="testi-name">Molnár Péter</div>
-          <div class="testi-car">Volkswagen Golf · Debrecen</div>
+          <div class="testi-text">„Évek óta ide hozom az autómat. Mindig megmondják előre, mennyibe kerül, és soha nem volt kellemes meglepetés. Debrecenben az egyik legjobb szerviz."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">NK</div>
+            <div>
+              <div class="testi-name">Nagy Katalin</div>
+              <div class="testi-meta">Debrecen · 2024 április</div>
+            </div>
+          </div>
         </div>
-        <div class="testi-card reveal">
-          <span class="testi-quote-mark">"</span>
+        <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Az autóm furcsa zajt adott, máshol azt mondták két hetes várakozás. Dunáéknál másnap belenéztek, egy napba telt az egész. Komoly szakemberek.</p>
-          <div class="testi-divider"></div>
-          <div class="testi-name">Fekete Ágnes</div>
-          <div class="testi-car">Ford Focus · Hajdúszoboszló</div>
+          <div class="testi-text">„Motorhiba miatt vittem be — másnap kész volt. Diagnosztizálták, megmondták mi a baj, megcsinálták. Nem próbáltak extra munkát rátukmálni. Visszajáró ügyfél lettem."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">BP</div>
+            <div>
+              <div class="testi-name">Balogh Péter</div>
+              <div class="testi-meta">Debrecen · 2024 február</div>
+            </div>
+          </div>
         </div>
-        <div class="testi-card reveal">
-          <span class="testi-quote-mark">"</span>
+        <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Megmondták előre mit csinálnak és mennyiért. Szóltak, hogy megtaláltak egy kis problémát — megkérdezték, csináljuk-e. Ezt értékelem.</p>
-          <div class="testi-divider"></div>
-          <div class="testi-name">Szabó Gábor</div>
-          <div class="testi-car">Škoda Octavia · Debrecen</div>
+          <div class="testi-text">„Műszaki vizsgára vittem. Előzetes átvizsgálás, pár apróság javítás — és első próbálkozásra átment. Gyors, korrekt, profi. Nem megyek máshova."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">VÁ</div>
+            <div>
+              <div class="testi-name">Varga Ádám</div>
+              <div class="testi-meta">Hajdúböszörmény · 2024 március</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- LOCATION -->
-  <section class="section" id="elerhetoseg">
+  <section class="section" id="helyszin">
     <div class="section-inner">
       <div class="location-grid">
-        <div class="location-info">
-          <div class="eyebrow reveal">Elérhetőség</div>
-          <h2 class="section-heading reveal">Megtalál minket.</h2>
+        <div>
+          <div class="s-eyebrow reveal"><span class="s-eyebrow-rule"></span>Hol találsz?</div>
+          <h2 class="s-title reveal">Debrecen szívében,<br><em>könnyen elérhető.</em></h2>
+          <p class="s-lead reveal" style="margin-bottom:40px;">Ingyenes parkolás a helyszínen, fedett szervizterület.</p>
+
           <div class="location-detail reveal">
             <div class="location-icon">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <div class="location-detail-body">
-              <h4>Cím</h4>
-              <p>4024 Debrecen, Péterfia utca 42.<br><span style="font-size:12px;color:var(--ink-3);">Parkolás az udvaron lehetséges</span></p>
+            <div>
+              <div class="location-dtitle">Cím</div>
+              <div class="location-dval">Kassai u. 34<br>4028 Debrecen</div>
             </div>
           </div>
+
           <div class="location-detail reveal">
             <div class="location-icon">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.22 2 2 0 012.1 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>
             </div>
-            <div class="location-detail-body">
-              <h4>Telefonszám</h4>
-              <p><a href="tel:+36525551234" style="color:var(--accent);text-decoration:none;font-weight:600;">+36 52 555 1234</a></p>
+            <div>
+              <div class="location-dtitle">Telefon</div>
+              <div class="location-dval"><a href="tel:+3652555234" style="color:var(--accent); font-weight:600;">+36 52 555 234</a></div>
             </div>
           </div>
+
           <div class="location-detail reveal">
             <div class="location-icon">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <div class="location-detail-body">
-              <h4>Nyitvatartás</h4>
-              <p>Hétfő–Péntek: 8:00–17:00<br>Szombat: 9:00–13:00</p>
-            </div>
-          </div>
-          <div class="location-detail reveal">
-            <div class="location-icon">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="location-detail-body">
-              <h4>Email</h4>
-              <p><a href="mailto:info@duna-autoszerviz.hu" style="color:var(--ink-2);text-decoration:none;">info@duna-autoszerviz.hu</a></p>
+            <div>
+              <div class="location-dtitle">Nyitvatartás</div>
+              <table class="hours-table">
+                <tr><td>Hétfő–Péntek</td><td>07:00–18:00</td></tr>
+                <tr><td>Szombat</td><td>08:00–13:00</td></tr>
+                <tr><td>Vasárnap</td><td>Zárva</td></tr>
+              </table>
             </div>
           </div>
         </div>
-        <div class="reveal">
-          <div class="map-placeholder">
-            <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p>4024 Debrecen, Péterfia utca 42.</p>
+
+        <!-- Map -->
+        <div class="location-map reveal">
+          <div class="map-grid"></div>
+          <svg class="map-streets" viewBox="0 0 460 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="90" x2="460" y2="90" stroke="rgba(253,245,235,0.06)" stroke-width="14"/>
+            <line x1="0" y1="200" x2="460" y2="200" stroke="rgba(253,245,235,0.05)" stroke-width="8"/>
+            <line x1="0" y1="290" x2="460" y2="290" stroke="rgba(253,245,235,0.04)" stroke-width="6"/>
+            <line x1="90" y1="0" x2="90" y2="360" stroke="rgba(253,245,235,0.05)" stroke-width="10"/>
+            <line x1="220" y1="0" x2="220" y2="360" stroke="rgba(253,245,235,0.06)" stroke-width="16"/>
+            <line x1="360" y1="0" x2="360" y2="360" stroke="rgba(253,245,235,0.04)" stroke-width="8"/>
+            <line x1="0" y1="0" x2="200" y2="360" stroke="rgba(253,245,235,0.03)" stroke-width="5"/>
+            <text x="20" y="86" fill="rgba(253,245,235,0.12)" font-family="DM Mono,monospace" font-size="7" letter-spacing="1">KASSAI ÚT</text>
+            <text x="24" y="196" fill="rgba(253,245,235,0.08)" font-family="DM Mono,monospace" font-size="7" letter-spacing="1">SZÉCHENYI ÚT</text>
+          </svg>
+          <div class="map-label">Duna Autószerviz</div>
+          <div class="map-pin-wrap">
+            <div class="map-pulse"></div>
+            <div class="map-pin"></div>
+          </div>
+          <div class="map-badge">
+            <div class="map-badge-title">Duna Autószerviz</div>
+            <div class="map-badge-sub">DEBRECEN · 4028</div>
           </div>
         </div>
       </div>
@@ -1273,89 +1417,182 @@
   </section>
 
   <!-- FORM -->
-  <section class="form-section" id="kapcsolat">
-    <div class="form-inner">
-      <div class="form-left reveal">
-        <h2>Írjon nekünk —<br><em>visszahívjuk.</em></h2>
-        <p>Kérdése van? Időpontot szeretne egyeztetni? Hagyja meg adatait, és 24 órán belül felvesszük Önnel a kapcsolatot.</p>
-        <div class="form-contact-items">
-          <div class="form-contact-item">
-            <div class="form-contact-icon">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.22 2 2 0 012.1 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+  <section class="section section-dark" id="idopont">
+    <div class="section-inner">
+      <div class="form-inner-grid">
+        <div class="form-left">
+          <div class="s-eyebrow reveal"><span class="s-eyebrow-rule"></span>Foglaljon időpontot</div>
+          <h2 class="s-title reveal">Mikor <em>hozzuk be?</em></h2>
+          <p class="s-lead reveal">Töltse ki az adatait — 24 órán belül visszahívjuk a megerősítéshez.</p>
+          <div class="form-contacts reveal" style="margin-top:36px;">
+            <div class="form-contact-row">
+              <div class="form-contact-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>
+              </div>
+              <div class="form-contact-text"><a href="tel:+3652555234">+36 52 555 234</a></div>
             </div>
-            <a href="tel:+36525551234">+36 52 555 1234</a>
-          </div>
-          <div class="form-contact-item">
-            <div class="form-contact-icon">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div class="form-contact-row">
+              <div class="form-contact-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="form-contact-text"><a href="mailto:info@dunaszerviz.hu">info@dunaszerviz.hu</a></div>
             </div>
-            <a href="mailto:info@duna-autoszerviz.hu">info@duna-autoszerviz.hu</a>
-          </div>
-          <div class="form-contact-item">
-            <div class="form-contact-icon">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="form-contact-row">
+              <div class="form-contact-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="form-contact-text">Kassai u. 34, 4028 Debrecen</div>
             </div>
-            <span>4024 Debrecen, Péterfia utca 42.</span>
           </div>
+        </div>
+        <div class="form-box reveal">
+          <div class="f-row">
+            <div class="f-group">
+              <label class="f-label">Neve</label>
+              <input class="f-input" type="text" placeholder="Kovács János">
+            </div>
+            <div class="f-group">
+              <label class="f-label">Telefonszám</label>
+              <input class="f-input" type="tel" placeholder="+36 30 000 0000">
+            </div>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label class="f-label">Autó típusa</label>
+              <input class="f-input" type="text" placeholder="pl. Toyota Corolla 2018">
+            </div>
+            <div class="f-group">
+              <label class="f-label">Rendszám</label>
+              <input class="f-input" type="text" placeholder="ABC-123">
+            </div>
+          </div>
+          <div class="f-group">
+            <label class="f-label">Szerviz típusa</label>
+            <select class="f-select">
+              <option value="">Válasszon...</option>
+              <option>Motor & vezérlés</option>
+              <option>Fékrendszer</option>
+              <option>Diagnosztika</option>
+              <option>Olajcsere / karbantartás</option>
+              <option>Klíma & fűtés</option>
+              <option>Műszaki vizsgára előkészítés</option>
+              <option>Egyéb</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label">Leírás</label>
+            <textarea class="f-textarea" placeholder="Írja le röviden a problémát..."></textarea>
+          </div>
+          <button type="submit" class="f-submit">Időpontot kérek →</button>
+          <p class="f-note">// 24 órán belül visszahívjuk &nbsp;·&nbsp; Nem kötelez semmire</p>
         </div>
       </div>
-      <form class="contact reveal" action="" method="POST">
-        <div class="field-row">
-          <div class="field">
-            <label for="nev">Neve</label>
-            <input type="text" id="nev" name="nev" placeholder="Kovács János" required>
-          </div>
-          <div class="field">
-            <label for="telefon">Telefonszáma</label>
-            <input type="tel" id="telefon" name="telefon" placeholder="+36 30 123 4567" required>
-          </div>
-        </div>
-        <div class="field">
-          <label for="auto">Autó típusa</label>
-          <input type="text" id="auto" name="auto" placeholder="pl. Volkswagen Golf 2015">
-        </div>
-        <div class="field">
-          <label for="problema">Miben segíthetünk?</label>
-          <textarea id="problema" name="problema" rows="4" placeholder="Írja le röviden a problémát vagy kérését…"></textarea>
-        </div>
-        <button type="submit" class="form-submit">Visszahívást kérek →</button>
-        <p class="form-note">Az adatait csak a visszahíváshoz használjuk. Spammentesen.</p>
-      </form>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <a href="#" class="footer-logo">Duna Autószerviz</a>
-      <div class="footer-copy">© 2026 Duna Autószerviz. 4024 Debrecen, Péterfia utca 42. · Adószám: 12345678-2-09</div>
-      <div class="footer-right">
-        <a href="#">Adatvédelem</a>
-        <a href="#">Impresszum</a>
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Duna Autószerviz &nbsp;<em>— Debrecen</em></div>
+          <div class="footer-tagline">Megbízható autójavítás 2010 óta.<br>Átlátható árak, 12 hónap garancia.</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <div class="footer-since">EST. 2010</div>
+            <div class="footer-since">4.9 ★ GOOGLE</div>
+            <div class="footer-since">12 HÓ GARANCIA</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Szolgáltatások</div>
+          <ul>
+            <li><a href="#szolgaltatasok">Motor & vezérlés</a></li>
+            <li><a href="#szolgaltatasok">Fékrendszer</a></li>
+            <li><a href="#szolgaltatasok">Diagnosztika</a></li>
+            <li><a href="#szolgaltatasok">Klíma & fűtés</a></li>
+            <li><a href="#szolgaltatasok">Műszaki vizsgára</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Információk</div>
+          <ul>
+            <li><a href="#rolunk">Rólunk</a></li>
+            <li><a href="#folyamat">Hogyan dolgozunk</a></li>
+            <li><a href="#velemenyek">Vélemények</a></li>
+            <li><a href="#helyszin">Helyszín</a></li>
+            <li><a href="#idopont">Időpontfoglalás</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Kapcsolat</div>
+          <ul>
+            <li><a href="tel:+3652555234">+36 52 555 234</a></li>
+            <li><a href="mailto:info@dunaszerviz.hu">info@dunaszerviz.hu</a></li>
+            <li><a href="#helyszin">Kassai u. 34</a></li>
+            <li><a href="#helyszin">4028 Debrecen</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 Duna Autószerviz Kft. · Minden jog fenntartva.</div>
+        <div class="footer-copy" style="display:flex; gap:16px;">
+          <a href="#" style="color:inherit;">Adatvédelem</a>
+          <a href="#" style="color:inherit;">ÁSZF</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- MOBILE CTA -->
   <div class="mobile-cta">
-    <a href="tel:+36525551234">Hívjon most: +36 52 555 1234</a>
+    <a href="#idopont" class="mcta-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Időpont
+    </a>
+    <a href="tel:+3652555234" class="mcta-secondary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>
+      Hívás
+    </a>
   </div>
 
   <script>
-    (function () {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.07 });
-      document.querySelectorAll('.reveal').forEach(function (el) {
-        observer.observe(el);
+    // ── Reveal ──────────────────────────────────────
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
       });
-    })();
-  </script>
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
+    // ── Counters ─────────────────────────────────────
+    function runCounter(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var dur = 900; var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var pct = Math.min((ts - start) / dur, 1);
+        var eased = pct === 1 ? 1 : 1 - Math.pow(2, -10 * pct);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (pct < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    const co = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { runCounter(e.target); co.unobserve(e.target); } });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => co.observe(el));
+
+    // ── Stagger service cards ─────────────────────────
+    document.querySelectorAll('.service-card').forEach((c, i) => {
+      c.style.transitionDelay = (i * 0.07) + 's';
+    });
+
+    // ── Nav scroll shadow ─────────────────────────────
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 8 ? '0 1px 20px rgba(28,15,6,0.10)' : 'none';
+    }, { passive: true });
+  </script>
 </body>
 </html>

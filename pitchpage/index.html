@@ -1035,8 +1035,29 @@
     .h1-line:nth-child(2) .h1-line-inner { animation-delay: 0.50s; }
     .h1-line:nth-child(3) .h1-line-inner { animation-delay: 0.68s; }
 
-    /* Lime glow pulse on guarantee line */
-    .h1-guarantee { animation: limePulse 3.5s 2.4s ease-in-out infinite; }
+    /* Underline sweep on guarantee line */
+    .h1-guarantee {
+      position: relative;
+      display: inline;
+    }
+    .h1-guarantee::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--lime);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: underlineSweep 3s 2.4s cubic-bezier(0.4,0,0.2,1) infinite;
+    }
+    @keyframes underlineSweep {
+      0%   { transform: scaleX(0); transform-origin: left; }
+      40%  { transform: scaleX(1); transform-origin: left; }
+      60%  { transform: scaleX(1); transform-origin: right; }
+      100% { transform: scaleX(0); transform-origin: right; }
+    }
 
     /* Mobile-only line break for h1 */
     .h1-first { display: inline; }
@@ -1233,7 +1254,7 @@
   <header>
     <div class="hero">
       <div class="hero-left">
-        <div class="hero-eyebrow">Landoló oldalak<span class="blink"></span></div>
+        <div class="hero-eyebrow">landing oldalak<span class="blink"></span></div>
         <h1>
           <span class="h1-line"><span class="h1-line-inner"><span class="h1-first">Egy oldal.</span> <span class="lime">20 000 Ft.</span></span></span>
           <span class="h1-line"><span class="h1-line-inner">12 óra alatt.</span></span>
@@ -1343,7 +1364,7 @@
   <div class="stat-strip">
     <div class="stat-strip-inner">
       <div class="stat-cell reveal">
-        <div class="stat-n" data-count="12" data-suffix="h">12h</div>
+        <div class="stat-n" data-count="12" data-suffix=" óra">12 óra</div>
         <div class="stat-l">átfutás az első verzióra</div>
       </div>
       <div class="stat-cell reveal">
