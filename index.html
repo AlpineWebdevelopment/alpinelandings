@@ -399,6 +399,7 @@
       color: var(--lime);
       margin-bottom: 6px;
       letter-spacing: -0.03em;
+      white-space: nowrap;
     }
     .stat-l {
       font-size: 15px;
@@ -825,16 +826,17 @@
 
     .h1-guarantee {
       position: relative;
-      display: inline;
+      display: inline-block;
     }
     .h1-guarantee::after {
       content: '';
       position: absolute;
-      bottom: -3px;
+      bottom: -4px;
       left: 0;
       width: 100%;
-      height: 2px;
+      height: 3px;
       background: var(--lime);
+      border-radius: 99px;
       transform: scaleX(0);
       transform-origin: left;
       animation: underlineSweep 3s 2.4s cubic-bezier(0.4,0,0.2,1) infinite;
@@ -1210,7 +1212,7 @@
           </div>
         </a>
 
-        <a href="/portfolio/budai-autocentrum-pecs/" class="pf-card reveal" target="_blank" rel="noopener">
+        <a href="/portfolio/mecsek-autocentrum-pecs/" class="pf-card reveal" target="_blank" rel="noopener">
           <div class="pf-thumb pf-thumb-v2">
             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="36" cy="36" r="32" stroke="#E5E7EB" stroke-width="1"/>
@@ -1230,7 +1232,7 @@
           </div>
         </a>
 
-        <a href="/portfolio/duna-szerviz-debrecen/" class="pf-card reveal" target="_blank" rel="noopener">
+        <a href="/portfolio/hajdu-szerviz-debrecen/" class="pf-card reveal" target="_blank" rel="noopener">
           <div class="pf-thumb pf-thumb-v3" style="flex-direction:column; gap:8px;">
             <div style="font-family:Georgia,serif; font-style:italic; font-size:32px; font-weight:700; color:#1C0F06; letter-spacing:-0.02em; line-height:1;">2010</div>
             <div style="width:24px; height:1px; background:#B85C2A;"></div>
