@@ -603,6 +603,17 @@ footer .legal {
 @media (max-width: 800px) { footer .container { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { footer .container { grid-template-columns: 1fr; } }
 
+/* ========== SCROLL REVEAL ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
 /* ========== STICKY MOBILE CTA ========== */
 .mobile-cta {
   display: none;
@@ -1024,6 +1035,42 @@ footer .legal {
 <a href="tel:+36961234567" class="mobile-cta">
   📞 Hívás: +36 96 123 4567
 </a>
+
+<script>
+(function () {
+  var stagger = [
+    ['.trust .item',   100],
+    ['.service',        70],
+    ['.why-cell',      100],
+    ['.process-step',  140],
+    ['.testi',         110]
+  ];
+  var plain = ['.section-header', '.location-grid', '.form-wrap'];
+
+  stagger.forEach(function (pair) {
+    document.querySelectorAll(pair[0]).forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.dataset.delay = i * pair[1];
+    });
+  });
+  plain.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      el.classList.add('reveal');
+    });
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      setTimeout(function () { el.classList.add('visible'); }, +el.dataset.delay || 0);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+}());
+</script>
 
 </body>
 </html>
