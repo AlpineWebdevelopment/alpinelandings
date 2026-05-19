@@ -929,6 +929,7 @@
       .proc-grid { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
       .mobile-cta { display: block; }
+      .nem-sablon-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     }
   </style>
 </head>
@@ -1062,12 +1063,19 @@
   </div>
 
   <!-- NOT A TEMPLATE CALLOUT -->
-  <div style="border-top:1px solid var(--rule); padding:48px 32px;">
-    <div style="max-width:1200px; margin:0 auto;">
-      <div class="reveal" style="border-left:3px solid var(--lime); padding:32px 40px; background:var(--bg-2); border-top:1px solid var(--rule-2); border-right:1px solid var(--rule-2); border-bottom:1px solid var(--rule-2);">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--lime); letter-spacing:0.06em; margin-bottom:14px;">// nem sablon</div>
-        <h3 style="font-family:'Instrument Serif',serif; font-style:italic; font-size:clamp(26px,3vw,40px); color:var(--ink); line-height:1.1; margin-bottom:14px;">12 óra — mert erre szakosodtunk,<br>nem mert sablon.</h3>
-        <p style="font-size:16px; color:var(--ink-2); line-height:1.8; max-width:680px;">Minden oldal kézzel van megírva, csak rólad szól — a nevedre, városodra, szakmádra. A gyorsaság nem azt jelenti, hogy egy Wix-sablonba töltjük ki az adataidat. Azt jelenti, hogy pontosan tudjuk, mit csinálunk.</p>
+  <div class="reveal" style="background:var(--lime); padding:72px 32px;">
+    <div class="nem-sablon-grid" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:rgba(0,0,0,0.4); letter-spacing:0.1em; margin-bottom:18px;">// fontos tudni</div>
+        <div style="font-family:'Anton',Impact,sans-serif; font-size:clamp(56px,8vw,104px); color:#0C0C0C; line-height:0.92; letter-spacing:-0.02em; text-transform:uppercase;">NEM<br>SABLON.</div>
+      </div>
+      <div>
+        <p style="font-size:18px; color:#0C0C0C; line-height:1.8; margin-bottom:24px;">Minden oldal kézzel van megírva, csak rólad szól — a nevedre, városodra, szakmádra szólóan. A 12 óra azért lehetséges, mert erre szakosodtunk. Nem azért, mert egy Wix-sablonba töltjük ki az adataidat.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; background:rgba(0,0,0,0.1); color:#0C0C0C; padding:5px 12px; border-radius:1px; letter-spacing:0.04em;">Egyedi HTML</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; background:rgba(0,0,0,0.1); color:#0C0C0C; padding:5px 12px; border-radius:1px; letter-spacing:0.04em;">A te neved, városod, szakmád</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; background:rgba(0,0,0,0.1); color:#0C0C0C; padding:5px 12px; border-radius:1px; letter-spacing:0.04em;">Semmi más</span>
+        </div>
       </div>
     </div>
   </div>
