@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nagy Klímatechnika Budapest — Megbízható klímaszerelő, 18 éve</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%23141414'/><text x='15' y='23' font-family='Impact,Arial Narrow,sans-serif' font-size='20' fill='%23F4EEE2' text-anchor='middle'>K</text><circle cx='23' cy='22' r='2.8' fill='%23C8341B'/></svg>">
+<meta name="description" content="Profi klímaszerelő Budapesten. Telepítés, szerviz, tisztítás, hőszivattyú. Visszahívás 24 órán belül, 2 év garancia minden munkára.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #F4EEE2;
+  --bg-card: #FFFFFF;
+  --bg-dark: #141414;
+  --ink: #0F0F0F;
+  --ink-dim: #5A5249;
+  --accent: #C8341B;
+  --accent-hover: #A92812;
+  --rule: #D9D2C2;
+  --rule-strong: #1A1A1A;
+  --gold: #8A6F47;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+.display { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: 0.005em; line-height: 0.95; text-transform: uppercase; }
+.mono { font-family: 'DM Mono', monospace; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* ========== TOP BAR ========== */
+.topbar {
+  background: var(--bg-dark);
+  color: var(--bg);
+  font-size: 13px;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #2A2A2A;
+}
+.topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.topbar .left { display: flex; gap: 24px; align-items: center; }
+.topbar .left span { display: flex; align-items: center; gap: 8px; }
+.topbar .dot { width: 6px; height: 6px; background: #4ADE80; border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+.topbar a.phone { font-weight: 700; color: var(--accent); transition: color 0.2s; }
+.topbar a.phone:hover { color: #FF6F4D; }
+
+/* ========== NAV ========== */
+nav.main {
+  padding: 22px 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+nav.main .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: baseline; gap: 12px; }
+.logo .mark { font-family: 'Anton', sans-serif; font-size: 28px; line-height: 1; letter-spacing: 0.01em; }
+.logo .est { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-dim); letter-spacing: 0.05em; }
+nav.main ul { display: flex; gap: 32px; list-style: none; font-size: 14px; font-weight: 500; }
+nav.main ul a { transition: color 0.2s; }
+nav.main ul a:hover { color: var(--accent); }
+.nav-cta { padding: 11px 22px; background: var(--rule-strong); color: var(--bg) !important; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+.nav-cta:hover { background: var(--accent) !important; }
+@media (max-width: 800px) { nav.main ul { display: none; } }
+
+/* ========== HERO ========== */
+.hero { padding: 72px 0 88px; position: relative; overflow: hidden; }
+.hero .container { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: end; }
+.hero .eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--ink-dim);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero .eyebrow::before { content: ""; width: 36px; height: 1px; background: var(--ink); display: inline-block; }
+.hero h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(48px, 8vw, 104px);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.hero h1 .accent { color: var(--accent); }
+.hero h1 .underline { position: relative; display: inline-block; }
+.hero h1 .underline::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0.06em; height: 0.08em;
+  background: var(--accent);
+}
+.hero .lede { font-size: 19px; line-height: 1.55; color: var(--ink-dim); max-width: 540px; margin-bottom: 36px; }
+.hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  padding: 18px 32px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-primary { background: var(--accent); color: var(--bg); }
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(200,52,27,0.4); }
+.btn-secondary { background: transparent; color: var(--ink); border: 2px solid var(--rule-strong); }
+.btn-secondary:hover { background: var(--rule-strong); color: var(--bg); }
+.btn .arrow { transition: transform 0.2s; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+.hero .visual {
+  position: relative;
+  background: var(--rule-strong);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  min-height: 280px;
+}
+.hero .visual::after {
+  content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, transparent 0, transparent 10px, rgba(200,52,27,0.04) 10px, rgba(200,52,27,0.04) 11px);
+  pointer-events: none;
+}
+.hero .visual-card {
+  position: absolute; left: 24px; right: 24px; bottom: 24px;
+  background: var(--bg);
+  padding: 24px;
+  border: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 18px;
+  z-index: 2;
+}
+.hero .visual-card .num { font-family: 'Anton', sans-serif; font-size: 56px; line-height: 0.85; color: var(--accent); }
+.hero .visual-card .lbl { font-size: 13px; color: var(--ink-dim); font-weight: 500; }
+.hero .visual-card .lbl strong { color: var(--ink); display: block; font-weight: 700; font-size: 15px; }
+.hero .visual svg.ac {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -52%);
+  width: 82%;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  z-index: 1;
+}
+.hero .visual .city-stamp {
+  position: absolute; top: 24px; right: 24px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--bg);
+  letter-spacing: 0.2em;
+  border: 1px solid rgba(245,239,227,0.3);
+  padding: 6px 12px;
+  z-index: 2;
+}
+@media (max-width: 900px) {
+  .hero { padding: 48px 0 56px; }
+  .hero .container { grid-template-columns: 1fr; gap: 40px; }
+  .hero .visual { aspect-ratio: 4 / 3; }
+}
+
+/* ========== TRUST STRIP ========== */
+.trust { background: var(--rule-strong); color: var(--bg); padding: 28px 0; }
+.trust .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.trust .item { display: flex; gap: 14px; align-items: center; }
+.trust .num { font-family: 'Anton', sans-serif; font-size: 38px; line-height: 0.9; color: var(--accent); }
+.trust .lbl { font-size: 13px; color: #B8B0A2; line-height: 1.35; }
+.trust .lbl strong { color: var(--bg); font-weight: 700; display: block; }
+@media (max-width: 800px) { .trust .container { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+
+/* ========== SECTION HEADER ========== */
+.section { padding: 96px 0; }
+.section-header { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 56px; flex-wrap: wrap; }
+.section-header .left { max-width: 640px; }
+.section-header .eyebrow {
+  font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.12em;
+  color: var(--ink-dim); margin-bottom: 16px; display: flex; align-items: center; gap: 14px;
+}
+.section-header .eyebrow .num { background: var(--accent); color: var(--bg); padding: 4px 8px; font-weight: 700; }
+.section-header h2 { font-family: 'Anton', sans-serif; font-size: clamp(40px,6vw,68px); line-height: 0.95; text-transform: uppercase; letter-spacing: -0.005em; }
+.section-header .right { font-size: 16px; color: var(--ink-dim); max-width: 380px; line-height: 1.55; }
+
+/* ========== SERVICES ========== */
+.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.service { background: var(--bg); padding: 36px 28px 32px; position: relative; transition: background 0.3s; }
+.service:hover { background: var(--bg-card); }
+.service .num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-dim); letter-spacing: 0.1em; margin-bottom: 28px; }
+.service .icon { width: 44px; height: 44px; margin-bottom: 24px; color: var(--accent); }
+.service h3 { font-family: 'Anton', sans-serif; font-size: 22px; line-height: 1; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.005em; }
+.service p { font-size: 14px; color: var(--ink-dim); line-height: 1.5; }
+@media (max-width: 1000px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* ========== WHY US ========== */
+.whyus { background: var(--bg-dark); color: var(--bg); }
+.whyus .section-header h2 { color: var(--bg); }
+.whyus .section-header .eyebrow { color: #999488; }
+.whyus .section-header .right { color: #999488; }
+.why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: #2A2A2A; border: 1px solid #2A2A2A; }
+.why-cell { background: var(--bg-dark); padding: 44px 36px; display: flex; gap: 28px; }
+.why-cell .num { font-family: 'Anton', sans-serif; font-size: 56px; line-height: 0.85; color: var(--accent); flex-shrink: 0; }
+.why-cell h3 { font-family: 'Anton', sans-serif; font-size: 24px; line-height: 1; text-transform: uppercase; margin-bottom: 14px; color: var(--bg); }
+.why-cell p { font-size: 15px; color: #B8B0A2; line-height: 1.6; }
+@media (max-width: 800px) { .why-grid { grid-template-columns: 1fr; } .why-cell { padding: 32px 24px; gap: 20px; } }
+
+/* ========== PROCESS ========== */
+.process { background: var(--bg); }
+.process-track { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; position: relative; }
+.process-track::before { content: ""; position: absolute; top: 60px; left: 12%; right: 12%; height: 2px; background: var(--rule); }
+.process-step { position: relative; padding: 0 24px; }
+.process-step .circle {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: var(--bg-card); border: 2px solid var(--rule-strong);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Anton', sans-serif; font-size: 56px; line-height: 1;
+  margin: 0 auto 28px; position: relative; transition: transform 0.3s;
+}
+.process-step:hover .circle { transform: translateY(-4px); background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.process-step h3 { font-family: 'Anton', sans-serif; font-size: 24px; line-height: 1; text-transform: uppercase; text-align: center; margin-bottom: 12px; }
+.process-step p { font-size: 15px; color: var(--ink-dim); text-align: center; line-height: 1.55; }
+@media (max-width: 800px) { .process-track { grid-template-columns: 1fr; gap: 40px; } .process-track::before { display: none; } }
+
+/* ========== TESTIMONIALS ========== */
+.testimonials { background: var(--rule-strong); color: var(--bg); }
+.testimonials .section-header h2 { color: var(--bg); }
+.testimonials .section-header .eyebrow { color: #999488; }
+.testimonials .section-header .right { color: #999488; }
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.testi { background: #1F1F1F; padding: 36px 32px; display: flex; flex-direction: column; border-left: 3px solid var(--accent); }
+.testi .stars { color: var(--accent); margin-bottom: 18px; font-size: 18px; letter-spacing: 2px; }
+.testi blockquote { font-size: 17px; line-height: 1.55; font-style: italic; color: var(--bg); margin-bottom: 28px; flex: 1; }
+.testi blockquote::before { content: "„"; font-family: 'Anton', sans-serif; font-size: 48px; line-height: 0.5; color: var(--accent); display: block; margin-bottom: 8px; }
+.testi cite { font-style: normal; font-size: 14px; font-weight: 600; color: var(--bg); display: block; }
+.testi cite small { display: block; color: #999488; font-weight: 500; font-size: 12px; margin-top: 2px; }
+@media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+
+/* ========== LOCATION ========== */
+.location { background: var(--bg); }
+.location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); }
+.location-info { padding: 56px 48px; background: var(--bg-card); }
+.location-info h3 { font-family: 'Anton', sans-serif; font-size: 32px; line-height: 1; text-transform: uppercase; margin-bottom: 32px; }
+.info-row { padding: 18px 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 24px; }
+.info-row:last-child { border-bottom: none; }
+.info-row .lbl { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-dim); letter-spacing: 0.1em; flex-shrink: 0; }
+.info-row .val { font-size: 15px; font-weight: 600; text-align: right; }
+.info-row .val a { color: var(--accent); }
+.location-map { background: linear-gradient(135deg,#2A2A2A 0%,#1A1A1A 100%); position: relative; min-height: 420px; display: flex; align-items: center; justify-content: center; }
+.location-map::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(245,239,227,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(245,239,227,0.04) 1px,transparent 1px); background-size: 32px 32px; }
+.location-map .pin { position: relative; z-index: 2; text-align: center; color: var(--bg); }
+.location-map .pin svg { width: 56px; height: 56px; color: var(--accent); margin-bottom: 16px; filter: drop-shadow(0 8px 24px rgba(200,52,27,0.5)); animation: bounce 2s infinite; }
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.location-map .pin .addr { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #999488; }
+.location-map .pin .city { font-family: 'Anton', sans-serif; font-size: 24px; text-transform: uppercase; }
+@media (max-width: 800px) { .location-grid { grid-template-columns: 1fr; } .location-info { padding: 36px 28px; } }
+
+/* ========== FORM ========== */
+.form-section { padding: 96px 0; background: var(--bg-dark); color: var(--bg); }
+.form-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+.form-wrap .eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 18px; }
+.form-wrap h2 { font-family: 'Anton', sans-serif; font-size: clamp(40px,6vw,64px); line-height: 0.95; text-transform: uppercase; margin-bottom: 16px; }
+.form-wrap .lede { color: #B8B0A2; margin-bottom: 48px; font-size: 17px; }
+form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; text-align: left; }
+form .full { grid-column: 1 / -1; }
+form label { display: block; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #999488; margin-bottom: 8px; }
+form input, form textarea { width: 100%; padding: 16px 18px; background: #1F1F1F; border: 1px solid #2A2A2A; color: var(--bg); font-family: 'Manrope', sans-serif; font-size: 15px; transition: border-color 0.2s, background 0.2s; }
+form input:focus, form textarea:focus { outline: none; border-color: var(--accent); background: #252525; }
+form textarea { min-height: 110px; resize: vertical; }
+form button.submit { width: 100%; padding: 22px; background: var(--accent); color: var(--bg); font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.02em; margin-top: 18px; transition: background 0.2s, transform 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 12px; }
+form button.submit:hover { background: var(--accent-hover); transform: translateY(-2px); }
+.form-or { margin-top: 32px; font-size: 14px; color: #999488; }
+.form-or a { color: var(--bg); font-weight: 700; border-bottom: 1px dotted var(--accent); }
+@media (max-width: 600px) { form .row { grid-template-columns: 1fr; } }
+
+/* ========== FOOTER ========== */
+footer { background: #0A0A0A; color: #999488; padding: 56px 0 32px; font-size: 14px; }
+footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+footer .brand h4 { font-family: 'Anton', sans-serif; font-size: 28px; color: var(--bg); text-transform: uppercase; margin-bottom: 12px; }
+footer .brand p { line-height: 1.6; max-width: 320px; }
+footer h5 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--bg); margin-bottom: 18px; text-transform: uppercase; }
+footer ul { list-style: none; }
+footer ul li { padding: 5px 0; }
+footer ul a:hover { color: var(--accent); }
+footer .legal { border-top: 1px solid #1A1A1A; padding-top: 24px; display: flex; justify-content: space-between; gap: 16px; font-size: 12px; color: #555049; flex-wrap: wrap; }
+@media (max-width: 800px) { footer .container { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { footer .container { grid-template-columns: 1fr; } }
+
+/* ========== SCROLL REVEAL ========== */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ========== STICKY MOBILE CTA ========== */
+.mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--accent); color: var(--bg); padding: 16px 20px; z-index: 50; text-align: center; font-weight: 700; font-size: 16px; box-shadow: 0 -8px 24px -8px rgba(0,0,0,0.3); }
+@media (max-width: 700px) { .mobile-cta { display: flex; align-items: center; justify-content: center; gap: 10px; } body { padding-bottom: 60px; } }
+</style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <span><span class="dot"></span> NYITVA — H–P 8:00–18:00</span>
+      <span>1111 Budapest, Példa utca 8.</span>
+    </div>
+    <div><a href="tel:+3612345678" class="phone">+36 1 234 5678</a></div>
+  </div>
+</div>
+
+<!-- ========== NAV ========== -->
+<nav class="main">
+  <div class="container">
+    <a href="#" class="logo">
+      <span class="mark">Nagy Klímatechnika</span>
+      <span class="est">— EST. 2008</span>
+    </a>
+    <ul>
+      <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="#miert-mi">Miért mi</a></li>
+      <li><a href="#velemenyek">Vélemények</a></li>
+      <li><a href="#kapcsolat">Kapcsolat</a></li>
+    </ul>
+    <a href="#ajanlat" class="nav-cta">Ingyenes felmérés</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Budapest · 18 éve a városért</div>
+      <h1>Profi<br>klímaszerelő<br><span class="underline accent">Budapesten.</span></h1>
+      <p class="lede">Telepítéstől a szervizig — egy helyen, garanciával. Ingyenes helyszíni felmérés, pontos árajánlat előre, 2 év garancia minden munkára.</p>
+      <div class="ctas">
+        <a href="#ajanlat" class="btn btn-primary">Ingyenes felmérést kérek <span class="arrow">→</span></a>
+        <a href="tel:+3612345678" class="btn btn-secondary">Hívjon most</a>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="city-stamp">№ 12 · BUDAPEST</div>
+      <!-- AC wall unit SVG -->
+      <svg class="ac" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+        <!-- Main indoor unit body -->
+        <rect x="48" y="52" width="304" height="76" rx="12"/>
+        <!-- Horizontal air vent slats -->
+        <line x1="78" y1="86" x2="322" y2="86"/>
+        <line x1="78" y1="98" x2="322" y2="98"/>
+        <line x1="78" y1="110" x2="322" y2="110"/>
+        <!-- Display panel -->
+        <rect x="266" y="62" width="60" height="22" rx="3"/>
+        <!-- Power LED -->
+        <circle cx="316" cy="66" r="4" fill="none"/>
+        <!-- Snowflake symbol (left side) -->
+        <line x1="98" y1="66" x2="98" y2="82"/>
+        <line x1="91" y1="70" x2="105" y2="78"/>
+        <line x1="105" y1="70" x2="91" y2="78"/>
+        <line x1="91" y1="74" x2="98" y2="66"/>
+        <!-- Bottom louvre / flap -->
+        <path d="M58 136 Q200 150 342 136" stroke-linecap="round" fill="none"/>
+        <!-- Airflow wavy lines (cold air coming down) -->
+        <path d="M140 160 Q148 168 140 176 Q132 184 140 192" fill="none" stroke-linecap="round"/>
+        <path d="M165 158 Q173 168 165 178 Q157 188 165 198" fill="none" stroke-linecap="round"/>
+        <path d="M200 160 Q208 168 200 176 Q192 184 200 192" fill="none" stroke-linecap="round"/>
+        <path d="M225 158 Q233 168 225 178 Q217 188 225 198" fill="none" stroke-linecap="round"/>
+        <path d="M260 160 Q268 168 260 176 Q252 184 260 192" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="visual-card">
+        <div class="num">18</div>
+        <div class="lbl"><strong>év szakmai tapasztalat</strong>800+ elégedett ügyfél · 4.9★ Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRUST STRIP ========== -->
+<section class="trust">
+  <div class="container">
+    <div class="item"><div class="num">18</div><div class="lbl"><strong>Év tapasztalat</strong>2008 óta Budapesten</div></div>
+    <div class="item"><div class="num">4.9★</div><div class="lbl"><strong>Google értékelés</strong>112 vélemény alapján</div></div>
+    <div class="item"><div class="num">2 év</div><div class="lbl"><strong>Garancia</strong>Minden telepítési munkára</div></div>
+    <div class="item"><div class="num">24h</div><div class="lbl"><strong>Visszahívás</strong>Ajánlatkérés után</div></div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section" id="szolgaltatasok">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">01</span> Szolgáltatások</div>
+        <h2>Amit elvégzünk<br>Önnek</h2>
+      </div>
+      <div class="right">Klíma telepítéstől a hőszivattyúig — minden klímatechnikai feladat egy helyen, garanciával és írásos árajánlattal.</div>
+    </div>
+    <div class="services-grid">
+      <div class="service">
+        <div class="num">01</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+        <h3>Klíma telepítés</h3>
+        <p>Split klíma, multi-split rendszerek. Minden márkához és típushoz, felmérés és telepítés garanciával.</p>
+      </div>
+      <div class="service">
+        <div class="num">02</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+        <h3>Klíma szerviz</h3>
+        <p>Éves karbantartás, hűtőközeg-töltés, teljesítmény ellenőrzés. Megelőző szerviz hosszabb élettartamért.</p>
+      </div>
+      <div class="service">
+        <div class="num">03</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg>
+        <h3>Klímatisztítás</h3>
+        <p>Mélytisztítás és fertőtlenítés. Penész, baktérium, allergének eltávolítása — friss, egészséges levegő.</p>
+      </div>
+      <div class="service">
+        <div class="num">04</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        <h3>Hőszivattyú</h3>
+        <p>Levegő-víz és levegő-levegő hőszivattyú telepítés. Hatékony fűtés és hűtés, alacsony rezsivel.</p>
+      </div>
+      <div class="service">
+        <div class="num">05</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+        <h3>Légcsatorna tisztítás</h3>
+        <p>Kazettás és csatornás rendszerek teljes átöblítése. Jobb minőségű levegő, hatékonyabb működés.</p>
+      </div>
+      <div class="service">
+        <div class="num">06</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>
+        <h3>Klíma csere</h3>
+        <p>Régi egység bontása, új telepítése. Energiahatékony A++ modellek, elszállítjuk a régit.</p>
+      </div>
+      <div class="service">
+        <div class="num">07</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+        <h3>Smart vezérlés</h3>
+        <p>Wi-Fi modul beépítés, telefonos irányítás. Menetrendezett üzemmód, energiafelhasználás figyelés.</p>
+      </div>
+      <div class="service">
+        <div class="num">08</div>
+        <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.137-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <h3>Klíma javítás</h3>
+        <p>Diagnosztika, hibakeresés, alkatrészcsere. Minden márka és típus — Daikin, Mitsubishi, Samsung, LG.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY US ========== -->
+<section class="section whyus" id="miert-mi">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">02</span> Miért minket választanak</div>
+        <h2>Négy ok,<br>amiért visszajönnek.</h2>
+      </div>
+      <div class="right">18 év alatt megtanultuk, mit várnak az emberek egy klímaszerelőtől. Ezeket adjuk meg minden ügyfelünknek, kivétel nélkül.</div>
+    </div>
+    <div class="why-grid">
+      <div class="why-cell">
+        <div class="num">01</div>
+        <div>
+          <h3>Ingyenes helyszíni felmérés</h3>
+          <p>Nem vakon adunk árajánlatot. Kijövünk, felmérjük a helyiséget, megmutatjuk a lehetőségeket és a pontos árat — mielőtt bármit aláírna.</p>
+        </div>
+      </div>
+      <div class="why-cell">
+        <div class="num">02</div>
+        <div>
+          <h3>2 év garancia, írásban</h3>
+          <p>Minden telepítési munkára 2 év garanciát vállalunk, számlán feltüntetve. Ha bármi probléma adódik a garancia ideje alatt, ingyen rendbe tesszük.</p>
+        </div>
+      </div>
+      <div class="why-cell">
+        <div class="num">03</div>
+        <div>
+          <h3>Pontos időpontok, nincs várakozás</h3>
+          <p>Ha reggel 9-re megbeszéltük, reggel 9-re megjelenünk. A munkát a megbeszélt időre fejezzük be, vagy előre szólunk, ha valami közbejön.</p>
+        </div>
+      </div>
+      <div class="why-cell">
+        <div class="num">04</div>
+        <div>
+          <h3>Minden márka, egy telefonszám</h3>
+          <p>Daikin, Mitsubishi, Samsung, LG, Panasonic, Gree — mindegy, melyiket veszi. Telepítjük, szerviseljük, javítjuk. Nem kell máshová fordulni.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section class="section process">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">03</span> Folyamat</div>
+        <h2>Hogyan dolgozunk.</h2>
+      </div>
+      <div class="right">Három lépés, semmi felesleges. A felmérési kéréstől a működő klímáig — átláthatóan, gyorsan.</div>
+    </div>
+    <div class="process-track">
+      <div class="process-step">
+        <div class="circle">1</div>
+        <h3>Felmérés</h3>
+        <p>Kijövünk, felmérjük a helyszínt, megmutatjuk a lehetőségeket. Írásos árajánlat, semmi rejtett díj.</p>
+      </div>
+      <div class="process-step">
+        <div class="circle">2</div>
+        <h3>Telepítés</h3>
+        <p>A megbeszélt napon megjelenünk és elvégezzük a munkát. Takarítunk magunk után, átadjuk a rendszert.</p>
+      </div>
+      <div class="process-step">
+        <div class="circle">3</div>
+        <h3>Átadás</h3>
+        <p>Bemutatjuk a kezelést, átadjuk a dokumentumokat. 2 év garancia, bármikor elérhetők vagyunk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section testimonials" id="velemenyek">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">04</span> Vélemények</div>
+        <h2>Mit mondanak<br>az ügyfeleink.</h2>
+      </div>
+      <div class="right">112 Google értékelésből kiválasztva. Az összeset elolvashatja a Google térképen — ott a teljes lista.</div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>Pontosan jöttek, a megbeszélt időre készen is lettek. Tisztán hagyták a lakást, mindent elmagyaráztak. Másnap már hűvös volt a nappaliban, nyáron ez nem kis dolog.</blockquote>
+        <cite>Kovács Márton <small>Nappali klíma telepítés · Budapest, XI. kerület</small></cite>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>Régi klímánk évek óta rosszul hűtött, mások azt mondták csere kell. Itt megjavították harmad annyi pénzért. Becsületes munka, korrekt ár, visszajövünk.</blockquote>
+        <cite>Vásárhelyi Ágnes <small>Klíma javítás · Budapest, II. kerület</small></cite>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>Irodánkba 4 klímát telepítettünk velük. Minden egységet egy nap alatt szereltek fel, az iroda másnap már működhetett. Profi csapat, ajánlom mindenkinek.</blockquote>
+        <cite>Fekete Bálint <small>Irodai telepítés (4 egység) · Budapest, VIII. kerület</small></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LOCATION ========== -->
+<section class="section location" id="kapcsolat">
+  <div class="container">
+    <div class="section-header">
+      <div class="left">
+        <div class="eyebrow"><span class="num">05</span> Kapcsolat</div>
+        <h2>Elérhetőségeink.</h2>
+      </div>
+      <div class="right">Budapesten és 30 km-es körzetében dolgozunk. Helyszíni felmérést vállalunk, hívjon vagy töltse ki az űrlapot.</div>
+    </div>
+    <div class="location-grid">
+      <div class="location-info">
+        <h3>Elérhetőségek</h3>
+        <div class="info-row"><span class="lbl">CÍM</span><span class="val">1111 Budapest,<br>Példa utca 8.</span></div>
+        <div class="info-row"><span class="lbl">TELEFON</span><span class="val"><a href="tel:+3612345678">+36 1 234 5678</a></span></div>
+        <div class="info-row"><span class="lbl">EMAIL</span><span class="val"><a href="mailto:info@nagyklima.hu">info@nagyklima.hu</a></span></div>
+        <div class="info-row"><span class="lbl">H–P</span><span class="val">8:00 – 18:00</span></div>
+        <div class="info-row"><span class="lbl">SZOMBAT</span><span class="val">8:00 – 13:00</span></div>
+        <div class="info-row"><span class="lbl">TERÜLET</span><span class="val">Budapest + 30 km</span></div>
+      </div>
+      <div class="location-map">
+        <div class="pin">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <div class="city">Budapest</div>
+          <div class="addr">PÉLDA UTCA 8.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FORM ========== -->
+<section class="form-section" id="ajanlat">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="eyebrow">INGYENES FELMÉRÉS · VISSZAHÍVÁS 24 ÓRÁN BELÜL</div>
+      <h2>Kérjen ingyenes<br>felmérést.</h2>
+      <p class="lede">Töltse ki az űrlapot, és még ma visszahívjuk. Kijövünk, felmérjük a helyszínt, pontos árajánlatot adunk — ingyen, kötelezettség nélkül.</p>
+      <form>
+        <div class="row">
+          <div><label>Név</label><input type="text" placeholder="Pl. Kovács László" required></div>
+          <div><label>Telefonszám</label><input type="tel" placeholder="+36 30 123 4567" required></div>
+        </div>
+        <div class="row">
+          <div class="full"><label>Helyiség típusa és mérete</label><input type="text" placeholder="Pl. nappali, ~28 m² — vagy iroda, 3 szoba"></div>
+        </div>
+        <div class="row">
+          <div class="full"><label>Mit szeretne elvégeztetni?</label><textarea placeholder="Pl. Új klíma telepítése a hálószobába. Régi egység még megvan, azt is megszeretnénk nézni."></textarea></div>
+        </div>
+        <button type="submit" class="submit">Visszahívást kérek <span>→</span></button>
+      </form>
+      <div class="form-or">vagy hívjon közvetlenül: <a href="tel:+3612345678">+36 1 234 5678</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="brand">
+      <h4>Nagy Klímatechnika</h4>
+      <p>Profi klímaszerelő Budapesten 2008 óta. Telepítés, szerviz, tisztítás, hőszivattyú — minden klímatechnikai feladat egy helyen, garanciával.</p>
+    </div>
+    <div>
+      <h5>Szolgáltatások</h5>
+      <ul>
+        <li><a href="#szolgaltatasok">Klíma telepítés</a></li>
+        <li><a href="#szolgaltatasok">Klíma szerviz</a></li>
+        <li><a href="#szolgaltatasok">Klímatisztítás</a></li>
+        <li><a href="#szolgaltatasok">Hőszivattyú</a></li>
+        <li><a href="#szolgaltatasok">Klíma javítás</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Információ</h5>
+      <ul>
+        <li><a href="#miert-mi">Miért minket?</a></li>
+        <li><a href="#velemenyek">Vélemények</a></li>
+        <li><a href="#kapcsolat">Kapcsolat</a></li>
+        <li><a href="#ajanlat">Ingyenes felmérés</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Kapcsolat</h5>
+      <ul>
+        <li>+36 1 234 5678</li>
+        <li>info@nagyklima.hu</li>
+        <li>1111 Budapest, Példa utca 8.</li>
+        <li>H–P 8:00–18:00, Szo 8–13</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="legal">
+      <span>© 2026 Nagy Klímatechnika Kft. · Adószám: 12345678-2-01</span>
+      <span><a href="#">Adatkezelési tájékoztató</a> · <a href="#">ÁSZF</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+3612345678" class="mobile-cta">📞 Hívás: +36 1 234 5678</a>
+
+<script>
+(function () {
+  var stagger = [
+    ['.trust .item', 100],['.service', 70],['.why-cell', 100],['.process-step', 140],['.testi', 110]
+  ];
+  var plain = ['.section-header', '.location-grid', '.form-wrap'];
+  stagger.forEach(function(pair){ document.querySelectorAll(pair[0]).forEach(function(el,i){ el.classList.add('reveal'); el.dataset.delay = i*pair[1]; }); });
+  plain.forEach(function(sel){ document.querySelectorAll(sel).forEach(function(el){ el.classList.add('reveal'); }); });
+  var io = new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(!entry.isIntersecting) return; var el=entry.target; setTimeout(function(){ el.classList.add('visible'); }, +el.dataset.delay||0); io.unobserve(el); }); }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+}());
+</script>
+</body>
+</html>
