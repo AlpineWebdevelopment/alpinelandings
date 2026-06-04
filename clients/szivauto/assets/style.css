@@ -421,7 +421,7 @@
   }
   
   .spotlight-image img {
-    margin: 0 8vw;
+    margin: 0;
     width: 100%;
     object-fit: cover;
     opacity: 0.75;
@@ -822,6 +822,7 @@
   .hero-sub      { animation: fadeInUp 0.7s ease 0.35s both; }
   .hero-actions  { animation: fadeInUp 0.7s ease 0.5s both; }
   .hero-stats    { animation: fadeInUp 0.7s ease 0.65s both; }
+  .hero-img-placeholder    { animation: fadeInUp 0.7s ease 0.2s both; }
 
   /* RESPONSIVE */
   @media (min-width: 640px) {
