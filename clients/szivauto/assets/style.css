@@ -741,6 +741,8 @@
     transition: background 0.2s, transform 0.15s;
     align-self: flex-start;
     margin-top: 8px;
+    position: relative;
+    width: max-content;
   }
   .submit-btn:hover { background: var(--red-light); transform: translateY(-1px); }
 
