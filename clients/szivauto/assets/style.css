@@ -421,7 +421,7 @@
   }
   
   .spotlight-image img {
-    margin-left: 8vw;
+    margin: 0 8vw;
     width: 100%;
     object-fit: cover;
     opacity: 0.75;
@@ -827,6 +827,9 @@
   @media (min-width: 640px) {
     .hero-actions {
       justify-content: start;
+    }
+    .spotlight-image img {
+      margin-right: 0;
     }
   }
   @media (max-width: 900px) {
