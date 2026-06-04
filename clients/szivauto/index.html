@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SzivAutó – Márkafüggetlen Autószerviz | Teskánd</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+<link href="https://api.fontshare.com/v2/css?f[]=gambetta@1,2&f[]=general-sans@1,2&f[]=satoshi@1,2&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="bg-svg-wrap">
+    <img src="assets/low-poly-grid-haikei.svg" class="bg-svg" alt="">
+  </div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><img src="assets/szivauto_logo.png" alt="SZIVAUTÓ"></a>
+  <ul class="nav-links">
+    <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+    <li><a href="#valtoolaj">Automata váltó</a></li>
+    <li><a href="#rolunk">Rólunk</a></li>
+    <li><a href="#kapcsolat" class="nav-cta">Időpontfoglalás</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding: 0; padding-top: 72px;">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Márkafüggetlen autószerviz · Teskánd</div>
+    <h1 class="hero-title">
+      Az autója
+      <span class="hero-title-accent">jó kezekben</span>
+      van.
+    </h1>
+    <p class="hero-sub">Teljeskörű diagnosztika, váltóolaj-csere, légkondicionáló javítás és céges flottaszerviz – profi technológiával, személyes odafigyeléssel.</p>
+    <div class="hero-actions">
+      <a href="#kapcsolat" class="btn-primary">Időpontot foglalok</a>
+      <a href="#szolgaltatasok" class="btn-ghost">
+        Szolgáltatások
+        <!-- Heroicons v2 outline: arrow-right -->
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Átlátható árak</div>
+      </div>
+      <div>
+        <div class="stat-num">Minden</div>
+        <div class="stat-label">Márka & Típus</div>
+      </div>
+      <div>
+        <div class="stat-num">Profi</div>
+        <div class="stat-label">Felszereltség</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hex-bg"></div>
+    <div class="hero-img-placeholder">
+      <!-- REPLACE: hero workshop image -->
+    </div>
+    <div class="placeholder-label">[ Kép helye – szervizcsarnok ]</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="szolgaltatasok">
+  <div class="section-label">Amit kínálunk</div>
+  <h2 class="section-title">Szolgáltatások</h2>
+  <p class="section-desc">Márkatól és évjárattól függetlenül vállalunk minden személyautó diagnosztikát, karbantartást és javítást.</p>
+
+  <div class="services-grid">
+
+    <!-- 1: Diagnosztika — Heroicons v2: cpu-chip -->
+    <div class="service-card">
+      <span class="service-number">01</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z"/>
+      </svg>
+      <div class="service-name">Teljeskörű diagnosztika & javítás</div>
+      <p class="service-desc">Korszerű elektronikus diagnosztikai berendezésekkel feltárjuk a hibákat, majd teljes körű javítást végzünk minden márkán.</p>
+    </div>
+
+    <!-- 2: Szívórendszer tisztítás — Heroicons v2: sparkles -->
+    <div class="service-card">
+      <span class="service-number">02</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/>
+      </svg>
+      <div class="service-name">Dióhéjas szívórendszer tisztítás</div>
+      <p class="service-desc">Speciális dióhéj-szemcsés technológiával tisztítjuk a szívórendszert karbontól és lerakódásoktól – vegyszermentes, kíméletes módszerrel.</p>
+    </div>
+
+    <!-- 3: Váltóolaj — Heroicons v2: arrow-path -->
+    <div class="service-card">
+      <span class="service-number">03</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/>
+      </svg>
+      <div class="service-name">Gépi automata váltó olajcsere</div>
+      <p class="service-desc">Teljes rendszerátöblítéssel, professzionális gépi technológiával. Az összes elhasználódott olaj eltávolítása és friss váltóolajjal való feltöltése.</p>
+    </div>
+
+    <!-- 4: Klíma — Heroicons v2: cloud -->
+    <div class="service-card">
+      <span class="service-number">04</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 .916-7.38 5.25 5.25 0 0 0-10.233-2.33 3 3 0 0 0-4.125 3.785A4.5 4.5 0 0 0 2.25 15Z"/>
+      </svg>
+      <div class="service-name">Klíma töltés & javítás</div>
+      <p class="service-desc">Klímahűtőközeg-töltés és teljes körű klímarendszer-javítás. Tartsa hatékonyan működő légkondicionálóját minden évszakban.</p>
+    </div>
+
+    <!-- 5: Flotta — Heroicons v2: truck -->
+    <div class="service-card">
+      <span class="service-number">05</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
+      </svg>
+      <div class="service-name">Céges flotta szervizelés</div>
+      <p class="service-desc">Vállalati járműflották rendszeres karbantartása rugalmas időpontokban. Kalkulált éves szervizköltség, megbízható ütemezés.</p>
+    </div>
+
+    <!-- 6: Coming soon — Heroicons v2: plus -->
+    <div class="service-card" style="display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; opacity:0.3;">
+      <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color:var(--muted)">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+      </svg>
+      <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)">Hamarosan</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- SPOTLIGHT: AUTOMATA VÁLTÓ -->
+<div class="spotlight" id="valtoolaj">
+  <div class="spotlight-inner">
+    <div class="spotlight-image">
+      <!-- REPLACE: gearbox / transmission image -->
+      <!-- Heroicons v2 outline: cog-6-tooth — used as large decorative placeholder -->
+      <svg class="spotlight-image-placeholder" width="260" height="260" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color:var(--red)">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+      </svg>
+      <div class="spotlight-img-label">[ Kép helye – automata váltó ]</div>
+    </div>
+    <div class="spotlight-content">
+      <div class="section-label">Kiemelt szolgáltatás</div>
+      <h2 class="section-title">Automata váltó olajcsere</h2>
+      <p class="section-desc">Az automata váltó az autó egyik legösszetettebb részegysége. Rendszeres, szakszerű olajcsere nélkül az elhasználódott olaj kopást okoz – és egy váltófelújítás többe kerül, mint évekre előre elvégzett karbantartás.</p>
+
+      <ul class="benefit-list">
+        <li class="benefit-item">
+          <!-- Heroicons v2: check-circle -->
+          <svg class="benefit-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+          </svg>
+          <div>
+            <div class="benefit-title">Teljes rendszerátöblítés gépi technológiával</div>
+            <div class="benefit-text">Nem csupán az olaj leengedése – a rendszer teljesen átöblítést kap, hogy az új olaj 100%-ban tiszta környezetben dolgozzon.</div>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <svg class="benefit-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+          </svg>
+          <div>
+            <div class="benefit-title">Érezhetően simább váltások</div>
+            <div class="benefit-text">A friss olajnak köszönhetően a váltások gyorsabbá és simábbá válnak – az autó visszakapja gyári kényelmét.</div>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <svg class="benefit-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+          </svg>
+          <div>
+            <div class="benefit-title">Megelőzés, nem javítás</div>
+            <div class="benefit-text">Az időben elvégzett olajcsere töredéke egy váltófelújítás költségének. Védi az alkatrészeket, megelőzi a meghibásodást.</div>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <svg class="benefit-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+          </svg>
+          <div>
+            <div class="benefit-title">Hosszú távon megtérülő befektetés</div>
+            <div class="benefit-text">Pénztárcakímélő és autókímélő egyszerre – a rendszeres karbantartás hosszabbítja a váltó élettartamát.</div>
+          </div>
+        </li>
+      </ul>
+
+      <a href="#kapcsolat" class="btn-primary">Időpontot foglalok</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT / LOCATION -->
+<section id="rolunk">
+  <div class="about-grid">
+    <div class="about-image-block">
+      <div class="about-img-main">
+        <!-- REPLACE: workshop exterior or team photo -->
+        <div class="about-img-label">[ Kép helye – szerviz / csapat ]</div>
+      </div>
+      <div class="about-accent-card">
+        <div class="about-accent-num">100%</div>
+        <div class="about-accent-text">Márkafüggetlen</div>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-label">Rólunk</div>
+      <h2 class="section-title">Profi szerviz,<br>személyes figyelem</h2>
+      <p class="about-text">A SzivAutó Teskándon egy márkakötelezettség nélküli, szakképzett autószerelő műhely – ahol minden autó ugyanolyan gondossággal kerül a szervizre, márkától és évjárattól függetlenül. Modern diagnosztikai felszereltségünk és tapasztalt szakembereink garantálják a precíz munkát.</p>
+
+      <ul class="info-list">
+        <li class="info-item">
+          <span class="info-icon">
+            <!-- Heroicons v2: map-pin -->
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0Z"/>
+            </svg>
+          </span>
+          <div>
+            <div class="info-label">Helyszín</div>
+            <div class="info-value">Teskánd, Zala megye</div>
+          </div>
+        </li>
+        <li class="info-item">
+          <span class="info-icon">
+            <!-- Heroicons v2: phone -->
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/>
+            </svg>
+          </span>
+          <div>
+            <div class="info-label">Telefon</div>
+            <div class="info-value">+36 30 233 2061</div>
+          </div>
+        </li>
+        <li class="info-item">
+          <span class="info-icon">
+            <!-- Heroicons v2: clock -->
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+            </svg>
+          </span>
+          <div>
+            <div class="info-label">Nyitvatartás</div>
+            <div class="info-value">H–P: 8:00 – 17:00 | Sz: 9:00 – 13:00</div>
+          </div>
+        </li>
+      </ul>
+
+      <a href="tel:+36302332061" class="btn-primary">Hívjon most: +36 30 233 2061</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<div class="map-section">
+  <div class="map-placeholder">
+    <!-- REPLACE: embed Google Maps iframe here -->
+    <div class="map-placeholder-text">
+      <div class="map-pin-icon">
+        <!-- Heroicons v2: map-pin -->
+        <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0Z"/>
+        </svg>
+      </div>
+      <div class="big">Teskánd, Zala megye</div>
+      <div class="small">[ Ide kerül a Google Maps beágyazás ]</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div>
+    <div class="cta-strip-title">Bízza autóját szakértő kezekre.</div>
+    <div class="cta-strip-sub">Foglaljon időpontot ma – kollégáink hamarosan visszahívják.</div>
+  </div>
+  <a href="#kapcsolat" class="btn-white">Időpontfoglalás →</a>
+</div>
+
+<!-- CONTACT -->
+<section id="kapcsolat">
+  <div class="section-label">Kapcsolat</div>
+  <h2 class="section-title">Írjon nekünk</h2>
+  <p class="section-desc" style="margin-bottom: 56px;">Küldjön üzenetet vagy keressen minket telefonon – rövid időn belül visszajelzünk.</p>
+
+  <div class="contact-grid">
+    <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="nev">Név</label>
+          <input type="text" id="nev" name="nev" placeholder="Hogyan szólíthatjuk?" required>
+        </div>
+        <div class="form-field">
+          <label for="telefon">Telefonszám</label>
+          <input type="tel" id="telefon" name="telefon" placeholder="+36 …" required>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="email">E-mail cím</label>
+        <input type="email" id="email" name="email" placeholder="pelda@email.hu" required>
+      </div>
+      <!-- <div class="form-field">
+        <label for="szolgaltatas">Szolgáltatás</label>
+        <select id="szolgaltatas" name="szolgaltatas">
+          <option value="">– Válasszon –</option>
+          <option>Teljeskörű diagnosztika / javítás</option>
+          <option>Dióhéjas szívórendszer tisztítás</option>
+          <option>Gépi automata váltó olajcsere</option>
+          <option>Klíma töltés / javítás</option>
+          <option>Céges flotta szervizelés</option>
+          <option>Egyéb</option>
+        </select>
+      </div> -->
+      <div class="form-field">
+        <label for="uzenet">Üzenet</label>
+        <textarea id="uzenet" name="uzenet" placeholder="Írja le, miben segíthetünk – autó típusa, tünet, preferált időpont…" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Visszahívás kérése →</button>
+    </form>
+
+    <div class="contact-info-block">
+      <div class="contact-detail">
+        <div class="contact-detail-label">Telefon</div>
+        <div class="contact-detail-value">+36 30 233 2061</div>
+        <div class="contact-detail-sub">Hívható nyitvatartási időben</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Helyszín</div>
+        <div class="contact-detail-value">Teskánd</div>
+        <div class="contact-detail-sub">Zala megye</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Nyitvatartás</div>
+        <div class="contact-detail-value" style="font-size:22px;">H – P · 8:00 – 17:00<br>Sz · 9:00 – 13:00</div>
+        <div class="contact-detail-sub">Vasárnap zárva</div>
+      </div>
+      <div style="margin-top: 32px; padding: 28px 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 3px;">
+        <div style="font-size:14px; color: var(--muted); font-weight:300; line-height:1.75;">
+          Gyors kérdés esetén hívjon közvetlenül – általában azonnal fogadjuk a hívásokat. Írásos megkeresésre 24 órán belül válaszolunk.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo"><img src="assets/szivauto_logo.png" alt="SZIVAUTÓ"></div>
+    <div class="footer-tagline">Márkafüggetlen autószerviz · Teskánd</div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-copy">© 2026 SzivAutó · Minden jog fenntartva</div>
+    <div class="footer-copy" style="margin-top: 6px;">+36 30 233 2061</div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .benefit-item, .contact-detail').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
