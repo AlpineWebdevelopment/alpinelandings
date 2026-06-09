@@ -9,7 +9,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -120,9 +120,10 @@ nav ul a:hover { color: var(--cyan); }
 }
 .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--cyan); display: inline-block; }
 .hero h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(48px, 7.5vw, 96px);
-  line-height: 1.0;
+  font-family: 'Barlow Condensed', 'Arial Black', sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 8vw, 104px);
+  line-height: 0.97;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   margin-bottom: 24px;
@@ -621,82 +622,11 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 <nav>
   <div class="container">
     <a href="#" class="nav-logo">
-      <!-- Tri-yin-yang logo: orange=fire/sun · blue=snowflake · gray=wrench -->
-      <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="CleanKlíma logó">
-        <defs>
-          <radialGradient id="ck-go" cx="62%" cy="28%" r="72%">
-            <stop offset="0%" stop-color="#FFCC00"/>
-            <stop offset="45%" stop-color="#F97316"/>
-            <stop offset="100%" stop-color="#8A2200"/>
-          </radialGradient>
-          <radialGradient id="ck-gb" cx="28%" cy="28%" r="80%">
-            <stop offset="0%" stop-color="#A8E8FF"/>
-            <stop offset="45%" stop-color="#1E96E8"/>
-            <stop offset="100%" stop-color="#003898"/>
-          </radialGradient>
-          <radialGradient id="ck-gg" cx="50%" cy="78%" r="72%">
-            <stop offset="0%" stop-color="#A4B8CC"/>
-            <stop offset="100%" stop-color="#1A2535"/>
-          </radialGradient>
-          <clipPath id="ck-clip"><circle cx="100" cy="100" r="90"/></clipPath>
-        </defs>
-        <!-- Orange section (upper-right) -->
-        <path clip-path="url(#ck-clip)"
-          d="M 100,10 A 90,90 0 0 1 177.9,145 A 45,45 0 0 0 100,100 A 45,45 0 0 1 100,10 Z"
-          fill="url(#ck-go)"/>
-        <!-- Gray section (bottom) -->
-        <path clip-path="url(#ck-clip)"
-          d="M 177.9,145 A 90,90 0 0 1 22.1,145 A 45,45 0 0 0 100,100 A 45,45 0 0 1 177.9,145 Z"
-          fill="url(#ck-gg)"/>
-        <!-- Blue section (upper-left) -->
-        <path clip-path="url(#ck-clip)"
-          d="M 22.1,145 A 90,90 0 0 1 100,10 A 45,45 0 0 0 100,100 A 45,45 0 0 1 22.1,145 Z"
-          fill="url(#ck-gb)"/>
-        <!-- Section dividers -->
-        <path d="M 100,10 A 45,45 0 0 0 100,100" fill="none" stroke="#050810" stroke-width="2.5" clip-path="url(#ck-clip)"/>
-        <path d="M 177.9,145 A 45,45 0 0 0 100,100" fill="none" stroke="#050810" stroke-width="2.5" clip-path="url(#ck-clip)"/>
-        <path d="M 22.1,145 A 45,45 0 0 0 100,100" fill="none" stroke="#050810" stroke-width="2.5" clip-path="url(#ck-clip)"/>
-        <!-- Outer ring -->
-        <circle cx="100" cy="100" r="88" fill="none" stroke="#050810" stroke-width="4"/>
-        <!-- Sun (orange section ~138,68) -->
-        <g transform="translate(138,68)" fill="none" stroke="rgba(255,250,210,0.95)" stroke-linecap="round" stroke-width="2.8">
-          <circle cx="0" cy="0" r="13"/>
-          <circle cx="0" cy="0" r="5.5" fill="rgba(255,250,210,0.95)" stroke="none"/>
-          <line x1="0" y1="-20" x2="0" y2="-16"/>
-          <line x1="0" y1="16" x2="0" y2="20"/>
-          <line x1="-20" y1="0" x2="-16" y2="0"/>
-          <line x1="16" y1="0" x2="20" y2="0"/>
-          <line x1="-14.1" y1="-14.1" x2="-11.2" y2="-11.2"/>
-          <line x1="11.2" y1="11.2" x2="14.1" y2="14.1"/>
-          <line x1="11.2" y1="-11.2" x2="14.1" y2="-14.1"/>
-          <line x1="-11.2" y1="11.2" x2="-14.1" y2="14.1"/>
-        </g>
-        <!-- Snowflake (blue section ~53,72) -->
-        <g transform="translate(53,72)" stroke="rgba(210,242,255,0.95)" stroke-linecap="round" stroke-width="2.8" fill="none">
-          <line x1="0" y1="-21" x2="0" y2="21"/>
-          <line x1="-18.2" y1="-10.5" x2="18.2" y2="10.5"/>
-          <line x1="18.2" y1="-10.5" x2="-18.2" y2="10.5"/>
-          <line x1="-6" y1="-14" x2="6" y2="-14"/>
-          <line x1="-6" y1="14" x2="6" y2="14"/>
-          <line x1="12" y1="-8" x2="16" y2="-14"/>
-          <line x1="12" y1="-14" x2="16" y2="-8"/>
-          <line x1="-12" y1="-8" x2="-16" y2="-14"/>
-          <line x1="-12" y1="-14" x2="-16" y2="-8"/>
-          <line x1="12" y1="8" x2="16" y2="14"/>
-          <line x1="12" y1="14" x2="16" y2="8"/>
-          <line x1="-12" y1="8" x2="-16" y2="14"/>
-          <line x1="-12" y1="14" x2="-16" y2="8"/>
-        </g>
-        <!-- Wrench (gray section ~100,155) -->
-        <g transform="translate(100,155)" fill="rgba(195,212,228,0.92)">
-          <rect x="-3.5" y="-23" width="7" height="30" rx="3.5"/>
-          <rect x="-9.5" y="-23" width="4" height="17" rx="2"/>
-          <rect x="5.5" y="-23" width="4" height="17" rx="2"/>
-          <rect x="-9.5" y="-27" width="19" height="8" rx="4"/>
-          <circle cx="0" cy="14" r="7"/>
-          <circle cx="0" cy="14" r="2.8" fill="#1A2535"/>
-        </g>
-      </svg>
+      <!-- Logo placeholder — replace with actual logo image -->
+      <div class="logo-icon" style="background:#1C2333; border:1px dashed #3A4A60; display:flex; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:9px; color:#627080; letter-spacing:0.08em; flex-direction:column; gap:2px;">
+        <span style="font-size:13px; color:#4A5A70;">☐</span>
+        <span>LOGO</span>
+      </div>
       <span class="name">Clean<span>Klíma</span></span>
     </a>
     <ul>
