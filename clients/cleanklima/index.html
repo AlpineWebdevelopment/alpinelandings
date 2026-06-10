@@ -20,12 +20,12 @@
   --ink:        #EDF2F7;
   --ink-2:      #9AA5B4;
   --ink-3:      #627080;
-  --cyan:       #0099C0;
-  --cyan-dim:   rgba(0,153,192,0.12);
-  --cyan-bdr:   rgba(0,153,192,0.25);
-  --cyan-light: #28C0E0;
-  --orange:     #F97316;
-  --orange-dim: rgba(249,115,22,0.12);
+  --cyan:       #0F48A9;
+  --cyan-dim:   rgba(15,72,169,0.12);
+  --cyan-bdr:   rgba(15,72,169,0.28);
+  --cyan-light: #2A65D0;
+  --orange:     #F05904;
+  --orange-dim: rgba(240,89,4,0.12);
   --yellow:     #F5C200;
   --rule:       #1E2535;
   --rule-2:     #252D3D;
@@ -63,7 +63,7 @@ img { max-width: 100%; display: block; }
 .topbar .dot { width: 6px; height: 6px; background: #4ADE80; border-radius: 50%; display: inline-block; margin-right: 6px; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.7); } 70% { box-shadow: 0 0 0 7px rgba(74,222,128,0); } }
 .topbar a.phone { font-weight: 700; color: var(--cyan); font-size: 14px; letter-spacing: 0.02em; transition: color 0.2s; }
-.topbar a.phone:hover { color: #00E5E0; }
+.topbar a.phone:hover { color: #3A72E0; }
 
 /* ── NAV ── */
 nav {
@@ -85,16 +85,16 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 nav ul { display: flex; gap: 28px; list-style: none; font-size: 14px; font-weight: 500; color: var(--ink-2); }
 nav ul a:hover { color: var(--cyan); }
 .nav-btn {
-  background: var(--cyan);
-  color: var(--bg);
+  background: linear-gradient(135deg, #0F48A9 0%, #2A65D0 100%);
+  color: #fff;
   font-weight: 700;
   font-size: 13px;
   padding: 10px 22px;
   letter-spacing: 0.04em;
-  transition: background 0.2s, transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
   white-space: nowrap;
 }
-.nav-btn:hover { background: #00E5E0; transform: translateY(-1px); }
+.nav-btn:hover { opacity: 0.88; transform: translateY(-1px); }
 @media (max-width: 800px) { nav ul { display: none; } }
 
 /* ── HERO ── */
@@ -106,8 +106,8 @@ nav ul a:hover { color: var(--cyan); }
 .hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(0,189,184,0.07) 0%, transparent 70%),
-              radial-gradient(ellipse 40% 40% at 20% 80%, rgba(249,115,22,0.05) 0%, transparent 60%);
+  background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(15,72,169,0.07) 0%, transparent 70%),
+              radial-gradient(ellipse 40% 40% at 20% 80%, rgba(240,89,4,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 .hero .container { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
@@ -141,16 +141,16 @@ nav ul a:hover { color: var(--cyan); }
 }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
 .btn-cyan {
-  background: var(--cyan);
-  color: var(--bg);
+  background: linear-gradient(135deg, #0F48A9 0%, #2A65D0 100%);
+  color: #fff;
   font-weight: 700;
   font-size: 14px;
   padding: 16px 30px;
   letter-spacing: 0.03em;
   display: inline-flex; align-items: center; gap: 10px;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.btn-cyan:hover { background: #00E5E0; transform: translateY(-2px); box-shadow: 0 10px 28px -8px rgba(0,189,184,0.5); }
+.btn-cyan:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 10px 28px -8px rgba(15,72,169,0.5); }
 .btn-outline {
   background: transparent;
   color: var(--ink-2);
@@ -190,13 +190,13 @@ nav ul a:hover { color: var(--cyan); }
 .hero-visual-main::after {
   content: '';
   position: absolute; inset: 0;
-  background: repeating-linear-gradient(45deg, transparent 0, transparent 18px, rgba(0,189,184,0.03) 18px, rgba(0,189,184,0.03) 19px);
+  background: repeating-linear-gradient(45deg, transparent 0, transparent 18px, rgba(15,72,169,0.03) 18px, rgba(15,72,169,0.03) 19px);
 }
 .hero-badge {
   position: absolute;
   bottom: 20px; right: 20px;
-  background: var(--cyan);
-  color: var(--bg);
+  background: linear-gradient(135deg, #F05904 0%, #FF7A28 100%);
+  color: #fff;
   padding: 12px 18px;
   text-align: center;
   z-index: 2;
@@ -434,12 +434,12 @@ nav ul a:hover { color: var(--cyan); }
 .about-visual::before {
   content: '';
   position: absolute; inset: 0;
-  background: repeating-linear-gradient(-45deg, transparent 0, transparent 16px, rgba(249,115,22,0.02) 16px, rgba(249,115,22,0.02) 17px);
+  background: repeating-linear-gradient(-45deg, transparent 0, transparent 16px, rgba(240,89,4,0.02) 16px, rgba(240,89,4,0.02) 17px);
 }
 .about-visual svg { width: 55%; position: relative; z-index: 1; opacity: 0.7; }
 .about-guarantee {
   position: absolute; bottom: 24px; right: 24px;
-  background: var(--orange);
+  background: linear-gradient(135deg, #C44800 0%, #F05904 60%, #FF7A28 100%);
   width: 96px; height: 96px;
   border-radius: 50%;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -493,11 +493,11 @@ nav ul a:hover { color: var(--cyan); }
 .map-box::before {
   content: '';
   position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(0,189,184,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,189,184,0.06) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(15,72,169,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(15,72,169,0.06) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 .map-pin { position: relative; z-index: 2; text-align: center; }
-.map-pin svg { width: 48px; height: 48px; color: var(--cyan); margin: 0 auto 12px; filter: drop-shadow(0 6px 20px rgba(0,189,184,0.4)); animation: bounce 2.2s ease-in-out infinite; }
+.map-pin svg { width: 48px; height: 48px; color: var(--cyan); margin: 0 auto 12px; filter: drop-shadow(0 6px 20px rgba(15,72,169,0.4)); animation: bounce 2.2s ease-in-out infinite; }
 @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 .map-pin .city { font-family: 'Anton', sans-serif; font-size: 22px; text-transform: uppercase; color: var(--ink); }
 .map-pin .county { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.12em; margin-top: 4px; }
@@ -518,7 +518,7 @@ nav ul a:hover { color: var(--cyan); }
 
 /* ── CTA BANNER ── */
 .cta-banner {
-  background: var(--cyan);
+  background: linear-gradient(135deg, #0A3A8A 0%, #0F48A9 50%, #2A65D0 100%);
   padding: 52px 0;
 }
 .cta-banner .container { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
@@ -587,8 +587,8 @@ nav ul a:hover { color: var(--cyan); }
 .f-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .f-submit {
   width: 100%;
-  background: var(--cyan);
-  color: var(--bg);
+  background: linear-gradient(135deg, #0F48A9 0%, #2A65D0 100%);
+  color: #fff;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -600,7 +600,7 @@ nav ul a:hover { color: var(--cyan); }
   transition: background 0.2s, transform 0.2s;
   display: flex; align-items: center; justify-content: center; gap: 10px;
 }
-.f-submit:hover { background: #00E5E0; transform: translateY(-2px); }
+.f-submit:hover { background: #3A72E0; transform: translateY(-2px); }
 .f-note { font-size: 11px; color: var(--ink-3); text-align: center; margin-top: 12px; font-family: 'DM Mono', monospace; }
 @media (max-width: 1024px) { .form-grid { grid-template-columns: 1fr; gap: 56px; } }
 
@@ -625,11 +625,11 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 /* ── MOBILE CTA ── */
 .mobile-cta {
   display: none; position: fixed; bottom: 0; left: 0; right: 0;
-  background: var(--cyan); color: var(--bg);
+  background: linear-gradient(90deg, #0F48A9 0%, #2A65D0 100%); color: #fff;
   padding: 16px 20px; z-index: 50;
   font-weight: 700; font-size: 15px;
   text-align: center;
-  box-shadow: 0 -8px 24px -8px rgba(0,189,184,0.4);
+  box-shadow: 0 -8px 24px -8px rgba(15,72,169,0.4);
 }
 @media (max-width: 700px) { .mobile-cta { display: block; } body { padding-bottom: 58px; } }
 
@@ -694,32 +694,32 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
         <!-- Wall AC unit SVG -->
         <svg class="ac-large" viewBox="0 0 480 280" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- Unit body -->
-          <rect x="40" y="60" width="400" height="100" rx="16" stroke="#0099C0" stroke-width="2"/>
+          <rect x="40" y="60" width="400" height="100" rx="16" stroke="#0F48A9" stroke-width="2"/>
           <!-- Front vents -->
-          <line x1="75" y1="100" x2="405" y2="100" stroke="#0099C0" stroke-width="1.5" opacity="0.6"/>
-          <line x1="75" y1="116" x2="405" y2="116" stroke="#0099C0" stroke-width="1.5" opacity="0.6"/>
-          <line x1="75" y1="132" x2="405" y2="132" stroke="#0099C0" stroke-width="1.5" opacity="0.6"/>
+          <line x1="75" y1="100" x2="405" y2="100" stroke="#0F48A9" stroke-width="1.5" opacity="0.6"/>
+          <line x1="75" y1="116" x2="405" y2="116" stroke="#0F48A9" stroke-width="1.5" opacity="0.6"/>
+          <line x1="75" y1="132" x2="405" y2="132" stroke="#0F48A9" stroke-width="1.5" opacity="0.6"/>
           <!-- Display -->
-          <rect x="320" y="72" width="80" height="26" rx="4" stroke="#0099C0" stroke-width="1.5"/>
-          <circle cx="360" cy="81" r="5" fill="#0099C0" opacity="0.5"/>
-          <circle cx="376" cy="81" r="3" stroke="#F97316" stroke-width="1.5" fill="none"/>
+          <rect x="320" y="72" width="80" height="26" rx="4" stroke="#0F48A9" stroke-width="1.5"/>
+          <circle cx="360" cy="81" r="5" fill="#0F48A9" opacity="0.5"/>
+          <circle cx="376" cy="81" r="3" stroke="#F05904" stroke-width="1.5" fill="none"/>
           <!-- Snowflake -->
-          <line x1="100" y1="78" x2="100" y2="98" stroke="#0099C0" stroke-width="1.5"/>
-          <line x1="91" y1="83" x2="109" y2="93" stroke="#0099C0" stroke-width="1.5"/>
-          <line x1="109" y1="83" x2="91" y2="93" stroke="#0099C0" stroke-width="1.5"/>
-          <line x1="91" y1="88" x2="100" y2="78" stroke="#0099C0" stroke-width="1" opacity="0.4"/>
+          <line x1="100" y1="78" x2="100" y2="98" stroke="#0F48A9" stroke-width="1.5"/>
+          <line x1="91" y1="83" x2="109" y2="93" stroke="#0F48A9" stroke-width="1.5"/>
+          <line x1="109" y1="83" x2="91" y2="93" stroke="#0F48A9" stroke-width="1.5"/>
+          <line x1="91" y1="88" x2="100" y2="78" stroke="#0F48A9" stroke-width="1" opacity="0.4"/>
           <!-- Louvre -->
-          <path d="M50 168 Q240 185 430 168" stroke="#0099C0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M50 168 Q240 185 430 168" stroke="#0F48A9" stroke-width="1.5" fill="none" stroke-linecap="round"/>
           <!-- Airflow waves -->
-          <path d="M160 200 Q172 212 160 224 Q148 236 160 248" stroke="#0099C0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
-          <path d="M190 196 Q202 210 190 224 Q178 238 190 252" stroke="#0099C0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.55"/>
-          <path d="M240 200 Q252 212 240 224 Q228 236 240 248" stroke="#0099C0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
-          <path d="M270 196 Q282 210 270 224 Q258 238 270 252" stroke="#0099C0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.55"/>
-          <path d="M320 200 Q332 212 320 224 Q308 236 320 248" stroke="#0099C0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M160 200 Q172 212 160 224 Q148 236 160 248" stroke="#0F48A9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M190 196 Q202 210 190 224 Q178 238 190 252" stroke="#0F48A9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.55"/>
+          <path d="M240 200 Q252 212 240 224 Q228 236 240 248" stroke="#0F48A9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M270 196 Q282 210 270 224 Q258 238 270 252" stroke="#0F48A9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.55"/>
+          <path d="M320 200 Q332 212 320 224 Q308 236 320 248" stroke="#0F48A9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
           <!-- Outdoor unit -->
-          <rect x="380" y="180" width="70" height="80" rx="6" stroke="#0099C0" stroke-width="1.5" opacity="0.4"/>
-          <circle cx="415" cy="220" r="22" stroke="#0099C0" stroke-width="1.5" fill="none" opacity="0.4"/>
-          <circle cx="415" cy="220" r="8" stroke="#F97316" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <rect x="380" y="180" width="70" height="80" rx="6" stroke="#0F48A9" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="415" cy="220" r="22" stroke="#0F48A9" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <circle cx="415" cy="220" r="8" stroke="#F05904" stroke-width="1.5" fill="none" opacity="0.4"/>
         </svg>
       </div>
       <div class="hero-badge">
@@ -833,14 +833,14 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
         <!-- Technician illustration -->
         <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- Person silhouette -->
-          <circle cx="150" cy="80" r="38" stroke="#F97316" stroke-width="2" opacity="0.5"/>
-          <path d="M80 200 Q80 160 150 155 Q220 160 220 200 L230 350 L70 350 Z" stroke="#F97316" stroke-width="2" fill="rgba(249,115,22,0.05)" opacity="0.5"/>
+          <circle cx="150" cy="80" r="38" stroke="#F05904" stroke-width="2" opacity="0.5"/>
+          <path d="M80 200 Q80 160 150 155 Q220 160 220 200 L230 350 L70 350 Z" stroke="#F05904" stroke-width="2" fill="rgba(240,89,4,0.05)" opacity="0.5"/>
           <!-- Tools -->
-          <rect x="100" y="240" width="100" height="14" rx="3" stroke="#0099C0" stroke-width="1.5" opacity="0.6"/>
-          <rect x="112" y="254" width="76" height="40" rx="3" stroke="#0099C0" stroke-width="1.5" opacity="0.5"/>
+          <rect x="100" y="240" width="100" height="14" rx="3" stroke="#0F48A9" stroke-width="1.5" opacity="0.6"/>
+          <rect x="112" y="254" width="76" height="40" rx="3" stroke="#0F48A9" stroke-width="1.5" opacity="0.5"/>
           <!-- Wrench -->
-          <path d="M195 160 L230 195" stroke="#0099C0" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
-          <circle cx="238" cy="203" r="12" stroke="#0099C0" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <path d="M195 160 L230 195" stroke="#0F48A9" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+          <circle cx="238" cy="203" r="12" stroke="#0F48A9" stroke-width="1.5" fill="none" opacity="0.4"/>
         </svg>
         <div class="about-guarantee">
           <span class="pct">100%</span>
@@ -883,28 +883,28 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
         <!-- Car AC vent illustration -->
         <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- AC vent slats -->
-          <rect x="30" y="30" width="340" height="200" rx="14" stroke="#0099C0" stroke-width="1.8" opacity="0.4"/>
-          <line x1="30" y1="75" x2="370" y2="75" stroke="#0099C0" stroke-width="1.5" opacity="0.35"/>
-          <line x1="30" y1="105" x2="370" y2="105" stroke="#0099C0" stroke-width="1.5" opacity="0.35"/>
-          <line x1="30" y1="135" x2="370" y2="135" stroke="#0099C0" stroke-width="1.5" opacity="0.35"/>
-          <line x1="30" y1="165" x2="370" y2="165" stroke="#0099C0" stroke-width="1.5" opacity="0.35"/>
-          <line x1="30" y1="195" x2="370" y2="195" stroke="#0099C0" stroke-width="1.5" opacity="0.35"/>
+          <rect x="30" y="30" width="340" height="200" rx="14" stroke="#0F48A9" stroke-width="1.8" opacity="0.4"/>
+          <line x1="30" y1="75" x2="370" y2="75" stroke="#0F48A9" stroke-width="1.5" opacity="0.35"/>
+          <line x1="30" y1="105" x2="370" y2="105" stroke="#0F48A9" stroke-width="1.5" opacity="0.35"/>
+          <line x1="30" y1="135" x2="370" y2="135" stroke="#0F48A9" stroke-width="1.5" opacity="0.35"/>
+          <line x1="30" y1="165" x2="370" y2="165" stroke="#0F48A9" stroke-width="1.5" opacity="0.35"/>
+          <line x1="30" y1="195" x2="370" y2="195" stroke="#0F48A9" stroke-width="1.5" opacity="0.35"/>
           <!-- Vertical slats -->
-          <line x1="100" y1="30" x2="100" y2="230" stroke="#0099C0" stroke-width="1" opacity="0.2"/>
-          <line x1="160" y1="30" x2="160" y2="230" stroke="#0099C0" stroke-width="1" opacity="0.2"/>
-          <line x1="220" y1="30" x2="220" y2="230" stroke="#0099C0" stroke-width="1" opacity="0.2"/>
-          <line x1="280" y1="30" x2="280" y2="230" stroke="#0099C0" stroke-width="1" opacity="0.2"/>
-          <line x1="340" y1="30" x2="340" y2="230" stroke="#0099C0" stroke-width="1" opacity="0.2"/>
+          <line x1="100" y1="30" x2="100" y2="230" stroke="#0F48A9" stroke-width="1" opacity="0.2"/>
+          <line x1="160" y1="30" x2="160" y2="230" stroke="#0F48A9" stroke-width="1" opacity="0.2"/>
+          <line x1="220" y1="30" x2="220" y2="230" stroke="#0F48A9" stroke-width="1" opacity="0.2"/>
+          <line x1="280" y1="30" x2="280" y2="230" stroke="#0F48A9" stroke-width="1" opacity="0.2"/>
+          <line x1="340" y1="30" x2="340" y2="230" stroke="#0F48A9" stroke-width="1" opacity="0.2"/>
           <!-- Airflow waves coming out -->
-          <path d="M55 255 Q75 240 55 225 Q35 210 55 195" stroke="#28C0E0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
-          <path d="M105 258 Q125 240 105 222 Q85 204 105 186" stroke="#28C0E0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
-          <path d="M200 260 Q220 240 200 220 Q180 200 200 180" stroke="#28C0E0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
-          <path d="M295 258 Q315 240 295 222 Q275 204 295 186" stroke="#28C0E0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
-          <path d="M345 255 Q365 240 345 225 Q325 210 345 195" stroke="#28C0E0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M55 255 Q75 240 55 225 Q35 210 55 195" stroke="#2A65D0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M105 258 Q125 240 105 222 Q85 204 105 186" stroke="#2A65D0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <path d="M200 260 Q220 240 200 220 Q180 200 200 180" stroke="#2A65D0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path d="M295 258 Q315 240 295 222 Q275 204 295 186" stroke="#2A65D0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <path d="M345 255 Q365 240 345 225 Q325 210 345 195" stroke="#2A65D0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
           <!-- Ozone O3 label -->
-          <text x="185" y="110" font-family="monospace" font-size="28" fill="#28C0E0" opacity="0.35" font-weight="bold">O₃</text>
+          <text x="185" y="110" font-family="monospace" font-size="28" fill="#2A65D0" opacity="0.35" font-weight="bold">O₃</text>
           <!-- Snowflake center -->
-          <g transform="translate(200,130)" stroke="#28C0E0" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5">
+          <g transform="translate(200,130)" stroke="#2A65D0" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5">
             <line x1="0" y1="-18" x2="0" y2="18"/>
             <line x1="-15.6" y1="-9" x2="15.6" y2="9"/>
             <line x1="15.6" y1="-9" x2="-15.6" y2="9"/>
