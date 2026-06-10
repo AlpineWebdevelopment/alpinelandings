@@ -23,10 +23,10 @@
   --cyan:       #0F48A9;
   --cyan-dim:   rgba(15,72,169,0.12);
   --cyan-bdr:   rgba(15,72,169,0.28);
-  --cyan-light: #2A65D0;
+  --cyan-light: #3898F8;
   --orange:     #F05904;
   --orange-dim: rgba(240,89,4,0.12);
-  --yellow:     #F5C200;
+  --yellow:     #F05904;
   --rule:       #1E2535;
   --rule-2:     #252D3D;
 }
@@ -85,7 +85,7 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 nav ul { display: flex; gap: 28px; list-style: none; font-size: 14px; font-weight: 500; color: var(--ink-2); }
 nav ul a:hover { color: var(--cyan); }
 .nav-btn {
-  background: linear-gradient(135deg, #0F48A9 0%, #2A65D0 100%);
+  background: linear-gradient(180deg, #3898F8 0%, #0838A8 100%);
   color: #fff;
   font-weight: 700;
   font-size: 13px;
@@ -130,8 +130,14 @@ nav ul a:hover { color: var(--cyan); }
   letter-spacing: 0.01em;
   margin-bottom: 24px;
 }
-.hero h1 .c { color: var(--cyan-light); }
-.hero h1 .o { color: var(--yellow); }
+.hero h1 .c {
+  background: linear-gradient(180deg, #3898F8 0%, #0838A8 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero h1 .o {
+  background: linear-gradient(180deg, #F08020 0%, #C43600 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
 .hero-sub {
   font-size: 17px;
   color: var(--ink-2);
@@ -141,7 +147,7 @@ nav ul a:hover { color: var(--cyan); }
 }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
 .btn-cyan {
-  background: linear-gradient(135deg, #0F48A9 0%, #2A65D0 100%);
+  background: linear-gradient(180deg, #3898F8 0%, #0838A8 100%);
   color: #fff;
   font-weight: 700;
   font-size: 14px;
@@ -324,7 +330,7 @@ nav ul a:hover { color: var(--cyan); }
 .benefits-header .s-eyebrow { justify-content: center; margin-bottom: 12px; }
 .benefits-header h2 { font-family: 'Barlow Condensed', 'Anton', sans-serif; font-weight: 800; font-size: clamp(32px,4vw,52px); text-transform: uppercase; line-height: 0.95; margin-bottom: 10px; }
 .benefits-header h2 span { color: var(--cyan-light); }
-.yellow-tag { font-style: italic; font-size: 16px; color: var(--yellow); letter-spacing: 0.01em; }
+.yellow-tag { font-style: italic; font-size: 16px; color: var(--orange); letter-spacing: 0.01em; }
 .benefits-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -387,7 +393,10 @@ nav ul a:hover { color: var(--cyan); }
 .ozonos-visual svg { width: 75%; position: relative; z-index: 1; }
 .ozonos-content .s-eyebrow { margin-bottom: 10px; }
 .ozonos-content h2 { font-family: 'Barlow Condensed', 'Anton', sans-serif; font-weight: 800; font-size: clamp(34px,4vw,56px); text-transform: uppercase; line-height: 0.95; margin-bottom: 8px; }
-.ozonos-content h2 span { color: var(--cyan-light); }
+.ozonos-content h2 span, .benefits-header h2 span, .map-info h3 span, .feature-content h2 span {
+  background: linear-gradient(180deg, #3898F8 0%, #0838A8 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
 .ozonos-content .yellow-tag { margin-bottom: 28px; }
 .ozonos-bens {
   display: grid;
@@ -439,7 +448,7 @@ nav ul a:hover { color: var(--cyan); }
 .about-visual svg { width: 55%; position: relative; z-index: 1; opacity: 0.7; }
 .about-guarantee {
   position: absolute; bottom: 24px; right: 24px;
-  background: linear-gradient(135deg, #C44800 0%, #F05904 60%, #FF7A28 100%);
+  background: linear-gradient(180deg, #F08020 0%, #C43600 100%);
   width: 96px; height: 96px;
   border-radius: 50%;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -455,7 +464,10 @@ nav ul a:hover { color: var(--cyan); }
   line-height: 0.95;
   margin-bottom: 16px;
 }
-.about-content h2 span { color: var(--orange); }
+.about-content h2 span {
+  background: linear-gradient(180deg, #F08020 0%, #C43600 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
 .about-content .intro { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-bottom: 32px; }
 .contact-rows { border-top: 1px solid var(--rule); margin-bottom: 28px; }
 .contact-row {
@@ -518,7 +530,7 @@ nav ul a:hover { color: var(--cyan); }
 
 /* ── CTA BANNER ── */
 .cta-banner {
-  background: linear-gradient(135deg, #0A3A8A 0%, #0F48A9 50%, #2A65D0 100%);
+  background: linear-gradient(180deg, #3898F8 0%, #0838A8 100%);
   padding: 52px 0;
 }
 .cta-banner .container { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
@@ -587,7 +599,7 @@ nav ul a:hover { color: var(--cyan); }
 .f-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .f-submit {
   width: 100%;
-  background: linear-gradient(135deg, #0F48A9 0%, #2A65D0 100%);
+  background: linear-gradient(180deg, #3898F8 0%, #0838A8 100%);
   color: #fff;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -625,7 +637,7 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 /* ── MOBILE CTA ── */
 .mobile-cta {
   display: none; position: fixed; bottom: 0; left: 0; right: 0;
-  background: linear-gradient(90deg, #0F48A9 0%, #2A65D0 100%); color: #fff;
+  background: linear-gradient(180deg, #3898F8 0%, #0838A8 100%); color: #fff;
   padding: 16px 20px; z-index: 50;
   font-weight: 700; font-size: 15px;
   text-align: center;
@@ -677,7 +689,7 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
     <div>
       <div class="hero-eyebrow">Telepítés · mosózsákos tisztítás · értékesítés · javítás</div>
       <h1>Tiszta klíma.<br><span class="c">Egészséges</span><br><span class="o">otthon.</span></h1>
-      <p style="font-style:italic; color:var(--yellow); font-size:15px; margin-bottom:10px; letter-spacing:0.01em;">Friss levegő. Egészséges otthon.</p>
+      <p style="font-style:italic; color:var(--orange); font-size:15px; margin-bottom:10px; letter-spacing:0.01em;">Friss levegő. Egészséges otthon.</p>
       <p class="hero-sub">Mosózsákos mélytisztítás, ózonos fertőtlenítés, profi telepítés. Minden típusú klíma — lakásban, irodában, autóban.</p>
       <div class="hero-ctas">
         <a href="#kapcsolat" class="btn-cyan">IDŐPONTOT FOGLALOK <span>→</span></a>
