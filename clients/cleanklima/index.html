@@ -706,8 +706,11 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 @media (max-width: 700px) { .mobile-cta { display: block; } body { padding-bottom: 58px; } }
 
 /* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1); }
-.reveal.visible { opacity: 1; transform: none; }
+.reveal        { opacity: 0; transform: translateY(28px);   transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal-left   { opacity: 0; transform: translateX(-44px);  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal-right  { opacity: 0; transform: translateX(44px);   transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal-scale  { opacity: 0; transform: scale(0.92);        transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible { opacity: 1; transform: none; }
 </style>
 </head>
 <body>
@@ -747,25 +750,25 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 <section class="hero">
   <div class="container">
     <div>
-      <div class="hero-eyebrow">Telepítés · mosózsákos tisztítás · értékesítés · javítás</div>
-      <div class="hero-price-badge">
+      <div class="hero-eyebrow reveal" data-delay="0">Telepítés · mosózsákos tisztítás · értékesítés · javítás</div>
+      <div class="hero-price-badge reveal-scale" data-delay="100">
         <div class="hero-price-label">Most csak</div>
         <div class="hero-price-amount">19.990 FT!</div>
       </div>
-      <h1>Tiszta klíma.<br><span class="c">Egészséges</span><br><span class="o">otthon.</span></h1>
-      <p style="font-style:italic; color:var(--orange); font-size:15px; margin-bottom:10px; letter-spacing:0.01em;">Friss levegő. Egészséges otthon.</p>
-      <p class="hero-sub">Mosózsákos mélytisztítás, ózonos fertőtlenítés, profi telepítés. Minden típusú klíma — lakásban, irodában, autóban.</p>
-      <div class="hero-ctas">
+      <h1 class="reveal" data-delay="180">Tiszta klíma.<br><span class="c">Egészséges</span><br><span class="o">otthon.</span></h1>
+      <p class="reveal" data-delay="260" style="font-style:italic; color:var(--orange); font-size:15px; margin-bottom:10px; letter-spacing:0.01em;">Friss levegő. Egészséges otthon.</p>
+      <p class="hero-sub reveal" data-delay="320">Mosózsákos mélytisztítás, ózonos fertőtlenítés, profi telepítés. Minden típusú klíma — lakásban, irodában, autóban.</p>
+      <div class="hero-ctas reveal" data-delay="400">
         <a href="#kapcsolat" class="btn-cyan">IDŐPONTOT FOGLALOK <span>→</span></a>
         <a href="#szolgaltatasok" class="btn-outline">SZOLGÁLTATÁSOK</a>
       </div>
-      <div class="hero-trust">
+      <div class="hero-trust reveal" data-delay="480">
         <span class="hero-trust-item">100% elégedettség</span>
         <span class="hero-trust-item">Minden márka</span>
         <span class="hero-trust-item">Profi felszerelés</span>
       </div>
     </div>
-    <div class="hero-visual">
+    <div class="hero-visual reveal-right" data-delay="200">
       <div class="hero-visual-main">
         <!-- Wall AC unit SVG -->
         <svg class="ac-large" viewBox="0 0 480 280" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -905,7 +908,7 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 <section class="ozonos" id="ozonos">
   <div class="container">
     <div class="ozonos-inner">
-      <div class="ozonos-visual reveal">
+      <div class="ozonos-visual reveal-left">
         <!-- Car AC vent illustration -->
         <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- AC vent slats -->
@@ -937,7 +940,7 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
           </g>
         </svg>
       </div>
-      <div class="ozonos-content reveal">
+      <div class="ozonos-content reveal-right">
         <div class="s-eyebrow">AUTÓS SZOLGÁLTATÁS</div>
         <h2>Ózonos<br><span>klímatisztítás</span></h2>
         <p class="yellow-tag">Az autód friss levegőjéért!</p>
@@ -977,8 +980,8 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 <!-- ABOUT -->
 <section class="section about" id="rolunk">
   <div class="container">
-    <div class="about-inner reveal">
-      <div class="about-visual">
+    <div class="about-inner">
+      <div class="about-visual reveal-left">
         <!-- Technician illustration -->
         <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- Person silhouette -->
@@ -996,7 +999,7 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
           <span class="lbl">Elégedett<br>ügyfél</span>
         </div>
       </div>
-      <div class="about-content">
+      <div class="about-content reveal-right">
         <div class="s-eyebrow">RÓLUNK</div>
         <h2>Profi szerviz,<br><span>személyes</span><br>figyelem</h2>
         <p class="intro">A CleanKlíma csapata tapasztalt klímatechnikusokból áll. Minden munkát precízen, a megbeszélt időpontban végzünk el — a takarítástól az utolsó ellenőrzésig.</p>
@@ -1027,15 +1030,15 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 <!-- MAP -->
 <div class="map-section">
   <div class="container">
-    <div class="map-inner reveal">
-      <div class="map-box">
+    <div class="map-inner">
+      <div class="map-box reveal-left">
         <div class="map-pin">
           <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           <div class="city">Szeged</div>
           <div class="county">ÉS EGÉSZ CSONGRÁD MEGYE</div>
         </div>
       </div>
-      <div class="map-info">
+      <div class="map-info reveal-right">
         <h3>Kiszállunk<br><span>Önhöz.</span></h3>
         <p>Szegeden és a környező településeken kiszállunk Önhöz. Telefonon egyeztetünk egy megfelelő időpontot — a munkát ott végezzük el, ahol a klíma van.</p>
         <a href="tel:+36304663727" class="cta-phone">
@@ -1050,7 +1053,7 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 <!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="container">
-    <div>
+    <div class="reveal-scale">
       <h2>Bízza klímáját<br>szakértő kezekre.</h2>
       <p>Foglalja le időpontját ma — hatékonyabb működés, frissebb levegő, hosszabb élettartam.</p>
       <p style="font-style:italic; color:var(--bg); opacity:0.65; font-size:14px; margin-top:6px; font-weight:700; letter-spacing:0.02em;">Tiszta klíma. <span style="color:#8B4500;">Boldog otthon.</span></p>
@@ -1063,7 +1066,7 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
 <section class="form-section" id="kapcsolat">
   <div class="container">
     <div class="form-grid">
-      <div class="form-left reveal">
+      <div class="form-left reveal-left">
         <div class="s-eyebrow">ÍRJON NEKÜNK</div>
         <h2>Kérjen<br><span>ajánlatot</span><br>most.</h2>
         <p>Töltse ki az űrlapot vagy hívjon közvetlenül. Minden megkeresésre 24 órán belül válaszolunk és egyeztetünk Önnel egy megfelelő időpontot.</p>
@@ -1082,7 +1085,7 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
           </div>
         </div>
       </div>
-      <div class="form-box reveal">
+      <div class="form-box reveal-right">
         <form>
           <div class="f-row-2">
             <div class="f-group"><label>Név</label><input type="text" placeholder="Pl. Kovács Anna" required></div>
@@ -1164,14 +1167,23 @@ footer .legal { border-top: 1px solid var(--rule); padding-top: 20px; display: f
       io.unobserve(el);
     });
   }, { threshold: 0.08 });
-  var stagger = ['.svc', '.hero-stat'];
-  stagger.forEach(function (sel) {
+
+  // Auto-stagger grid groups
+  ['.svc', '.benefit-item'].forEach(function (sel) {
     document.querySelectorAll(sel).forEach(function (el, i) {
       el.classList.add('reveal');
-      el.dataset.delay = i * 80;
+      el.dataset.delay = i * 100;
     });
   });
-  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.ozonos-ben').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.dataset.delay = 200 + i * 90;
+  });
+
+  // Observe all animation targets
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
+    io.observe(el);
+  });
 }());
 </script>
 </body>
