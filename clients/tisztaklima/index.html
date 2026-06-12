@@ -101,7 +101,7 @@ nav{
   border-bottom:1px solid var(--line);
 }
 .brand{display:flex;align-items:center;gap:11px}
-.brand-mark{width:42px;height:42px;flex:none}
+.brand-mark{width:42px;height:42px;flex:none;border-radius:10px;object-fit:cover;display:block}
 .brand-text{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.14rem;letter-spacing:-.02em;line-height:1;color:var(--navy)}
 .brand-text small{display:block;font-family:'Hanken Grotesk',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.26em;color:var(--blue);margin-top:4px}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
@@ -156,7 +156,7 @@ nav{
   content:'';position:absolute;top:-90px;right:-90px;width:240px;height:240px;border-radius:50%;
   background:radial-gradient(circle,rgba(61,155,224,.4),transparent 70%);
 }
-.hero-card-logo{width:96px;height:96px;margin:0 auto 1.2rem;position:relative;z-index:1}
+.hero-card-logo{width:120px;height:120px;margin:0 auto 1rem;position:relative;z-index:1;border-radius:18px;object-fit:cover;display:block}
 .hero-card h3{text-align:center;font-size:1.4rem;font-weight:700;position:relative;z-index:1;margin-bottom:.4rem}
 .hero-card .tag{text-align:center;font-size:.88rem;color:#A9C5DE;position:relative;z-index:1;margin-bottom:1.6rem}
 .hero-check{display:flex;flex-direction:column;gap:.9rem;position:relative;z-index:1}
@@ -328,16 +328,6 @@ footer{background:#0A2038;color:#7E96AE;padding:2.6rem 0}
 
 <!-- ░░ ICON + LOGO DEFS (custom duotone set — currentColor adaptive) ░░ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <!-- brand logo -->
-  <symbol id="logo" viewBox="0 0 100 100">
-    <circle cx="50" cy="44" r="34" fill="#2E7CC4"/>
-    <rect x="18" y="30" width="40" height="13" rx="6" fill="#F8F4EA" stroke="#0E2A47" stroke-width="2"/>
-    <path d="M22 46 q14 8 30 4 M24 52 q14 8 28 3 M26 58 q12 7 24 2" stroke="#1E5C96" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <path d="M68 36 l0 18 M62 45 l12 0 M64 39 l8 12 M64 51 l8 -12" stroke="#F8F4EA" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M76 36 a9 9 0 0 1 0 18 z" fill="#F5A623"/>
-    <g fill="#7FB8E8"><path d="M40 22 l1.4 3 3 1.4 -3 1.4 -1.4 3 -1.4 -3 -3 -1.4 3 -1.4z"/><path d="M62 60 l1 2.2 2.2 1 -2.2 1 -1 2.2 -1 -2.2 -2.2 -1 2.2 -1z"/></g>
-  </symbol>
-
   <!-- sparkle (logo motif) -->
   <symbol id="i-spark" viewBox="0 0 24 24">
     <path d="M12 2c.6 4.4 3 6.8 7.5 7.5C15 10.2 12.6 12.6 12 17c-.6-4.4-3-6.8-7.5-7.5C9 8.8 11.4 6.4 12 2z" fill="currentColor"/>
@@ -437,7 +427,7 @@ footer{background:#0A2038;color:#7E96AE;padding:2.6rem 0}
 <!-- NAV -->
 <nav>
   <a href="#" class="brand">
-    <svg class="brand-mark"><use href="#logo"/></svg>
+    <img class="brand-mark" src="/clients/tisztaklima/assets/logo.jpg" alt="Tiszta Klíma Debrecen logó" />
     <span class="brand-text">Tiszta Klíma<small>DEBRECEN</small></span>
   </a>
   <ul class="nav-links">
@@ -476,8 +466,7 @@ footer{background:#0A2038;color:#7E96AE;padding:2.6rem 0}
 
     <div class="hero-visual reveal-r" data-d="200">
       <div class="hero-card">
-        <svg class="hero-card-logo"><use href="#logo"/></svg>
-        <h3>Tiszta Klíma Debrecen</h3>
+        <img class="hero-card-logo" src="/clients/tisztaklima/assets/logo.jpg" alt="Tiszta Klíma Debrecen logó" />
         <p class="tag">„Válaszd a frissességet, ne a problémákat!”</p>
         <ul class="hero-check">
           <li><span class="ck"><svg class="ic"><use href="#i-check"/></svg></span> Megelőzheti a betegségeket</li>
@@ -694,7 +683,7 @@ footer{background:#0A2038;color:#7E96AE;padding:2.6rem 0}
 <footer>
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <svg class="brand-mark"><use href="#logo"/></svg>
+      <img class="brand-mark" src="/clients/tisztaklima/assets/logo.jpg" alt="Tiszta Klíma Debrecen logó" />
       <span class="brand-text">Tiszta Klíma<small>DEBRECEN</small></span>
     </div>
     <div class="foot-copy">© 2026 Tiszta Klíma Debrecen — Minden jog fenntartva. · Tiszta klíma, tiszta levegő.</div>
