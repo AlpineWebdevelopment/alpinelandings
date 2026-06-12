@@ -28,12 +28,14 @@
 
 <!-- BADGE STRIP -->
 <div class="badge-strip" style="margin-top:68px;">
-  <span class="badge-strip-text">Klímaszerelés</span>
-  <span class="badge-strip-text">Klímajavítás</span>
-  <span class="badge-strip-text">Klímatervezés</span>
-  <span class="badge-strip-text">Karbantartás</span>
-  <span class="badge-strip-text">Szervíz & Tisztítás</span>
-  <span class="badge-strip-text">Hőszivattyú rendszerek</span>
+  <div class="badge-strip-track">
+    <span class="badge-strip-text">Klímaszerelés</span>
+    <span class="badge-strip-text">Klímajavítás</span>
+    <span class="badge-strip-text">Klímatervezés</span>
+    <span class="badge-strip-text">Karbantartás</span>
+    <span class="badge-strip-text">Szervíz & Tisztítás</span>
+    <span class="badge-strip-text">Hőszivattyú rendszerek</span>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -289,6 +291,28 @@
   <div class="footer-logo">KLÍMA 2020 DEBRECEN</div>
   <div class="footer-copy">© 2026 — Klíma 2020 Debrecen. Minden jog fenntartva.</div>
 </footer>
+<script>
+const track = document.querySelector('.badge-strip-track');
 
+// duplicate content for seamless loop
+track.innerHTML += track.innerHTML;
+
+let position = 0;
+const speed = 0.5;
+
+function animate() {
+  position -= speed;
+
+  if (Math.abs(position) >= track.scrollWidth / 2) {
+    position = 0;
+  }
+
+  track.style.transform = `translateX(${position}px)`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 </body>
 </html>
