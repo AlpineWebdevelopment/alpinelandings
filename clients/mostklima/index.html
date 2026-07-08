@@ -165,7 +165,7 @@ nav{
 .hero-callout .ph{width:44px;height:44px;border-radius:13px;background:var(--flame-soft);color:var(--flame);display:flex;align-items:center;justify-content:center;flex:none}
 .hero-callout .ph .ic{width:23px;height:23px}
 .hero-callout small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
-.hero-callout b{font-family:'Sora',sans-serif;font-weight:700;font-size:1.06rem;color:var(--ink)}
+.hero-callout b{font-family:'Sora',sans-serif;font-weight:700;font-size:1.06rem;color:var(--ink);white-space:nowrap}
 
 /* ── MARQUEE STRIP ── */
 .strip{background:linear-gradient(90deg,var(--cool-deep),var(--ink-2) 55%,#8C4A08);overflow:hidden;padding:15px 0}
@@ -311,7 +311,9 @@ footer{background:#0A1B29;color:#7A92A7;padding:2.6rem 0}
 }
 @media(max-width:640px){
   .nav-links{display:none}
-  .hero-callout{left:50%;transform:translateX(-50%);bottom:-22px}
+  .eyebrow-extra{display:none}
+  .hero-callout{left:50%;transform:translateX(-50%);bottom:-22px;width:max-content;padding:12px 16px}
+  .hero-callout b{font-size:.98rem}
   .f-row{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .city-list{grid-template-columns:1fr}
@@ -435,7 +437,7 @@ footer{background:#0A1B29;color:#7A92A7;padding:2.6rem 0}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow reveal"><svg class="spk"><use href="#i-spark"/></svg> Klíma értékesítés &amp; telepítés · 100% elégedett ügyfelek</div>
+      <div class="eyebrow reveal"><svg class="spk"><use href="#i-spark"/></svg> Klíma értékesítés &amp; telepítés<span class="eyebrow-extra"> · 100% elégedett ügyfelek</span></div>
       <h1 class="reveal" data-d="100">Nyáron <span class="cool">hűt</span>,<br>télen <span class="warm">fűt</span> — egy kézből</h1>
       <p class="hero-sub reveal" data-d="200">Minőségi, tiszta és precíz munka szakemberektől. Segítünk kiválasztani az otthonához illő klímát, majd gyorsan és szakszerűen telepítjük — hogy egész évben komfortban élhessen.</p>
       <div class="hero-actions reveal" data-d="300">
