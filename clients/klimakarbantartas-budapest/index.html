@@ -274,6 +274,7 @@ header{border-bottom:1px solid var(--rule-dark);background:var(--paper);position
 .c-form .btn{border-color:var(--paper);background:var(--paper);color:var(--ink);justify-content:center}
 .c-form .btn:hover{background:#7FB2D6;border-color:#7FB2D6;color:var(--ink)}
 .c-form .btn:disabled{opacity:.6;cursor:default}
+.c-form[hidden]{display:none}
 .c-error{color:#F2B8A2;font-size:.86rem;margin:-.2rem 0 .2rem}
 .c-error[hidden]{display:none}
 .c-success{border:1px solid rgba(127,178,214,.4);background:rgba(127,178,214,.08);padding:34px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
@@ -549,6 +550,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:0"><span class="sec-num">07</span><h2>Kérjen időpontot <em>klímakarbantartásra</em></h2></div>
     <div class="contact-grid">
+      <div class="c-left">
       <form class="c-form" id="kkbForm" action="https://formspree.io/f/xykrzpvy" method="POST">
         <div class="f-row">
           <div class="f-field"><label for="nev">Név</label><input type="text" id="nev" name="nev" placeholder="Hogyan szólíthatjuk?" required></div>
@@ -563,6 +565,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
         <span class="c-success-mark"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4.5 12.5l4.5 4.5L19.5 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h3>Sikeresen elküldve!</h3>
         <p>Köszönjük a megkeresést — hamarosan visszahívjuk. Sürgős esetben hívjon minket bizalommal: <a href="tel:+36301770044">+36 30 177 0044</a>.</p>
+      </div>
       </div>
       <div>
         <div class="c-list">
