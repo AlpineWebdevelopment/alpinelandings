@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adatkezelési tájékoztató — Klímakarbantartás Budapest</title>
+<meta name="description" content="Klímakarbantartás Budapest (Varga Tamás EV) adatkezelési tájékoztatója — a kapcsolatfelvételi űrlapon megadott személyes adatok kezeléséről." />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://klimakarbantartas-budapest.hu/adatkezeles.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F7F4EE;--paper-2:#EFEAE0;--ink:#16232C;--ink-soft:#4A5A66;
+  --blue:#1B6FAE;--blue-deep:#0E4D75;--blue-pale:#E4EFF7;--rule:#D9D2C3;--rule-dark:#16232C;
+}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',sans-serif;font-size:1rem;color:var(--ink);background:var(--paper);line-height:1.68;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:820px;margin:0 auto;padding:0 5vw;width:100%}
+h1,h2,h3{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.12;letter-spacing:-.01em}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:500}
+
+/* header */
+header{border-bottom:1px solid var(--rule-dark);background:var(--paper);position:sticky;top:0;z-index:50}
+.head-in{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1080px;margin:0 auto;padding:0 5vw;width:100%}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:44px;height:44px;flex:none}
+.brand-name{font-family:'Instrument Serif',serif;font-size:1.22rem;line-height:1;white-space:nowrap}
+.brand-name small{display:block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-top:3px}
+.head-call{font-family:'IBM Plex Mono',monospace;font-size:.88rem;font-weight:500;background:var(--ink);color:var(--paper);padding:10px 18px;transition:background .15s}
+.head-call:hover{background:var(--blue-deep)}
+
+/* doc */
+main{flex:1;padding:56px 0 72px}
+.doc-label{display:flex;align-items:center;gap:14px;margin-bottom:1.4rem}
+.doc-label::after{content:'';flex:1;height:1px;background:var(--rule-dark)}
+h1{font-size:clamp(2.1rem,5vw,3rem);margin-bottom:.6rem}
+.updated{color:var(--ink-soft);font-size:.9rem;margin-bottom:2.6rem}
+.doc h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:2.6rem 0 .7rem;padding-top:1.6rem;border-top:1px solid var(--rule)}
+.doc h2:first-of-type{border-top:none;padding-top:0;margin-top:1.4rem}
+.doc h3{font-size:1.25rem;color:var(--blue-deep);margin:1.8rem 0 .5rem}
+.doc p{margin-bottom:1rem;color:var(--ink)}
+.doc ul{margin:0 0 1rem 0;padding-left:0;list-style:none}
+.doc li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;color:var(--ink)}
+.doc li::before{content:'—';position:absolute;left:0;color:var(--blue)}
+.card{border:1px solid var(--rule-dark);background:#fff;padding:22px 26px;margin:1rem 0 1.4rem}
+.card .mono{display:block;margin-bottom:10px}
+.card b{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.3rem;display:block;margin-bottom:6px}
+.card p{margin:0;font-size:.95rem;color:var(--ink-soft);line-height:1.7}
+.card a{color:var(--blue);border-bottom:1px solid var(--blue)}
+.back{display:inline-flex;align-items:center;gap:8px;margin-top:2.6rem;font-family:'IBM Plex Mono',monospace;font-size:.85rem;border:1px solid var(--ink);padding:12px 20px;transition:background .15s,color .15s}
+.back:hover{background:var(--ink);color:var(--paper)}
+
+footer{background:var(--ink);color:#8FA3B0;padding:24px 0;font-size:.84rem;border-top:1px solid rgba(247,244,238,.15)}
+footer .wrap{max-width:1080px;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{color:#B9C9D4;border-bottom:1px solid transparent}
+footer a:hover{border-color:#B9C9D4}
+
+@media(max-width:640px){
+  .head-call{padding:9px 12px;font-size:.78rem}
+  .brand-name{font-size:1rem}
+  .brand svg{width:36px;height:36px}
+  footer .wrap{flex-direction:column;gap:.5rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-in">
+    <a href="/" class="brand" aria-label="Klímakarbantartás Budapest">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#fff" stroke="#1B6FAE" stroke-width="1.6"/>
+        <rect x="10" y="12" width="28" height="10" rx="2.4" fill="none" stroke="#0E4D75" stroke-width="1.9"/>
+        <line x1="14" y1="19" x2="30" y2="19" stroke="#0E4D75" stroke-width="1.6"/>
+        <line x1="32.5" y1="15.5" x2="34.5" y2="15.5" stroke="#0E4D75" stroke-width="1.9" stroke-linecap="round"/>
+        <path d="M23.5 24.5c0 1.6-2.4 2.6-2.4 4a2.4 2.4 0 104.8 0c0-1.4-2.4-2.4-2.4-4z" fill="#1B6FAE"/>
+        <path d="M12 24c1 5.5 5 9.5 10.5 10.2 3 .4 5.5-.4 7.5-2" fill="none" stroke="#1B6FAE" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M31 29l4.5 3.5M35.5 32.5l2.5-1M35.5 32.5l.5 3.4" fill="none" stroke="#0E4D75" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Klímakarbantartás<small>BUDAPEST</small></span>
+    </a>
+    <a class="head-call" href="tel:+36301770044">+36 30 177 0044</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap doc">
+    <div class="doc-label mono">Jogi tájékoztató</div>
+    <h1>Adatkezelési tájékoztató</h1>
+    <p class="updated">Hatályos: 2026. július 8-tól · Klímakarbantartás Budapest — Varga Tamás EV</p>
+
+    <h2>Az adatkezelő megnevezése és elérhetőségei</h2>
+    <div class="card">
+      <span class="mono">Adatkezelő</span>
+      <b>Varga Tamás EV.</b>
+      <p>
+        Székhely: 1157 Budapest, Páskom park 13. IX. em. 57.<br>
+        Nyilvántartási szám: 53965680<br>
+        Telefon: <a href="tel:+36301770044">+36 30 177 0044</a><br>
+        E-mail: <a href="mailto:info@klimamosas-budapest.hu">info@klimamosas-budapest.hu</a><br>
+        Internetes elérhetőség: https://klimakarbantartas-budapest.hu
+      </p>
+    </div>
+
+    <h2>Az adatkezelés célja</h2>
+    <p>Az adatkezelés célja, hogy Ön a véleményeit, észrevételeit, kérdéseit, kéréseit eljuttassa az Adatkezelő részére, valamint az Adatkezelő ezen vélemények, észrevételek, kérdések, kérések vonatkozásában felvehesse Önnel a kapcsolatot.</p>
+
+    <h2>Az adatkezelés jogalapja</h2>
+    <p>Az adatkezelés jogalapja az Ön akaratának önkéntes, konkrét és megfelelő tájékoztatáson alapuló és egyértelmű kinyilvánítása, amellyel Ön az üzenetküldő felületen található checkbox bejelölésével a megerősítést félreérthetetlenül kifejező cselekedet útján jelzi, hogy beleegyezését adja az alábbiakban meghatározott személyes adatai kezeléséhez.</p>
+    <p>A hozzájárulás bármikor visszavonható, amely visszavonás nem érinti a visszavonás előtt a hozzájárulás alapján végrehajtott adatkezelés jogszerűségét. A hozzájárulás visszavonására Önnek az Adatkezelő elérhetőségein van lehetősége.</p>
+
+    <h2>A kezelt adatok köre</h2>
+    <p>Az Adatkezelő az adatkezelés során az Ön következő személyes adatait kezeli:</p>
+    <ul>
+      <li>név</li>
+      <li>e-mail cím</li>
+      <li>telefonszám</li>
+      <li>megkeresés tárgya</li>
+      <li>üzenet tartalma</li>
+    </ul>
+
+    <h2>Az adatkezelés időtartama</h2>
+    <p>Az Adatkezelő az előző pontban meghatározott személyes adatokat az Ön hozzájárulásának visszavonásáig tárolja.</p>
+
+    <h2>Adatfeldolgozó igénybevétele</h2>
+    <p>Az Adatkezelő az adatkezelési műveletekhez kapcsolódó feladatok elvégzése során az alábbi adatfeldolgozókat veszi igénybe.</p>
+    <div class="card">
+      <span class="mono">Webtárhely-szolgáltató</span>
+      <b>Vercel Inc.</b>
+      <p>
+        Cím: 340 S Lemon Ave #4133, Walnut, CA 91789, Amerikai Egyesült Államok<br>
+        E-mail: <a href="mailto:privacy@vercel.com">privacy@vercel.com</a>
+      </p>
+    </div>
+    <div class="card">
+      <span class="mono">Űrlapkezelő (kapcsolatfelvételi űrlap)</span>
+      <b>Formspree, Inc.</b>
+      <p>
+        Cím: 1007 N Orange St, 4th Floor, Wilmington, DE 19801, Amerikai Egyesült Államok<br>
+        E-mail: <a href="mailto:team@formspree.io">team@formspree.io</a><br>
+        A weboldal kapcsolatfelvételi űrlapján megadott adatokat a Formspree szolgáltatás továbbítja e-mailben az Adatkezelő részére.
+      </p>
+    </div>
+
+    <h2>Az érintett jogai és jogérvényesítés lehetőségei</h2>
+    <p>Az Ön adatvédelmi jogait és jogorvoslati lehetőségeit a GDPR tartalmazza részletesen. Az alábbiakban ismertetjük Önnel a GDPR legfontosabb rendelkezéseit az Ön jogaival és jogérvényesítési lehetőségeivel kapcsolatban.</p>
+    <p>Amennyiben Önnek bármilyen észrevétele, kérdése merül fel jelen Adatkezelési Tájékoztatóval kapcsolatban, vagy a benne foglalt tartalommal kapcsolatban, kérjük forduljon hozzánk bizalommal, az Adatkezelő munkatársai a segítségére lesznek a fenti elérhetőségek bármelyikén.</p>
+
+    <h3>Hozzáférés vagy tájékoztatáshoz való jog</h3>
+    <p>Ezen jog alapján Ön jogosult arra, hogy tájékoztatást, információt kapjon tőlünk arra vonatkozóan, hogy személyes adatainak kezelése az Adatkezelőnél folyamatban van-e. Ha ilyen adatkezelés folyamatban van, Ön jogosult arra, hogy az Önről kezelt személyes adatokhoz és az alábbi információkhoz hozzáférést, tájékoztatást kapjon:</p>
+    <ul>
+      <li>az adatkezelés céljairól;</li>
+      <li>az érintett személyes adatok kategóriáiról;</li>
+      <li>azon címzettek vagy címzettek kategóriáiról, akikkel a személyes adatokat az Adatkezelő közölte, ideértve különösen a harmadik országbeli címzetteket, illetve a nemzetközi szervezeteket is;</li>
+      <li>a személyes adatok tárolásának időtartamáról, vagy ha ez nem lehetséges, ezen időtartam meghatározásának szempontjairól;</li>
+      <li>arról a jogáról, hogy kérelmezheti az Adatkezelőtől az Önre vonatkozó személyes adatok helyesbítését, törlését vagy kezelésének korlátozását, és tiltakozhat a személyes adatainak kezelése ellen;</li>
+      <li>a felügyeleti hatósághoz címzett panasz benyújtásának jogáról;</li>
+      <li>amennyiben az adatokat nem Öntől kapta meg az Adatkezelő, a személyes adatok forrására vonatkozó minden elérhető információról;</li>
+      <li>az automatizált döntéshozatal tényéről, ideértve a profilalkotást is, valamint az alkalmazott logikáról és arról, hogy az ilyen adatkezelés milyen jelentőséggel bír Önre nézve és várhatóan milyen következményekkel jár.</li>
+    </ul>
+    <p>Amennyiben személyes adatok harmadik országba történő továbbítására kerül sor, Ön jogosult arra, hogy tájékoztatást kapjon a továbbításra vonatkozó megfelelőségi garanciákról.</p>
+    <p>Az adatkezelés tárgyát képező személyes adatokról másolatot igényelhet, és ha annak nincs jogszabályban előírt akadálya, azt az Ön rendelkezésére bocsátjuk. Az Adatkezelő indokolatlan késedelem nélkül, de mindenféleképpen a kérelem beérkezésétől számított egy hónapon belül tájékoztatja az érintettet a kérelme kapcsán hozott intézkedésekről. Szükség esetén, figyelembe véve a kérelem összetettségét és a kérelmek számát, ez a határidő további két hónappal meghosszabbítható.</p>
+
+    <h3>A helyesbítéshez való jog</h3>
+    <p>A GDPR szerint Ön jogosult arra, hogy kérésére indokolatlan késedelem nélkül az Adatkezelő helyesbítse az Önre vonatkozó hibás, pontosítást igénylő személyes adatokat. Ön jogosult továbbá arra, hogy kérje a hiányos személyes adatok kiegészítését.</p>
+
+    <h3>A törléshez („elfeledtetéshez”) való jog</h3>
+    <p>Ezen jog alapján Ön jogosult arra, hogy kérésére – a GDPR szerinti indokolatlan késedelem nélkül – törlésre kerüljenek az Önre vonatkozó személyes adatok, ha az alábbi indokok valamelyike fennáll:</p>
+    <ul>
+      <li>az Önről kezelt személyes adatokra már nincs szükség abból a célból, amelyből azokat az Adatkezelő felvette vagy más módon kezelte;</li>
+      <li>Ön visszavonja az adatkezelés alapját képező hozzájárulását, és az adatkezelésnek nincs más jogalapja;</li>
+      <li>Ön tiltakozik az adatkezelése ellen, és adott esetben nincs elsőbbséget élvező jogszerű ok az adatkezelésre;</li>
+      <li>a személyes adatokat jogellenesen kezeltük;</li>
+      <li>a személyes adatokat az Adatkezelőre alkalmazandó uniós vagy tagállami jogban előírt jogi kötelezettség teljesítése miatt törölni kell;</li>
+      <li>a személyes adatok gyűjtésére az információs társadalommal összefüggő szolgáltatások nyújtásával kapcsolatosan került sor.</li>
+    </ul>
+    <p>Amennyiben az adatkezelés a GDPR-ban foglalt okok miatt szükséges (különösen a véleménynyilvánítás szabadságához és a tájékozódáshoz való jog gyakorlása, jogi kötelezettség teljesítése, közérdekű archiválás, tudományos vagy statisztikai cél, illetve jogi igények előterjesztése, érvényesítése vagy védelme céljából), nem lehetséges a törlés, illetve az elfeledtetéshez való jog érvényesítése.</p>
+
+    <h3>Az adatkezelés korlátozásához való jog</h3>
+    <p>Ön a GDPR rendelkezései szerint jogosult arra, hogy személyes adatai kezelésének korlátozását kérje, ha az alábbiak valamelyike fennáll:</p>
+    <ul>
+      <li>Ön vitatja az Önről kezelt személyes adatok pontosságát – ez esetben a korlátozás arra az időtartamra vonatkozik, amely lehetővé teszi az adatok ellenőrzését;</li>
+      <li>az adatkezelés jogellenes, azonban Ön ellenzi az adatok törlését, és ehelyett kéri azok felhasználásának korlátozását;</li>
+      <li>az Adatkezelőnek már nincs szüksége a személyes adatokra, de Ön igényli azokat jogi igények előterjesztéséhez, érvényesítéséhez vagy védelméhez;</li>
+      <li>Ön tiltakozott az adatkezelés ellen – ez esetben a korlátozás arra az időtartamra vonatkozik, amíg megállapításra nem kerül, hogy az Adatkezelő jogos érdekei elsőbbséget élveznek-e az Ön jogos érdekével szemben.</li>
+    </ul>
+
+    <h3>Értesítési kötelezettség</h3>
+    <p>Az Adatkezelő minden olyan címzettet tájékoztat valamennyi helyesbítésről, törlésről vagy adatkezelési korlátozásról, akivel, illetve amellyel a személyes adatot közölte, kivéve, ha ez lehetetlennek bizonyul, vagy aránytalanul nagy erőfeszítést igényel. Az Ön kérése esetén tájékoztatjuk Önt ezen címzettekről.</p>
+
+    <h3>Az adathordozhatósághoz való jog</h3>
+    <p>A GDPR szerint Ön jogosult arra, hogy az Önre vonatkozó, Ön által az Adatkezelő rendelkezésére bocsátott személyes adatokat tagolt, széles körben használt, géppel olvasható formátumban megkapja, továbbá jogosult arra, hogy ezeket az adatokat egy másik adatkezelőnek továbbítsa anélkül, hogy ezt az Adatkezelő bármilyen módon akadályozná. E jogával Ön akkor élhet, ha az adatkezelés hozzájáruláson vagy szerződésen alapul, és az adatkezelés automatizált módon történik.</p>
+
+    <h3>A tiltakozáshoz való jog</h3>
+    <p>A GDPR szerint Ön jogosult arra, hogy a saját helyzetével kapcsolatos okokból bármikor tiltakozzon személyes adatainak jogos érdeken alapuló kezelése ellen, ideértve a profilalkotást is. Ha a személyes adatok kezelése közvetlen üzletszerzés érdekében történik, Ön jogosult arra, hogy bármikor tiltakozzon az Önre vonatkozó személyes adatok e célból történő kezelése ellen; ez esetben a személyes adatok a továbbiakban e célból nem kezelhetők.</p>
+
+    <h3>A felügyeleti hatósághoz címzett panasz benyújtásának joga</h3>
+    <p>Ön jogosult arra, hogy panaszt tegyen a felügyeleti hatóságnál – különösen a szokásos tartózkodási helye, a munkahelye vagy a feltételezett jogsértés helye szerinti tagállamban –, ha az Ön megítélése szerint az Önre vonatkozó személyes adatok kezelése sérti a GDPR rendelkezéseit.</p>
+    <div class="card">
+      <span class="mono">Felügyeleti hatóság</span>
+      <b>Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)</b>
+      <p>
+        Web: http://naih.hu<br>
+        Cím: 1363 Budapest, Pf.: 9.<br>
+        Telefon: +36-1-391-1400 · Fax: +36-1-391-1410<br>
+        E-mail: <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>
+      </p>
+    </div>
+    <p>Ön jogosult a hatékony bírósági jogorvoslatra a felügyeleti hatóság Önre vonatkozó, jogilag kötelező erejű döntésével szemben, továbbá akkor is, ha az illetékes felügyeleti hatóság nem foglalkozik a panasszal, vagy három hónapon belül nem tájékoztatja Önt a benyújtott panasszal kapcsolatos eljárási fejleményekről vagy annak eredményéről.</p>
+
+    <a href="/" class="back">← Vissza a főoldalra</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Klímakarbantartás Budapest — Varga Tamás EV. Minden jog fenntartva.</span>
+    <span><a href="/adatkezeles.html">Adatkezelési tájékoztató</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
