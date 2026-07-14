@@ -273,6 +273,15 @@ header{border-bottom:1px solid var(--rule-dark);background:var(--paper);position
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .c-form .btn{border-color:var(--paper);background:var(--paper);color:var(--ink);justify-content:center}
 .c-form .btn:hover{background:#7FB2D6;border-color:#7FB2D6;color:var(--ink)}
+.c-form .btn:disabled{opacity:.6;cursor:default}
+.c-error{color:#F2B8A2;font-size:.86rem;margin:-.2rem 0 .2rem}
+.c-error[hidden]{display:none}
+.c-success{border:1px solid rgba(127,178,214,.4);background:rgba(127,178,214,.08);padding:34px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.c-success[hidden]{display:none}
+.c-success-mark{width:56px;height:56px;border-radius:50%;background:#7FB2D6;color:var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
+.c-success h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.7rem;color:var(--paper)}
+.c-success p{color:#AEC6D8;font-size:.95rem;max-width:42ch;margin:0}
+.c-success a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
 .c-list{display:flex;flex-direction:column}
 .c-line{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(247,244,238,.18);font-size:.98rem}
 .c-line:first-child{padding-top:0}
@@ -540,15 +549,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:0"><span class="sec-num">07</span><h2>Kérjen időpontot <em>klímakarbantartásra</em></h2></div>
     <div class="contact-grid">
-      <form class="c-form" action="https://formspree.io/f/xykrzpvy" method="POST">
+      <form class="c-form" id="kkbForm" action="https://formspree.io/f/xykrzpvy" method="POST">
         <div class="f-row">
           <div class="f-field"><label for="nev">Név</label><input type="text" id="nev" name="nev" placeholder="Hogyan szólíthatjuk?" required></div>
           <div class="f-field"><label for="tel">Telefonszám</label><input type="tel" id="tel" name="telefon" placeholder="+36 …" required></div>
         </div>
         <div class="f-field"><label for="email">E-mail cím</label><input type="email" id="email" name="email" placeholder="pelda@email.hu" required></div>
         <div class="f-field"><label for="uzenet">Üzenet</label><textarea id="uzenet" name="uzenet" placeholder="Hány beltéri egység? Melyik kerületben / településen? Mikor lenne alkalmas?" required></textarea></div>
+        <p class="c-error" id="kkbError" hidden role="alert">Hiba történt a küldés során. Kérjük, próbálja újra, vagy hívjon minket: +36 30 177 0044.</p>
         <button type="submit" class="btn">Visszahívást kérek →</button>
       </form>
+      <div class="c-success" id="kkbSuccess" hidden role="status" aria-live="polite">
+        <span class="c-success-mark"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4.5 12.5l4.5 4.5L19.5 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Sikeresen elküldve!</h3>
+        <p>Köszönjük a megkeresést — hamarosan visszahívjuk. Sürgős esetben hívjon minket bizalommal: <a href="tel:+36301770044">+36 30 177 0044</a>.</p>
+      </div>
       <div>
         <div class="c-list">
           <div class="c-line"><span class="mono">Telefon</span><a href="tel:+36301770044"><b>+36 30 177 0044</b></a></div>
@@ -628,6 +643,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     try{ localStorage.setItem(KEY, b.getAttribute("data-cookie")); }catch(e){}
     el.classList.remove("show");
     setTimeout(function(){el.hidden=true;},450);
+  });
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById("kkbForm");
+  if(!f) return;
+  var ok=document.getElementById("kkbSuccess");
+  var err=document.getElementById("kkbError");
+  var btn=f.querySelector("button[type=submit]");
+  var orig=btn.textContent;
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    err.hidden=true;
+    btn.disabled=true; btn.textContent="Küldés…";
+    fetch(f.action,{method:"POST",body:new FormData(f),headers:{"Accept":"application/json"}})
+      .then(function(r){
+        if(r.ok){
+          f.hidden=true; ok.hidden=false;
+          ok.scrollIntoView({behavior:"smooth",block:"center"});
+        }else{
+          err.hidden=false; btn.disabled=false; btn.textContent=orig;
+        }
+      })
+      .catch(function(){
+        err.hidden=false; btn.disabled=false; btn.textContent=orig;
+      });
   });
 })();
 </script>
