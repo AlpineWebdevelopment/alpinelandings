@@ -148,7 +148,7 @@ header{border-bottom:1px solid var(--rule-dark);background:var(--paper);position
 .brand svg{width:44px;height:44px;flex:none}
 .brand-name{font-family:'Instrument Serif',serif;font-size:1.22rem;line-height:1;white-space:nowrap}
 .brand-name small{display:block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-top:3px}
-.head-nav{display:flex;gap:1.8rem;font-size:.9rem}
+.head-nav{display:flex;gap:1.45rem;font-size:.9rem;white-space:nowrap}
 .head-nav a{border-bottom:1px solid transparent;padding-bottom:2px}
 .head-nav a:hover{border-color:var(--ink)}
 .head-call{font-family:'IBM Plex Mono',monospace;font-size:.88rem;font-weight:500;background:var(--ink);color:var(--paper);padding:10px 18px;transition:background .15s}
@@ -227,6 +227,26 @@ header{border-bottom:1px solid var(--rule-dark);background:var(--paper);position
 .steprow h3{font-size:1.3rem}
 .steprow p{font-size:.92rem;color:var(--ink-soft)}
 
+/* before / after */
+.ba-list{border:1px solid var(--rule-dark);background:#fff}
+.ba{display:grid;grid-template-columns:1fr 1fr 300px;border-bottom:1px solid var(--rule-dark)}
+.ba:last-child{border-bottom:none}
+.ba-fig{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--paper-2);border-right:1px solid var(--rule-dark);margin:0}
+.ba-fig img{width:100%;height:100%;object-fit:cover}
+.ba-tag{position:absolute;top:0;left:0;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:7px 13px;background:var(--ink);color:var(--paper)}
+.ba-tag.is-after{background:var(--blue)}
+.ba-text{padding:26px 28px;display:flex;flex-direction:column;justify-content:center}
+.ba-text .mono{color:var(--blue);display:block;margin-bottom:11px}
+.ba-text h3{font-size:1.3rem;margin-bottom:.5rem}
+.ba-text p{font-size:.92rem;color:var(--ink-soft)}
+.ba-foot{margin-top:14px;font-size:.86rem;color:var(--ink-soft)}
+
+/* on-site photo */
+.area-photo{margin:0;border:1px solid var(--rule-dark);background:#fff}
+.area-photo img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-bottom:1px solid var(--rule-dark)}
+.area-photo figcaption{padding:16px 20px;font-size:.88rem;color:var(--ink-soft)}
+.area-photo figcaption .mono{color:var(--blue);display:block;margin-bottom:6px}
+
 /* pricing */
 .price-table{border:1px solid var(--rule-dark);background:#fff}
 .price-row{display:grid;grid-template-columns:1fr auto;align-items:baseline;padding:22px 28px;border-bottom:1px solid var(--rule);gap:1rem}
@@ -238,7 +258,7 @@ header{border-bottom:1px solid var(--rule-dark);background:var(--paper);position
 .price-foot{margin-top:14px;font-size:.86rem;color:var(--ink-soft)}
 
 /* area */
-.area-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.area-cols{display:grid;grid-template-columns:.82fr 1.18fr;gap:3rem;align-items:start}
 .dist-list{display:flex;flex-wrap:wrap;gap:8px}
 .dist{font-family:'IBM Plex Mono',monospace;font-size:.8rem;border:1px solid var(--rule-dark);padding:7px 13px;background:#fff}
 .dist.hl{background:var(--ink);color:var(--paper)}
@@ -310,7 +330,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   .why{border-right:none}
   .steprow{grid-template-columns:64px 1fr}
   .steprow>div:last-child{grid-column:2;padding-top:0}
+  .ba{grid-template-columns:1fr 1fr}
+  .ba-fig:nth-of-type(2){border-right:none}
+  .ba-text{grid-column:1/-1;border-top:1px solid var(--rule-dark);padding:22px 24px}
   .area-cols{grid-template-columns:1fr}
+  .area-photo{max-width:420px}
   .contact-grid{grid-template-columns:1fr}
   .head-nav{display:none}
 }
@@ -359,6 +383,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     <nav class="head-nav" aria-label="Fő navigáció">
       <a href="#mi-a-klimakarbantartas">Mi ez?</a>
       <a href="#folyamat">Folyamat</a>
+      <a href="#elotte-utana">Előtte–utána</a>
       <a href="#arak">Árak</a>
       <a href="#gyik">GYIK</a>
     </nav>
@@ -459,10 +484,70 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- 04 PRICING -->
+<!-- 04 BEFORE / AFTER -->
+<section class="sec" id="elotte-utana">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Előtte és <em>utána</em></h2></div>
+    <p class="sec-intro">Saját munkáinkról készült képek. Minden képpár <b>ugyanarról a készülékről</b> készült — közvetlenül a zsákos mosás előtt és után.</p>
+    <div class="ba-list">
+
+      <article class="ba">
+        <figure class="ba-fig">
+          <img src="img/ba-1-elotte.jpg" width="1100" height="825" loading="lazy" decoding="async" alt="Klíma beltéri egység hőcserélője karbantartás előtt: a lamellák között vastag porréteg">
+          <span class="ba-tag">Előtte</span>
+        </figure>
+        <figure class="ba-fig">
+          <img src="img/ba-1-utana.jpg" width="1100" height="825" loading="lazy" decoding="async" alt="Ugyanaz a hőcserélő zsákos klímamosás után: tiszta, szabad lamellák">
+          <span class="ba-tag is-after">Utána</span>
+        </figure>
+        <div class="ba-text">
+          <span class="mono">01 · Beltéri hőcserélő</span>
+          <h3>Eltömődött lamellák</h3>
+          <p>A hőcserélő lamellái közötti rést összefüggő porréteg zárta el — a gép ezen keresztül próbált levegőt fújni. Mélymosás és fertőtlenítés után a lamellák újra szabadon átjárhatók.</p>
+        </div>
+      </article>
+
+      <article class="ba">
+        <figure class="ba-fig">
+          <img src="img/ba-2-elotte.jpg" width="1100" height="825" loading="lazy" decoding="async" alt="Klíma beltéri egység lamellái és terelőlapátjai karbantartás előtt, szöszös lerakódással">
+          <span class="ba-tag">Előtte</span>
+        </figure>
+        <figure class="ba-fig">
+          <img src="img/ba-2-utana.jpg" width="1100" height="825" loading="lazy" decoding="async" alt="Ugyanaz a beltéri egység klímatisztítás után: tiszta kék lamellák, lerakódás nélkül">
+          <span class="ba-tag is-after">Utána</span>
+        </figure>
+        <div class="ba-text">
+          <span class="mono">02 · Lamellák és terelők</span>
+          <h3>Szöszös lerakódás</h3>
+          <p>A lamellák élére rátapadt szösz- és porréteg az, ami a dohos szagot okozza, és amiben a penész megtelepszik. A mosás után sima, tiszta felület marad.</p>
+        </div>
+      </article>
+
+      <article class="ba">
+        <figure class="ba-fig">
+          <img src="img/ba-3-elotte.jpg" width="1100" height="825" loading="lazy" decoding="async" alt="Klíma kültéri egység kondenzátora tisztítás előtt: szösszel és úti porral eltömődött lamellák">
+          <span class="ba-tag">Előtte</span>
+        </figure>
+        <figure class="ba-fig">
+          <img src="img/ba-3-utana.jpg" width="1100" height="825" loading="lazy" decoding="async" alt="Ugyanaz a kültéri egység átmosás után: tiszta kondenzátor lamellák">
+          <span class="ba-tag is-after">Utána</span>
+        </figure>
+        <div class="ba-text">
+          <span class="mono">03 · Kültéri egység</span>
+          <h3>Bedugult kondenzátor</h3>
+          <p>A kültéri kondenzátorra rátapadt szösz, pollen és útipor gátolja a hőleadást — ettől nő a fogyasztás és melegszik a kompresszor. Átmosás után a levegő akadálytalanul áramlik át.</p>
+        </div>
+      </article>
+
+    </div>
+    <p class="ba-foot">A karbantartás után Önnek is megmutatjuk, mi jött ki a készülékből — a különbséget a legtöbb esetben már az első bekapcsoláskor érezni a levegőn.</p>
+  </div>
+</section>
+
+<!-- 05 PRICING -->
 <section class="sec" id="arak">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Klímakarbantartás <em>árak</em></h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Klímakarbantartás <em>árak</em></h2></div>
     <p class="sec-intro">Fix, rejtett költségek nélküli árak — a kiszállás Budapest területén <b>ingyenes</b>, és az ár a fertőtlenítést is tartalmazza.</p>
     <div class="price-table">
       <div class="price-row">
@@ -482,11 +567,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- 05 AREA -->
+<!-- 06 AREA -->
 <section class="sec" id="terulet">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Hol vállalunk <em>klímakarbantartást?</em></h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Hol vállalunk <em>klímakarbantartást?</em></h2></div>
     <div class="area-cols">
+      <figure class="area-photo">
+        <img src="img/helyszin-budapest.jpg" width="750" height="1000" loading="lazy" decoding="async" alt="Klímakarbantartás felszerelése — létra, nyomásos mosóberendezés és tisztítóeszközök egy budapesti belvárosi utcán">
+        <figcaption>
+          <span class="mono">Helyszínen</span>
+          Budapest belvárosában, munka közben. A teljes felszerelés — létra, nyomásos mosó, mosózsák és fertőtlenítő — velünk érkezik a helyszínre, Önnek semmit nem kell előkészítenie.
+        </figcaption>
+      </figure>
       <div>
         <p class="sec-intro" style="margin:0 0 1.4rem">Budapest <b>összes kerületében</b> és Pest megye településein dolgozunk — a kiszállás Budapesten belül ingyenes.</p>
         <div class="dist-list" aria-label="Kiemelt települések">
@@ -502,20 +594,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
           <span class="dist">Vác</span>
           <span class="dist">+ Pest megye</span>
         </div>
-      </div>
-      <div class="area-note">
-        <span class="mono" style="color:var(--blue);display:block;margin-bottom:8px">Székhely</span>
-        1157 Budapest, Páskom park 13.<br><br>
-        Nem találja a települését a listában? Hívjon bizalommal — Pest megye legtöbb településére rendszeresen járunk, és a környező megyékben is találunk megoldást.
+        <div class="area-note">
+          <span class="mono" style="color:var(--blue);display:block;margin-bottom:8px">Székhely</span>
+          1157 Budapest, Páskom park 13.<br><br>
+          Nem találja a települését a listában? Hívjon bizalommal — Pest megye legtöbb településére rendszeresen járunk, és a környező megyékben is találunk megoldást.
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 06 FAQ -->
+<!-- 07 FAQ -->
 <section class="sec" id="gyik">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Gyakori kérdések a <em>klímakarbantartásról</em></h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Gyakori kérdések a <em>klímakarbantartásról</em></h2></div>
     <div class="faq">
       <details>
         <summary>Mit jelent pontosan a klímakarbantartás?</summary>
@@ -548,7 +640,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <!-- 07 CONTACT -->
 <section class="contact" id="kapcsolat">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:0"><span class="sec-num">07</span><h2>Kérjen időpontot <em>klímakarbantartásra</em></h2></div>
+    <div class="sec-head" style="margin-bottom:0"><span class="sec-num">08</span><h2>Kérjen időpontot <em>klímakarbantartásra</em></h2></div>
     <div class="contact-grid">
       <div class="c-left">
       <form class="c-form" id="kkbForm" action="https://formspree.io/f/xykrzpvy" method="POST">
