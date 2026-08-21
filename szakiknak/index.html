@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpine Landings — Oldal, amitől csörög a telefonod. 15 000 Ft.</title>
-  <meta name="description" content="Landing oldal duguláselhárítóknak, zárszerviznek, klímásoknak, vízszerelőknek — 15 000 Ft egyszeri díj, 12 óra átfutás, 0 Ft jutalék. 5+ hívás 60 nap alatt, vagy ingyen dolgozunk.">
+  <meta name="description" content="Landing oldal szakembereknek — vízszerelő, villanyszerelő, festő, burkoló, bármilyen szakma. 15 000 Ft egyszeri díj, 12 óra átfutás, 0 Ft jutalék. 5+ hívás 60 nap alatt, vagy ingyen dolgozunk.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%230F1E26'/><text x='13' y='23' font-family='Georgia,serif' font-style='italic' font-size='20' fill='%23F5F7F8' text-anchor='middle'>A</text><polygon points='19,23 23.5,15 28,23' fill='%232EA3DC'/></svg>">
 
   <!-- ═══════════════════════════════════════════════════════════
-       ALPINE LANDINGS — kampányoldal sürgősségi lakossági szolgáltatóknak
-       (dugulás, zárszerviz, klíma, víz, villany, konténer).
+       ALPINE LANDINGS — általános kampányoldal szakembereknek
+       (bármilyen szakma: víz, villany, festés, burkolás, klíma, kert…).
        Ide fut a FB hirdetés / cold DM forgalom.
        TODO élesítés előtt: Formspree endpoint bekötése az űrlapba
        (keresd: FORMSPREE-TODO), addig az űrlap csak siker-állapotot
@@ -242,15 +242,18 @@
   <section class="hero">
     <div class="wrap">
       <div class="trades" id="trades">
-        <span class="trade on" data-job="35000">Duguláselhárító</span>
-        <span class="trade" data-job="25000">Zárszerviz</span>
-        <span class="trade" data-job="30000">Klímás</span>
-        <span class="trade" data-job="30000">Vízszerelő</span>
+        <span class="trade on" data-job="30000">Vízszerelő</span>
         <span class="trade" data-job="25000">Villanyszerelő</span>
-        <span class="trade" data-job="45000">Konténeres</span>
+        <span class="trade" data-job="90000">Festő</span>
+        <span class="trade" data-job="90000">Burkoló</span>
+        <span class="trade" data-job="30000">Klímás</span>
+        <span class="trade" data-job="35000">Duguláselhárító</span>
+        <span class="trade" data-job="35000">Kertész</span>
+        <span class="trade" data-job="60000">Költöztető</span>
+        <span class="trade" data-job="45000">Bármilyen szakma</span>
       </div>
       <h1>A telefonodból élsz. Mi azt <em class="l">csörgetjük.</em></h1>
-      <p class="hero-sub">Landing oldal, aminek egy dolga van: hogy a bajban lévő ügyfél <strong>téged hívjon, ne a konkurenst.</strong> Nem lájkokat hozunk — hívásokat.</p>
+      <p class="hero-sub">Landing oldal, aminek egy dolga van: hogy aki szakembert keres, <strong>téged hívjon, ne a konkurenst.</strong> Bármilyen szakmában. Nem lájkokat hozunk — hívásokat.</p>
       <div class="hero-ctas">
         <a href="#kapcsolat" class="btn btn-lime">Kérem az oldalamat →</a>
         <a href="tel:+36706607873" class="btn btn-ghost">
@@ -275,12 +278,12 @@
         <p class="sub">Válaszd ki fent a szakmádat, vagy állítsd be, mennyit hoz nálad egy átlagos munka:</p>
         <div class="calc-row">
           <span class="calc-lbl">Egy munka átlagos értéke</span>
-          <span class="calc-val" id="jobval">35 000 Ft</span>
+          <span class="calc-val" id="jobval">30 000 Ft</span>
         </div>
-        <input type="range" id="jobslider" min="10000" max="100000" step="5000" value="35000" aria-label="Egy munka átlagos értéke">
+        <input type="range" id="jobslider" min="10000" max="100000" step="5000" value="30000" aria-label="Egy munka átlagos értéke">
         <div class="calc-out">
-          <div class="cout"><div class="l">Havi 3 hívással</div><div class="v" id="omonth">105 000 Ft/hó</div></div>
-          <div class="cout hi"><div class="l">Egy év alatt</div><div class="v" id="oyear">1 260 000 Ft</div></div>
+          <div class="cout"><div class="l">Havi 3 hívással</div><div class="v" id="omonth">90 000 Ft/hó</div></div>
+          <div class="cout hi"><div class="l">Egy év alatt</div><div class="v" id="oyear">1 080 000 Ft</div></div>
           <div class="cout"><div class="l">Az oldal ára — egyszer</div><div class="v">15 000 Ft</div></div>
         </div>
         <p class="calc-note">// óvatos becslés: havi 3 hívás. Az éles ügyfeleink oldalai ennél többet hoznak.</p>
@@ -345,7 +348,7 @@
         <h2>Nem „weboldalt". <em class="l">Hívás-gépet.</em></h2>
       </div>
       <div class="gets reveal">
-        <div class="get"><span class="no">01</span><div><b>Hívásgomb minden képernyőn</b><span>Mobilon fixen ott a „Hívás most" — mert az ügyfeled bajban van, és nem görgetni akar.</span></div></div>
+        <div class="get"><span class="no">01</span><div><b>Hívásgomb minden képernyőn</b><span>Mobilon fixen ott a „Hívás most" — mert aki szakembert keres, hívni akar, nem görgetni.</span></div></div>
         <div class="get"><span class="no">02</span><div><b>A szakmádra és környékedre írva</b><span>Nem sablonszöveg: a te szolgáltatásaid, áraid, kerületeid — arra, amire a Google-ben keresnek.</span></div></div>
         <div class="get"><span class="no">03</span><div><b>Ajánlatkérő űrlap</b><span>Aki éjjel talál rád, az is hagyjon nyomot — reggel visszahívod.</span></div></div>
         <div class="get"><span class="no">04</span><div><b>Saját domain, saját tulajdon</b><span>Segítünk domaint választani és bekötni. Az oldal a tiéd, nem egy appban bérelsz profilt.</span></div></div>
@@ -441,13 +444,15 @@
           <div class="field">
             <label for="f-job">Szakma</label>
             <select id="f-job" name="szakma">
-              <option>Duguláselhárítás</option>
-              <option>Zárszerviz</option>
-              <option>Klímaszerelés / karbantartás</option>
               <option>Vízszerelés</option>
               <option>Villanyszerelés</option>
-              <option>Konténer / sittszállítás</option>
-              <option>Egyéb sürgősségi szolgáltatás</option>
+              <option>Festés, mázolás</option>
+              <option>Burkolás</option>
+              <option>Klímaszerelés / karbantartás</option>
+              <option>Duguláselhárítás</option>
+              <option>Kertészet, kertépítés</option>
+              <option>Költöztetés, fuvarozás</option>
+              <option>Egyéb szakma</option>
             </select>
           </div>
           <button type="submit" class="btn btn-lime">Hívjatok vissza →</button>
