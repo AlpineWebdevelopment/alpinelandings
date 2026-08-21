@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   EGY TERVEZÉS, HÁROM SZÍNSÉMA.
+
+   A szerkezet, a tipográfia és a motívumtár mindhárom sémában azonos —
+   csak a tokenek értéke más. Így az ügyfél színt választ, nem oldalt.
+   ========================================================================== */
+
+/*
+ * FONTOS: `@theme inline` kell, nem sima `@theme`.
+ * Sima @theme esetén a --color-* a :root-on oldódna fel a gyökér értékeire,
+ * és a .sema-* hatókörű felüldefiniálás nem érne el a segédosztályokig.
+ */
+@theme inline {
+  --color-paper: var(--v-paper);
+  --color-paper2: var(--v-paper2);
+  --color-card: var(--v-card);
+  --color-ink: var(--v-ink);
+  --color-ink2: var(--v-ink2);
+  --color-muted: var(--v-muted);
+  --color-line: var(--v-line);
+  --color-accent: var(--v-accent);
+  --color-accent2: var(--v-accent2);
+  --color-accent3: var(--v-accent3);
+  --color-onaccent: var(--v-onaccent);
+  --color-link: var(--v-link);
+
+  --font-display: var(--font-cinzel);
+  --font-body: var(--font-eb-garamond);
+
+  /*
+   * Nagyobb alap-betűfokozat.
+   * Az EB Garamond kicsi x-magasságú: 16 px-en úgy olvasódik, mint egy
+   * groteszk 14 px-en. Ezért a teljes skálát megemeljük — a törzsszöveg
+   * 17 px, a kísérőszövegek 15 px, a képaláírások 13 px.
+   * A címfokozatokat arányosan kevésbé, mert a Cinzel csupa nagybetű,
+   * és nagy fokozatban amúgy is erős.
+   */
+  --text-xs: 0.8125rem;    /* 13 px */
+  --text-sm: 0.9375rem;    /* 15 px */
+  --text-base: 1.0625rem;  /* 17 px */
+  --text-lg: 1.1875rem;    /* 19 px */
+  --text-xl: 1.375rem;     /* 22 px */
+  --text-2xl: 1.625rem;    /* 26 px */
+  --text-3xl: 2rem;        /* 32 px */
+  --text-4xl: 2.375rem;    /* 38 px */
+  --text-5xl: 3.125rem;    /* 50 px */
+}
+
+/* --------------------------------------------------------------------------
+   1 — PERGAMEN
+   Kódexlap festékei: pergamen, cinóber (rubrum), aranyfüst, lazúr.
+   -------------------------------------------------------------------------- */
+.sema-pergamen {
+  --v-paper: #f2e8d2;
+  --v-paper2: #e8dcc0;
+  --v-card: #fbf5e7;
+  --v-ink: #221d16;
+  --v-ink2: #4f463a;
+  --v-muted: #696050;
+  --v-line: #d3c19b;
+  --v-accent: #a32e17;   /* cinóber */
+  --v-accent2: #9e772b;  /* aranyfüst — DÍSZÍTŐ szín, nem szövegszín */
+  --v-accent3: #2c4a7c;  /* lazúr */
+  --v-link: #2c4a7c;
+  --v-onaccent: #fbf5e7;
+  --v-grain: 0.45;
+}
+
+/* --------------------------------------------------------------------------
+   2 — INDIGÓ
+   Kékfestő vászon: indigó alap, fehér mintanyomás, krappvörös.
+   Ez az egyetlen sötét séma — a lapok belsejében a tinta megfordul.
+   -------------------------------------------------------------------------- */
+.sema-indigo {
+  --v-paper: #1b2e52;
+  --v-paper2: #152440;
+  --v-card: #22385f;
+  --v-ink: #eef2f8;
+  --v-ink2: #c8d4e6;
+  --v-muted: #9caec9;
+  --v-line: #3a4f7a;
+  --v-accent: #dfa08e;   /* lágy krapp, sötét alapon — mérve hangolva, hogy
+                            a vászonlapon (#22385f) is 4,5:1 fölött legyen */
+  --v-accent2: #e8eef7;  /* fehér mintanyomás */
+  --v-accent3: #ae3b2c;  /* krappvörös */
+  --v-link: #e8eef7;
+  --v-onaccent: #1b2e52;
+  --v-grain: 0.22;
+}
+
+/* Az indigó sémán a Lap vászonszínű: sötét tinta világos alapon. */
+.sema-indigo .lap-kor {
+  --v-paper: #f7f2e6;
+  --v-paper2: #efe8d7;
+  --v-card: #fdfbf4;
+  --v-ink: #1d2333;
+  --v-ink2: #4a5266;
+  --v-muted: #5d6474;
+  --v-line: #c8bfa8;
+  --v-accent: #ae3b2c;
+  --v-accent2: #1b2e52;
+  --v-accent3: #5b6c42;  /* sötétebb zsályazöld: a korábbi #6b7f4e csak
+                            4,25:1-et hozott a lap alapján */
+  --v-link: #1b2e52;
+  --v-onaccent: #f7f2e6;
+}
+
+/* --------------------------------------------------------------------------
+   3 — POSZTÓ
+   Szűrposztó: fehér gyapjú alap, posztózöld hímzés, sárgaréz.
+   Szándékosan nincs benne piros a zöld és a fehér mellett.
+   -------------------------------------------------------------------------- */
+.sema-poszto {
+  --v-paper: #f0ede3;
+  --v-paper2: #e2ded0;
+  --v-card: #faf8f1;
+  --v-ink: #1f231d;
+  --v-ink2: #474d43;
+  --v-muted: #5b6055;
+  --v-line: #c6c4b0;
+  --v-accent: #2c4a38;   /* posztózöld */
+  --v-accent2: #91742c;  /* sárgaréz — DÍSZÍTŐ szín */
+  --v-accent3: #4f6248;  /* fakó zöld */
+  --v-link: #2c4a38;
+  --v-onaccent: #faf8f1;
+  --v-grain: 0.4;
+}
+
+/* A gyökér (sémaválasztó) semleges készlete. */
+:root {
+  --v-paper: #ffffff;
+  --v-paper2: #f4f2ee;
+  --v-card: #ffffff;
+  --v-ink: #17150f;
+  --v-ink2: #55504a;
+  --v-muted: #6b665e;
+  --v-line: #e2ded6;
+  --v-accent: #17150f;
+  --v-accent2: #55504a;
+  --v-accent3: #6b665e;
+  --v-link: #55504a;
+  --v-onaccent: #ffffff;
+  --v-grain: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--v-paper);
+  color: var(--v-ink);
+  font-family: var(--font-eb-garamond), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Látható fókusz mindenhol — billentyűzetes navigációhoz. */
+:focus-visible {
+  outline: 2px solid var(--v-accent);
+  outline-offset: 3px;
+}
+
+/* Ugrás a tartalomra */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--v-accent);
+  color: var(--v-onaccent);
+}
+
+/* ==========================================================================
+   Támogatói sáv — vízszintesen futó hirdetőléc a hero tetején.
+   Duplikált lista + transform animáció, hogy varrat nélkül fusson.
+   ========================================================================== */
+
+@keyframes bar-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.bar-track {
+  animation: bar-left 46s linear infinite;
+  will-change: transform;
+}
+
+.bar-viewport:hover .bar-track,
+.bar-viewport:focus-within .bar-track {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   Hero-mozgás — egyetlen belépő pillanat, semmi folyamatos animáció.
+   ========================================================================== */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gild {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gild {
+  animation: gild 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Csökkentett mozgás: a sáv statikus, oldalra görgethető listává válik. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .bar-track {
+    animation: none;
+  }
+  .bar-viewport {
+    overflow-x: auto;
+  }
+  .rise,
+  .gild {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

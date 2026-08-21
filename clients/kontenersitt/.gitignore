@@ -1,0 +1,20 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencies
+node_modules/
+
+# Next.js build output (bármelyik almappában)
+.next/
+out/
+build/
+next-env.d.ts
+
+# Vercel
+.vercel/
+
+# Env / titkos
+.env
+.env*.local
