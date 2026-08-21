@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagy Szakember — Megbízható szakember Budapesten | Felújítás, javítás, karbantartás</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' fill='%232B5566'/><rect x='3' y='3' width='42' height='42' fill='none' stroke='%23F1EEE7' stroke-width='2'/><text x='24' y='34' font-family='Georgia,serif' font-size='26' fill='%23F1EEE7' text-anchor='middle'>N</text></svg>">
+  <meta name="description" content="Megbízható szakember Budapesten és környékén — víz, villany, festés, burkolás, asztalos- és lakatosmunka, kisjavítás. Ingyenes felmérés, fix árajánlat, 2 év garancia. Hívjon: +36 30 123 4567">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    /* ─────────────────────────────────────────────
+       REFERENCIA — általános szakember landing
+       „nyomtatott poszter" stílus. A design szerkezete a
+       Rákosmente-oldalról származik: papír + tinta, poszter-slab
+       címek (Alfa Slab One), nyomdai szövegtörzs (Libre Franklin),
+       szögletes formák, kemény (offszet) árnyékok, újságos léniák,
+       ponyva-él. Színvilág: alpesi gleccserkék + rozsda.
+       A tartalom demó — kitalált cég, nem valós elérhetőségek.
+       ───────────────────────────────────────────── */
+
+    :root{
+      --font-display:'Alfa Slab One';
+      --font-body:'Libre Franklin';
+      --paper:#F1EEE7;
+      --card:#FAF8F3;
+      --ink:#1C2026;
+      --ink-soft:#414951;
+      --stone:#6B737A;
+      --brand:#2B5566;
+      --brand-2:#3B6C80;
+      --brand-soft:#DDE7EA;
+      --line:#DAD5CB;
+      --line-strong:#B6B0A4;
+      --rust:#A5502B;
+    }
+
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--font-body),Helvetica,Arial,sans-serif;
+      background:var(--paper);
+      color:var(--ink);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+    h1,h2,h3,.disp{font-family:var(--font-display),Georgia,serif;font-weight:400;line-height:1.14;letter-spacing:.005em}
+
+    /* ── GOMBOK ── */
+    .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body),sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.02em;text-transform:uppercase;padding:14px 24px;border:2px solid var(--ink);cursor:pointer;transition:transform .1s,box-shadow .1s,background .15s,color .15s}
+    .btn svg{width:17px;height:17px;flex:none}
+    .btn-primary{background:var(--brand);color:#fff;box-shadow:4px 4px 0 var(--ink)}
+    .btn-primary:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+    .btn-ghost{background:var(--card);color:var(--ink);box-shadow:4px 4px 0 var(--line-strong)}
+    .btn-ghost:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--line-strong);color:var(--brand)}
+
+    /* ── TOPBAR (kék szalag) ── */
+    .topbar{background:var(--brand);color:#E6EFF2;font-size:.82rem}
+    .topbar .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+    .topbar a:hover{color:#fff;text-decoration:underline}
+
+    /* ── NAV + ponyva-él ── */
+    .nav{background:var(--paper);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:90}
+    .nav::before{content:'';position:absolute;top:0;left:0;right:0;height:9px;background-image:radial-gradient(circle at 9px 0,var(--brand) 8px,transparent 9px);background-size:18px 9px;background-repeat:repeat-x;pointer-events:none;z-index:1}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:1.5rem;padding-top:6px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:42px;height:42px;flex:none;background:var(--brand);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink)}
+    .brand-mark svg{width:24px;height:24px}
+    .brand-name{font-family:var(--font-display),serif;font-size:1.05rem;line-height:1.05;color:var(--ink)}
+    .brand-name small{display:block;font-family:var(--font-body),sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brand);margin-top:3px}
+    .nav-menu{display:flex;gap:1.8rem;margin-left:auto}
+    .nav-menu a{color:var(--ink-soft);font-weight:600;font-size:.93rem;text-transform:uppercase;letter-spacing:.04em;transition:color .15s;border-bottom:2px solid transparent}
+    .nav-menu a:hover{color:var(--brand);border-bottom-color:var(--brand)}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-weight:700;padding:10px 16px;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);font-size:.9rem;transition:transform .1s,box-shadow .1s}
+    .nav-cta:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
+    .nav-cta svg{width:16px;height:16px}
+
+    /* ── SZEKCIÓCÍMKE ── */
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--brand);font-weight:700;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1rem}
+    .eyebrow::before{content:'◆';font-size:.6rem;color:var(--rust)}
+
+    /* ── HERO ── */
+    .hero{padding:64px 0 28px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+    .hero h1{font-size:clamp(2.3rem,4.9vw,3.6rem)}
+    .hero h1 em{font-style:normal;color:var(--brand);background:linear-gradient(transparent 64%,var(--brand-soft) 64%)}
+    .hero-lead{margin:1.5rem 0 2rem;font-size:1.1rem;color:var(--ink-soft);max-width:52ch}
+    .hero-actions{display:flex;gap:1.1rem;flex-wrap:wrap}
+    .hero-note{margin-top:1.7rem;font-size:.92rem;color:var(--stone);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .hero-note b{display:inline-block;font-family:var(--font-display),serif;font-weight:400;color:var(--brand);border:2px dashed var(--brand);padding:6px 12px;transform:rotate(-2deg);background:var(--card)}
+    .hero-card{background:var(--card);border:2px solid var(--ink);box-shadow:7px 7px 0 var(--brand);padding:26px}
+    .hero-card h3{font-size:1.1rem;margin-bottom:.3rem}
+    .hero-card>p{color:var(--stone);font-size:.9rem;margin-bottom:1.2rem;border-bottom:1px solid var(--line);padding-bottom:.9rem}
+    .hc-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+    .hc-stat{background:var(--card);padding:15px 16px}
+    .hc-stat b{display:block;font-family:var(--font-display),serif;font-weight:400;font-size:1.6rem;color:var(--brand);line-height:1.1}
+    .hc-stat span{font-size:.79rem;color:var(--ink-soft)}
+
+    /* ── SZEKCIÓFEJ (újságos dupla lénia) ── */
+    .section{padding:64px 0}
+    .section-tint{background:var(--card);border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
+    .head{max-width:64ch;margin-bottom:2.4rem;border-top:3px solid var(--ink);position:relative;padding-top:18px}
+    .head::before{content:'';position:absolute;top:5px;left:0;right:0;height:1px;background:var(--ink)}
+    .head h2{font-size:clamp(1.7rem,3.5vw,2.4rem)}
+    .head h2 em{font-style:normal;color:var(--brand);background:linear-gradient(transparent 64%,var(--brand-soft) 64%)}
+    .head p{color:var(--ink-soft);margin-top:.7rem;font-size:1.03rem}
+
+    /* ── BIZALMI SÁV ── */
+    .trust{background:var(--ink)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .trust-item{padding:26px 24px;border-right:1px dashed rgba(241,238,231,.25);display:flex;flex-direction:column;gap:4px}
+    .trust-item:last-child{border-right:none}
+    .trust-item b{font-family:var(--font-display),serif;font-weight:400;font-size:1.45rem;color:#F1EEE7;line-height:1.1}
+    .trust-item span{font-size:.85rem;color:#A6ABB0}
+
+    /* ── SZOLGÁLTATÁSOK ── */
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .svc-card{background:var(--card);border:2px solid var(--ink);padding:26px;display:flex;flex-direction:column;gap:.6rem;box-shadow:5px 5px 0 var(--line-strong);transition:transform .12s,box-shadow .12s}
+    .svc-card:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--brand)}
+    .svc-ic{width:44px;height:44px;background:var(--brand-soft);color:var(--brand);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:.4rem}
+    .svc-ic svg{width:24px;height:24px}
+    .svc-card h3{font-size:1.1rem}
+    .svc-card p{color:var(--ink-soft);font-size:.93rem;flex:1}
+
+    /* ── TIPIKUS MUNKÁK (jegy/ticket kártyák) ── */
+    .job-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+    .job-card{background:var(--card);border:2px solid var(--ink);padding:22px;position:relative}
+    .job-card::after{content:'';position:absolute;left:10px;right:10px;top:84px;border-top:2px dashed var(--line-strong)}
+    .job-card .amt{display:block;font-family:var(--font-display),serif;font-weight:400;font-size:1.85rem;color:var(--brand);line-height:1.1}
+    .job-card .amt small{display:block;font-family:var(--font-body),sans-serif;font-weight:600;font-size:.78rem;color:var(--stone);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+    .job-card h3{font-size:1rem;margin:1.2rem 0 .3rem}
+    .job-card p{font-size:.85rem;color:var(--stone)}
+    .job-card .pill{position:absolute;top:-2px;right:-2px;background:var(--rust);color:#fff;font-weight:700;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border:2px solid var(--ink)}
+    .note{margin-top:1.8rem;color:var(--ink-soft);font-size:.95rem}
+    .note a{color:var(--brand);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+    /* ── VÁLLALJUK / NEM VÁLLALJUK ── */
+    .scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .w-card{background:var(--card);border:2px solid var(--ink);padding:28px}
+    .w-card.yes{box-shadow:6px 6px 0 var(--brand)}
+    .w-card.no{box-shadow:6px 6px 0 var(--rust)}
+    .w-card h3{display:flex;align-items:center;gap:11px;font-size:1.15rem;margin-bottom:1.1rem}
+    .w-card ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+    .w-card li{display:flex;gap:10px;align-items:baseline;color:var(--ink-soft);font-size:.94rem}
+    .w-card li b{color:var(--ink)}
+    .w-card.yes li::before{content:'✓';color:var(--brand);font-weight:800;flex:none}
+    .w-card.no li::before{content:'✕';color:var(--rust);font-weight:800;flex:none}
+    .w-card .foot{margin-top:1.3rem;padding-top:1rem;border-top:2px dashed var(--line-strong);font-size:.85rem;color:var(--stone)}
+    .w-badge{width:30px;height:30px;border:2px solid var(--ink);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem}
+    .yes .w-badge{background:var(--brand-soft);color:var(--brand)}
+    .no .w-badge{background:#F2E2D8;color:var(--rust)}
+
+    /* ── POSZTER-SÁV ── */
+    .slab-band{background:var(--brand);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:64px 0}
+    .slab-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.4rem;align-items:center}
+    .slab-kicker{font-weight:700;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:#C3DBE3;margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .slab-kicker::before{content:'◆';font-size:.6rem;color:var(--paper)}
+    .slab-huge{font-family:var(--font-display),serif;font-size:clamp(2.8rem,7.4vw,5rem);line-height:.96;color:var(--paper);text-transform:uppercase;text-shadow:6px 6px 0 var(--ink)}
+    .slab-body p{color:#D9E5EA;font-size:1.06rem;margin-bottom:1.4rem}
+    .slab-tags{display:flex;flex-wrap:wrap;gap:9px}
+    .slab-tag{background:var(--paper);border:1.5px solid var(--ink);padding:6px 13px;font-size:.84rem;color:var(--ink);font-weight:600;box-shadow:2px 2px 0 var(--ink)}
+
+    /* ── TERÜLET ── */
+    .local-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.6rem;align-items:start}
+    .local-body p{color:var(--ink-soft);margin-bottom:1rem}
+    .local-body b{color:var(--ink)}
+    .area-tags{display:flex;flex-wrap:wrap;gap:9px;margin:1.4rem 0}
+    .area-tag{background:var(--card);border:1.5px solid var(--ink);padding:6px 13px;font-size:.84rem;color:var(--ink-soft);font-weight:600;box-shadow:2px 2px 0 var(--line-strong)}
+    .info-card{background:var(--brand);color:#E6EFF2;border:2px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:28px}
+    .info-card h3{color:#fff;font-size:1.2rem;margin-bottom:.7rem}
+    .info-card p{font-size:.94rem;color:#D2E1E7;margin-bottom:.6rem}
+    .info-card b{color:#fff}
+
+    /* ── LÉPÉSEK ── */
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:st}
+    .step-card{background:var(--card);border:2px solid var(--ink);padding:26px;counter-increment:st;box-shadow:5px 5px 0 var(--line-strong)}
+    .step-card::before{content:counter(st,decimal-leading-zero) '.';display:inline-block;font-family:var(--font-display),serif;font-weight:400;font-size:2.2rem;color:var(--brand);line-height:1;margin-bottom:.8rem;border-bottom:4px double var(--rust);padding-bottom:6px}
+    .step-card h3{font-size:1.08rem;margin-bottom:.4rem}
+    .step-card p{font-size:.91rem;color:var(--ink-soft)}
+    .step-card a{color:var(--brand);font-weight:700}
+    .step-badge{display:inline-block;margin-top:1rem;background:var(--brand-soft);border:1.5px solid var(--brand);color:var(--brand);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px}
+
+    /* ── VÉLEMÉNYEK ── */
+    .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .rev-card{background:var(--card);border:2px solid var(--ink);padding:26px;box-shadow:5px 5px 0 var(--line-strong);display:flex;flex-direction:column;gap:.9rem}
+    .rev-stars{color:var(--rust);letter-spacing:.16em;font-size:.95rem}
+    .rev-card blockquote{font-size:.95rem;color:var(--ink-soft);flex:1}
+    .rev-who{border-top:2px dashed var(--line-strong);padding-top:.85rem;font-size:.85rem}
+    .rev-who b{display:block;font-family:var(--font-display),serif;font-weight:400;color:var(--ink);font-size:.98rem}
+    .rev-who span{color:var(--stone)}
+
+    /* ── GYIK (léniázott lista) ── */
+    .faq-list{max-width:840px;border-top:3px solid var(--ink)}
+    .faq-item{border-bottom:1.5px solid var(--ink);background:transparent}
+    .faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:19px 4px;font-weight:700;font-size:1.03rem}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:'+';font-family:var(--font-display),serif;color:var(--brand);font-size:1.4rem;flex:none}
+    .faq-item[open] summary::after{content:'–'}
+    .faq-item[open] summary{color:var(--brand)}
+    .faq-item .a{padding:0 4px 20px;color:var(--ink-soft);font-size:.95rem;max-width:72ch}
+
+    /* ── KAPCSOLAT ── */
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.4rem;align-items:start}
+    .contact-info{background:var(--ink);color:#D3D8DC;border:2px solid var(--ink);box-shadow:7px 7px 0 var(--brand);padding:30px}
+    .contact-info .foot-h{color:#8FB6C4}
+    .contact-info .big{font-family:var(--font-display),serif;font-weight:400;font-size:clamp(1.6rem,3.8vw,2.2rem);color:#F1EEE7;display:inline-block;margin:.4rem 0 .3rem}
+    .contact-info .big:hover{color:#8FB6C4}
+    .contact-info>p{color:#A6ABB0;font-size:.92rem}
+    .ci-meta{margin-top:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+    .ci-meta div{display:flex;justify-content:space-between;gap:1rem;font-size:.92rem;padding-bottom:.65rem;border-bottom:1px dashed rgba(241,238,231,.3)}
+    .ci-meta span{color:#878E95}
+    .ci-meta b{color:#F1EEE7;text-align:right;font-weight:600}
+    .ci-meta a{color:#8FB6C4}
+
+    /* űrlap */
+    .form{background:var(--card);border:2px solid var(--ink);box-shadow:7px 7px 0 var(--line-strong);padding:28px;display:flex;flex-direction:column;gap:1rem}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field label{font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+    .field input,.field select,.field textarea{background:var(--paper);border:2px solid var(--ink);padding:12px 14px;font-family:inherit;font-size:.96rem;color:var(--ink);outline:none;transition:box-shadow .15s;width:100%;border-radius:0}
+    .field input:focus,.field select:focus,.field textarea:focus{box-shadow:inset 3px 3px 0 var(--brand-soft);border-color:var(--brand)}
+    .field textarea{min-height:110px;resize:vertical}
+    .form .btn{justify-content:center;margin-top:.3rem}
+    .form .fine{font-size:.8rem;color:var(--stone)}
+
+    /* ── CTA SÁV ── */
+    .cta-band{background:var(--brand);color:#fff;border:2px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:34px;margin-top:2.6rem;display:flex;justify-content:space-between;align-items:center;gap:1.6rem;flex-wrap:wrap}
+    .cta-band h3{color:#fff;font-size:1.3rem}
+    .cta-band p{color:#D2E1E7;font-size:.93rem;margin-top:.3rem;max-width:46ch}
+    .cta-band .btn-primary{background:var(--paper);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+    .cta-band .btn-primary:hover{background:#fff}
+
+    /* ── LÁBLÉC ── */
+    .site-foot{background:var(--ink);color:#A6ABB0;padding:52px 0 40px;border-top:6px double var(--brand)}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:2.4rem}
+    .foot-brand{font-family:var(--font-display),serif;font-weight:400;font-size:1.2rem;color:#F1EEE7}
+    .foot-brand span{color:#8FB6C4}
+    .foot-col{display:flex;flex-direction:column;gap:.5rem;font-size:.92rem}
+    .foot-col p{color:#878E95;font-size:.87rem;max-width:34ch}
+    .foot-h{font-weight:700;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#8FB6C4;margin-bottom:.3rem}
+    .foot-col a:hover{color:#fff}
+    .foot-tel{font-family:var(--font-display),serif;font-size:1.2rem;color:#F1EEE7}
+    .foot-legal{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:#8A9199;font-size:.82rem;margin-top:2.6rem;padding-top:1.4rem;border-top:1px dashed rgba(241,238,231,.25)}
+    .foot-legal a:hover{color:#fff}
+
+    /* ── MOBIL HÍVÓSÁV ── */
+    .callbar{position:fixed;left:0;right:0;bottom:0;z-index:100;display:none;padding:10px 14px;background:rgba(28,32,38,.06);backdrop-filter:blur(6px)}
+    .callbar a{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--brand);color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:14px;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink)}
+    .callbar svg{width:18px;height:18px}
+
+    a[href^="tel:"]{white-space:nowrap}
+
+    @media(max-width:900px){
+      .hero-grid,.local-grid,.contact-grid,.scope-grid,.slab-grid{grid-template-columns:1fr}
+      .steps-grid,.rev-grid{grid-template-columns:1fr}
+      .trust-grid{grid-template-columns:1fr 1fr}
+      .trust-item:nth-child(2){border-right:none}
+      .foot-grid{grid-template-columns:1fr;gap:1.8rem}
+      .cta-band{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:640px){
+      .nav-menu{display:none}
+      .callbar{display:block}
+      .nav-cta{display:none}
+      .topbar .tmid{display:none}
+      .row{grid-template-columns:1fr}
+      .trust-grid{grid-template-columns:1fr}
+      .trust-item{border-right:none;border-bottom:1px dashed rgba(241,238,231,.25)}
+      .site-foot{padding-bottom:96px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="wrap">
+      <span>H–P: 7:00–19:00 · Szo: 8:00–14:00 · V: zárva</span>
+      <span class="tmid">Budapest és agglomeráció</span>
+      <span><a href="mailto:info@nagyszakember.hu">info@nagyszakember.hu</a></span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="/" class="brand" aria-label="Nagy Szakember — Budapest">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M14.7 6.3a3.9 3.9 0 0 0 5 5l-7.4 7.4a2.1 2.1 0 0 1-3-3l7.4-7.4Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M14.7 6.3 17.5 3.5a4.6 4.6 0 0 1 3 3l-2.8 2.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.5 15.5 5 19" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">
+          Nagy Szakember
+          <small>Budapest · 2009 óta</small>
+        </span>
+      </a>
+      <nav class="nav-menu">
+        <a href="#szolgaltatasok">Szolgáltatások</a>
+        <a href="#arak">Árak</a>
+        <a href="#velemenyek">Vélemények</a>
+        <a href="#gyik">GYIK</a>
+      </nav>
+      <a href="tel:+36301234567" class="nav-cta">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4.5C4 3.7 4.7 3 5.5 3H8c.6 0 1.1.4 1.3 1l1 3.2c.2.6 0 1.2-.5 1.6L8.2 10c1 2.3 2.5 3.8 4.8 4.8l1.2-1.6c.4-.5 1-.7 1.6-.5l3.2 1c.6.2 1 .7 1 1.3v2.5c0 .8-.7 1.5-1.5 1.5C9.6 19.5 4 13.9 4 4.5z" fill="currentColor"/></svg>
+        +36 30 123 4567
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Budapest · 15 éve a szakmában</span>
+          <h1>Megbízható <em>szakember</em> Budapesten, ház körüli munkára</h1>
+          <p class="hero-lead">Felújítás, javítás, karbantartás — egy kézből. Víz, villany, festés, burkolás, asztalos- és lakatosmunka: nem kell öt embert összeszervezni, elég egy hívás.</p>
+          <div class="hero-actions">
+            <a href="tel:+36301234567" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4.5C4 3.7 4.7 3 5.5 3H8c.6 0 1.1.4 1.3 1l1 3.2c.2.6 0 1.2-.5 1.6L8.2 10c1 2.3 2.5 3.8 4.8 4.8l1.2-1.6c.4-.5 1-.7 1.6-.5l3.2 1c.6.2 1 .7 1 1.3v2.5c0 .8-.7 1.5-1.5 1.5C9.6 19.5 4 13.9 4 4.5z" fill="currentColor"/></svg>
+              +36 30 123 4567
+            </a>
+            <a href="#kapcsolat" class="btn btn-ghost">Árajánlatot kérek</a>
+          </div>
+          <p class="hero-note">
+            <b>Ingyenes felmérés</b> A helyszíni felmérés és az árajánlat nem kerül semmibe.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Miért minket válasszon?</h3>
+          <p>Budapest és környéke — megbízhatóan, 2009 óta.</p>
+          <div class="hc-stats">
+            <div class="hc-stat">
+              <b>15 év</b>
+              <span>szakmai tapasztalat</span>
+            </div>
+            <div class="hc-stat">
+              <b>1200+</b>
+              <span>elvégzett munka</span>
+            </div>
+            <div class="hc-stat">
+              <b>2 év</b>
+              <span>garancia a munkánkra</span>
+            </div>
+            <div class="hc-stat">
+              <b>24 óra</b>
+              <span>válasz minden megkeresésre</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- BIZALMI SÁV -->
+    <section class="trust">
+      <div class="wrap trust-grid">
+        <div class="trust-item">
+          <b>Fix ár</b>
+          <span>felmérés után, írásban</span>
+        </div>
+        <div class="trust-item">
+          <b>Számla</b>
+          <span>minden munkáról</span>
+        </div>
+        <div class="trust-item">
+          <b>Takarítás</b>
+          <span>a munka után, magától értetődően</span>
+        </div>
+        <div class="trust-item">
+          <b>4,9 ★</b>
+          <span>átlagos értékelés</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SZOLGÁLTATÁSOK -->
+    <section class="section" id="szolgaltatasok">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Szolgáltatások</span>
+          <h2>Amiben segítünk</h2>
+          <p>A csöpögő csaptól a teljes fürdőfelújításig. Ha nem tudja, melyik szakma kell hozzá, hívjon — megmondjuk, és el is végezzük.</p>
+        </div>
+        <div class="svc-grid">
+
+          <div class="svc-card">
+            <span class="svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5s5 5.6 5 9a5 5 0 0 1-10 0c0-3.4 5-9 5-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Víz- és fűtésszerelés</h3>
+            <p>Csaptelep, WC, mosdó, szifon, radiátor, bojler, csőtörés és dugulás — javítás vagy csere.</p>
+          </div>
+
+          <div class="svc-card">
+            <span class="svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M13.5 2.5 5.5 13.5h5l-1 8 8-11h-5l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Villanyszerelés</h3>
+            <p>Konnektor, kapcsoló, lámpa, biztosítéktábla, hibakeresés, új vezetékezés felújításnál.</p>
+          </div>
+
+          <div class="svc-card">
+            <span class="svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4" width="12" height="5.5" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M15.5 6.75h3.5a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1H12v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="10.25" y="13.5" width="3.5" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            <h3>Festés, mázolás</h3>
+            <p>Szobafestés, glettelés, tapétázás, nyílászárók mázolása, kisebb homlokzati javítás.</p>
+          </div>
+
+          <div class="svc-card">
+            <span class="svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 12h17M12 3.5v17" stroke="currentColor" stroke-width="1.4"/></svg>
+            </span>
+            <h3>Burkolás</h3>
+            <p>Csempe, járólap, laminált és vinyl padló, szegélyek, fugázás — fürdőben és lakótérben.</p>
+          </div>
+
+          <div class="svc-card">
+            <span class="svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 15.5 12 7l2.5 2.5-8.5 8.5-2.5-2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4.5h6v4l-3 1.5-3-3V4.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Asztalos- és lakatosmunka</h3>
+            <p>Ajtó, ablak, zár, kilincs, bútorszerelés és -javítás, korlát, kapu, kerítéselem.</p>
+          </div>
+
+          <div class="svc-card">
+            <span class="svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a3.9 3.9 0 0 0 5 5l-7.4 7.4a2.1 2.1 0 0 1-3-3l7.4-7.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.7 6.3 17.5 3.5a4.6 4.6 0 0 1 3 3l-2.8 2.8" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Karbantartás, kisjavítás</h3>
+            <p>Polc, TV-konzol, függönykarnis, szilikonozás, ház körüli apró munkák — amire nincs ideje.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- POSZTER-SÁV -->
+    <section class="slab-band">
+      <div class="wrap slab-grid">
+        <div>
+          <div class="slab-kicker">Ezért egyszerűbb</div>
+          <div class="slab-huge">Minden<br>egy kézből.</div>
+        </div>
+        <div class="slab-body">
+          <p>A legtöbb ház körüli munkához három-négy különböző szakember kell — és mind mást mond, mind máskor ér rá. Nálunk egy ember veszi fel a telefont, egy ember méri fel, és egy árajánlat érkezik az egész munkáról.</p>
+          <div class="slab-tags">
+            <span class="slab-tag">Egy kapcsolattartó</span>
+            <span class="slab-tag">Egy árajánlat</span>
+            <span class="slab-tag">Egy garancia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁRAK -->
+    <section class="section" id="arak">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Árak</span>
+          <h2>Mennyibe kerülnek a gyakori munkák?</h2>
+          <p>Tájékoztató irányárak nettóban, anyag nélkül. A pontos árat a helyszíni felmérés után, írásban adjuk — utólag nem változik.</p>
+        </div>
+        <div class="job-grid">
+          <div class="job-card">
+            <span class="amt">5 000 Ft<small>kiszállás</small></span>
+            <h3>Kiszállás Budapesten</h3>
+            <p>Megrendelés esetén beleszámít a munkadíjba.</p>
+          </div>
+          <div class="job-card">
+            <span class="pill">Gyakori</span>
+            <span class="amt">12 000 Ft<small>-tól</small></span>
+            <h3>Csaptelep csere</h3>
+            <p>Mosdó- vagy mosogatócsap cseréje, régi leszerelésével.</p>
+          </div>
+          <div class="job-card">
+            <span class="amt">8 000 Ft<small>-tól</small></span>
+            <h3>Konnektor, kapcsoló</h3>
+            <p>Csere vagy új szerelvény meglévő vezetékre.</p>
+          </div>
+          <div class="job-card">
+            <span class="amt">1 800 Ft<small>/m²-től</small></span>
+            <h3>Szobafestés</h3>
+            <p>Két réteg, előkészítéssel, letakarással, takarítással.</p>
+          </div>
+          <div class="job-card">
+            <span class="amt">6 500 Ft<small>/m²-től</small></span>
+            <h3>Járólap burkolás</h3>
+            <p>Aljzat-előkészítés, ragasztás, fugázás.</p>
+          </div>
+          <div class="job-card">
+            <span class="amt">15 000 Ft<small>-tól</small></span>
+            <h3>Ajtózár csere</h3>
+            <p>Bejárati vagy beltéri zárbetét és kilincs cseréje.</p>
+          </div>
+        </div>
+        <p class="note">Nagyobb munkánál — fürdőfelújítás, teljes lakásfelújítás — tételes árajánlatot adunk. Nem tudja, mekkora munka? Hívjon: <a href="tel:+36301234567">+36 30 123 4567</a>, és megmondjuk telefonban, mire számítson.</p>
+      </div>
+    </section>
+
+    <!-- VÁLLALJUK / NEM -->
+    <section class="section section-tint">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Amit vállalunk</span>
+          <h2>Mit bízhat ránk — és mit nem?</h2>
+        </div>
+        <div class="scope-grid">
+          <div class="w-card yes">
+            <h3><span class="w-badge">✓</span> Ezt elvállaljuk</h3>
+            <ul>
+              <li><b>Kisjavítás</b> — akár egyetlen csepegő csap vagy beszorult zár</li>
+              <li><b>Fürdő- és konyhafelújítás</b> — bontástól a beüzemelésig</li>
+              <li><b>Teljes lakásfelújítás</b> — több szakma összehangolásával</li>
+              <li><b>Társasházi karbantartás</b> — folyamatos szerződéssel is</li>
+              <li><b>Irodák, üzlethelyiségek</b> — munkaidőn kívül is egyeztethető</li>
+            </ul>
+            <div class="foot">Minden munkáról számlát adunk, és 2 év garanciát vállalunk a saját munkánkra.</div>
+          </div>
+          <div class="w-card no">
+            <h3><span class="w-badge">✕</span> Ehhez mást ajánlunk</h3>
+            <ul>
+              <li>Gázkészülék be- és leszerelés (jogosultsághoz kötött)</li>
+              <li>Tartószerkezet bontása statikusi terv nélkül</li>
+              <li>Kéményseprés, kéménybélelés</li>
+              <li>Emelőgépes homlokzati munka</li>
+              <li>Éjszakai sürgősségi kiszállás</li>
+            </ul>
+            <div class="foot">Ha valami nem fér bele, megmondjuk előre — és ajánlunk rá olyan szakembert, akivel magunk is dolgozunk.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERÜLET -->
+    <section class="section">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Hol dolgozunk</span>
+          <h2>Budapest és az agglomeráció</h2>
+        </div>
+        <div class="local-grid">
+          <div class="local-body">
+            <p>Budapest <b>mind a 23 kerületébe</b> kimegyünk, és a környező településeket is rendszeresen visszük. A napi útvonalat úgy szervezzük, hogy egy-egy környéken egymás után legyenek a munkák — ezért tudunk gyakran <b>1–2 napon belül</b> időpontot adni.</p>
+            <p>Régi budapesti lakásokat is ismerjük: a <b>vályogfal, a régi vezetékezés és a nem szabványos méretek</b> nem érnek meglepetésként. Társasházban egyeztetünk a közös képviselővel, ha a munka azt kívánja.</p>
+            <div class="area-tags" aria-label="Ellátott területek">
+              <span class="area-tag">Budapest I–XXIII.</span>
+              <span class="area-tag">Budaörs</span>
+              <span class="area-tag">Törökbálint</span>
+              <span class="area-tag">Érd</span>
+              <span class="area-tag">Szentendre</span>
+              <span class="area-tag">Gödöllő</span>
+              <span class="area-tag">Dunakeszi</span>
+              <span class="area-tag">Fót</span>
+              <span class="area-tag">Vecsés</span>
+            </div>
+          </div>
+          <aside class="info-card">
+            <h3>Sürgős a munka?</h3>
+            <p>Csőtörés, áramkimaradás, beszorult zár esetén hívjon — ha van szabad emberünk a környéken, <b>még aznap</b> kimegyünk.</p>
+            <p>Munkaidőben: <b>H–P 7:00–19:00</b>, szombaton <b>8:00–14:00</b>.</p>
+            <p style="margin-top:1rem">Nem sürgős, csak nem tudja, kihez forduljon? <b>Hívjon, megmondjuk.</b></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- LÉPÉSEK -->
+    <section class="section section-tint">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Így zajlik</span>
+          <h2>Három lépés, és kész a munka</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <h3>Hívjon vagy írjon</h3>
+            <p>Mondja el, mi a munka és hol — telefonban előzetes árat mondunk, és időpontot egyeztetünk. <a href="tel:+36301234567">+36 30 123 4567</a></p>
+            <span class="step-badge">5 perc</span>
+          </div>
+          <div class="step-card">
+            <h3>Ingyenes felmérés</h3>
+            <p>Kimegyünk, megnézzük, és <b>fix árajánlatot</b> adunk írásban, 48 órán belül. A felmérés akkor is ingyenes, ha nem minket választ.</p>
+            <span class="step-badge">48 óra</span>
+          </div>
+          <div class="step-card">
+            <h3>Elvégezzük, garanciával</h3>
+            <p>A megbeszélt időpontban jövünk, a végén takarítunk, számlát adunk — a munkánkra 2 év garancia.</p>
+            <span class="step-badge">2 év garancia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VÉLEMÉNYEK -->
+    <section class="section" id="velemenyek">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Vélemények</span>
+          <h2>Mit mondanak az ügyfeleink?</h2>
+        </div>
+        <div class="rev-grid">
+          <div class="rev-card">
+            <div class="rev-stars" aria-label="5 csillagból 5">★★★★★</div>
+            <blockquote>„Reggel hívtam a csőtörés miatt, délután már itt volt. Nem kellett könyörögni, nem kellett háromszor visszahívni. A végén fel is takarított maga után."</blockquote>
+            <div class="rev-who"><b>Kovács Éva</b><span>XI. kerület · vízszerelés</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars" aria-label="5 csillagból 5">★★★★★</div>
+            <blockquote>„A fürdőt teljesen újracsinálták: bontás, víz, villany, burkolás, festés. Egy emberrel beszéltem végig, és annyi lett a számla, amennyit előre mondtak."</blockquote>
+            <div class="rev-who"><b>Tóth Gábor</b><span>Budaörs · fürdőfelújítás</span></div>
+          </div>
+          <div class="rev-card">
+            <div class="rev-stars" aria-label="5 csillagból 5">★★★★★</div>
+            <blockquote>„Apró munkák gyűltek össze hónapok alatt — polc, karnis, zár, pár konnektor. Egy délelőtt alatt mindet megcsinálta. Rég nem volt ilyen egyszerű."</blockquote>
+            <div class="rev-who"><b>Szabó Márta</b><span>XIV. kerület · kisjavítások</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GYIK -->
+    <section class="section section-tint" id="gyik">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Gyakori kérdések</span>
+          <h2>Amit érdemes előre tudni</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Mennyibe kerül a kiszállás?</summary>
+            <p class="a">Budapesten 5 000 Ft, az agglomerációban a távolságtól függ. Ha nálunk rendeli meg a munkát, a kiszállási díj beleszámít a munkadíjba — tehát a felmérés gyakorlatilag ingyenes.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Mennyi idő alatt tudnak jönni?</summary>
+            <p class="a">Kisebb munkára jellemzően 1–2 napon belül adunk időpontot. Sürgős esetben — csőtörés, áramkimaradás, beszorult zár — hívjon, és ha van szabad emberünk a környéken, még aznap kimegyünk.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Az árajánlat után változhat még az ár?</summary>
+            <p class="a">Nem. A helyszíni felmérés után írásban adunk fix árat, és ahhoz tartjuk magunkat. Ha munka közben derül ki valami előre nem látható — például rejtett csőhiba a falban —, leállunk, megmutatjuk, és csak az Ön jóváhagyásával megyünk tovább.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Az anyagot ki szerzi be?</summary>
+            <p class="a">Ahogy Önnek kényelmesebb. Ha ránk bízza, nagykereskedelmi áron szerezzük be, és a számlán tételesen szerepel. Ha saját anyagot vesz, azt is beépítjük — ilyenkor az anyagra értelemszerűen nem tudunk garanciát vállalni.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Adnak számlát és garanciát?</summary>
+            <p class="a">Minden munkáról számlát adunk. A saját munkánkra 2 év garanciát vállalunk, a beépített anyagra pedig a gyártói garancia érvényes. Ha garanciális probléma merül fel, díjmentesen javítjuk.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- KAPCSOLAT -->
+    <section class="section" id="kapcsolat">
+      <div class="wrap">
+        <div class="head">
+          <span class="eyebrow">Kapcsolat</span>
+          <h2>Kérjen árajánlatot — 1 perc az egész</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="foot-h">A leggyorsabb: hívjon most</span>
+            <a class="big" href="tel:+36301234567">+36 30 123 4567</a>
+            <p>Ha nem vesszük fel, dolgozunk — de aznap visszahívjuk.</p>
+            <div class="ci-meta">
+              <div>
+                <span>E-mail</span>
+                <b><a href="mailto:info@nagyszakember.hu">info@nagyszakember.hu</a></b>
+              </div>
+              <div>
+                <span>Nyitvatartás</span>
+                <b>H–P 7:00–19:00 · Szo 8:00–14:00</b>
+              </div>
+              <div>
+                <span>Terület</span>
+                <b>Budapest és agglomeráció</b>
+              </div>
+              <div>
+                <span>Felmérés</span>
+                <b>Ingyenes, fix árajánlattal</b>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORMSPREE: cseréld ki a saját endpointra (docs/client-onboarding.md 5. lépés) -->
+          <form class="form" action="https://formspree.io/f/XXXXXXXX" method="POST">
+            <div class="row">
+              <div class="field">
+                <label for="nev">Név</label>
+                <input id="nev" name="nev" type="text" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="tel">Telefonszám</label>
+                <input id="tel" name="telefon" type="tel" required autocomplete="tel">
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="tipus">Milyen munkáról van szó?</label>
+              <select id="tipus" name="munka_tipusa">
+                <option>Víz- és fűtésszerelés</option>
+                <option>Villanyszerelés</option>
+                <option>Festés, mázolás</option>
+                <option>Burkolás</option>
+                <option>Asztalos- és lakatosmunka</option>
+                <option>Karbantartás, kisjavítás</option>
+                <option>Teljes felújítás</option>
+                <option>Egyéb / még nem tudom</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="uzenet">Rövid leírás</label>
+              <textarea id="uzenet" name="uzenet" placeholder="Mi a munka, melyik kerületben, mikorra lenne jó?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Árajánlatot kérek</button>
+            <p class="fine">Az adatait kizárólag az árajánlat elkészítéséhez használjuk, harmadik félnek nem adjuk ki.</p>
+          </form>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Inkább telefonon egyeztetne?</h3>
+            <p>Mondja el pár mondatban, mi a munka — telefonban előzetes árat mondunk, és időpontot egyeztetünk.</p>
+          </div>
+          <a href="tel:+36301234567" class="btn btn-primary">☎ +36 30 123 4567</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LÁBLÉC -->
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <span class="foot-brand">Nagy <span>Szakember</span></span>
+          <p>Felújítás, javítás és karbantartás egy kézből — Budapesten és az agglomerációban, 2009 óta.</p>
+        </div>
+        <div class="foot-col">
+          <span class="foot-h">Szolgáltatások</span>
+          <a href="#szolgaltatasok">Víz- és fűtésszerelés</a>
+          <a href="#szolgaltatasok">Villanyszerelés</a>
+          <a href="#szolgaltatasok">Festés, burkolás</a>
+          <a href="#szolgaltatasok">Karbantartás, kisjavítás</a>
+        </div>
+        <div class="foot-col">
+          <span class="foot-h">Kapcsolat</span>
+          <a href="tel:+36301234567" class="foot-tel">+36 30 123 4567</a>
+          <a href="mailto:info@nagyszakember.hu">info@nagyszakember.hu</a>
+          <span>Budapest és agglomeráció</span>
+          <span>H–P 7:00–19:00 · Szo 8:00–14:00</span>
+        </div>
+      </div>
+      <div class="foot-legal">
+        <span>© 2026 Nagy Szakember · Minden jog fenntartva.</span>
+        <a href="#kapcsolat">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBIL HÍVÓSÁV -->
+  <div class="callbar">
+    <a href="tel:+36301234567">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4.5C4 3.7 4.7 3 5.5 3H8c.6 0 1.1.4 1.3 1l1 3.2c.2.6 0 1.2-.5 1.6L8.2 10c1 2.3 2.5 3.8 4.8 4.8l1.2-1.6c.4-.5 1-.7 1.6-.5l3.2 1c.6.2 1 .7 1 1.3v2.5c0 .8-.7 1.5-1.5 1.5C9.6 19.5 4 13.9 4 4.5z" fill="currentColor"/></svg>
+      Hívás: +36 30 123 4567
+    </a>
+  </div>
+
+</body>
+</html>
