@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belluna Studios — Oldal, amitől csörög a telefonod. 15 000 Ft.</title>
+  <title>Alpine Landings — Oldal, amitől csörög a telefonod. 15 000 Ft.</title>
   <meta name="description" content="Landing oldal duguláselhárítóknak, zárszerviznek, klímásoknak, vízszerelőknek — 15 000 Ft egyszeri díj, 12 óra átfutás, 0 Ft jutalék. 5+ hívás 60 nap alatt, vagy ingyen dolgozunk.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%230C0C0C'/><text x='15' y='23' font-family='Georgia,serif' font-style='italic' font-size='21' fill='%23EDEBE6' text-anchor='middle'>B</text><circle cx='23.5' cy='22' r='2.8' fill='%23C8FF00'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%230F1E26'/><text x='13' y='23' font-family='Georgia,serif' font-style='italic' font-size='20' fill='%23F5F7F8' text-anchor='middle'>A</text><polygon points='19,23 23.5,15 28,23' fill='%232EA3DC'/></svg>">
 
   <!-- ═══════════════════════════════════════════════════════════
-       BELLUNA — kampányoldal sürgősségi lakossági szolgáltatóknak
+       ALPINE LANDINGS — kampányoldal sürgősségi lakossági szolgáltatóknak
        (dugulás, zárszerviz, klíma, víz, villany, konténer).
        Ide fut a FB hirdetés / cold DM forgalom.
        TODO élesítés előtt: Formspree endpoint bekötése az űrlapba
@@ -24,17 +24,17 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
     :root{
-      --bg:#0C0C0C;
-      --bg-2:#111111;
-      --bg-3:#181818;
-      --ink:#EDEBE6;
-      --ink-2:#B8B3AC;
-      --ink-3:#8A837B;
-      --lime:#C8FF00;
-      --lime-dim:rgba(200,255,0,0.06);
-      --lime-bdr:rgba(200,255,0,0.2);
-      --rule:#1C1C1C;
-      --rule-2:#242424;
+      --bg:#F5F7F8;
+      --bg-2:#FFFFFF;
+      --bg-3:#EBF0F2;
+      --ink:#0F1E26;
+      --ink-2:#44565F;
+      --ink-3:#75868E;
+      --lime:#0E7FB8;
+      --lime-dim:rgba(14,127,184,0.07);
+      --lime-bdr:rgba(14,127,184,0.35);
+      --rule:#DFE7EA;
+      --rule-2:#C7D5DB;
     }
 
     html{scroll-behavior:smooth}
@@ -65,18 +65,18 @@
       font-weight:700;font-size:.95rem;padding:16px 30px;cursor:pointer;
       border:1px solid transparent;transition:transform .15s,box-shadow .15s,background .15s,color .15s;white-space:nowrap}
     .btn svg{width:16px;height:16px;flex:none}
-    .btn-lime{background:var(--lime);color:var(--bg);box-shadow:0 0 0 rgba(200,255,0,0)}
-    .btn-lime:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(200,255,0,.22)}
+    .btn-lime{background:var(--lime);color:var(--bg);box-shadow:0 0 0 rgba(14,127,184,0)}
+    .btn-lime:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(14,127,184,.3)}
     .btn-ghost{border-color:var(--rule-2);color:var(--ink)}
     .btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
 
     /* header */
     header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
-    header.scrolled{background:rgba(12,12,12,.85);backdrop-filter:blur(14px);border-color:var(--rule)}
+    header.scrolled{background:rgba(245,247,248,.86);backdrop-filter:blur(14px);border-color:var(--rule)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
     .logo{font-family:'Instrument Serif',serif;font-size:1.35rem;white-space:nowrap}
     .logo i{font-style:italic}
-    .logo .dot{color:var(--lime)}
+    .logo .dot{color:var(--lime);font-size:.72em;vertical-align:.08em}
     .nav-tel{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.92rem;white-space:nowrap;
       padding:10px 20px;border:1px solid var(--rule-2);transition:border-color .2s,color .2s}
     .nav-tel:hover{border-color:var(--lime);color:var(--lime)}
@@ -86,7 +86,7 @@
     /* hero */
     .hero{padding:158px 0 80px;position:relative;overflow:hidden}
     .hero::before{content:"";position:absolute;top:-260px;right:-200px;width:620px;height:620px;border-radius:50%;
-      background:radial-gradient(closest-side,rgba(200,255,0,.07),rgba(200,255,0,0));pointer-events:none}
+      background:radial-gradient(closest-side,rgba(14,127,184,.08),rgba(14,127,184,0));pointer-events:none}
     .trades{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
     .trade{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-2);
       border:1px solid var(--rule-2);padding:7px 13px;border-radius:100px;cursor:pointer;transition:all .18s;user-select:none}
@@ -102,7 +102,7 @@
     @media(max-width:760px){.hero{padding:124px 0 60px}.hero-stats{grid-template-columns:repeat(2,1fr);width:100%;gap:20px}}
 
     /* kalkulátor */
-    .calc{background:var(--bg-2);border:1px solid var(--rule);padding:clamp(28px,5vw,56px);position:relative;overflow:hidden}
+    .calc{background:var(--bg-2);border:1px solid var(--rule);box-shadow:0 14px 40px rgba(15,30,38,.06);padding:clamp(28px,5vw,56px);position:relative;overflow:hidden}
     .calc::before{content:"HÍVÁS-MATEK";position:absolute;top:18px;right:-34px;transform:rotate(35deg);
       font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;color:var(--bg);background:var(--lime);padding:6px 48px}
     .calc h3{font-family:'Anton',sans-serif;font-size:clamp(1.4rem,3vw,2rem);text-transform:uppercase;margin-bottom:8px}
@@ -111,8 +111,8 @@
     .calc-lbl{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
     .calc-val{font-family:'Anton',sans-serif;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--ink)}
     input[type=range]{width:100%;margin:10px 0 34px;-webkit-appearance:none;appearance:none;height:4px;background:var(--rule-2);outline:none}
-    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:var(--lime);cursor:pointer;border:4px solid var(--bg);box-shadow:0 0 0 1px var(--lime)}
-    input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--lime);cursor:pointer;border:4px solid var(--bg);box-shadow:0 0 0 1px var(--lime)}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:var(--lime);cursor:pointer;border:4px solid var(--bg-2);box-shadow:0 0 0 1px var(--lime)}
+    input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--lime);cursor:pointer;border:4px solid var(--bg-2);box-shadow:0 0 0 1px var(--lime)}
     .calc-out{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
     .cout{background:var(--bg);padding:26px 22px}
     .cout .l{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
@@ -137,7 +137,7 @@
 
     /* éles munkák */
     .works{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .site{border:1px solid var(--rule-2);background:var(--bg-2);transition:transform .2s,border-color .2s;display:block}
+    .site{border:1px solid var(--rule);background:var(--bg-2);box-shadow:0 10px 30px rgba(15,30,38,.05);transition:transform .2s,border-color .2s;display:block}
     .site:hover{transform:translateY(-4px);border-color:var(--lime-bdr)}
     .site-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--rule);background:var(--bg-3)}
     .site-bar .dots{display:flex;gap:5px}
@@ -192,7 +192,7 @@
     .contact-tel{display:inline-flex;align-items:center;gap:14px;font-family:'Anton',sans-serif;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:24px 0 8px;color:var(--lime)}
     .contact-tel svg{width:24px;height:24px}
     .contact-open{color:var(--ink-3);font-size:.9rem}
-    .form{background:var(--bg);border:1px solid var(--rule-2);padding:34px 30px}
+    .form{background:var(--bg);border:1px solid var(--rule);box-shadow:0 14px 40px rgba(15,30,38,.06);padding:34px 30px}
     .form h3{font-family:'Anton',sans-serif;font-size:1.3rem;text-transform:uppercase;margin-bottom:6px}
     .form .sub{color:var(--ink-3);font-size:.9rem;margin-bottom:24px}
     .field{margin-bottom:16px}
@@ -200,7 +200,7 @@
     .field input,.field textarea,.field select{
       width:100%;background:var(--bg-2);border:1px solid var(--rule-2);
       padding:14px 16px;color:var(--ink);font-family:'DM Sans';font-size:1rem;transition:border-color .2s}
-    .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A837B' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+    .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2375868E' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
     .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--lime)}
     .form .btn{width:100%;margin-top:6px}
     .form-ok{display:none;text-align:center;padding:40px 10px}
@@ -215,8 +215,8 @@
     .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     @media(min-width:881px){footer{padding-bottom:32px}}
     .stickybar{position:fixed;left:12px;right:12px;bottom:12px;z-index:150;display:none;gap:10px;
-      background:rgba(17,17,17,.92);backdrop-filter:blur(14px);border:1px solid var(--rule-2);padding:10px;
-      box-shadow:0 18px 50px rgba(0,0,0,.55)}
+      background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border:1px solid var(--rule-2);padding:10px;
+      box-shadow:0 18px 50px rgba(15,30,38,.16)}
     .stickybar .btn{flex:1;padding:14px 10px;font-size:.9rem}
     @media(max-width:880px){.stickybar{display:flex}}
 
@@ -230,7 +230,7 @@
 
   <header id="hdr">
     <div class="wrap nav">
-      <a href="#" class="logo"><i>Belluna</i> Studios<span class="dot">.</span></a>
+      <a href="#" class="logo"><i>Alpine</i> Landings<span class="dot"> ▲</span></a>
       <a href="tel:+36706607873" class="nav-tel">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>
         +36 70 660 7873
@@ -463,7 +463,7 @@
 
   <footer>
     <div class="wrap foot">
-      <span>© 2026 Belluna Studios · Landing oldalak, amik hívást hoznak</span>
+      <span>© 2026 Alpine Landings · Landing oldalak, amik hívást hoznak</span>
       <span class="mono" style="font-size:11px">// szakiknak, szakiktól</span>
     </div>
   </footer>
