@@ -1,0 +1,341 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ─────────────────────────────────────────────
+   ÚJBUDA — „beton + munkagép"
+   Nyers beton-szürke + jelző-narancs. Archivo Black / Archivo.
+   Dobozok helyett léniák és sorok (megtartva), de munkás
+   karakterrel: vastag vonalak, paralelogramma-gombok
+   (ferde oldalélek — szállítás/lendület), sarok-jelek.
+   Zéró lekerekítés, zéró elmosott árnyék.
+   ───────────────────────────────────────────── */
+
+:root{
+  --paper:#EFEEE9;
+  --card:#F8F7F3;
+  --ink:#1A1C1D;
+  --ink-soft:#3F4245;
+  --stone:#73767A;
+  --orange:#D95E0E;
+  --orange-dark:#B24A08;
+  --orange-soft:#F8E7D8;
+  --line:#D8D6CE;
+  --line-strong:#A9AAA6;
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body),system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1130px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.disp{font-family:var(--font-display),Arial,sans-serif;font-weight:400;line-height:1.06;letter-spacing:-.01em}
+
+/* ── SAROK-JELEK (nyitott keret: csak a négy sarok vonala — technikai) ── */
+.corner-frame,.info-card,.contact-info,.form-done{
+  border:none;background-color:transparent;
+  background-image:linear-gradient(var(--ink),var(--ink)),linear-gradient(var(--ink),var(--ink)),linear-gradient(var(--ink),var(--ink)),linear-gradient(var(--ink),var(--ink)),linear-gradient(var(--ink),var(--ink)),linear-gradient(var(--ink),var(--ink)),linear-gradient(var(--ink),var(--ink)),linear-gradient(var(--ink),var(--ink));
+  background-size:34px 3px,3px 34px,34px 3px,3px 34px,34px 3px,3px 34px,34px 3px,3px 34px;
+  background-position:left top,left top,right top,right top,left bottom,left bottom,right bottom,right bottom;
+  background-repeat:no-repeat;
+}
+
+/* ── GOMBOK (paralelogramma: ferde oldalélek — nem téglalap) ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--font-body),sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;border:none;cursor:pointer;transition:background .15s,color .15s}
+.btn-primary{background:var(--orange);color:#fff;padding:15px 32px;clip-path:polygon(13px 0,100% 0,calc(100% - 13px) 100%,0 100%)}
+.btn-primary:hover{background:var(--ink)}
+.btn-ghost{background:var(--ink);color:var(--paper);padding:15px 32px;clip-path:polygon(13px 0,100% 0,calc(100% - 13px) 100%,0 100%)}
+.btn-ghost:hover{background:var(--orange);color:#fff}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--ink);color:#B9BBB6;font-size:.8rem;font-weight:500}
+.topbar .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.topbar a:hover{color:#fff;text-decoration:underline}
+
+/* ── NAV ── */
+.nav{background:var(--paper);border-bottom:3px solid var(--ink);position:sticky;top:0;z-index:90}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:42px;height:42px;flex:none;background:var(--orange);display:flex;align-items:center;justify-content:center;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.brand-mark svg{width:24px;height:24px}
+.brand-name{font-family:var(--font-display),sans-serif;font-size:1.05rem;line-height:1.02;color:var(--ink);text-transform:uppercase}
+.brand-name small{display:block;font-family:var(--font-body),sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-top:3px}
+.nav-menu{display:flex;gap:1.8rem;margin-left:auto}
+.nav-menu a{color:var(--ink-soft);font-weight:600;font-size:.86rem;text-transform:uppercase;letter-spacing:.05em;transition:color .15s}
+.nav-menu a:hover{color:var(--orange)}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;padding:11px 22px;transition:background .15s;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%)}
+.nav-cta:hover{background:var(--ink)}
+.nav-cta svg{width:15px;height:15px}
+
+/* ── SZEKCIÓCÍMKE (vastag narancs pálca) ── */
+.eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--ink);font-weight:700;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem}
+.eyebrow::before{content:'';width:26px;height:5px;background:var(--orange);flex:none}
+.eyebrow::after{content:none}
+
+/* ── HERO (nagy fekete cím + vonalazott adat-hasáb) ── */
+.hero{padding:62px 0 48px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3.2rem;align-items:start}
+.hero h1{font-size:clamp(2.4rem,5.2vw,3.9rem);text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero-lead{margin:1.4rem 0 2rem;font-size:1.1rem;color:var(--ink-soft);max-width:52ch}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.hero-note{margin-top:1.6rem;font-size:.88rem;color:var(--stone);display:flex;align-items:center;gap:10px;padding-top:1.1rem;border-top:1px solid var(--line-strong)}
+.hero-note b{color:var(--orange-dark);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.84rem}
+/* adat-hasáb: vastag bal lénia, nincs doboz */
+.hero-card{background:transparent;border:none;border-left:4px solid var(--ink);padding:4px 0 4px 2.2rem}
+.hero-card h3{font-size:1.15rem;margin-bottom:.2rem;text-transform:uppercase}
+.hero-card>p{color:var(--stone);font-size:.9rem;margin-bottom:1.1rem}
+.hc-stats{display:block;border-top:3px solid var(--ink)}
+.hc-stat{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:11px 2px;border-bottom:1px solid var(--line)}
+.hc-stat b{font-family:var(--font-display),sans-serif;font-size:1.4rem;color:var(--orange);line-height:1}
+.hc-stat span{font-size:.86rem;color:var(--ink-soft);text-align:right}
+
+/* ── SZEKCIÓFEJ ── */
+.section{padding:64px 0}
+.section-tint{background:var(--card);border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
+.head{max-width:64ch;margin-bottom:2.4rem}
+.head h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
+.head p{color:var(--ink-soft);margin-top:.7rem;font-size:1.03rem}
+
+/* ── BIZALMI SÁV (vastag vonalak közt, nehéz számok) ── */
+.trust{background:transparent;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{padding:22px 24px;border-right:1px solid var(--line-strong);display:flex;flex-direction:column;gap:2px}
+.trust-item:last-child{border-right:none}
+.trust-item b{font-family:var(--font-display),sans-serif;font-size:1.4rem;color:var(--ink);line-height:1.1}
+.trust-item span{font-size:.8rem;color:var(--stone);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+
+/* ── SZOLGÁLTATÁSOK (rovat-kvadráns: közös léniák, nincs doboz) ── */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:3px solid var(--ink)}
+.svc-card{background:transparent;border:none;border-bottom:1px solid var(--ink);padding:26px 28px;display:flex;flex-direction:column;gap:.5rem;transition:background .15s}
+.svc-card:nth-child(odd){border-right:1px solid var(--ink)}
+.svc-card:hover{background:var(--card)}
+.svc-ic{display:none}
+.svc-card h3{font-size:1.15rem;text-transform:uppercase}
+.svc-card p{color:var(--ink-soft);font-size:.94rem;flex:1}
+.svc-go{color:var(--orange);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+
+/* ── MÉRETEK (specifikációs sorok) ── */
+.size-grid{display:block;border-top:3px solid var(--ink)}
+.size-card{background:transparent;border:none;border-bottom:1px solid var(--line-strong);padding:18px 4px;display:grid;grid-template-columns:110px 210px 1fr auto;gap:1.6rem;align-items:baseline;position:static}
+.size-card .m3{font-family:var(--font-display),sans-serif;font-size:2rem;color:var(--orange);line-height:1}
+.size-card .m3 sup{font-size:.95rem;color:var(--stone);font-weight:600}
+.size-card h3{font-size:1.05rem;margin:0;text-transform:uppercase}
+.size-card p{font-size:.92rem;color:var(--stone);margin:0}
+.size-card .pill{position:static;background:var(--ink);color:#fff;border:none;font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;white-space:nowrap;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.note{margin-top:1.8rem;color:var(--ink-soft);font-size:.95rem}
+.note a{color:var(--orange-dark);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* ── HULLADÉK (két hasáb, középen lénia) ── */
+.waste-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:3px solid var(--ink)}
+.w-card{background:transparent;border:none;padding:26px 30px 26px 0}
+.w-card.no{border-left:1px solid var(--ink);padding-left:30px;padding-right:0}
+.w-card h3{display:flex;align-items:center;gap:10px;font-size:1.2rem;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--line-strong);text-transform:uppercase}
+.w-card ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.w-card li{display:flex;gap:10px;align-items:baseline;color:var(--ink-soft);font-size:.95rem}
+.w-card li b{color:var(--ink)}
+.w-card.yes li::before{content:'✓';color:var(--orange);font-weight:800;flex:none}
+.w-card.no li::before{content:'✕';color:var(--ink);font-weight:800;flex:none}
+.w-card .foot{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.86rem;color:var(--stone)}
+.w-badge{width:auto;height:auto;border:none;background:none;display:inline;font-size:1.1rem}
+.yes .w-badge{color:var(--orange)}
+.no .w-badge{color:var(--ink)}
+
+/* ── HELYISMERET ── */
+.local-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.8rem;align-items:start}
+.local-body p{color:var(--ink-soft);margin-bottom:1rem}
+.local-body b{color:var(--ink)}
+.area-tags{display:flex;flex-wrap:wrap;gap:8px 10px;margin:1.4rem 0}
+.area-tag{background:var(--card);border:none;box-shadow:inset 0 0 0 1.5px var(--ink);padding:6px 16px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%)}
+.info-card{padding:32px 30px;color:var(--ink-soft)}
+.info-card h3{color:var(--ink);font-size:1.25rem;margin-bottom:.6rem;text-transform:uppercase}
+.info-card p{font-size:.95rem;margin-bottom:.6rem}
+.info-card b{color:var(--orange-dark)}
+
+/* ── LÉPÉSEK (számozott sorok, nehéz számokkal) ── */
+.steps-grid{display:block;max-width:820px;border-top:3px solid var(--ink);counter-reset:st}
+.step-card{background:transparent;border:none;border-bottom:1px solid var(--line-strong);padding:22px 4px;counter-increment:st;display:grid;grid-template-columns:80px 1fr;gap:1.5rem;align-items:start}
+.step-card::before{content:counter(st,decimal-leading-zero);font-family:var(--font-display),sans-serif;font-size:2.3rem;color:var(--orange);line-height:1;grid-row:1/span 2}
+.step-card h3{font-size:1.15rem;margin-bottom:.3rem;grid-column:2;text-transform:uppercase}
+.step-card p{font-size:.94rem;color:var(--ink-soft);grid-column:2}
+.step-card a{color:var(--orange-dark);font-weight:700}
+
+/* ── GYIK ── */
+.faq-list{max-width:840px;border-top:3px solid var(--ink)}
+.faq-item{border-bottom:1px solid var(--line-strong);background:transparent}
+.faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:18px 4px;font-weight:700;font-size:1.02rem}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';color:var(--orange);font-size:1.5rem;font-weight:400;flex:none}
+.faq-item[open] summary::after{content:'–'}
+.faq-item[open] summary{color:var(--orange-dark)}
+.faq-item .a{padding:0 4px 20px;color:var(--ink-soft);font-size:.95rem;max-width:72ch}
+
+/* ── KAPCSOLAT ── */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.8rem;align-items:start}
+.contact-info{padding:34px 30px;color:var(--ink-soft)}
+.contact-info .foot-h{color:var(--orange-dark)}
+.contact-info .big{font-family:var(--font-display),sans-serif;font-size:clamp(1.6rem,3.8vw,2.2rem);color:var(--ink);display:inline-block;margin:.4rem 0 .3rem}
+.contact-info .big:hover{color:var(--orange)}
+.contact-info>p{color:var(--stone);font-size:.92rem}
+.ci-meta{margin-top:1.4rem;display:flex;flex-direction:column;gap:.65rem}
+.ci-meta div{display:flex;justify-content:space-between;gap:1rem;font-size:.92rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
+.ci-meta span{color:var(--stone);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.ci-meta b{color:var(--ink);text-align:right;font-weight:600}
+.ci-meta a{color:var(--orange-dark)}
+
+/* űrlap: keret nélkül, vastagon aláhúzott mezők */
+.form{background:transparent;border:none;padding:0;display:flex;flex-direction:column;gap:1.3rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.field input,.field select,.field textarea{background:transparent;border:none;border-bottom:2px solid var(--ink);padding:9px 2px;font-family:var(--font-body),sans-serif;font-size:1rem;color:var(--ink);outline:none;transition:border-color .15s;width:100%;border-radius:0}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--orange)}
+.field textarea{min-height:90px;resize:vertical}
+.form .btn{justify-content:center;margin-top:.4rem}
+.form .btn:disabled{opacity:.6;cursor:default}
+.form-err{color:var(--orange-dark);font-size:.9rem;font-weight:700}
+.form-done{padding:36px 32px;text-align:center}
+.form-done h3{color:var(--orange-dark);font-size:1.4rem;margin-bottom:.5rem;text-transform:uppercase}
+.form-done p{color:var(--ink-soft)}
+.form-done a{color:var(--orange-dark);font-weight:700}
+
+/* ── CTA (vastag vonalak közt, középre zárva — dísz nélkül) ── */
+.cta-band{background:transparent;color:var(--ink);border:none;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:42px 24px;margin-top:3rem;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:1.2rem}
+.cta-band h3{color:var(--ink);font-size:1.5rem;text-transform:uppercase}
+.cta-band p{color:var(--ink-soft);font-size:.95rem;margin-top:.3rem;max-width:52ch}
+
+/* ── LÁBLÉC ── */
+.site-foot{background:var(--ink);color:#B9BBB6;padding:52px 0 40px;border-top:5px solid var(--orange)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:2.4rem}
+.foot-brand{font-family:var(--font-display),sans-serif;font-size:1.25rem;color:#fff;text-transform:uppercase}
+.foot-brand span{color:#F09A55}
+.foot-col{display:flex;flex-direction:column;gap:.5rem;font-size:.92rem}
+.foot-col p{color:#8E908C;font-size:.88rem;max-width:34ch}
+.foot-h{font-weight:700;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#F09A55;margin-bottom:.3rem}
+.foot-col a:hover{color:#fff}
+.foot-tel{font-family:var(--font-display),sans-serif;font-size:1.2rem;color:#fff}
+.foot-legal{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:#7E807B;font-size:.82rem;margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid rgba(239,238,233,.18)}
+.foot-legal a:hover{color:#fff}
+
+/* ── MOBIL HÍVÓSÁV ── */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:100;display:none;padding:10px 14px;background:rgba(26,28,29,.06);backdrop-filter:blur(6px)}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--orange);color:#fff;font-weight:700;font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;padding:15px 30px;border:none;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%)}
+.callbar svg{width:17px;height:17px}
+
+/* ── ALOLDAL ── */
+.subhead{padding:46px 0 34px;border-bottom:3px solid var(--ink)}
+.crumb{display:flex;gap:.5rem;font-size:.76rem;color:var(--stone);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.crumb a:hover{color:var(--orange)}
+.subhead h1{font-size:clamp(1.9rem,4.4vw,3rem);max-width:22ch;text-transform:uppercase}
+.subhead .lead{margin-top:1rem;color:var(--ink-soft);max-width:60ch;font-size:1.06rem}
+.article{padding:48px 0 40px}
+.prose{max-width:72ch}
+.prose h2{font-size:clamp(1.4rem,2.9vw,1.9rem);margin:2.2rem 0 .8rem;border-bottom:2px solid var(--ink);padding-bottom:.35rem;text-transform:uppercase}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:1.1rem;margin:1.5rem 0 .4rem;color:var(--orange-dark);text-transform:uppercase}
+.prose p{color:var(--ink-soft);margin-bottom:1rem}
+.prose b{color:var(--ink)}
+.prose a{color:var(--orange-dark);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.prose ul{list-style:none;margin:1rem 0 1.4rem;display:flex;flex-direction:column;gap:.55rem}
+.prose li{color:var(--ink-soft);display:flex;gap:10px;align-items:baseline}
+.prose li::before{content:'';width:9px;height:9px;background:var(--orange);flex:none;transform:translateY(1px) skewX(-12deg)}
+.prose li b{color:var(--ink)}
+.ptable{width:100%;border-collapse:collapse;margin:1.4rem 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.ptable th,.ptable td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-size:.94rem}
+.ptable thead th{background:transparent;color:var(--ink);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.74rem;border-bottom:2px solid var(--ink)}
+.ptable td{color:var(--ink-soft)}
+.ptable td b{color:var(--orange-dark)}
+.ptable tr:last-child td{border-bottom:none}
+
+/* ── CTA a prose-on belül: a .prose szabályai ne írják felül ── */
+.prose .cta-band h3{color:var(--ink);border-bottom:none;padding-bottom:0}
+.prose .cta-band p{color:var(--ink-soft);margin-bottom:0}
+.prose .cta-band .btn{text-decoration:none}
+.prose .cta-band .btn-primary{background:var(--orange);color:#fff}
+.prose .cta-band .btn-primary:hover{background:var(--ink)}
+
+@media(max-width:900px){
+  .hero-grid,.local-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-card{border-left:none;border-top:3px solid var(--ink);padding:1.6rem 0 0}
+  .waste-grid{grid-template-columns:1fr;border-top:none}
+  .w-card{padding:26px 0;border-top:3px solid var(--ink)}
+  .w-card.no{border-left:none;padding-left:0}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .trust-item:nth-child(2){border-right:none}
+  .foot-grid{grid-template-columns:1fr;gap:1.8rem}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-card:nth-child(odd){border-right:none}
+  .size-card{grid-template-columns:90px 1fr auto;gap:1rem}
+  .size-card p{grid-column:2/span 2}
+}
+@media(max-width:640px){
+  .nav-menu{display:none}
+  .callbar{display:block}
+  .nav-cta{display:none}
+  .topbar .tmid{display:none}
+  .row{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
+  .trust-item{border-right:none;border-bottom:1px solid var(--line-strong)}
+  .size-card{grid-template-columns:80px 1fr}
+  .size-card .pill{display:none}
+  .step-card{grid-template-columns:60px 1fr}
+}
+
+/* Telefonszámok mindig egy sorban (gépen és mobilon is) */
+a[href^="tel:"]{white-space:nowrap}
+
+/* ── MIKRO-RÉSZLETEK (munkagép-nyelven) ── */
+/* a hero m³-ára festékszórós jelölés: ferde narancs plakett */
+.hero-note b{display:inline-block;background:var(--orange-soft);color:var(--orange-dark);padding:5px 16px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+/* a lépés-számok kis narancs paralelogramma-lapkán ülnek */
+.step-card::before{background:var(--orange-soft);color:var(--orange-dark);padding:6px 14px;clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%);font-size:1.7rem}
+/* szolgáltatás-nyíl elindul hoverre */
+.svc-go{transition:padding-left .18s}
+.svc-card:hover .svc-go{padding-left:7px}
+/* a "Népszerű" jelölés ferdén, mint egy ráütött stancolás */
+.size-card .pill{transform:skewX(-8deg)}
+
+/* ── KÉPEK (munkagép: vastag tinta-él, narancs csík) ── */
+.photo-band{padding:0 0 64px}
+.photo-band-img{display:block;width:100%;height:auto;border:2px solid var(--ink);border-top:6px solid var(--orange)}
+.local-side{display:flex;flex-direction:column;gap:1.6rem}
+.local-photo{display:block;width:100%;height:auto;border:2px solid var(--ink);border-left:6px solid var(--orange)}
+
+/* ── RESZPONZÍV JAVÍTÁS ──
+   A nav-menü tabletnél kilógott (a márkanév + menü + telefon-gomb nem fért ki).
+   900 px alatt elrejtjük; a telefon-gomb és a láblécnavigáció megmarad. */
+@media(max-width:900px){
+  .nav-menu{display:none}
+}
+/* Hosszú magyar összetett szavak ne feszítsék szét a rácsot */
+@media(max-width:640px){
+  .hero-grid > *{min-width:0}
+  .hero h1,.subhead h1,.head h2,.prose h2{overflow-wrap:break-word;hyphens:auto}
+}
+/* A hero H1 („PANELLAKÁSTÓL" = 365 px) kilógott 375 px-en → kisebb méret mobilon */
+@media(max-width:640px){
+  .hero h1{font-size:1.95rem}
+}
+
+/* ── SÜTI-SÁV (hozzájárulás) — beton: vastag lénia, ferde gombok ── */
+.cookiebar{position:fixed;left:0;right:0;bottom:0;z-index:120;background:var(--card);border-top:3px solid var(--ink);box-shadow:0 -12px 36px rgba(26,28,29,.18)}
+.cookiebar-in{max-width:1130px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;gap:1.8rem}
+.cookiebar-text{font-size:.88rem;color:var(--ink-soft);line-height:1.55}
+.cookiebar-text b{display:block;color:var(--ink);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:.84rem;margin-bottom:.2rem}
+.cookiebar-text a{color:var(--orange);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.cookiebar-actions{display:flex;gap:.7rem;flex:none}
+.cookiebar-btn{font-family:var(--font-body),sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;padding:14px 28px;border:none;cursor:pointer;transition:background .15s,color .15s;clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%)}
+.cookiebar-accept{background:var(--orange);color:#fff}
+.cookiebar-accept:hover{background:var(--ink)}
+.cookiebar-reject{background:var(--line);color:var(--ink)}
+.cookiebar-reject:hover{background:var(--ink);color:var(--paper)}
+.cookie-reset{background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.cookie-reset:hover{color:var(--orange)}
+@media(max-width:640px){
+  .cookiebar{bottom:81px}
+  .cookiebar-in{flex-direction:column;align-items:stretch;gap:1rem;padding:16px 20px}
+  .cookiebar-btn{flex:1;padding:14px 8px}
+}
