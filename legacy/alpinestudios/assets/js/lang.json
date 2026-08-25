@@ -1,0 +1,326 @@
+{
+  "en": {
+    "index": {
+      "lang": "EN",
+      "lang1": "HU",
+      "lang2": "DE",
+      "lang3": "IT",
+      "hackMsg": "Our Works, All in One Place!",
+      "cio": ["Check", "it", "out"],
+      "footer" : "© 2025 ALPINE Webdevelopment Studios. All Rights Reserved.",
+      "about" : "About Us",
+      "aboutUp" : "ABOUT US",
+      "letsWork" : "Let's Work Together",
+      "prevBtn" : "I Want Something Similar",
+      "about1" : "We are <b>Alpine Studios</b>, a young web development duo dedicated to crafting exceptional digital experiences. With a passion for innovation and a commitment to quality, we blend stunning design with powerful functionality to bring websites to life.",
+      "about2" : "As the <b>Frontend Designer & Client Manager</b>, <i>Balazs Varga</i> creates designs that convert visitors to customers and makes brands trustworthy. Mainly focuses on creating visually engaging, user-friendly interfaces while ensuring seamless communication and project execution. On the development side, <i>Simon Severin (a.k.a. @severinnHQ)</i>, our expert <b>Web Developer</b>, turns ideas into high-performing, scalable websites with clean & efficient code and outstanding <b>SEO</b>.",
+      "about3" : "Together, we specialize in building modern, responsive, and high-performing websites tailored to our clients' needs. Whether you're a <b>startup</b>, a <b>growing business</b>, or an <b>established brand</b>, we're here to elevate your online presence with creativity and expertise.",
+      "about4" : "Let's build something extraordinary!",
+      "about5" : "Based in <b>Budapest, Hungary</b>",
+      "contact" : "CONTACT US",
+      "contact0" : "Feel free to send us a message here, we will contact you back on your email address.",
+      "CI01" : "Contact Reason",
+      "CI02" : "Select a reason",
+      "CI03" : "Offer Request",
+      "CI04" : "I have a question (or more)",
+      "CI05" : "Legal Inquiry",
+      "CI06" : "Template I want to use",
+      "CI07" : "Choose a Template",
+      "CI08" : "Don't want to use templates",
+      "CI09" : "Deadline",
+      "CI10" : "Choose a Deadline",
+      "CI11" : "Very Urgent (within 1 week)",
+      "CI12" : "Urgent (1-2 weeks)",
+      "CI13" : "Not so Urgent (within 1 month)",
+      "CI14" : "I am Flexible",
+      "CI15" : "6 months",
+      "CI16" : "1 year",
+      "CI17" : "over 1 year",
+      "CI18" : "Budget Size",
+      "CI19" : "Choose a Budget",
+      "CI20" : "less than €300",
+      "CI21" : "more than €10000",
+      "CI22" : "Company Name (Optional)",
+      "CI23" : "Full Name",
+      "CI24" : "Email Address",
+      "CI25" : "Subject",
+      "CI26" : "Message",
+      "sendBtn" : "Send",
+      "legal1" : "For Legal Inquiries, please email ",
+      "legal2" : "For any Questions, Offer Requests or Legal Inquiries please email "
+    },
+    "baker": {
+      "h4" : "This is an imagined fastfood bakery's webshop design by us. Bakerizly is your go-to online bakery, delivering delectable treats right to your doorstep. From heavenly honey buns to indulgent red fruit cornettos, our selection is baked fresh daily to ensure top-notch quality. Whether you're looking to satisfy your sweet tooth or learn to bake like a pro with our baking school, Bakerizly has something for everyone. Experience the art of baking and enjoy our mouthwatering treats, crafted with love and tradition since 1995."
+    },
+    "chair": {
+      "h4-1" : "This is an imagined modern furniture supermarket's design by us. It features a sophisticated design with a clean layout. Clear navigation options and engaging statistics enhance the user experience, making it a standout product page.",
+      "h4-2" : "Set against a gradient background, the text describes the chair's features and benefits. The footer includes links to key sections, a newsletter subscription, and social media icons, ensuring a comprehensive and enjoyable browsing experience.",
+      "h4-3" : "Try out the buttons!"
+    },
+    "elegant": {
+      "h4-1" : "This is an imagined elegeant luxury jewelry webshop's design by us. Perceval Jewelry's website features an elegant design with stunning background imagery and bold typography. The pastel color palette and sleek layout create a refined shopping experience. Subtle hover effects and high-quality images highlight the luxury of each piece, ensuring a visually captivating journey for every visitor.",
+      "h4-2" : "Perceval Jewelry's website design perfectly balances aesthetics and functionality, creating an immersive and luxurious online shopping experience. The attention to detail in each section reflects the brand's commitment to quality and elegance."
+    },
+    "marbella": {
+      "h4-1" : "This is an imagined luxury real estate marketplace design by us. LuxMarbella's website exudes luxury and elegance, perfectly mirroring the high-end properties it represents. The homepage welcomes visitors with a sophisticated and clean design, featuring a balanced blend of white space and rich, inviting visuals.",
+      "h4-2" : "The main banner, with its compelling call to action and high-resolution image, immediately engages potential buyers, offering a sense of exclusivity. The site's use of elegant typography and well-placed icons enhances readability and emphasizes key information about the company's experience, extensive network, and top-notch customer service.",
+      "h4-3" : "LuxMarbella's website design seamlessly combines functionality and aesthetics, making it an ideal platform for showcasing premium real estate and attracting discerning buyers."
+    },
+    "mvp": {
+      "h4" : "This is an imagined Saas MVP design by us. Sochial is a sleek, modern platform designed to help individuals and businesses build credibility and trust on social media. With a strong emphasis on engagement, automation, and strategy, Sochial empowers users to grow their online presence with confidence. Whether you're looking to optimize your content strategy or increase audience reach, this platform provides the tools you need to succeed."
+    },
+    "secure": {
+      "h4" : "This is an imagined cybersecurity service's website design by us. SecHub is a cutting-edge cybersecurity service that detects, prevents, and fixes vulnerabilities faster than traditional security tools. Featuring an intuitive interface, dynamic pricing plans, and enterprise-level protection, it's the go-to solution for businesses looking to enhance their digital security. With SecHub, security isn't just a feature—it's a priority."
+    },
+    "shoes": {
+      "h4" : "This is an imagined premium footwear webstore's design by us. It captivates with it's sleek and dynamic design, reflecting the brand's commitment to style and performance. Bold, high-contrast colors like white and crimson dominate the page, creating a visually striking experience. The clean and minimalist layout emphasizes the product's features, while the interactive elements, such as hover effects and animations, add a layer of sophistication. This design embodies the essence of cutting-edge athletic gear, delivering a powerful visual impact."
+    },
+    "square": {
+      "h4-1" : "This is an imagined webdevelopment agency's website design by us. Square Agency's website captivates with its modern and professional design, creating an immediate impression of sophistication and expertise. A minimalist layout, dynamic banner, and clean lines highlight the agency's expertise, making it easy for users to explore services and content.",
+      "h4-2" : "Each section of the site is thoughtfully designed to maintain user engagement. The overall design is both functional and aesthetically pleasing, reflecting Square Agency's commitment to quality and innovation."
+    }
+  },
+  "hu": {
+    "index": {
+      "lang": "HU",
+      "lang1": "EN",
+      "lang2": "DE",
+      "lang3": "IT",
+      "hackMsg": "Munkáink, minden egy helyen!",
+      "cio": ["Nézd", "meg"],
+      "footer" : "© 2025 ALPINE Webdevelopment Studios. Minden jog fenntartva.",
+      "about" : "Rólunk",
+      "aboutUp" : "RÓLUNK",
+      "letsWork" : "Dolgozzunk együtt",
+      "prevBtn" : "Valami hasonlót szeretnék",
+      "about1" : "Mi az <b>Alpine Studios</b> vagyunk, egy fiatal web development duo akik kivételes User-Experience megteremtéséről híresek. Az innováció szenvedélyével és a minőség iránti elköteleződéssel, a lenyűgöző design-t egyesítjük a hatékony funkcionalitással, hogy életrekeltsük a weboldalakat.",
+      "about2" : "<b>Frontend Designer & Ügyfél Managerként</b>, <i>Varga Balázs</i> olyan terveket készít, amelyek a látogatókat vásárlókká alakítják, és megbízhatóbbá teszik a brand-et. Főként a vizuálisan vonzó, felhasználóbarát felületek létrehozására összpontosít, miközben biztosítja a zökkenőmentes kommunikációt a megrendelő féllel. A development oldalon, <i>Severin Simon (a.k.a. @severinnHQ)</i>, szakértő <b>Webfejlesztőnk</b>, az ötleteket erős teljesítményű, bővíthető weboldallá alakítja, tiszta és hatékony kóddal, ráadásul kimagasló <b>SEO</b>-val.",
+      "about3" : "Együtt, modern, reszponzív és magas teljesítményű weboldalakra specializálódunk, mindezt ügyfeleint igényeire szabva. Legyen szó <b>startup</b>-ról, <b>kis-</b> és <b>nagyvállalkozásról</b>, vagy <b>nagynevű cégről</b>, itt vagyunk hogy kreativitással és szakértelemmel növeljük a cégük online jelenlétét.",
+      "about4" : "Építsünk valami rendkívül különlegeset!",
+      "about5" : "Based in <b>Budapest, Magyarország</b>",
+      "contact" : "KAPCSOLAT",
+      "contact0" : "Nyugodtan küldjön nekünk üzenetet itt, és fel fogjuk venni Önökkel a kapcsolatot e-mail-en keresztül.",
+      "CI01" : "Megkeresés Oka",
+      "CI02" : "Válasszon Okot",
+      "CI03" : "Ajánlatkérés",
+      "CI04" : "Kérdése(i)m van(nak)",
+      "CI05" : "Jogi megkeresés",
+      "CI06" : "Sablon, amit használék",
+      "CI07" : "Válasszon Sablont",
+      "CI08" : "Nem Akarok Sablont",
+      "CI09" : "Határidő",
+      "CI10" : "Válasszon Határidőt",
+      "CI11" : "Nagyon Sürgős (1 héten belül)",
+      "CI12" : "Sürgős (1-2 hét)",
+      "CI13" : "Nem Sürgős (1 hónapon belül)",
+      "CI14" : "Rugalmas vagyok",
+      "CI15" : "6 hónap",
+      "CI16" : "1 év",
+      "CI17" : "több mint 1 év",
+      "CI18" : "Keret",
+      "CI19" : "Válasszon Keretet",
+      "CI20" : "kevesebb mint €300",
+      "CI21" : "több mint €10000",
+      "CI22" : "Cég Név (Nem Kötelező)",
+      "CI23" : "Teljes Név",
+      "CI24" : "Email Cím",
+      "CI25" : "Tárgy",
+      "CI26" : "Üzenet",
+      "sendBtn" : "Küldés",
+      "legal1" : "Jogi Megkereséssel, kérjük küldjön email-t: ",
+      "legal2" : "Bármilyen Kérdéssel, Ajánlatkéréssel vagy Jogi Megkereséssel, kérjük küldjön email-t: "
+    },
+    "baker": {
+      "h4" : "Ez egy elképzelt online pékség webshop-ja. A Bakerizly az Ön kedvenc péksége, amely finom finomságokat szállít a küszöbére. A mennyei mézes zsemlétől az elkényeztethető piros gyümölcsös cornettóig, választékunkat naponta frissen sütjük, hogy biztosítsuk a lehető legjobb minőséget. Akár édesszájúsága kielégítésére, akár sütni tanulásra a pékiskolánkban, Bakerizly-n mindenki talál valamit magának. Tapasztalja meg a sütés művészetét, és élvezze ínycsiklandó finomságainkat, amelyeket 1995 óta szeretettel és hagyományokkal készítünk."
+    },
+    "chair": {
+      "h4-1" : "Ez egy elképzelt modern bútoráruház terve. Kifinomult design és letisztult elrendezés jellemzi. Az áttekinthető navigációs lehetőségek és a lebilincselő statisztikák javítják a felhasználói élményt, így egy nem mindennapi termékoldallá válik.",
+      "h4-2" : "A színátmenetes háttér előtt a szöveg leírja a termék tulajdonságait és előnyeit. A footer kulcsfontosságú részekre mutató link-eket, hírlevél-feliratkozást és közösségi média ikonokat tartalmaz, amelyek átfogó és élvezetes böngészési élményt biztosítanak.",
+      "h4-3" : "Próblja ki a gombokat!"
+    },
+    "elegant": {
+      "h4-1" : "Ez egy elképzelt luxus ékszer webáruház. A Perceval Jewelry weboldala elegáns design-al, lenyűgöző háttérrel és merész tipográfiával rendelkezik. A pasztell színpaletta és az előkelő elrendezés kifinomult vásárlási élményt teremt. A finom lebegő effektusok és a kiváló minőségű képek kiemelik az egyes darabok luxusát, így minden látogató számára vizuálisan lenyűgöző utazást biztosítanak.",
+      "h4-2" : "A Perceval Jewelry weboldalának kialakítása tökéletes egyensúlyban tartja az esztétikát és a funkcionalitást, magával ragadó és fényűző online vásárlási élményt teremtve. Az egyes részekben a részletekre való odafigyelés tükrözi a márka minőség és elegancia iránti elkötelezettségét."
+    },
+    "marbella": {
+      "h4-1" : "Ez egy elképzelt luxus-ingatlanpiaci weboldal terv. A LuxMarbella weboldala luxust és eleganciát áraszt, tökéletesen tükrözve az általa képviselt csúcsminőségű ingatlanokat. A honlap kifinomult és letisztult design-al várja a látogatókat, a fehér tér és a gazdag, hívogató látvány kiegyensúlyozott keverékével.",
+      "h4-2" : "A fő banner lenyűgöző cselekvésre ösztönző és nagy felbontású képével azonnal leköti a potenciális vásárlókat, és az exkluzivitás érzését kínálja. Az oldal elegáns tipográfiája és jól elhelyezett ikonjai javítják az olvashatóságot, és kiemelik a vállalat tapasztalatairól, kiterjedt hálózatáról és kiváló ügyfélszolgálatáról szóló kulcsfontosságú információkat.",
+      "h4-3" : "A LuxMarbella weboldalának kialakítása zökkenőmentesen ötvözi a funkcionalitást és az esztétikát, így ideális platform a prémium ingatlanok bemutatására és a vásárlók vonzására."
+    },
+    "mvp": {
+      "h4" : "Ez egy elképzelt Saas MVP design. A Sochial egy pragmatikus, modern platform, amelynek célja, hogy segítse az egyéneket és a vállalkozásokat hitelesség és bizalom kialakításában a közösségi médiumokban. Nagy hangsúlyt fektetve az elkötelezettségre, az automatizálásra és a stratégiára, a Sochial megtanítja a felhasználókat arra, hogy magabiztosan növeljék online jelenlétüket. Akár tartalmi stratégiáját szeretné optimalizálni, akár a közönség elérését szeretné növelni, ez a platform biztosítja a sikerhez szükséges eszközöket."
+    },
+    "secure": {
+      "h4" : "Ez egy elképzelt kiberbiztonsági szolgáltatás weboldala. A SecHub egy élvonalbeli kiberbiztonsági szolgáltatás, amely gyorsabban észleli, megelőzi és kijavítja a sebezhetőségeket, mint a hagyományos biztonsági eszközök. Az intuitív kezelőfelülettel, dinamikus árazási tervekkel és vállalati szintű védelemmel ellátva, a SecHub a megoldás a digitális biztonságukat fokozni kívánó vállalkozások számára. A SecHub segítségével a biztonság nem csak egy szolgáltatás, hanem egy prioritás."
+    },
+    "shoes": {
+      "h4" : "Ez egy elképzelt prémium cipő webáruház tervei. A letisztult és dinamikus design magával ragad, tükrözve a márka stílusát és teljesítmény iránti elkötelezettségét a sportban. A merész, nagy kontrasztú színek dominálnak az oldalon, megragadó élményt nyújtva a látogatónak. Az átlátható és minimalista elrendezés kiemeli a termék jellemzőit, míg az interaktív elemek, mint például a lebegő effektusok és az animációk egy réteg kifinomultságot adnak. Ez a kialakítás az élvonalbeli sport felszerelés lényegét testesíti meg, erőteljes vizuális hatást biztosítva."
+    },
+    "square": {
+      "h4-1" : "Ez egy elképzelt webfejlesztő ügynökség weboldal terve. A Square Agency weboldala modern és professzionális dizájnjával magával ragad, azonnali kifinomultság és hozzáértés benyomását keltve. A minimalista elrendezés, a dinamikus szalaghirdetés és a letisztult vonalak kiemelik az ügynökség szakértelmét, megkönnyítve a felhasználók számára a szolgáltatások és tartalmak felfedezését.",
+      "h4-2" : "A weboldal minden része átgondolt módon van kialakítva, hogy fenntartsa a felhasználó figyelmét. Az design egyszerre funkcionális és esztétikus is, tükrözve a Square Agency minőség és innováció iránti elkötelezettségét."
+    }
+  },
+  "it": {
+    "index": {
+      "lang": "IT",
+      "lang1": "EN",
+      "lang2": "DE",
+      "lang3": "HU",
+      "hackMsg": "Benvenuti, ecco I nostri lavori!",
+      "cio": ["Guarda", "ora"],
+      "footer": "© 2025 ALPINE Webdevelopment Studios. Tutti i diritti riservati.",
+      "about": "Chi siamo",
+      "aboutUp": "CHI SIAMO",
+      "letsWork": "Lavoriamo insieme",
+      "prevBtn": "Voglio qualcosa di simile",
+      "about1": "Siamo <b>Alpine Studios</b>, un giovane duo di sviluppatori web dedicato a creare esperienze digitali eccezionali. Con una passione per l'innovazione e un impegno per la qualità, uniamo un design straordinario a una funzionalità potente per dare vita ai siti web.",
+      "about2": "Come <b>Frontend Designer & Client Manager</b>, <i>Balazs Varga</i> crea design che trasformano i visitatori in clienti e rendono i marchi più affidabili. Si concentra sulla creazione di interfacce visivamente accattivanti e facili da usare, garantendo al contempo una comunicazione fluida e un'ottima gestione dei progetti. Dall'altro lato dello sviluppo, <i>Simon Severin (alias @severinnHQ)</i>, il nostro esperto <b>Sviluppatore Web</b>, trasforma idee in siti web performanti e scalabili con codice pulito ed efficiente e un eccezionale <b>SEO</b>.",
+      "about3": "Insieme, ci specializziamo nella creazione di siti web moderni, reattivi e ad alte prestazioni, su misura per le esigenze dei nostri clienti. Che tu sia una <b>startup</b>, un'<b>azienda in crescita</b> o un <b>brand affermato</b>, siamo qui per migliorare la tua presenza online con creatività ed esperienza.",
+      "about4": "Creiamo qualcosa di veramente straordinario!",
+      "about5": "Sede: <b>Budapest, Ungheria</b>",
+      "contact": "CONTATTO",
+      "contact0": "Scrivici un messaggio qui e ti ricontatteremo al tuo indirizzo email.",
+      "CI01": "Motivo del contatto",
+      "CI02": "Seleziona un motivo",
+      "CI03": "Richiesta di offerta",
+      "CI04": "Ho una domanda (o più)",
+      "CI05": "Richiesta legale",
+      "CI06": "Template che voglio usare",
+      "CI07": "Scegli un template",
+      "CI08": "Non voglio usare un template",
+      "CI09": "Scadenza",
+      "CI10": "Scegli una scadenza",
+      "CI11": "Molto urgente (entro 1 settimana)",
+      "CI12": "Urgente (1-2 settimane)",
+      "CI13": "Non troppo urgente (entro 1 mese)",
+      "CI14": "Sono flessibile",
+      "CI15": "6 mesi",
+      "CI16": "1 anno",
+      "CI17": "Più di 1 anno",
+      "CI18": "Budget",
+      "CI19": "Scegli un budget",
+      "CI20": "meno di €300",
+      "CI21": "più di €10000",
+      "CI22": "Nome dell'azienda (opzionale)",
+      "CI23": "Nome completo",
+      "CI24": "Indirizzo email",
+      "CI25": "Oggetto",
+      "CI26": "Messaggio",
+      "sendBtn": "Invia",
+      "legal1": "Per richieste legali, invia un'email a ",
+      "legal2": "Per qualsiasi domanda, richiesta di offerta o richiesta legale, invia un'email a "
+    },
+    "baker": {
+      "h4": "Questo è un design di webshop per una panetteria fast food immaginaria creato da noi. Bakerizly è la tua panetteria online di fiducia, che consegna deliziose prelibatezze direttamente a casa tua. Dai soffici panini al miele ai cornetti ai frutti rossi, tutto è preparato fresco ogni giorno per garantire la massima qualità. Che tu voglia soddisfare la tua voglia di dolce o imparare a cucinare da professionista con la nostra scuola di panificazione, Bakerizly ha qualcosa per tutti. Scopri l'arte della panificazione e assapora le nostre creazioni, fatte con amore e tradizione dal 1995."
+    },
+    "chair": {
+      "h4-1": "Questo è un design immaginario per un supermercato di mobili moderni creato da noi. Presenta un design sofisticato con un layout pulito. Le opzioni di navigazione chiare e le statistiche interattive migliorano l'esperienza dell'utente, rendendola una pagina prodotto eccezionale.",
+      "h4-2": "Su uno sfondo sfumato, il testo descrive le caratteristiche e i vantaggi della sedia. Il footer include link alle sezioni chiave, un'iscrizione alla newsletter e icone dei social media, garantendo un'esperienza di navigazione completa e coinvolgente.",
+      "h4-3": "Prova i pulsanti!"
+    },
+    "elegant": {
+      "h4-1": "Questo è un design immaginario per un webshop di gioielli di lusso creato da noi. Il sito di Perceval Jewelry presenta un design elegante con splendide immagini di sfondo e una tipografia audace. La palette di colori pastello e il layout raffinato creano un'esperienza di acquisto esclusiva.",
+      "h4-2": "Il design del sito di Luxe Jewelry bilancia perfettamente estetica e funzionalità, creando un'esperienza di shopping online immersiva e lussuosa."
+    },
+    "marbella": {
+      "h4-1": "Questo è un design immaginario per un marketplace di immobili di lusso creato da noi. Il sito di LuxMarbella trasmette lusso ed eleganza, riflettendo perfettamente le proprietà esclusive che rappresenta.",
+      "h4-2": "Il banner principale, con la sua call to action accattivante e immagini in alta risoluzione, cattura subito l’attenzione degli acquirenti, offrendo un senso di esclusività.",
+      "h4-3": "Il design del sito di LuxMarbella combina perfettamente funzionalità ed estetica, rendendolo una piattaforma ideale per presentare immobili di lusso e attirare clienti selezionati."
+    },
+    "mvp": {
+      "h4": "Questo è un design immaginario per un Saas MVP creato da noi. Sochial è una piattaforma moderna e intuitiva progettata per aiutare individui e aziende a costruire credibilità e fiducia sui social media. Con un forte focus sull'engagement, l'automazione e la strategia, Sochial permette agli utenti di far crescere la propria presenza online con sicurezza."
+    },
+    "secure": {
+      "h4": "Questo è un design immaginario per un servizio di cybersecurity creato da noi. SecHub è una soluzione avanzata per rilevare, prevenire e correggere le vulnerabilità più velocemente rispetto agli strumenti di sicurezza tradizionali."
+    },
+    "shoes": {
+      "h4": "Questo è un design immaginario per un negozio di calzature premium creato da noi. Il sito colpisce per il suo design dinamico e raffinato, che riflette l'impegno del marchio per stile e performance."
+    },
+    "square": {
+      "h4-1": "Questo è un design immaginario per un'agenzia di sviluppo web creato da noi. Il sito di Square Agency affascina con il suo design moderno e professionale, creando un'impressione immediata di competenza ed esperienza.",
+      "h4-2": "Ogni sezione del sito è stata progettata con cura per mantenere alto il coinvolgimento dell’utente. Il design complessivo è sia funzionale che esteticamente piacevole, riflettendo l'impegno di Square Agency per qualità e innovazione."
+    }
+  },
+  "de": {
+    "index": {
+      "lang": "DE",
+      "lang1": "EN",
+      "lang2": "HU",
+      "lang3": "IT",
+      "hackMsg": "Willkommen, Unser Portfolio!",
+      "cio": ["Schau", "es dir an"],
+      "footer": "© 2025 ALPINE Webdevelopment Studios. Alle Rechte vorbehalten.",
+      "about": "Über uns",
+      "aboutUp": "ÜBER UNS",
+      "letsWork": "Lass uns zusammenarbeiten",
+      "prevBtn": "Ich möchte etwas Ähnliches",
+      "about1": "Wir sind <b>Alpine Studios</b>, ein junges Webentwicklungs-Duo, das sich der Schaffung außergewöhnlicher digitaler Erlebnisse verschrieben hat. Mit einer Leidenschaft für Innovation und einem Engagement für Qualität verbinden wir atemberaubendes Design mit leistungsstarker Funktionalität, um Websites zum Leben zu erwecken.",
+      "about2": "Als <b>Frontend Designer & Client Manager</b> sorgt <i>Balazs Varga</i> dafür, dass Designs Besucher in Kunden verwandeln und Marken vertrauenswürdig wirken. Sein Fokus liegt auf ansprechenden, benutzerfreundlichen Oberflächen sowie einer reibungslosen Kommunikation und Projektabwicklung. Auf der Entwicklungsseite setzt <i>Simon Severin (a.k.a. @severinnHQ)</i>, unser erfahrener <b>Webentwickler</b>, Ideen in leistungsstarke, skalierbare Websites um - mit sauberem Code und erstklassiger <b>SEO</b>.",
+      "about3": "Gemeinsam spezialisieren wir uns auf moderne, responsive und leistungsstarke Websites, die genau auf die Bedürfnisse unserer Kunden zugeschnitten sind. Egal, ob du ein <b>Startup</b>, ein <b>wachsendes Unternehmen</b> oder eine <b>etablierte Marke</b> bist - wir helfen dir, deine Online-Präsenz mit Kreativität und Expertise zu optimieren.",
+      "about4": "Lass uns etwas Außergewöhnliches erschaffen!",
+      "about5": "Sitz in <b>Budapest, Ungarn</b>",
+      "contact": "KONTAKT",
+      "contact0": "Schicke uns hier eine Nachricht, wir melden uns per E-Mail bei dir zurück.",
+      "CI01": "Kontaktgrund",
+      "CI02": "Wähle einen Grund",
+      "CI03": "Angebotsanfrage",
+      "CI04": "Ich habe eine Frage (oder mehrere)",
+      "CI05": "Rechtliche Anfrage",
+      "CI06": "Template, das ich verwenden möchte",
+      "CI07": "Wähle ein Template",
+      "CI08": "Ich möchte kein Template verwenden",
+      "CI09": "Frist",
+      "CI10": "Wähle eine Frist",
+      "CI11": "Sehr dringend (innerhalb einer Woche)",
+      "CI12": "Dringend (1-2 Wochen)",
+      "CI13": "Nicht so dringend (innerhalb eines Monats)",
+      "CI14": "Ich bin flexibel",
+      "CI15": "6 Monate",
+      "CI16": "1 Jahr",
+      "CI17": "Mehr als 1 Jahr",
+      "CI18": "Budget",
+      "CI19": "Wähle ein Budget",
+      "CI20": "weniger als €300",
+      "CI21": "mehr als €10000",
+      "CI22": "Firmenname (optional)",
+      "CI23": "Vollständiger Name",
+      "CI24": "E-Mail-Adresse",
+      "CI25": "Betreff",
+      "CI26": "Nachricht",
+      "sendBtn": "Senden",
+      "legal1": "Für rechtliche Anfragen sende bitte eine E-Mail an ",
+      "legal2": "Für Fragen, Angebotsanfragen oder rechtliche Anfragen sende bitte eine E-Mail an "
+    },
+    "baker": {
+      "h4": "Dies ist ein von uns entworfenes Webshop-Design für eine imaginäre Fastfood-Bäckerei. Bakerizly ist deine Online-Bäckerei für köstliche Leckereien, die direkt zu dir nach Hause geliefert werden. Von himmlischen Honigbrötchen bis zu verführerischen roten Fruchtcornettos - alles wird täglich frisch gebacken, um höchste Qualität zu gewährleisten."
+    },
+    "chair": {
+      "h4-1": "Dies ist ein von uns gestaltetes Design für einen modernen Möbel-Supermarkt. Es bietet ein elegantes Design mit einer klaren Struktur.",
+      "h4-2": "Vor einem sanften Farbverlaufshintergrund beschreibt der Text die Eigenschaften des Stuhls. Die Fußzeile enthält Links zu wichtigen Bereichen, eine Newsletter-Anmeldung und Social-Media-Icons.",
+      "h4-3": "Probiere die Buttons aus!"
+    },
+    "elegant": {
+      "h4-1": "Dies ist ein von uns entworfenes Design für einen luxuriösen Schmuck-Webshop. Die Website von Perceval Jewelry kombiniert elegante Hintergründe mit markanter Typografie.",
+      "h4-2": "Das Design der Luxe Jewelry-Website vereint Ästhetik und Funktionalität zu einem luxuriösen Online-Shopping-Erlebnis."
+    },
+    "marbella": {
+      "h4-1": "Dies ist ein von uns entworfenes Design für einen Luxus-Immobilienmarktplatz. LuxMarbella strahlt Eleganz aus und spiegelt die hochwertigen Immobilien perfekt wider.",
+      "h4-2": "Das Hauptbanner mit seinem ansprechenden Call-to-Action und hochauflösenden Bildern fängt sofort die Aufmerksamkeit potenzieller Käufer ein.",
+      "h4-3": "Das Design von LuxMarbella verbindet Funktionalität und Ästhetik zu einer erstklassigen Plattform für Luxusimmobilien."
+    },
+    "mvp": {
+      "h4": "Dies ist ein von uns entworfenes SaaS-MVP-Design. Sochial ist eine moderne Plattform, die Unternehmen und Einzelpersonen hilft, Glaubwürdigkeit und Vertrauen in sozialen Medien aufzubauen."
+    },
+    "secure": {
+      "h4": "Dies ist ein von uns entworfenes Design für einen Cybersecurity-Dienst. SecHub ist eine fortschrittliche Lösung zur Erkennung, Prävention und Behebung von Sicherheitslücken - schneller als herkömmliche Sicherheitstools."
+    },
+    "shoes": {
+      "h4": "Dies ist ein von uns entworfenes Design für einen Premium-Schuh-Webshop. Die elegante und dynamische Gestaltung spiegelt das Engagement der Marke für Stil und Leistung wider."
+    },
+    "square": {
+      "h4-1": "Dies ist ein von uns entworfenes Design für eine Webentwicklungsagentur. Die Website von Square Agency beeindruckt mit einem modernen und professionellen Design.",
+      "h4-2": "Jeder Abschnitt der Seite wurde sorgfältig entworfen, um das Engagement der Nutzer zu maximieren. Das gesamte Design ist funktional und optisch ansprechend und spiegelt Square Agencys Engagement für Qualität und Innovation wider."
+    }
+  }
+}

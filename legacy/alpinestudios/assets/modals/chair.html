@@ -1,0 +1,43 @@
+<div class="imageContainer">
+  <div class="parallax">
+    <img id="parallaxImage" src="assets/images/previews/ChairPage-a1.webp" alt="preview here" draggable="false" style="margin-bottom: 0;">
+    <div id="left" onclick="prevImage()">
+      <img src="assets/svg/ChevronLeft.svg" alt="Arrow Icon Left">
+    </div>
+    <div id="right" onclick="nextImage()">
+      <img src="assets/svg/ChevronRight.svg" alt="Arrow Icon Right">
+    </div>
+  </div>
+  <img src="assets/images/previews/ChairPage-2.webp" alt="preview here" draggable="false" style="margin-top: 0;">
+</div>    
+<div class="detailsContainer">
+  <h2 id="pagename">LOGO LOUNGE</h2>
+  <h4 id="pagedescription" data-page="chair" data-key="h4-1">This is an imagined modern furniture supermarket's design by us. It features a sophisticated design with a clean layout. Clear navigation options and engaging statistics enhance the user experience, making it a standout product page.</h4>
+  <h4 id="pagedescription" data-page="chair" data-key="h4-2">Set against a gradient background, the text describes the chair's features and benefits. The footer includes links to key sections, a newsletter subscription, and social media icons, ensuring a comprehensive and enjoyable browsing experience.</h4>
+  <h4 id="pagedescription" style="margin: 0;" data-page="chair" data-key="h4-3">Try out the buttons!</h4>
+</div>
+
+                          <!-- Carousel -->
+<script id="carouselScript">
+const images = [
+"assets/images/previews/ChairPage-a1.webp",
+"assets/images/previews/ChairPage-b1.webp",
+"assets/images/previews/ChairPage-c1.webp"
+];
+
+let currentIndex = 0;
+const parallaxImage = document.getElementById("parallaxImage");
+
+// Function to Switch to Next Image
+function nextImage() {
+currentIndex = (currentIndex + 1) % images.length;
+parallaxImage.src = images[currentIndex];
+}
+
+// Function to Switch to Previous Image
+function prevImage() {
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+parallaxImage.src = images[currentIndex];
+}
+
+</script>

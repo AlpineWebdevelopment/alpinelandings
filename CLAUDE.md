@@ -42,6 +42,7 @@ Deployment (per `docs/deployment.md`): **each client subfolder is its own Vercel
 | `portfolio/<slug>/index.html` | Sales demos linked from the pitch page. `kovacs-autoszerviz-gyor` is the locked reference design — do not modify it. `szegedi-autoshop-szeged` is an empty stub. |
 | `klima/index.html` | Standalone klímaszerelő demo (Kovács design retargeted to HVAC). |
 | `templates/autoszerelo-base.html` | The `{{placeholder}}` master template. `koltozteto-base.html` and `lakatos-base.html` are empty stubs. |
+| `legacy/alpinestudios/` | Archived previous agency site (Alpine Webdevelopment, EN portfolio). External CSS + GSAP + separate `mobile.html`; **relative** asset paths, unlike the rest of the repo. Images are WebP re-encodes — the original PNG/PSD assets live only in `R:\z_jeskoserver\alpinestudios`. Do not edit — see `legacy/README.md`. |
 | `docs/` | `swap-variables.md` (every placeholder + where it appears), `client-onboarding.md` (17-step build/QA/deploy checklist), `deployment.md`, `outreach-templates.md`. |
 
 `README.md` is stale on folder names (it lists `budai-autocentrum-pecs` / `duna-szerviz-debrecen`, which are now `mecsek-autocentrum-pecs` / `hajdu-szerviz-debrecen`) and on `clients/` being empty.
