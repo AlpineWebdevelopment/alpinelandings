@@ -21,6 +21,7 @@ export const reviews: Review[] = [
   {
     name: "Samu Székely",
     text: "Időbe hozták, amit kértünk",
+    photo: "/velemeny-1.webp",
   },
   {
     name: "Gábor Ludányi",
@@ -28,16 +29,18 @@ export const reviews: Review[] = [
       "Végre egy rugalmas pontos konténeres, akiknél a teherautónál lehet " +
       "kártyával fizetni és helyben adja a számlát elkerülve minden korábbi " +
       "bonyodalmat. Ja és ami lényeg ….. jó áron dolgoznak!",
+    photo: "/velemeny-2.webp",
   },
   {
     name: "Anita Kenyó",
     text: "Szuper gyors , pontos !",
+    photo: "/velemeny-3.webp",
   },
 ];
 
 /** A cégprofil a Google Térképen — a „több vélemény” link ide mutat. */
 export const googleProfileUrl =
-  "https://www.google.com/maps/place/?q=place_id:ChIJD13NnpAW-yERlCRtnsMvAak";
+  "https://maps.google.com/?cid=12178067384609612948";
 
 export const googleRating = "5,0";
-export const googleReviewCount = 62;
+export const googleReviewCount = 63;

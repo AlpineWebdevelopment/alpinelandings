@@ -351,3 +351,6 @@ a[href^="tel:"]{white-space:nowrap}
 /* Vélemények — tördelés kisebb kijelzőn */
 @media(max-width:900px){ .review-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
 @media(max-width:620px){ .review-grid{grid-template-columns:minmax(0,1fr)} }
+.review-photo{display:block;width:calc(100% + 48px);margin:-24px -24px 0;height:auto;border-radius:calc(var(--r) - 2px) calc(var(--r) - 2px) 0 0}
+.review-card{overflow:hidden}
+.review-grid{align-items:start}

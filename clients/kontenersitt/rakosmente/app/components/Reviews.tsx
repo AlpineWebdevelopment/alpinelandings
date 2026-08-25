@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   reviews,
   googleProfileUrl,
@@ -44,14 +45,19 @@ export default function Reviews() {
         <div className="review-grid">
           {reviews.map((r) => (
             <article className="review-card" key={r.name}>
+              {r.photo && (
+                <Image
+                  className="review-photo"
+                  src={r.photo}
+                  alt="Szerviz Trans konténer munka közben"
+                  width={700}
+                  height={300}
+                  sizes="(max-width: 620px) 100vw, 360px"
+                />
+              )}
               <div className="review-top">
                 <span className="review-avatar" aria-hidden="true">
-                  {r.photo ? (
-                    /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={r.photo} alt="" width={40} height={40} />
-                  ) : (
-                    initials(r.name)
-                  )}
+                  {initials(r.name)}
                 </span>
                 <span className="review-who">
                   <span className="review-name">{r.name}</span>
