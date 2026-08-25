@@ -1,7 +1,8 @@
 /**
- * A hat aloldal útvonalfájljait generálja mindhárom színsémához.
+ * A hat aloldal útvonalfájljait generálja mindhárom változathoz.
  * A tényleges felület a components/pages/* alatt él; az aloldalak
- * színsémától függetlenül azonosak, a témát a szülő layout adja.
+ * változattól és színsémától függetlenül azonosak — a keretet a szülő layout
+ * (components/ValtozatLayout.tsx) adja.
  *
  * Futtatás: node scripts/gen-routes.mjs
  */

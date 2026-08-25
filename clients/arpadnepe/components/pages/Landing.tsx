@@ -32,14 +32,15 @@ import { Gomb } from '../ui';
  * a hero alján szerepel: így a forrásmegjelölés nem vész el, a képernyőolvasó
  * viszont nem olvassa be a címsor elé.
  *
- * A sötétítő fátyol három rétegű: egy alap fedés, egy vízszintes átmenet (a
- * szöveg felőli oldal a sötétebb) és egy függőleges átmenet a sáv és a
- * képaláírás alá. Így a fotó a jobb oldalon marad látható, a szöveg alatt
- * viszont majdnem tömör az alap.
+ * A fátyol három rétegű: egy alapfedés, egy vízszintes átmenet (a szöveg felőli
+ * oldal a tömörebb) és egy függőleges átmenet a sáv és a képaláírás alá. Így a
+ * fotó a jobb oldalon marad látható, a szöveg alatt viszont majdnem tömör az alap.
  *
- * A fedés értékei MÉRÉSSEL álltak be, nem szemre: a kirenderelt háttérből
- * (fotó + fátyol) minden szövegdoboz LEGVILÁGOSABB képpontjára számoltunk
- * kontrasztarányt, és úgy hangoltuk, hogy minden elem küszöb fölött legyen.
+ * A fedés MÉRÉSSEL állt be, nem szemre, és SÉMÁNKÉNT más — a tokenek a
+ * globals.css-ben (`--fatyol*`), mert a sötét sémán világos tinta ül a képen
+ * (a legrosszabb eset a legvilágosabb képpont), a világos sémákon sötét tinta
+ * (a legrosszabb eset a legsötétebb). A séma a lebegő váltóval menet közben
+ * cserélhető, ezért kellett mindhárom színre külön belőni.
  * Ha a hero fotóját kicserélik, ezt újra le kell mérni.
  */
 function HeroHatterkep() {
@@ -50,21 +51,21 @@ function HeroHatterkep() {
         alt=""
         aria-hidden="true"
         fill
-        priority
+        /* a hero fotója a legnagyobb tartalmi festés (LCP) — a Next 16 itt
+           kifejezett loading/fetchPriority-t vár, a `priority` már nem elég */
+        loading="eager"
+        fetchPriority="high"
         sizes="100vw"
         className="object-cover object-center"
       />
+      <div aria-hidden="true" className="hero-fatyol pointer-events-none absolute inset-0" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-paper/88 lg:bg-paper/52"
+        className="hero-fatyol-oldal pointer-events-none absolute inset-0"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 hidden bg-linear-to-r from-paper/96 via-paper/86 to-transparent lg:block"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-linear-to-b from-paper/55 via-transparent to-paper/85 lg:from-paper/70"
+        className="hero-fatyol-fugg pointer-events-none absolute inset-0"
       />
       {/* a pecsétmező itt csak halványan, hogy ne küzdjön a fotóval */}
       <PecsetMezo id="hero" className="text-accent2" opacity={0.07} />
@@ -95,6 +96,10 @@ function HeroHatterkep() {
 export function Landing({ v }: { v: VariantConfig }) {
   const h = (p: string) => variantHref(v.key, p);
   const kepHero = v.heroHatter === 'kep';
+  /* A hero ALATTI szakaszok formanyelve. A hero maga mindhárom változatban
+     ugyanaz marad — csak a színséma és a címbetű követi a formanyelvet. */
+  const sztyeppe = v.stilus === 'sztyeppe';
+  const kodex = v.stilus === 'kodex';
 
   return (
     <>
@@ -200,7 +205,8 @@ export function Landing({ v }: { v: VariantConfig }) {
                         src={fotok.ijaszatOktatas.src}
                         alt={fotok.ijaszatOktatas.alt}
                         fill
-                        priority
+                        loading="eager"
+                        fetchPriority="high"
                         sizes="(max-width: 1024px) 100vw, 21rem"
                         className="object-cover"
                       />
@@ -244,7 +250,7 @@ export function Landing({ v }: { v: VariantConfig }) {
       </section>
 
       {/* ═══════════════ RÓLUNK — idézetblokk ═══════════════ */}
-      <section className="relative overflow-hidden border-b border-line bg-paper2">
+      <section className="szakasz relative overflow-hidden border-b border-line bg-paper2">
         <PecsetMezo id="rolunk" className="text-ink" opacity={0.05} />
         <Szemcse id="rolunk" opacity={0.35} />
 
@@ -257,19 +263,62 @@ export function Landing({ v }: { v: VariantConfig }) {
             tovább a következő generációknak."
           </blockquote>
 
-          <div className="mt-10 grid gap-x-12 gap-y-8 sm:mt-16 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
+          {/*
+            KÓDEX: a pontok nem rácsban, hanem HASÁBOKBAN folynak, hasábvonallal
+            elválasztva — ahogy a kódexlap tükre. A többi formanyelvben marad a
+            rács. A `break-inside-avoid` tartja együtt az egyes tételeket.
+          */}
+          <div
+            className={
+              kodex
+                ? 'kethasab mt-10 sm:mt-16 [&>div]:mb-8 [&>div]:break-inside-avoid sm:[&>div]:mb-10'
+                : 'mt-10 grid gap-x-12 gap-y-8 sm:mt-16 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3'
+            }
+          >
             {bemutatkozas.pontok.map((p, i) => (
-              <div key={p.cim} className="border-t border-line pt-6">
-                <span className="font-display text-sm font-bold tabular-nums text-accent">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
+              <div
+                key={p.cim}
+                className={
+                  sztyeppe
+                    ? 'pt-2'
+                    : kodex
+                      ? 'border-l-2 border-accent/50 pl-5'
+                      : 'border-t border-line pt-6'
+                }
+              >
+                {sztyeppe ? (
+                  /* SZTYEPPE: a sorszám vert korongban ül — kör, nem vonal */
+                  <span className="szam grid h-11 w-11 place-items-center rounded-full border-2 border-accent2 font-display text-base font-bold tabular-nums text-accent">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                ) : kodex ? (
+                  /* KÓDEX: rubrikált bekezdésjel, ahogy a kódexlapon */
+                  <span className="font-display text-xl font-bold leading-none text-accent">
+                    <span aria-hidden="true">¶</span>
+                    <span className="szam ml-2 text-base tabular-nums">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </span>
+                ) : (
+                  <span className="szam font-display text-sm font-bold tabular-nums text-accent">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                )}
                 <h3 className="mt-3 font-display text-lg font-bold uppercase leading-snug tracking-wide text-ink">
                   {p.cim}
                 </h3>
                 <p className="mt-3 font-body text-base leading-relaxed text-ink2">{p.szoveg}</p>
               </div>
             ))}
-            <div className="border-t-2 border-accent/40 pt-6">
+            <div
+              className={
+                sztyeppe
+                  ? 'pt-2'
+                  : kodex
+                    ? 'border-l-2 border-accent pl-5'
+                    : 'border-t-2 border-accent/40 pt-6'
+              }
+            >
               <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent">
                 Szablyavívás
               </span>
@@ -282,12 +331,12 @@ export function Landing({ v }: { v: VariantConfig }) {
       </section>
 
       {/* ═══════════════ ÉLET NÁLUNK — lépcsős fotósor + lap ═══════════════ */}
-      <section className="relative overflow-hidden border-b border-line bg-paper">
+      <section className="szakasz relative overflow-hidden border-b border-line bg-paper">
         <PecsetMezo id="elet" className="text-accent2" opacity={0.11} />
         <Szemcse id="elet" opacity={0.3} />
 
         <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-24">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div className="szakasz-fej flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-2xl">
               <Rubrum>Élet nálunk</Rubrum>
               <h2 className="mt-4 font-display text-2xl font-bold uppercase leading-tight text-ink sm:text-3xl lg:text-4xl">
@@ -300,16 +349,40 @@ export function Landing({ v }: { v: VariantConfig }) {
             </p>
           </div>
 
-          <div className="mt-9 grid grid-cols-2 items-start gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
+          {/*
+            A fotósor formanyelve:
+              SZTYEPPE — korongok. A nomád tárgyi világ kör alapú (jurtakarika,
+                         boglár, korong), ezért itt nincs derékszögű keret.
+              KÓDEX    — keretezett miniatúrák: kettős vonalazású tükör, alatta
+                         vonalazott képaláírás-sáv, egy vonalban álló sorral.
+              ALAP     — a megszokott lépcsős fotósor.
+          */}
+          <div
+            className={`mt-9 grid grid-cols-2 items-start gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4 ${
+              sztyeppe ? 'sm:gap-6 lg:gap-8' : ''
+            }`}
+          >
             {[fotok.erdeiCsata, fotok.jurtaallitas, fotok.tanchaz, fotok.nyariEdzotabor].map(
               (f, i) => (
                 <figure
                   key={f.src}
-                  className={`relative overflow-hidden border border-line ${
-                    i % 2 === 1 ? 'lg:mt-10' : ''
-                  }`}
+                  className={
+                    sztyeppe
+                      ? `flex flex-col items-center text-center ${i % 2 === 1 ? 'lg:mt-12' : ''}`
+                      : kodex
+                        ? 'kartya relative overflow-hidden border border-line bg-card p-0'
+                        : `relative overflow-hidden border border-line ${
+                            i % 2 === 1 ? 'lg:mt-10' : ''
+                          }`
+                  }
                 >
-                  <div className="relative aspect-[3/4] w-full">
+                  <div
+                    className={
+                      sztyeppe
+                        ? 'relative aspect-square w-full overflow-hidden rounded-full border-2 border-accent2'
+                        : 'relative aspect-[3/4] w-full'
+                    }
+                  >
                     <Image
                       src={f.src}
                       alt={f.alt}
@@ -318,7 +391,15 @@ export function Landing({ v }: { v: VariantConfig }) {
                       className="object-cover"
                     />
                   </div>
-                  <figcaption className="bg-card/85 px-3 py-2.5 font-body text-xs leading-snug text-ink2 sm:px-4 sm:py-3">
+                  <figcaption
+                    className={
+                      sztyeppe
+                        ? 'mt-3 px-1 font-body text-xs leading-snug text-ink2'
+                        : kodex
+                          ? 'border-t border-line bg-card px-3 py-2.5 font-body text-xs leading-snug text-ink2 sm:px-4 sm:py-3'
+                          : 'bg-card/85 px-3 py-2.5 font-body text-xs leading-snug text-ink2 sm:px-4 sm:py-3'
+                    }
+                  >
                     {f.alt}
                   </figcaption>
                 </figure>
@@ -344,7 +425,7 @@ export function Landing({ v }: { v: VariantConfig }) {
       </section>
 
       {/* ═══════════════ 50 ÓRA — kiemelt lap ═══════════════ */}
-      <section className="relative overflow-hidden border-b border-line bg-paper2">
+      <section className="szakasz relative overflow-hidden border-b border-line bg-paper2">
         <PecsetMezo id="ksz" className="text-accent2" opacity={0.09} />
         <LogoPecset id="ksz-vizjel" felirattal={false} strokeWidth={3} className="pointer-events-none absolute -left-32 -bottom-44 h-[32rem] w-[32rem] text-accent/15" />
 
@@ -390,7 +471,7 @@ export function Landing({ v }: { v: VariantConfig }) {
       </section>
 
       {/* ═══════════════ EREDMÉNYEK — statisztikarács ═══════════════ */}
-      <section className="relative overflow-hidden border-b border-line bg-paper">
+      <section className="szakasz relative overflow-hidden border-b border-line bg-paper">
         {/* A pecsét teljes kontúrja, nagy vízjelként — felirattal együtt */}
         <LogoPecset
           id="eredm-vizjel"
@@ -417,35 +498,97 @@ export function Landing({ v }: { v: VariantConfig }) {
               </div>
             </div>
 
-            <div className="grid gap-px bg-line sm:grid-cols-2">
-              {[
+            {/*
+              A számsor formanyelve:
+                SZTYEPPE — vert korongok, jurtakarika-gyűrűvel. Nincs rácsvonal.
+                KÓDEX    — vonalazott regiszter: tétel balra, kipontozás, szám
+                           jobbra — ahogy egy oklevél összesítője fut.
+                ALAP     — hajszálvonalas négyes rács.
+            */}
+            {(() => {
+              const adatok = [
                 { k: '2025', e: String(referenciaOsszegzes.ev2025), u: 'rendezvény' },
                 { k: '2024', e: String(referenciaOsszegzes.ev2024), u: 'rendezvény' },
                 { k: 'Hunyadi iskola', e: '~20', u: 'éve tartunk itt foglalkozást' },
                 { k: 'Szablyavívás', e: '10+', u: 'éve' },
-              ].map((s) => (
-                <div key={s.k} className="bg-paper p-5 sm:p-8">
-                  <p className="font-body text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-                    {s.k}
-                  </p>
-                  <p className="mt-2 font-display text-4xl font-bold tabular-nums text-accent sm:mt-3 sm:text-5xl">
-                    {s.e}
-                  </p>
-                  <p className="mt-2 font-body text-base text-ink2">{s.u}</p>
+              ];
+
+              if (sztyeppe) {
+                return (
+                  <ul className="grid grid-cols-2 gap-x-6 gap-y-9 sm:gap-x-10">
+                    {adatok.map((a) => (
+                      <li key={a.k} className="flex flex-col items-center text-center">
+                        <span className="relative grid aspect-square w-full max-w-[9.5rem] place-items-center rounded-full border-2 border-accent2">
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-2 rounded-full border border-accent2/50"
+                          />
+                          <span className="szam relative font-display text-4xl font-bold tabular-nums text-accent sm:text-5xl">
+                            {a.e}
+                          </span>
+                        </span>
+                        <p className="mt-3 font-body text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+                          {a.k}
+                        </p>
+                        <p className="mt-1 font-body text-base text-ink2">{a.u}</p>
+                      </li>
+                    ))}
+                  </ul>
+                );
+              }
+
+              if (kodex) {
+                return (
+                  <dl className="border-t border-line">
+                    {adatok.map((a) => (
+                      <div
+                        key={a.k}
+                        className="flex flex-wrap items-baseline gap-x-3 border-b border-line py-4"
+                      >
+                        <dt className="font-body text-base text-ink">
+                          {a.k}
+                          <span className="ml-2 font-body text-base text-ink2">{a.u}</span>
+                        </dt>
+                        <span
+                          aria-hidden="true"
+                          className="mx-1 hidden min-w-8 flex-1 self-center border-b border-dotted border-line sm:block"
+                        />
+                        <dd className="szam ml-auto font-display text-3xl font-bold tabular-nums text-accent sm:text-4xl">
+                          {a.e}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                );
+              }
+
+              return (
+                <div className="grid gap-px bg-line sm:grid-cols-2">
+                  {adatok.map((a) => (
+                    <div key={a.k} className="bg-paper p-5 sm:p-8">
+                      <p className="font-body text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+                        {a.k}
+                      </p>
+                      <p className="szam mt-2 font-display text-4xl font-bold tabular-nums text-accent sm:mt-3 sm:text-5xl">
+                        {a.e}
+                      </p>
+                      <p className="mt-2 font-body text-base text-ink2">{a.u}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </div>
         </div>
       </section>
 
       {/* ═══════════════ RENDEZVÉNYEK — programrács ═══════════════ */}
-      <section className="relative overflow-hidden border-b border-line bg-paper2">
+      <section className="szakasz relative overflow-hidden border-b border-line bg-paper2">
         <PecsetMezo id="rend" className="text-accent2" opacity={0.1} />
         <Szemcse id="rend" opacity={0.3} />
 
         <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-24">
-          <div className="max-w-2xl">
+          <div className="szakasz-fej max-w-2xl">
             <Rubrum>Rendezvények</Rubrum>
             <h2 className="mt-4 font-display text-2xl font-bold uppercase leading-tight text-ink sm:text-3xl lg:text-4xl">
               Vigyük el a programot Önökhöz
@@ -486,7 +629,7 @@ export function Landing({ v }: { v: VariantConfig }) {
       </section>
 
       {/* ═══════════════ ÉRTÉKELÉSEK ═══════════════ */}
-      <section className="relative overflow-hidden border-b border-line bg-paper">
+      <section className="szakasz relative overflow-hidden border-b border-line bg-paper">
         <Szemcse id="ertek" opacity={0.3} />
         <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-24">
           <Rubrum>Értékelések</Rubrum>
@@ -542,13 +685,13 @@ export function Landing({ v }: { v: VariantConfig }) {
       {/* ═══════════════ KAPCSOLAT + EDZÉSREND ═══════════════ */}
       <section
         id="kapcsolat"
-        className="relative overflow-hidden border-t border-line bg-paper2"
+        className="szakasz relative overflow-hidden border-t border-line bg-paper2"
       >
         <PecsetMezo id="kapcs" className="text-accent2" opacity={0.09} />
         <Szemcse id="kapcs" opacity={0.35} />
 
         <div className="relative mx-auto max-w-7xl px-5 pb-12 pt-4 sm:pb-16 lg:pb-24">
-          <div className="max-w-2xl">
+          <div className="szakasz-fej max-w-2xl">
             <Rubrum>Kapcsolat</Rubrum>
             <h2 className="mt-4 font-display text-2xl font-bold uppercase leading-tight text-ink sm:text-3xl lg:text-4xl">
               Válassz edzést

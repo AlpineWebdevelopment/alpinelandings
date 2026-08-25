@@ -28,7 +28,7 @@ export function PageHeader({
   children?: ReactNode;
 }) {
   return (
-    <header className="relative overflow-hidden border-b border-line bg-paper2">
+    <header className="oldal-fej relative overflow-hidden border-b border-line bg-paper2">
       <FejlecHatter />
       <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-20">
         <Rubrum>{cimke}</Rubrum>
@@ -36,7 +36,7 @@ export function PageHeader({
           {cim}
         </h1>
         {lead ? (
-          <p className="mt-5 max-w-2xl font-body text-base leading-relaxed text-ink2 sm:mt-6 sm:text-lg">
+          <p className="lead mt-5 max-w-2xl font-body text-base leading-relaxed text-ink2 sm:mt-6 sm:text-lg">
             {lead}
           </p>
         ) : null}
@@ -68,11 +68,11 @@ export function Section({
   return (
     <section
       id={id}
-      className={`${alt ? 'bg-paper2' : 'bg-paper'} border-b border-line ${className}`}
+      className={`szakasz relative overflow-hidden ${alt ? 'bg-paper2' : 'bg-paper'} border-b border-line ${className}`}
     >
-      <div className="mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-20">
+      <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-20">
         {cimke || cim || lead ? (
-          <div className="mb-8 max-w-3xl sm:mb-10">
+          <div className="szakasz-fej mb-8 max-w-3xl sm:mb-10">
             {cimke ? (
               <Rubrum>{cimke}</Rubrum>
             ) : null}
@@ -82,7 +82,7 @@ export function Section({
               </h2>
             ) : null}
             {lead ? (
-              <p className="mt-4 font-body text-base leading-relaxed text-ink2">{lead}</p>
+              <p className="lead mt-4 font-body text-base leading-relaxed text-ink2">{lead}</p>
             ) : null}
           </div>
         ) : null}
@@ -103,7 +103,7 @@ export function Card({
 }) {
   return (
     <Tag
-      className={`min-w-0 border border-line bg-card p-5 sm:p-6 ${className}`}
+      className={`kartya min-w-0 border border-line bg-card p-5 sm:p-6 ${className}`}
     >
       {children}
     </Tag>
@@ -142,7 +142,8 @@ export function Gomb({
     <a
       href={href}
       {...(kulso ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3 font-body text-sm font-bold transition ${stilus} ${className}`}
+      data-elsodleges={!masodlagos}
+      className={`gomb inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3 font-body text-sm font-bold transition ${stilus} ${className}`}
     >
       {children}
     </a>

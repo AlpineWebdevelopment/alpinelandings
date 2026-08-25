@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./stilusok.css";
 
 /* ==========================================================================
    EGY TERVEZÉS, HÁROM SZÍNSÉMA.
@@ -26,7 +27,7 @@
   --color-onaccent: var(--v-onaccent);
   --color-link: var(--v-link);
 
-  --font-display: var(--font-cinzel);
+  --font-display: var(--v-display);
   --font-body: var(--font-eb-garamond);
 
   /*
@@ -52,13 +53,22 @@
    1 — PERGAMEN
    Kódexlap festékei: pergamen, cinóber (rubrum), aranyfüst, lazúr.
    -------------------------------------------------------------------------- */
-.sema-pergamen {
+/*
+ * A tokenkészletek KÉT helyről kaphatók meg:
+ *   - a burkoló saját osztályából — ez a változat alapértelmezése, a szerverről;
+ *   - a <html>-re tett `valaszt-*` osztályból — ez a lebegő váltó választása.
+ * A második fajsúlya nagyobb (két osztály + egy elem), ezért felülírja az
+ * elsőt, akármelyik változaton is állunk.
+ */
+.sema-pergamen,
+html.valaszt-pergamen .sema-gyoker {
   --v-paper: #f2e8d2;
   --v-paper2: #e8dcc0;
   --v-card: #fbf5e7;
   --v-ink: #221d16;
   --v-ink2: #4f463a;
-  --v-muted: #696050;
+  --v-muted: #635a4b;  /* sötétítve: a régi #696050 a váltakozó háttérsávon
+                          csak 4,5:1-et hozott, a vonalazott írástükör alatt 4,27-et */
   --v-line: #d3c19b;
   --v-accent: #a32e17;   /* cinóber */
   --v-accent2: #9e772b;  /* aranyfüst — DÍSZÍTŐ szín, nem szövegszín */
@@ -66,6 +76,15 @@
   --v-link: #2c4a7c;
   --v-onaccent: #fbf5e7;
   --v-grain: 0.45;
+
+  /* háttérfotós hero fátyla — világos séma: SÖTÉT tinta ül a képen */
+  --fatyol: 85%;
+  --fatyol-lg: 66%;
+  --fatyol-bal: 60%;
+  --fatyol-kozep: 40%;
+  --fatyol-fent: 25%;
+  --fatyol-fent-lg: 30%;
+  --fatyol-lent: 55%;
 }
 
 /* --------------------------------------------------------------------------
@@ -73,7 +92,8 @@
    Kékfestő vászon: indigó alap, fehér mintanyomás, krappvörös.
    Ez az egyetlen sötét séma — a lapok belsejében a tinta megfordul.
    -------------------------------------------------------------------------- */
-.sema-indigo {
+.sema-indigo,
+html.valaszt-indigo .sema-gyoker {
   --v-paper: #1b2e52;
   --v-paper2: #152440;
   --v-card: #22385f;
@@ -88,10 +108,20 @@
   --v-link: #e8eef7;
   --v-onaccent: #1b2e52;
   --v-grain: 0.22;
+
+  /* háttérfotós hero fátyla — sötét séma: VILÁGOS tinta ül a képen */
+  --fatyol: 85%;
+  --fatyol-lg: 60%;
+  --fatyol-bal: 74%;
+  --fatyol-kozep: 60%;
+  --fatyol-fent: 30%;
+  --fatyol-fent-lg: 35%;
+  --fatyol-lent: 55%;
 }
 
 /* Az indigó sémán a Lap vászonszínű: sötét tinta világos alapon. */
-.sema-indigo .lap-kor {
+.sema-indigo .lap-kor,
+html.valaszt-indigo .sema-gyoker .lap-kor {
   --v-paper: #f7f2e6;
   --v-paper2: #efe8d7;
   --v-card: #fdfbf4;
@@ -107,18 +137,51 @@
   --v-onaccent: #f7f2e6;
 }
 
+/*
+ * Az indigón kívül EGYIK séma sem fordítja meg a lapot — a világosakon nincs
+ * mit fordítani, a Szattyánon pedig a lapok is sötétek maradnak. Ezért a
+ * szabály nem sémákat sorol fel, hanem mindent kivéve az indigót: új séma
+ * felvételekor nincs mit karbantartani rajta.
+ *
+ * Fajsúllyal ezt nem lehet megoldani: a `.sema-indigo .lap-kor` szabály MAGÁN
+ * a lapelemen állítja be a tokeneket, a felülíró szabály viszont a burkolón —
+ * két különböző elem, tehát nincs mit összemérni, és az öröklés mindig veszít
+ * a helyben álló deklarációval szemben.
+ *
+ * A megoldás nem az értékek duplikálása, hanem a lap saját deklarációinak
+ * VISSZAVONÁSA: `unset` egy öröklődő tulajdonságon (márpedig a
+ * custom property az) pontosan „vedd a szülőét"-et jelent. Így a Lap a
+ * választott séma színeit kapja, és nincs egyetlen hexa érték sem megismételve.
+ * A változat × séma kombinációkat a `lapkor.mjs` mérés ellenőrzi.
+ */
+html[class*='valaszt-']:not(.valaszt-indigo) .sema-gyoker .lap-kor {
+  --v-paper: unset;
+  --v-paper2: unset;
+  --v-card: unset;
+  --v-ink: unset;
+  --v-ink2: unset;
+  --v-muted: unset;
+  --v-line: unset;
+  --v-accent: unset;
+  --v-accent2: unset;
+  --v-accent3: unset;
+  --v-link: unset;
+  --v-onaccent: unset;
+}
+
 /* --------------------------------------------------------------------------
    3 — POSZTÓ
    Szűrposztó: fehér gyapjú alap, posztózöld hímzés, sárgaréz.
    Szándékosan nincs benne piros a zöld és a fehér mellett.
    -------------------------------------------------------------------------- */
-.sema-poszto {
+.sema-poszto,
+html.valaszt-poszto .sema-gyoker {
   --v-paper: #f0ede3;
   --v-paper2: #e2ded0;
   --v-card: #faf8f1;
   --v-ink: #1f231d;
   --v-ink2: #474d43;
-  --v-muted: #5b6055;
+  --v-muted: #565a50;  /* sötétítve, ugyanazon okból, mint a pergamennél */
   --v-line: #c6c4b0;
   --v-accent: #2c4a38;   /* posztózöld */
   --v-accent2: #91742c;  /* sárgaréz — DÍSZÍTŐ szín */
@@ -126,10 +189,85 @@
   --v-link: #2c4a38;
   --v-onaccent: #faf8f1;
   --v-grain: 0.4;
+
+  /* háttérfotós hero fátyla — világos séma: SÖTÉT tinta ül a képen */
+  --fatyol: 85%;
+  --fatyol-lg: 66%;
+  --fatyol-bal: 60%;
+  --fatyol-kozep: 40%;
+  --fatyol-fent: 25%;
+  --fatyol-fent-lg: 30%;
+  --fatyol-lent: 55%;
+}
+
+/* --------------------------------------------------------------------------
+   4 — PARÁZS
+   Fehér mészfelület, parázs-narancs kiemelés, fekete tinta. A tábortűz
+   színei — a legvilágosabb, legerősebb kontrasztú séma a készletben.
+   -------------------------------------------------------------------------- */
+.sema-parazs,
+html.valaszt-parazs .sema-gyoker {
+  --v-paper: #ffffff;
+  --v-paper2: #f4efe7;
+  --v-card: #ffffff;
+  --v-ink: #121212;      /* fekete törzsszöveg, ahogy kérve volt */
+  --v-ink2: #3d3a36;
+  --v-muted: #5c5750;
+  --v-line: #e0d8ca;
+  --v-accent: #b04405;   /* parázsnarancs — SÖTÉTÍTVE, mert szövegszín is */
+  --v-accent2: #e8891f;  /* lángnarancs — DÍSZÍTŐ szín, nem szövegszín */
+  --v-accent3: #8a4a12;  /* pörkölt föld */
+  --v-link: #b04405;
+  --v-onaccent: #ffffff;
+  --v-grain: 0.3;
+
+  /* háttérfotós hero fátyla — világos séma: SÖTÉT tinta ül a képen */
+  --fatyol: 85%;
+  --fatyol-lg: 66%;
+  --fatyol-bal: 60%;
+  --fatyol-kozep: 40%;
+  --fatyol-fent: 25%;
+  --fatyol-fent-lg: 30%;
+  --fatyol-lent: 55%;
+}
+
+/* --------------------------------------------------------------------------
+   5 — SZATTYÁN
+   Cserzett bőr: a nomád tarsoly és a kódexkötés ugyanabból az anyagból van.
+   Sötét bőralap, csontszín tinta, vörösréz kiemelés, patinazöld harmadik szín.
+   A második sötét séma — az Indigóval ellentétben itt a lapok is sötétek
+   maradnak, tehát nincs tintafordítás.
+   -------------------------------------------------------------------------- */
+.sema-szattyan,
+html.valaszt-szattyan .sema-gyoker {
+  --v-paper: #2b1f17;
+  --v-paper2: #221812;
+  --v-card: #372822;
+  --v-ink: #f4ead9;      /* csont */
+  --v-ink2: #dccbb2;
+  --v-muted: #c2b096;
+  --v-line: #4f3c30;
+  --v-accent: #e3a877;   /* vörösréz */
+  --v-accent2: #f2e4cd;  /* csontfehér — DÍSZÍTŐ szín */
+  --v-accent3: #93bda8;  /* patinazöld */
+  --v-link: #f2e4cd;
+  --v-onaccent: #2b1f17;
+  --v-grain: 0.24;
+
+  /* háttérfotós hero fátyla — sötét séma: VILÁGOS tinta ül a képen */
+  --fatyol: 85%;
+  --fatyol-lg: 60%;
+  --fatyol-bal: 74%;
+  --fatyol-kozep: 60%;
+  --fatyol-fent: 30%;
+  --fatyol-fent-lg: 35%;
+  --fatyol-lent: 55%;
 }
 
 /* A gyökér (sémaválasztó) semleges készlete. */
 :root {
+  /* alapértelmezett címbetű; a formanyelvek felülírják (lásd lentebb) */
+  --v-display: var(--font-cinzel);
   --v-paper: #ffffff;
   --v-paper2: #f4f2ee;
   --v-card: #ffffff;
@@ -200,6 +338,61 @@ body {
 .bar-viewport:hover .bar-track,
 .bar-viewport:focus-within .bar-track {
   animation-play-state: paused;
+}
+
+/* ==========================================================================
+   HÁTTÉRFOTÓS HERO FÁTYLA (2. változat).
+
+   Nem Tailwind-segédosztályokkal, mert a fedés SÉMÁNKÉNT más: a sötét sémán
+   világos tinta ül a képen (a legrosszabb eset a legvilágosabb képpont), a
+   világos sémákon sötét tinta (a legrosszabb eset a legsötétebb). Az értékek
+   méréssel álltak be — lásd README, „Kontraszt a háttérfotón".
+
+   Három réteg: alapfedés + vízszintes átmenet (a szöveg felőli oldal a
+   tömörebb, hogy a fotó a jobb oldalon látszódjon) + függőleges átmenet a
+   támogatói sáv és a képaláírás alá.
+   ========================================================================== */
+
+.hero-fatyol {
+  background-color: color-mix(in srgb, var(--v-paper) var(--fatyol), transparent);
+}
+
+.hero-fatyol-fugg {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--v-paper) var(--fatyol-fent), transparent),
+    transparent 50%,
+    color-mix(in srgb, var(--v-paper) var(--fatyol-lent), transparent)
+  );
+}
+
+/* a vízszintes átmenet csak nagy képernyőn van értelmezve: mobilon a szöveg
+   a teljes szélességet elfoglalja, ott az alapfedés viszi a kontrasztot */
+.hero-fatyol-oldal {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-fatyol {
+    background-color: color-mix(in srgb, var(--v-paper) var(--fatyol-lg), transparent);
+  }
+  .hero-fatyol-fugg {
+    background-image: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--v-paper) var(--fatyol-fent-lg), transparent),
+      transparent 50%,
+      color-mix(in srgb, var(--v-paper) var(--fatyol-lent), transparent)
+    );
+  }
+  .hero-fatyol-oldal {
+    display: block;
+    background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--v-paper) var(--fatyol-bal), transparent),
+      color-mix(in srgb, var(--v-paper) var(--fatyol-kozep), transparent) 50%,
+      transparent
+    );
+  }
 }
 
 /* ==========================================================================

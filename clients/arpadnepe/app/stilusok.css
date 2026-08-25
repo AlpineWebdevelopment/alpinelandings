@@ -1,0 +1,267 @@
+/* ==========================================================================
+   FORMANYELVEK — a hero ALATTI oldal karaktere.
+
+   Három hatókörosztály a burkolón: `stil-alap | stil-sztyeppe | stil-kodex`.
+   A SZÍNTŐL függetlenek: mindhárom formanyelv mindhárom színsémában működik,
+   mert csak formát, ritmust és díszítést állítanak — ahol szín kell, ott is a
+   `--v-*` tokeneket használják.
+
+   A díszítmények CSS-MASZKKAL készülnek, nem háttérképként: így a színüket a
+   séma tokenje adja (`background-color: var(--v-accent2)` + `mask-image`), és
+   a sémaváltásnál automatikusan átszíneződnek.
+   ========================================================================== */
+
+/*
+ * A pecsét tiled vízjelmezője az ALAP formanyelv sajátja. A másik kettőnek
+ * saját háttérmintája van, ott ez csak zajt tenne alá.
+ */
+.stil-sztyeppe .pecset-mezo,
+.stil-kodex .pecset-mezo {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. VÁLTOZAT — SZTYEPPE (honfoglalás előtti, 890 előtt)
+
+   Nemez és bőr, nem pergamen. Doboz helyett SÁV és KÖR. Motívumok: palmetta
+   (a korszak vezérdísze a tarsolylemezekről), jurtakarika, mértani jelek.
+   Kódexes vagy gótikus utalás szándékosan nincs benne — ebben a korban az
+   anakronizmus lenne.
+   -------------------------------------------------------------------------- */
+
+.stil-sztyeppe {
+  --v-display: var(--font-cormorant-unicase);
+
+  /* palmettás szalag — díszítősáv a szakaszfejek alatt */
+  --motivum-szalag: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='14' viewBox='0 0 40 14'%3E%3Cg fill='%23000'%3E%3Cpath d='M20 13C18 9 18 4 20 1c2 3 2 8 0 12z'/%3E%3Cpath d='M20 13c-4-3-7-7-11-9 1 4 5 8 11 9z'/%3E%3Cpath d='M20 13c4-3 7-7 11-9-1 4-5 8-11 9z'/%3E%3Cpath d='M4 13c1-2 3-3 5-2-1 2-3 3-5 2z'/%3E%3Cpath d='M36 13c-1-2-3-3-5-2 1 2 3 3 5 2z'/%3E%3C/g%3E%3Crect x='0' y='13' width='40' height='1' fill='%23000'/%3E%3C/svg%3E");
+
+  /* palmettarács — a szakaszok háttérmezője */
+  --motivum-mezo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.4'%3E%3Cpath d='M24 72c0-14 10-22 24-22s24 8 24 22'/%3E%3Cpath d='M24 24c0 14 10 22 24 22s24-8 24-22'/%3E%3C/g%3E%3Cg fill='%23000'%3E%3Cpath d='M48 46c-2-5-2-11 0-15 2 4 2 10 0 15z'/%3E%3Cpath d='M48 46c-4-3-8-8-12-10 1 5 5 9 12 10z'/%3E%3Cpath d='M48 46c4-3 8-8 12-10-1 5-5 9-12 10z'/%3E%3Ccircle cx='0' cy='48' r='3'/%3E%3Ccircle cx='96' cy='48' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/*
+ * A címbetű unicase: a kis- és nagybetűk egy magasságban futnak. A
+ * `uppercase` pont ezt a sajátosságát venné el, ezért mindenhol kikapcsoljuk,
+ * ahol a címbetű fut — nem csak a címsorokon.
+ */
+.stil-sztyeppe h1,
+.stil-sztyeppe h2,
+.stil-sztyeppe h3,
+.stil-sztyeppe .font-display {
+  text-transform: none;
+  letter-spacing: 0.005em;
+}
+
+/* Nem keretes doboz, hanem nemezmező: felül szíjszegély, oldalt semmi. */
+.stil-sztyeppe .kartya,
+.stil-sztyeppe .lap-kor {
+  border: 0;
+  border-top: 3px solid var(--v-accent2);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--v-line) 45%, transparent);
+}
+
+/* a Lap belső vonalkerete kódexutalás — itt nincs helye */
+.stil-sztyeppe .lap-kor > span[aria-hidden='true'] {
+  display: none;
+}
+
+/* Szakaszfej alatt palmettás szalag fut végig. */
+.stil-sztyeppe .szakasz-fej {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.stil-sztyeppe .szakasz-fej::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 14px;
+  background-color: var(--v-accent2);
+  opacity: 0.65;
+  -webkit-mask-image: var(--motivum-szalag);
+  mask-image: var(--motivum-szalag);
+  -webkit-mask-size: auto 14px;
+  mask-size: auto 14px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+
+/* A szakaszok háttere palmettarács. */
+.stil-sztyeppe .szakasz::before,
+.stil-sztyeppe .oldal-fej::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: var(--v-accent2);
+  opacity: 0.1;
+  -webkit-mask-image: var(--motivum-mezo);
+  mask-image: var(--motivum-mezo);
+  -webkit-mask-size: 96px 96px;
+  mask-size: 96px 96px;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+}
+
+/* Gomb: lecsapott sarkú bőrcímke, nem lekerekített modern felület. */
+.stil-sztyeppe .gomb {
+  clip-path: polygon(
+    9px 0,
+    100% 0,
+    100% calc(100% - 9px),
+    calc(100% - 9px) 100%,
+    0 100%,
+    0 9px
+  );
+}
+
+/* Nagy számok szélesebb ritmussal. */
+.stil-sztyeppe .szam {
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   3. VÁLTOZAT — KÓDEX (középkori magyar)
+
+   Pergamenlap: vonalazott írástükör, rubrikák, iniciálék, lapszéli indadísz,
+   kéthasábos szedés. A címbetű gótikus textúra — a középkori magyar oklevelek
+   és kódexek írásképe.
+   -------------------------------------------------------------------------- */
+
+.stil-kodex {
+  --v-display: var(--font-grenze-gotisch);
+
+  /* indás szalag — a szakaszfejek záróvonala */
+  --motivum-szalag: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='16' viewBox='0 0 48 16'%3E%3Cpath d='M0 8c6-7 18-7 24 0s18 7 24 0' fill='none' stroke='%23000' stroke-width='1.3'/%3E%3Cg fill='%23000'%3E%3Cpath d='M12 4.5c-2.5-3-6.5-3-8.5 0 2.5 3 6.5 3 8.5 0z'/%3E%3Cpath d='M36 11.5c2.5 3 6.5 3 8.5 0-2.5-3-6.5-3-8.5 0z'/%3E%3Ccircle cx='24' cy='8' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* lapszéli indadísz — a kiemelt lapok bal oldalán */
+  --motivum-inda: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='64' viewBox='0 0 16 64'%3E%3Cpath d='M8 0c-6 8-6 16 0 24s6 16 0 24-6 12 0 16' fill='none' stroke='%23000' stroke-width='1.3'/%3E%3Cg fill='%23000'%3E%3Cpath d='M8 10c3-3 3-7 0-9-3 2-3 6 0 9z'/%3E%3Cpath d='M8 34c-3 3-3 7 0 9 3-2 3-6 0-9z'/%3E%3Cpath d='M8 54c3-3 3-6 0-8-3 2-3 5 0 8z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/*
+ * A gótikus textúra csupa nagybetűvel olvashatatlan — a textura maiuscula
+ * betűi önmagukban is díszítettek. Ezért mindenhol kikapcsoljuk a
+ * nagybetűsítést, ahol a címbetű fut, nem csak a címsorokon.
+ */
+.stil-kodex h1,
+.stil-kodex h2,
+.stil-kodex h3,
+.stil-kodex .font-display {
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.16;
+}
+
+/* Számot nem szedünk gótikussal — ott marad a kenyérbetű. */
+.stil-kodex .szam {
+  font-family: var(--font-eb-garamond), Georgia, serif;
+  font-weight: 700;
+}
+
+/*
+ * Vonalazott írástükör a szakaszok mögött.
+ *
+ * A fedés mérve áll be: a vonalak a szakasz háttere FÖLÖTT, a szöveg ALATT
+ * festődnek, tehát beleszámítanak a kontrasztba. 50%-nál a halvány címkeszín
+ * 4,5:1 alá esett a váltakozó háttérsávokon — 25% már bőven fölötte marad,
+ * és a vonalazás így is tisztán látszik.
+ */
+.stil-kodex .szakasz::before,
+.stil-kodex .oldal-fej::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 27px,
+    var(--v-line) 27px 28px
+  );
+}
+
+/* Kettős vonalazású keret — a kódexlap tükre. */
+.stil-kodex .kartya {
+  box-shadow:
+    0 0 0 3px var(--v-paper),
+    0 0 0 4px color-mix(in srgb, var(--v-accent2) 55%, transparent);
+}
+
+/* A kiemelt lap bal szélén lapszéli indadísz fut. */
+.stil-kodex .lap-kor::before {
+  content: '';
+  position: absolute;
+  left: 0.4rem;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  width: 16px;
+  pointer-events: none;
+  background-color: var(--v-accent2);
+  opacity: 0.55;
+  -webkit-mask-image: var(--motivum-inda);
+  mask-image: var(--motivum-inda);
+  -webkit-mask-size: 16px 64px;
+  mask-size: 16px 64px;
+  -webkit-mask-repeat: repeat-y;
+  mask-repeat: repeat-y;
+}
+
+@media (min-width: 640px) {
+  .stil-kodex .lap-kor {
+    padding-left: 2.75rem;
+  }
+}
+
+/* Szakaszfej: rubrikált, indás záróvonallal. */
+.stil-kodex .szakasz-fej {
+  position: relative;
+  padding-bottom: 2.25rem;
+}
+
+.stil-kodex .szakasz-fej::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 16px;
+  background-color: var(--v-accent2);
+  opacity: 0.7;
+  -webkit-mask-image: var(--motivum-szalag);
+  mask-image: var(--motivum-szalag);
+  -webkit-mask-size: auto 16px;
+  mask-size: auto 16px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+
+/* Iniciálé: a vezető bekezdés első betűje kiemelt, rubrumszínű. */
+.stil-kodex .lead::first-letter {
+  float: left;
+  margin: 0.1em 0.14em 0 0;
+  font-family: var(--v-display), Georgia, serif;
+  font-size: 3.1em;
+  line-height: 0.82;
+  font-weight: 700;
+  color: var(--v-accent);
+}
+
+/* Kéthasábos szedés a hosszabb prózához — mint a kódexlap tükre. */
+@media (min-width: 1024px) {
+  .stil-kodex .kethasab {
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 1px solid color-mix(in srgb, var(--v-line) 80%, transparent);
+  }
+}
+
+/* Gomb: oklevélzáradék — kettős keret, nem tömör tábla. */
+.stil-kodex .gomb {
+  box-shadow:
+    0 0 0 1px var(--v-paper) inset,
+    0 0 0 2px currentColor inset;
+}
+
+.stil-kodex .gomb[data-elsodleges='true'] {
+  box-shadow:
+    0 0 0 1px var(--v-onaccent) inset,
+    0 0 0 2px var(--v-accent) inset;
+}

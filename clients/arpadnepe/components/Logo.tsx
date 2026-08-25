@@ -283,7 +283,7 @@ export function PecsetMezo({
   return (
     <svg
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-0 h-full w-full ${className}`}
+      className={`pecset-mezo pointer-events-none absolute inset-0 h-full w-full ${className}`}
       style={{ opacity }}
       role="presentation"
     >

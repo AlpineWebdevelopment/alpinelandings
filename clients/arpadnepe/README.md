@@ -1,10 +1,24 @@
-# Árpád Népe Egyesület — egy tervezés, három színséma (demó)
+# Árpád Népe Egyesület — három változat, öt színséma (demó)
 
 Bemutató oldal az **Árpád Népe Hagyományőrző, Kulturális és Sport Egyesület** részére.
 
-A `/a`, `/b` és `/c` **ugyanazt a tervezést** mutatja: azonos szerkezet, azonos
-tipográfia, azonos motívumtár. Csak a **színséma** más — Pergamen, Indigó, Posztó.
-Az egyesület tehát színt választ, nem oldalt.
+Két, egymástól **független** tengely — az egyesület kettőt választ, nem egyet:
+
+1. **Változat** (`/a`, `/b`, `/c`) — kettő tartozik hozzá: a hero FELÉPÍTÉSE (mi a fotó
+   szerepe, hol ül a legfrissebb Facebook-bejegyzés) és a hero alatti oldal
+   FORMANYELVE (szakaszkeret, lapforma, díszítmény, címbetű). A tartalom és a
+   szerkezeti váz mindhárom változatban azonos.
+2. **Színséma** (Pergamen, Indigó, Posztó, Parázs, Szattyán) — kizárólag a tokenek
+   értéke. **Minden oldal jobb alsó sarkában lebegő váltó** van, amivel bármelyik
+   változat bármelyik színben megnézhető: 3 × 5 = **15 nézet**. A választás
+   localStorage-ba kerül, tehát aloldalra lépve és a változatok között váltogatva is
+   megmarad.
+
+Ugyanaz a lebegő váltó **a három demó között is átlép** — és megtartja az aktuális
+aloldalt: az `/a/akciok`-ról a `/c/akciok`-ra visz, nem a kezdőlapra.
+
+> A lebegő váltó a **bemutató kezelőszerve**, nem a leendő oldal része — az élesre nem
+> kerül rá (`components/SemaValto.tsx` törlése, és a `ValtozatLayout` egy sora).
 
 Ez nem az éles oldal. Formában viszont annak készült.
 
@@ -59,13 +73,13 @@ iniciáléval induló címblokk pecsétléccel, a bemutatkozóval és a két gom
 **Statisztika és ár nincs a heróban** — a számok az „Eredmények", az árak a
 „Kapcsolat" szakaszban állnak, ott, ahol a látogató keresi őket.
 
-A fotó szerepe sémánként más — ezt a `heroHatter` mező mondja meg a
+A fotó szerepe VÁLTOZATONKÉNT más — ezt a `heroHatter` mező mondja meg a
 `variants/config.ts`-ben:
 
-- **Pergamen és Posztó** (`heroHatter: 'lap'`) — a fotó külön mezőben, a jobb hasábban áll.
-- **Indigó** (`heroHatter: 'kep'`) — a fotó **kitölti a hero hátterét**, sötétítő indigó
-  fátyol alatt; a címblokk és a hírkártya a képen ül. Külön fotómező nincs. A kép
-  dekoratív háttér (`alt=""`), a képaláírás láthatóan, a hero alján kap helyet.
+- **1. és 3. változat** (`heroHatter: 'lap'`) — a fotó külön mezőben, a jobb hasábban áll.
+- **2. változat** (`heroHatter: 'kep'`) — a fotó **kitölti a hero hátterét**, fátyol
+  alatt; a címblokk és a hírkártya a képen ül. Külön fotómező nincs. A kép dekoratív
+  háttér (`alt=""`), a képaláírás láthatóan, a hero alján kap helyet.
 
 **A hero alatt** széles, kevés elemű blokkok követik egymást: idézetblokk (eszmeiség) →
 lépcsős fotósor + kiemelt lap (élet nálunk) → kiemelt lap (50 óra) → statisztikarács
@@ -103,13 +117,53 @@ sehol ne legyen sima színfelület.
 
 ---
 
-## A három színséma
+## A három változat
 
-| | Séma | Alap | Kiemelés | Díszítés | Harmadik |
-|---|---|---|---|---|---|
-| `/a` | **Pergamen** | `#F2E8D2` pergamen | `#A32E17` cinóber | `#9E772B` aranyfüst | `#2C4A7C` lazúr |
-| `/b` | **Indigó** | `#1B2E52` indigó | `#DA8E7D` / `#AE3B2C` krapp | `#E8EEF7` mintafehér | `#F7F2E6` vászon (lapok) |
-| `/c` | **Posztó** | `#F0EDE3` gyapjú | `#2C4A38` posztózöld | `#91742C` sárgaréz | `#4F6248` fakó zöld |
+| Útvonal | Változat | A hero fotója | A friss bejegyzés | Alapból |
+|---|---|---|---|---|
+| `/a` | **Hírcsík** | külön mezőben, a jobb hasábban | teljes szélességű csík a fejléc alatt | Pergamen |
+| `/b` | **Képes hero** | KITÖLTI a hero hátterét, fátyol alatt | kártya a háttérfotón, a jobb hasábban | Indigó |
+| `/c` | **Cédula a képen** | külön mezőben, a jobb hasábban | kártya a fotó alsó részén | Posztó |
+
+### A hero alatti oldal formanyelve
+
+A hero mindhárom változatban ugyanaz marad; ami alatta van, változatonként más
+formanyelvet visel. Ez egy hatókörosztály a burkolón (`stil-*`), tehát **minden
+aloldalra is átüt** — nem csak a kezdőlapra.
+
+| Változat | Formanyelv | Mit csinál |
+|---|---|---|
+| `/a` | **Visszafogott kódexlap** | A megszokott: keretes lapok, vonalas pecsétmotívum, letisztult rács. Ez nem változott. |
+| `/b` | **Sztyeppe — honfoglalás előtti** | Nemez és bőr, nem pergamen: doboz helyett **sáv és kör**. Palmettás szalag a szakaszfejek alatt, palmettarács a háttérben, felül szíjszegélyes lapok, **korong alakú fotók**, vert korongba írt számok, lecsapott sarkú gombok. Címbetű: **Cormorant Unicase**. Kódexes vagy gótikus utalás szándékosan nincs benne — 890 előtt az anakronizmus lenne. |
+| `/c` | **Kódex — középkori magyar** | **Vonalazott írástükör** a szakaszok mögött, indás záróvonal a szakaszfejek alatt, **iniciálé** a vezető bekezdésen, rubrikált `¶` bekezdésjelek, **lapszéli indadísz** a kiemelt lapok bal szélén, kettős vonalazású keretek, **kéthasábos szedés** hasábvonallal, kipontozott regiszter a számoknál. Címbetű: **gótikus textúra** (Grenze Gotisch) — a középkori magyar oklevelek írásképe. |
+
+Két dolog a formanyelvekről:
+
+- **A színtől függetlenek.** A díszítmények CSS-maszkkal készülnek
+  (`background-color: var(--v-accent2)` + `mask-image`), nem háttérképként — így
+  sémaváltáskor maguktól átszíneződnek. Mind a kilenc kombináció működik.
+- **A címbetű a heróra is átüt.** A hero *felépítése* nem változott, de a betűtípusa
+  igen — különben a lap teteje és alja két külön oldalnak látszana. Ha a hero
+  betűjét is az eredetin kellene tartani, az a `--v-display` token egy sora.
+
+A gótikus textúra és a unicase **csupa nagybetűvel olvashatatlan**, ezért ezekben a
+formanyelvekben a `text-transform: uppercase` ki van kapcsolva mindenhol, ahol a
+címbetű fut. A **kenyérbetű mindhárom változatban EB Garamond marad** — hosszú
+szöveget gótikussal szedni nem lenne olvasható.
+
+Az „alapból" oszlop csak azt mondja meg, milyen színnel NYÍLIK MEG az oldal — hogy a
+választóoldalon egymás mellett mindhárom séma látszódjon. A váltóval mindegyik
+változat mindegyik színre átállítható.
+
+## Az öt színséma
+
+| Séma | Alap | Kiemelés | Díszítés | Harmadik |
+|---|---|---|---|---|
+| **Pergamen** | `#F2E8D2` pergamen | `#A32E17` cinóber | `#9E772B` aranyfüst | `#2C4A7C` lazúr |
+| **Indigó** | `#1B2E52` indigó | `#DFA08E` / `#AE3B2C` krapp | `#E8EEF7` mintafehér | `#F7F2E6` vászon (lapok) |
+| **Posztó** | `#F0EDE3` gyapjú | `#2C4A38` posztózöld | `#91742C` sárgaréz | `#4F6248` fakó zöld |
+| **Parázs** | `#FFFFFF` mészfehér | `#B04405` parázs | `#E8891F` láng | `#121212` korom (törzsszöveg) |
+| **Szattyán** | `#2B1F17` cserzett bőr | `#E3A877` vörösréz | `#F2E4CD` csont | `#93BDA8` patinazöld |
 
 - **Pergamen** — a középkori kódexlap festékei. Világos, meleg, vörös vezérszínnel.
 - **Indigó** — a kékfestő vászon színei. Az egyetlen sötét séma: a tartalom
@@ -117,6 +171,13 @@ sehol ne legyen sima színfelület.
 - **Posztó** — a szűrhímzés színei. Hűvösebb fehér gyapjú alap, zöld vezérszínnel.
   **Szándékosan nincs benne piros** a zöld és a fehér mellett, hogy a hármas ne
   olvasódjon zászlóként.
+- **Parázs** — a tábortűz színei: mészfehér alap, fekete törzsszöveg, parázsnarancs
+  kiemelés. A készlet legerősebb kontrasztú sémája. A narancs **két árnyalatban** van:
+  a szövegszín sötétebb (`#B04405`), mert a világos lángnarancs fehéren csak 2,6:1-et
+  hozna; a `#E8891F` csak díszítésre megy.
+- **Szattyán** — cserzett bőr. A nomád tarsoly és a kódexkötés ugyanabból az anyagból
+  készült, ezért ez a séma mindkét új formanyelvhez illik. A **második sötét séma**, de
+  az Indigóval ellentétben itt a lapok is sötétek maradnak, tehát nincs tintafordítás.
 
 ### Hogyan működik a témázás
 
@@ -134,6 +195,30 @@ Az **Indigó sémának két tokenkészlete van**: a sötét alap és a világos 
 kártyaszerkezet mindkét közegben olvasható marad. A világos sémákban a `.lap-kor`
 nem változtat semmin.
 
+### A lebegő bemutatóváltó
+
+`components/SemaValto.tsx`. Két dolgot kapcsol.
+
+**Változat.** Átvisz a másik két demóra, és megtartja az aktuális aloldalt: az
+útvonalból (`usePathname`) leválasztja a változat-előtagot, és a maradékot fűzi az új
+elé. Az aktuális változat `aria-current="page"`-et kap.
+
+**Színséma.** Egyetlen dolgot csinál: a gyökérelemen
+(`#sema-gyoker`) cseréli a hatókörosztályt. Mivel a teljes paletta CSS-változókból
+jön, ez az egy osztálycsere átszínezi az egész oldalt — nincs újratöltés, nincs
+szerveroldali változat.
+
+A választás `localStorage`-ba kerül, és a `ValtozatLayout`-ba ágyazott apró szkript
+**még az első festés előtt** visszaállítja, tehát nincs színvillanás. Ezért van a
+gyökérdiven `suppressHydrationWarning`: a szkript szándékosan eltér attól, amit a
+szerver renderelt. Ha a `localStorage` nem elérhető (privát mód, letiltott tároló),
+a váltó ugyanúgy működik, csak nem emlékszik — ez mérve is van.
+
+Akadálymentesség: valódi `<button>`-ok, `aria-expanded` / `aria-controls` (a panel
+mindig a DOM-ban van, csak `hidden` — így az `aria-controls` létező elemre mutat),
+`aria-current` az aktív sémán, Escape-re és kívülre kattintásra zár, a fókusz a
+nyitógombra tér vissza, minden célpont legalább 44 px.
+
 ---
 
 ## A két hero-követelmény
@@ -150,15 +235,15 @@ sávban **nincs fókuszálható elem** — nem tudja csapdába ejteni a billenty
 
 ### 2. Legfrissebb Facebook-bejegyzés — háromféle megoldás
 
-Mindhárom séma ugyanazt a tartalmat mutatja, csak más helyen — hogy az egyesület
+Mindhárom változat ugyanazt a tartalmat mutatja, csak más helyen — hogy az egyesület
 össze tudja hasonlítani, melyik kompromisszum a jó. Mindegyik a hajtás felső részén
 van, és egyik sem viszi el a címsor elől a fókuszt.
 
-| Séma | Megoldás | Hol |
+| Változat | Megoldás | Hol |
 |---|---|---|
-| `/a` **Pergamen** | `LatestPostSav` | Teljes szélességű hírcsík **közvetlenül a fejléc alatt**, még a támogatói sáv fölött. Ez a legfelső lehetséges hely — a látogató a címsor előtt látja. |
-| `/b` **Indigó** | `LatestPostCard` (`kepen`) | Kártya a hero **háttérfotóján**, a jobb hasábban. 92%-os fedettségű lapszín, hogy a kép átüssön alatta. |
-| `/c` **Posztó** | `LatestPostKepAlja` | Kártya a hero **fotójának alsó részére ültetve**, a kép szélétől behúzva — mint egy múzeumi tárgycédula. |
+| `/a` **Hírcsík** | `LatestPostSav` | Teljes szélességű hírcsík **közvetlenül a fejléc alatt**, még a támogatói sáv fölött. Ez a legfelső lehetséges hely — a látogató a címsor előtt látja. |
+| `/b` **Képes hero** | `LatestPostCard` (`kepen`) | Kártya a hero **háttérfotóján**, a jobb hasábban. 92%-os fedettségű lapszín, hogy a kép átüssön alatta. |
+| `/c` **Cédula a képen** | `LatestPostKepAlja` | Kártya a hero **fotójának alsó részére ültetve**, a kép szélétől behúzva — mint egy múzeumi tárgycédula. |
 
 Mérve (1440 px, a lap tetejétől): a bejegyzés az `/a`-n 89 px-en, a `/b`-n 258 px-en,
 a `/c`-n 396 px-en kezdődik — a címsor rendre 309 / 252 / 244 px-en. A `/c`-n a kártya
@@ -202,8 +287,9 @@ content/          Közös tartalomréteg — mindhárom séma EZT fogyasztja
   akciok.ts         a jelenlegi oldal saját ajánlatai
   minta.ts        ⚠ AZ EGYETLEN fájl kitalált (MINTA) tartalommal
 variants/
-  config.ts         a három színséma leírása és palettája
-  fonts.ts          Cinzel + EB Garamond, latin-ext vágattal
+  config.ts         a három VÁLTOZAT és a három SZÍNSÉMA leírása (két külön tengely)
+  fonts.ts          Cinzel + EB Garamond + Cormorant Unicase + Grenze Gotisch,
+                    mind latin-ext vágattal
 components/
   pages/Landing.tsx a kezdőlap — mindhárom séma ezt rendereli
   pages/*.tsx       a hat aloldal közös szerkezete
@@ -212,14 +298,17 @@ components/
   Ornament.tsx      szakaszelválasztó, rubrumjel — a pecsét formanyelvéből
   SponsorBar.tsx    vízszintesen futó támogatói hirdetősáv
   LatestPost.tsx    a hero hírkártyája (3 elhelyezés) + éles beágyazás kapcsolója
+  ValtozatLayout.tsx a három változat közös kerete (fejléc, lábléc, sémagyökér)
+  SemaValto.tsx   ⚠ a lebegő színsémaváltó — a BEMUTATÓ eszköze, élesre nem kell
   Nav / Footer / Minta / ui.tsx
 app/
-  page.tsx          színsémaválasztó
-  a|b|c/            layout (séma-osztály) + kezdőlap + 6 aloldal-útvonal
+  globals.css       színsémák, tokenek, hero-fátyol
+  stilusok.css      a három FORMANYELV — a `stil-*` hatókörosztályok
+  page.tsx          változatválasztó
+  a|b|c/            layout (11 sor: a ValtozatLayout hívása) + kezdőlap + 6 aloldal
 public/foto/        25 fotó az egyesület saját képgalériájából
 scripts/
   gen-routes.mjs    a 18 aloldal-útvonalfájl generálása
-  gen-schemes.mjs   a 3 séma layoutjának és kezdőlapjának generálása
   check-fonts.mjs   latin-ext lefedettség ellenőrzése a buildben
 ```
 
@@ -270,9 +359,18 @@ képaláírásokkal mint alt szöveggel. Stockfotó nincs.
 - **Betűk:** mindkét betűcsalád latin-ext vágattal (ő ű Ő Ű) — `npm run check-fonts`
   a build kimenetéből ellenőrzi, nem feltételezésből
 - **Kontraszt:** nem tokenpárokból számolva, hanem a **kirenderelt oldalakon** mérve.
-  Mind a 22 oldalon, 1440 és 390 px-en, minden szövegelem tényleges színe és a fölé
-  kompozitált tényleges háttere (az ősök átlátszóságával együtt) — **7583 elem, 0 esik
-  a küszöb alá** (4.5:1 törzsszövegnél, 3:1 nagy fokozatnál). Az aranyfüst és a
+  Mind a 22 oldalon, **mind az öt színsémában** (mert a váltóval bármelyik oldal
+  bármelyik színben megnézhető), 1440 és 390 px-en, minden szövegelem tényleges színe
+  és a fölé kompozitált tényleges háttere — **38 180 elem, 0 esik a küszöb alá**
+  (4.5:1 törzsszövegnél, 3:1 nagy fokozatnál). A nyitott váltópanel külön is mérve,
+  mind az öt sémában.
+
+  A kompozitba a formanyelvek **teljes felületű `::before` rétegei** is beleszámítanak
+  (palmettarács, vonalazott írástükör): ezek a szakasz háttere fölött, a szöveg alatt
+  festődnek, tehát pont a kritikus réteget hagynánk ki nélkülük. Ez a mérés fogta meg,
+  hogy a kódex vonalazása 50%-os fedésnél 4,27:1-re vitte le a halvány címkeszínt —
+  innen jött a 25%-os fedés és két sötétebb `--v-muted` (`#696050` → `#635a4b`,
+  `#5b6055` → `#565a50`). Az aranyfüst és a
   sárgaréz dekorációs szín, nem szövegszín — a linkek külön `--v-link` tokent kapnak.
 
   A mérés három dolgot hozott ki, amit egy tokenpáronkénti ellenőrzés nem lát:
@@ -281,15 +379,35 @@ képaláírásokkal mint alt szöveggel. Stockfotó nincs.
   lett; az Indigó kiemelőszíne a vászonlapon csak 3.93:1-et hozott — `#da8e7d` →
   `#dfa08e`; a vászonlap zsályazöldje 4.25:1-et — `#6b7f4e` → `#5b6c42`.
 
-- **Kontraszt a háttérfotón** (`/b` hero): itt nem lehet tokenből számolni, mert a
-  háttér a fotó. A kirenderelt hátteret (fotó + fátyol) lefényképezzük a szöveg
-  elrejtésével, és minden szövegdoboz **legvilágosabb képpontjára** — világos szövegnél
-  ez a legrosszabb eset — számolunk arányt. Így állt be a fátyol: mobilon 88%,
-  1440 px-en 52% alap + vízszintes átmenet (96% → 86% → 0) a szöveg felőli oldalon.
-  Eredmény: 3.99–9.42:1, minden elem küszöb fölött. Két elem emiatt kapott más színt
-  a fotós heróban: a szakaszcímke (kiemelőszínben csak 3.41:1) és a képaláírás
-  (halvány tintában 3.78:1) világos tintát kapott. **A fotó cseréjekor ezt újra le
-  kell mérni** — a scriptek nélkül a fátyol értékei nem tippelhetők meg.
+- **Kontraszt a háttérfotón** (2. változat hero): itt nem lehet tokenből számolni, mert
+  a háttér a fotó. A kirenderelt hátteret (fotó + fátyol) lefényképezzük a szöveg
+  elrejtésével, és minden szövegdoboz **minden képpontjára** kiszámoljuk az arányt, majd
+  a legrosszabbat vesszük — így mindegy, hogy világos tinta ül sötét képen vagy fordítva.
+
+  Ez azért kell mindhárom sémára külön, mert a **fátyol iránya megfordul**: a sötét
+  sémán világos tinta ül a képen (a veszélyes eset a világos képpont), a világos
+  sémákon sötét tinta (a veszélyes eset a sötét). A fedés ezért séma-szintű token
+  (`--fatyol*` az `app/globals.css`-ben), nem Tailwind-segédosztály:
+
+  | Séma | mobil alap | 1440 alap | vízszintes átmenet |
+  |---|---|---|---|
+  | Világos (Pergamen, Posztó, Parázs) | 85% | 66% | 60% → 40% → 0 |
+  | Sötét (Indigó, Szattyán) | 85% | 60% | 74% → 60% → 0 |
+
+  A vízszintes átmenet **szándékosan lapos**: korábban 96%-ról indult, és a fotó a
+  hero bal kétharmadán gyakorlatilag eltűnt alatta. Most a kép a teljes szélességben
+  látszik, a szöveg alatti fedés viszont még mindig elég.
+
+  Mérve mind az öt sémában, 1440 és 390 px-en: **0 bukás.** (A 3 és 4 közötti értékek
+  a nagy fokozatú címsor elemei, ahol a küszöb 3.0.)
+  Két elem emiatt kapott más színt a fotós heróban: a szakaszcímke és a képaláírás
+  világos tintát kapott. **A fotó cseréjekor mindhárom sémát újra le kell mérni.**
+
+- **A váltó mérve:** mind az öt séma vált, a választás átmegy az aloldalakra és a
+  másik két változatra; a változatváltás megtartja az aktuális aloldalt
+  (`/a/akciok` → `/c/akciok`) és `aria-current`-tel jelöli az aktuálisat; Escape-re
+  zár és visszaadja a fókuszt; a panel minden célpontja 44 px fölött van; letiltott
+  `localStorage` mellett sem dob hibát.
 - **Mobil-először tervezve.** A méretek és a függőleges ritmus a 390 px-es
   nézetből indulnak, és onnan nőnek (`sm:` / `lg:`). Mérve:
   minden interaktív elem legalább 24×24 px (WCAG 2.5.8 AA), az elsődleges

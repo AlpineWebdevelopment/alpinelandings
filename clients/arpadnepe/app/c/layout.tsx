@@ -1,23 +1,12 @@
 import type { ReactNode } from 'react';
-import { Footer } from '@/components/Footer';
-import { Nav } from '@/components/Nav';
+import { ValtozatLayout } from '@/components/ValtozatLayout';
 import { variants } from '@/variants/config';
-import { betuValtozok } from '@/variants/fonts';
 
-/** Poszto színséma. A szerkezet és a tipográfia mindhárom sémában azonos. */
+/**
+ * 3. változat — Cédula a képen: a kártya a hero fotójának alsó részén ül.
+ * Alapból Posztó színben nyílik; a jobb alsó sarki váltóval mind a három
+ * színséma kipróbálható rajta.
+ */
 export default function Layout({ children }: { children: ReactNode }) {
-  return (
-    <div
-      className={`${betuValtozok} sema-poszto flex min-h-screen flex-col bg-paper text-ink`}
-    >
-      <a href="#tartalom" className="skip-link">
-        Ugrás a tartalomra
-      </a>
-      <Nav v={variants.c} />
-      <main id="tartalom" className="flex-1">
-        {children}
-      </main>
-      <Footer v={variants.c} />
-    </div>
-  );
+  return <ValtozatLayout v={variants.c}>{children}</ValtozatLayout>;
 }
