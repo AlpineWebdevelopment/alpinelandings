@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reviews from "./components/Reviews";
 import Image from "next/image";
 import ContactForm from "./components/ContactForm";
 import { site } from "./lib/site";
@@ -446,6 +447,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Reviews />
 
         {/* CONTACT */}
         <section className="contact" id="kapcsolat">
