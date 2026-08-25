@@ -31,6 +31,7 @@ export const reviews: Review[] = [
   {
     name: "Mercédesz Kovács",
     text: "Zoli időben hozta a konténert a megbeszéltek szerint.",
+    photo: "/velemeny-3.webp",
   },
 ];
 
