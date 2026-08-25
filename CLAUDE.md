@@ -6,19 +6,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A collection of hand-built, single-file static landing pages for Hungarian small businesses (klímaszerelő, autószerelő, etc.), plus the sales/pitch page for the agency itself (**Belluna Studios** — renamed from "Alpine Studios" in `00403a8`; the old name still lingers in `README.md`, `templates/*-base.html`, and the `pitchpage/*.bak.html` files).
 
-**No build step, no npm, no framework, no tests.** HTML + CSS + vanilla JS only. Editing a file is the whole build.
+**Most of this repo has no build step, no npm, no framework, no tests** — HTML + CSS + vanilla JS only, where editing a file is the whole build.
+
+**The exceptions are the Next.js clients.** `clients/kontenersitt/{angyalfold,rakosmente,ujbuda,ujpest,zuglo}` and `clients/arpadnepe` are ordinary npm/TypeScript Next.js apps, each self-contained with its own `package.json`, lockfile, and `vercel.json`. They share nothing with the static pages and nothing with each other — no workspace, no root `package.json`. Treat each as its own project and read its own `AGENTS.md`/`README.md` first.
 
 ## Commands
 
-There is no package manager or test runner. To preview:
+The static pages have no package manager or test runner. To preview them:
 
 ```bash
 python -m http.server 8000      # MUST be run from the repo root, not from a client folder
 ```
 
+The Next.js clients are previewed and built from inside their own folder instead:
+
+```bash
+cd clients/arpadnepe && npm install && npm run dev     # or: npm run build
+```
+
 Serving from the repo root is required because every page references its assets with **root-absolute paths** (`/clients/<slug>/assets/...`). Opening an `index.html` via `file://` or serving a client subfolder directly will 404 all images and CSS.
 
-Deployment (per `docs/deployment.md`): each client subfolder is its own Vercel project with Root Directory `clients/<slug>`, Framework "Other", empty build command. **Note the conflict with the point above** — a page whose assets use `/clients/<slug>/...` will break under a subfolder-root deploy; paths must be made relative before deploying that way. The root `.htaccess` (extensionless-URL rewrite, `Options -Indexes`) implies the whole repo is also served from an Apache host at the domain root, where the absolute paths work as-is.
+Deployment (per `docs/deployment.md`): **each client subfolder is its own Vercel project**, set via that project's Root Directory — `clients/<slug>`. Depth is irrelevant to Vercel; a project never has to sit at the repo root. Static clients use Framework "Other" with an empty build command; Next.js clients use Framework "Next.js" with all build settings on default, and carry a `vercel.json` pinning `"framework": "nextjs"` so they can't silently fall back to "Other" and publish raw source.
+
+**Note the conflict with the preview note above** — a *static* page whose assets use `/clients/<slug>/...` will break under a subfolder-root deploy; those paths must be made relative before deploying that way. This does not apply to the Next.js clients: they serve `public/` at their own domain root (`/foto/x.webp`), which is already correct for a subfolder-root deploy. The root `.htaccess` (extensionless-URL rewrite, `Options -Indexes`) implies the static part of the repo is also served from an Apache host at the domain root, where the absolute paths work as-is; the Next.js clients cannot run there and are Vercel-only.
 
 ## Layout
 
@@ -26,7 +36,9 @@ Deployment (per `docs/deployment.md`): each client subfolder is its own Vercel p
 |---|---|
 | `index.html` | The **live** pitch page served at the domain root. This is the one to edit. |
 | `pitchpage/index.html` | Older copy of the same page — has since diverged (root is ahead). `*.bak.html` next to it are dead snapshots. |
-| `clients/<slug>/index.html` | Real client sites. `robots.txt` disallows `/clients/`. |
+| `clients/<slug>/index.html` | Real client sites, single-file static. `robots.txt` disallows `/clients/`. |
+| `clients/kontenersitt/<kerulet>/` | Five **Next.js** apps (konténerrendelés, one per Budapest district). Real server routes — each has `app/api/lead/route.ts`. |
+| `clients/arpadnepe/` | **Next.js** demo for the Árpád Népe egyesület: 3 layout variants (`/a`, `/b`, `/c`) × 5 colour schemes, switched client-side. Fully prerendered — no server routes. |
 | `portfolio/<slug>/index.html` | Sales demos linked from the pitch page. `kovacs-autoszerviz-gyor` is the locked reference design — do not modify it. `szegedi-autoshop-szeged` is an empty stub. |
 | `klima/index.html` | Standalone klímaszerelő demo (Kovács design retargeted to HVAC). |
 | `templates/autoszerelo-base.html` | The `{{placeholder}}` master template. `koltozteto-base.html` and `lakatos-base.html` are empty stubs. |

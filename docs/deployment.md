@@ -1,6 +1,15 @@
 # Deployment — Vercel
 
-Static HTML, no build step. Each client subfolder deploys as a separate Vercel project.
+Each client subfolder deploys as its **own Vercel project** — one repo, many projects. Vercel
+supports this natively via the **Root Directory** setting; the subfolder does not need to be the
+repo root.
+
+Two kinds of client live here:
+
+| Kind | Examples | Framework Preset | Build |
+|---|---|---|---|
+| Static HTML | most of `clients/*`, `portfolio/*` | Other | none |
+| Next.js | `clients/kontenersitt/*`, `clients/arpadnepe` | Next.js | `next build` |
 
 ---
 
@@ -18,7 +27,7 @@ Static HTML, no build step. Each client subfolder deploys as a separate Vercel p
 
 ## Deploying a new client site
 
-### Via Vercel dashboard (recommended for first deploy)
+### Static HTML client — via Vercel dashboard (recommended for first deploy)
 
 1. vercel.com → your account → **Add New Project**
 2. Select this GitHub repo (`alpinelandings`)
@@ -30,6 +39,43 @@ Static HTML, no build step. Each client subfolder deploys as a separate Vercel p
 7. Click **Deploy**
 
 Each client gets their own Vercel project pointing at their subfolder. One repo, multiple projects — Vercel handles this natively.
+
+### Next.js client
+
+Same flow, three settings differ. A Next.js app in a subfolder deploys exactly like a static one —
+the Root Directory setting is what makes the depth irrelevant.
+
+1. vercel.com → **Add New Project** → select this repo (`alpinelandings`)
+2. **Root Directory** → Edit → type the app folder, e.g. `clients/arpadnepe`
+3. Framework Preset: **Next.js** (auto-detected once Root Directory is set)
+4. Build Command / Output Directory / Install Command: leave **all on default** — do not override
+5. Click **Deploy**
+
+Every Next.js client also carries a `vercel.json` next to its `package.json`:
+
+```json
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs"
+}
+```
+
+This pins the framework so the build does not fall back to "Other" (which would publish the raw
+source files instead of building). Keep it in every Next.js client folder.
+
+**Do not point a Vercel project at the repo root for these.** The root is the static pitch page;
+a root-directory project will never build `clients/<slug>` — that is what the per-project Root
+Directory setting is for.
+
+#### Gotchas specific to Next.js clients
+
+| Problem | Fix |
+|---|---|
+| Deploy succeeds but serves `.tsx` source / a file listing | Framework Preset is "Other". Set it to **Next.js** and confirm `vercel.json` is present |
+| `No Next.js version detected` | Root Directory is wrong — it must be the folder containing `package.json`, not the repo root |
+| Build can't find the lockfile | Each app keeps its own `package-lock.json`. Don't delete it; there is no workspace root |
+| Assets 404 | Next.js serves `public/` at the domain root (`/foto/x.webp`). Do **not** apply the static-site `/clients/<slug>/...` path convention here |
+| Changes to a shared file outside the app folder don't trigger a rebuild | Enable *Settings → Git → Include files outside Root Directory* (not needed today — each app is self-contained) |
 
 ### Via CLI (faster for redeploys after edits)
 
