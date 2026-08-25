@@ -31,7 +31,6 @@ export const reviews: Review[] = [
   {
     name: "Tutor Evelin",
     text: "Nagyon segítőkészek a kollégák, minden rendben volt!",
-    photo: "/velemeny-3.webp",
   },
 ];
 
