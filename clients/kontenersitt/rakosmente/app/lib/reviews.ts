@@ -21,6 +21,7 @@ export const reviews: Review[] = [
   {
     name: "Levente Szapula",
     text: "Nagyon gyors és precíz szállitás! Kávéval is megkínáltam.",
+    photo: "/velemeny-1.webp",
   },
   {
     name: "Mark Miskolczi",
