@@ -10,9 +10,10 @@ import {
   versenyek,
 } from '@/content';
 import { Minta, MintaSav } from '../Minta';
+import type { VariantConfig } from '@/variants/config';
 import { Card, CardCim, CardSzoveg, PageHeader, Section } from '../ui';
 
-export function EredmenyekPage() {
+export function EredmenyekPage(_props: { v: VariantConfig }) {
   return (
     <>
       <PageHeader

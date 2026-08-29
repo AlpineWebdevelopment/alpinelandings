@@ -18,19 +18,30 @@ export const egyesulet = {
   email: 'arpadnepemail@gmail.com',
 } as const;
 
+export type HelyszinId = 'xvi' | 'xiv';
+
 export type Helyszin = {
-  id: string;
+  id: HelyszinId;
   nev: string;
   cim: string;
+  /** '16. ker.' — a 2026–27-es táblázat jelölése. */
+  ker: string;
+  /** 'Irha utca 21.' — a táblázat cellái szerint. */
+  rovidCim: string;
   leiras: string;
 };
 
-/** FORRÁS: kezdőlap „Helyszínek címei" + /kozossegi-szolgalat/ */
+/**
+ * FORRÁS: kezdőlap „Helyszínek címei" + /kozossegi-szolgalat/;
+ * `ker` és `rovidCim`: forras/Arpad Nepe Egyesulet foglalkozas tablazat 2026-27.jpg
+ */
 export const helyszinek: Helyszin[] = [
   {
     id: 'xvi',
     nev: 'XVI. kerület — egyesületi központ',
     cim: 'Budapest, 1162 Irha u. 21.',
+    ker: '16. ker.',
+    rovidCim: 'Irha utca 21.',
     leiras:
       'Itt szoktuk a szabadidős programjaink nagyját is lebonyolítani (sütögetés, társasozás, felszerelések készítése…).',
   },
@@ -38,9 +49,17 @@ export const helyszinek: Helyszin[] = [
     id: 'xiv',
     nev: 'XIV. kerület — Hunyadi J. Ált. Isk. pince lőtér',
     cim: 'Budapest, 1148 Wass Albert tér 12.',
+    ker: '14. ker.',
+    rovidCim: 'Wass Albert tér 12.',
     leiras: 'Lassan 20 éve működnek itt foglalkozások.',
   },
 ];
+
+export function helyszinRovid(id: HelyszinId): Helyszin {
+  const h = helyszinek.find((x) => x.id === id);
+  if (!h) throw new Error(`Ismeretlen helyszín: ${id}`);
+  return h;
+}
 
 export const linkek = {
   facebook:
@@ -107,7 +126,13 @@ export const versenyek = {
   terv: 'Tervezett íjászversenyek látogatása idén Turulmezőn: 2026-ban szintén tervezzük versenyek látogatását.',
 } as const;
 
-/** FORRÁS: kezdőlap — „Támogasd egyesületünket!" */
+/**
+ * FORRÁS: kezdőlap — „Támogasd egyesületünket!", valamint az egyesület
+ * „TÁMOGASD EGYESÜLETÜNKET!" plakátja (forras/kepek/), amely négy módot sorol:
+ * adó 1%, tárgyadomány, pénzadomány projektekre, „járj edzéseinkre, azzal is
+ * támogathatsz". Az adószám a saját oldalukról való; ennél többet az 1%-ról
+ * nem állítunk.
+ */
 export const tamogatas = {
   cim: 'Támogasd egyesületünket!',
   modok: [
@@ -124,6 +149,14 @@ export const tamogatas = {
       cim: 'Felszereléssel',
       szoveg:
         'Íjász vagy egyéb sportfelszerelés, vívómaszk, fegyverek, páncélok, társasjátékok, könyvek, kézműves alapanyagok, szerszámok, viseletek, ruhaanyag és sok minden más, amit használni tudunk.',
+    },
+    {
+      cim: 'Adó 1%',
+      szoveg: `Személyi jövedelemadód 1%-át felajánlhatod az egyesületnek. Adószám: ${egyesulet.adoszam}.`,
+    },
+    {
+      cim: 'Járj az edzéseinkre',
+      szoveg: 'Járj edzéseinkre, azzal is támogathatsz.',
     },
   ],
 } as const;

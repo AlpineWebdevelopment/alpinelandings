@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# KÉPEK: csak az kerül a verziókezelőbe, amit az oldal tényleg megjelenít.
+# Minden más az átadott anyag része, és ezen a gépen marad.
+#
+#   forras/kepek/        az ügyfél 121 nyers fotója (110 MB) → public/galeria/
+#   forras/*.jpg|png     az átadott plakátok, táblázat, árlista → public/plakat/
+#   forras/nem-hasznalt/ ami legyártás után sem került egyetlen oldalra sem
+/forras/kepek/
+/forras/*.jpg
+/forras/*.png
+/forras/nem-hasznalt/

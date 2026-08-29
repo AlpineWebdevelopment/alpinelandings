@@ -1,14 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {
+  arMegjegyzes,
   arak,
+  arakById,
   bemutatkozas,
   egyesulet,
   fotok,
+  galeriaKep,
   helyszinek,
-  heti,
+  jelentkezesiLap,
   kozossegiElet,
   kozossegiSzolgalat,
+  szolgalatiAlkalmak,
   linkek,
   mintaErtekelesek,
   programelemek,
@@ -23,10 +27,12 @@ import { Ornament, OrnamentLec, Rubrum } from '../Ornament';
 import { SponsorBar } from '../SponsorBar';
 import { LogoPecset, PecsetMezo } from '../Logo';
 import { InicialeKeret, Lap, Szemcse } from '../Texture';
-import { Gomb } from '../ui';
+import { ArLista, Gomb } from '../ui';
+import { HetiTablazat } from '../HetiTablazat';
+import { JelentkezesUrlap } from '../JelentkezesUrlap';
 
 /**
- * INDIGÓ — a hero háttere maga a fotó.
+ * 2. VÁLTOZAT — a hero háttere maga a fotó.
  *
  * A kép itt dekoratív háttér (alt=""), a hozzá tartozó képaláírás láthatóan,
  * a hero alján szerepel: így a forrásmegjelölés nem vész el, a képernyőolvasó
@@ -47,7 +53,7 @@ function HeroHatterkep() {
   return (
     <>
       <Image
-        src={fotok.ijaszatOktatas.src}
+        src={fotok.heroFegyverek.src}
         alt=""
         aria-hidden="true"
         fill
@@ -68,7 +74,7 @@ function HeroHatterkep() {
         className="hero-fatyol-fugg pointer-events-none absolute inset-0"
       />
       {/* a pecsétmező itt csak halványan, hogy ne küzdjön a fotóval */}
-      <PecsetMezo id="hero" className="text-accent2" opacity={0.07} />
+      <PecsetMezo className="text-accent2" opacity={0.07} />
     </>
   );
 }
@@ -80,11 +86,11 @@ function HeroHatterkep() {
  * tetején fut. A fotó és a „Friss hírek" kártya viszonya sémánként más
  * (`heroHatter` + `posztHely` a variants/config.ts-ben):
  *
- *   Pergamen — fotó a jobb hasábban, a bejegyzés teljes szélességű hírcsík
+ *   1. változat — fotó a jobb hasábban, a bejegyzés teljes szélességű hírcsík
  *              a fejléc alatt;
- *   Indigó   — a fotó KITÖLTI a hero hátterét, a címsor és a bejegyzéskártya
+ *   2. változat — a fotó KITÖLTI a hero hátterét, a címsor és a bejegyzéskártya
  *              a képen ül;
- *   Posztó   — fotó a jobb hasábban, a bejegyzéskártya a kép ALSÓ RÉSZÉRE ül.
+ *   3. változat — fotó a jobb hasábban, a bejegyzéskártya a kép ALSÓ RÉSZÉRE ül.
  *
  * A hero alatti ritmus széles, kevés elemű blokkokból áll: idézetblokk,
  * lépcsős fotósor, kiemelt lap, statisztikarács, programrács, idézetek,
@@ -115,7 +121,7 @@ export function Landing({ v }: { v: VariantConfig }) {
           <HeroHatterkep />
         ) : (
           <>
-            <PecsetMezo id="hero" className="text-accent2" opacity={0.13} />
+            <PecsetMezo className="text-accent2" opacity={0.13} />
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-linear-to-b from-paper2/70 to-transparent"
@@ -202,8 +208,8 @@ export function Landing({ v }: { v: VariantConfig }) {
                       }`}
                     >
                       <Image
-                        src={fotok.ijaszatOktatas.src}
-                        alt={fotok.ijaszatOktatas.alt}
+                        src={fotok.heroFegyverek.src}
+                        alt={fotok.heroFegyverek.alt}
                         fill
                         loading="eager"
                         fetchPriority="high"
@@ -226,7 +232,7 @@ export function Landing({ v }: { v: VariantConfig }) {
                   </div>
 
                   <figcaption className="mt-2 font-body text-xs italic text-muted">
-                    {fotok.ijaszatOktatas.alt}
+                    {fotok.heroFegyverek.alt}
                   </figcaption>
                 </figure>
               </div>
@@ -241,7 +247,7 @@ export function Landing({ v }: { v: VariantConfig }) {
             /* text-ink2, nem muted: a halvány szürkéskék a fátyolozott fotón
                nem hozná a 4,5:1-et ekkora fokozatban (mérve: 3,78:1). */
             <p className="relative mt-8 font-body text-xs italic text-ink2 lg:mt-10">
-              {fotok.ijaszatOktatas.alt}
+              {fotok.heroFegyverek.alt}
             </p>
           ) : null}
         </div>
@@ -251,7 +257,7 @@ export function Landing({ v }: { v: VariantConfig }) {
 
       {/* ═══════════════ RÓLUNK — idézetblokk ═══════════════ */}
       <section className="szakasz relative overflow-hidden border-b border-line bg-paper2">
-        <PecsetMezo id="rolunk" className="text-ink" opacity={0.05} />
+        <PecsetMezo className="text-ink" opacity={0.05} />
         <Szemcse id="rolunk" opacity={0.35} />
 
         <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-24">
@@ -332,7 +338,7 @@ export function Landing({ v }: { v: VariantConfig }) {
 
       {/* ═══════════════ ÉLET NÁLUNK — lépcsős fotósor + lap ═══════════════ */}
       <section className="szakasz relative overflow-hidden border-b border-line bg-paper">
-        <PecsetMezo id="elet" className="text-accent2" opacity={0.11} />
+        <PecsetMezo className="text-accent2" opacity={0.11} />
         <Szemcse id="elet" opacity={0.3} />
 
         <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-24">
@@ -362,7 +368,7 @@ export function Landing({ v }: { v: VariantConfig }) {
               sztyeppe ? 'sm:gap-6 lg:gap-8' : ''
             }`}
           >
-            {[fotok.erdeiCsata, fotok.jurtaallitas, fotok.tanchaz, fotok.nyariEdzotabor].map(
+            {[galeriaKep('jurta-racsfal-allitas'), galeriaKep('tuzugras-este'), galeriaKep('tabor-oktato-gyerekek'), galeriaKep('bogracs-szabadtuzon')].map(
               (f, i) => (
                 <figure
                   key={f.src}
@@ -426,8 +432,8 @@ export function Landing({ v }: { v: VariantConfig }) {
 
       {/* ═══════════════ 50 ÓRA — kiemelt lap ═══════════════ */}
       <section className="szakasz relative overflow-hidden border-b border-line bg-paper2">
-        <PecsetMezo id="ksz" className="text-accent2" opacity={0.09} />
-        <LogoPecset id="ksz-vizjel" felirattal={false} strokeWidth={3} className="pointer-events-none absolute -left-32 -bottom-44 h-[32rem] w-[32rem] text-accent/15" />
+        <PecsetMezo className="text-accent2" opacity={0.09} />
+        <LogoPecset className="pointer-events-none absolute -left-32 -bottom-44 h-[32rem] w-[32rem] text-accent/15" />
 
         <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-24">
           <Lap className="p-5 sm:p-8 lg:p-12">
@@ -454,12 +460,12 @@ export function Landing({ v }: { v: VariantConfig }) {
               </div>
 
               <ul className="self-center">
-                {kozossegiSzolgalat.allando.map((a, i) => (
+                {szolgalatiAlkalmak().map((a, i) => (
                   <li
                     key={`${a.nap}-${a.ido}-${i}`}
                     className="flex items-baseline gap-4 border-b border-line py-3 font-body text-base"
                   >
-                    <span className="w-20 shrink-0 font-semibold text-ink">{a.nap}</span>
+                    <span className="w-20 shrink-0 font-semibold text-ink">{a.napNev}</span>
                     <span className="w-16 shrink-0 text-muted">{a.ker}</span>
                     <span className="tabular-nums text-ink2">{a.ido}</span>
                   </li>
@@ -474,7 +480,6 @@ export function Landing({ v }: { v: VariantConfig }) {
       <section className="szakasz relative overflow-hidden border-b border-line bg-paper">
         {/* A pecsét teljes kontúrja, nagy vízjelként — felirattal együtt */}
         <LogoPecset
-          id="eredm-vizjel"
           className="pointer-events-none absolute -left-24 top-1/2 hidden h-[34rem] w-[34rem] -translate-y-1/2 text-accent2/30 lg:block"
         />
         <Szemcse id="eredm" opacity={0.3} />
@@ -584,7 +589,7 @@ export function Landing({ v }: { v: VariantConfig }) {
 
       {/* ═══════════════ RENDEZVÉNYEK — programrács ═══════════════ */}
       <section className="szakasz relative overflow-hidden border-b border-line bg-paper2">
-        <PecsetMezo id="rend" className="text-accent2" opacity={0.1} />
+        <PecsetMezo className="text-accent2" opacity={0.1} />
         <Szemcse id="rend" opacity={0.3} />
 
         <div className="relative mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:py-24">
@@ -687,7 +692,7 @@ export function Landing({ v }: { v: VariantConfig }) {
         id="kapcsolat"
         className="szakasz relative overflow-hidden border-t border-line bg-paper2"
       >
-        <PecsetMezo id="kapcs" className="text-accent2" opacity={0.09} />
+        <PecsetMezo className="text-accent2" opacity={0.09} />
         <Szemcse id="kapcs" opacity={0.35} />
 
         <div className="relative mx-auto max-w-7xl px-5 pb-12 pt-4 sm:pb-16 lg:pb-24">
@@ -697,47 +702,20 @@ export function Landing({ v }: { v: VariantConfig }) {
               Válassz edzést
             </h2>
             <p className="mt-5 font-body text-base leading-relaxed text-ink2">
-              Heti foglalkozás, edzés ára: 11 000 Ft/hónap (4 alkalom). A vasárnapi alkalmaknak
-              külön áruk van.
+              Heti egy edzés esetén {arakById.havi.ertek}, alkalmi részvétel{' '}
+              {arakById.alkalmi.ertek}. {arMegjegyzes}
             </p>
           </div>
 
-          <div className="mt-9 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6">
-            {heti.map((nap) => (
-              <Lap key={nap.nap} className="p-5 sm:p-7">
-                <div className="relative flex items-baseline justify-between gap-4 border-b border-line pb-4">
-                  <h3 className="font-display text-xl font-bold uppercase text-ink">{nap.nap}</h3>
-                  <p className="text-right font-body text-xs text-muted">
-                    {nap.helyszin}
-                    <br />
-                    {nap.cim}
-                  </p>
-                </div>
-                <ul className="relative mt-4 space-y-4">
-                  {nap.alkalmak.map((a, i) => (
-                    <li key={`${nap.nap}-${a.ido}-${i}`} className="grid gap-1">
-                      <div className="flex flex-wrap items-baseline gap-x-3">
-                        <span className="font-display text-base font-bold tabular-nums text-accent">
-                          {a.ido}
-                        </span>
-                        <span className="font-body text-base font-semibold text-ink">
-                          {a.cim}
-                        </span>
-                        {a.ar ? (
-                          <span className="font-body text-base font-bold text-accent3">
-                            {a.ar}
-                          </span>
-                        ) : null}
-                      </div>
-                      <p className="font-body text-sm text-muted">
-                        {a.korosztaly}
-                        {a.ferohely ? ` · ${a.ferohely}` : ''}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </Lap>
-            ))}
+          {/* Az egyesület 2026–27-es táblázata — az ügyfél kérésére a kezdőlapon. */}
+          <div className="mt-9 sm:mt-12">
+            <HetiTablazat />
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Gomb href="#jelentkezes">Jelentkezem</Gomb>
+              <Gomb href={h('/foglalkozasok')} masodlagos>
+                Minden foglalkozás részletesen
+              </Gomb>
+            </div>
           </div>
 
           <div className="mt-9 grid gap-5 sm:mt-12 sm:gap-6 lg:grid-cols-3">
@@ -778,20 +756,31 @@ export function Landing({ v }: { v: VariantConfig }) {
           </div>
 
           <Lap className="mt-10 p-5 sm:mt-12 sm:p-8">
-            <dl className="relative grid gap-x-12 sm:grid-cols-2">
-              {arak.map((a) => (
-                <div
-                  key={a.cim}
-                  className="flex items-baseline justify-between gap-6 border-b border-line py-3"
-                >
-                  <dt className="font-body text-base text-ink2">{a.cim}</dt>
-                  <dd className="shrink-0 font-display text-base font-bold tabular-nums text-accent">
-                    {a.ertek}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <h3 className="relative font-display text-lg font-bold uppercase text-ink">
+              Díjak 2026–27
+            </h3>
+            <ArLista tetelek={arak} className="relative mt-4" />
           </Lap>
+
+          {/* Jelentkezési lap — az ügyfél kérésére a kezdőlapon; a nyomtatott
+              beiratkozó lap mezői. A küldés a bemutatóban nincs bekötve (MINTA). */}
+          <div id="jelentkezes" className="mt-12 scroll-mt-24 sm:mt-16">
+            <div className="max-w-2xl">
+              <Rubrum>{jelentkezesiLap.cimke}</Rubrum>
+              <h3
+                id="jelentkezes-cim"
+                className="mt-4 font-display text-2xl font-bold uppercase leading-tight text-ink sm:text-3xl"
+              >
+                {jelentkezesiLap.cim}
+              </h3>
+              <p className="mt-4 font-body text-base leading-relaxed text-ink2">{jelentkezesiLap.lead}</p>
+            </div>
+            <Lap className="mt-6 p-5 sm:p-8">
+              <div className="relative">
+                <JelentkezesUrlap valtozat={v.key} />
+              </div>
+            </Lap>
+          </div>
         </div>
       </section>
     </>

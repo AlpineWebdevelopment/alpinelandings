@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { RendezvenyekPage } from '@/components/pages/Rendezvenyek';
+import { variants } from '@/variants/config';
 
 export const metadata: Metadata = {
   title: 'Rendezvények — Árpád Népe Egyesület',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <RendezvenyekPage />;
+  return <RendezvenyekPage v={variants.a} />;
 }

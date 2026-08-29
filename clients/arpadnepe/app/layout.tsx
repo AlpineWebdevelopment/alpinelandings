@@ -7,7 +7,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Árpád Népe Egyesület — bemutató változatok',
   description:
-    'Három tervezési irány az Árpád Népe Hagyományőrző, Kulturális és Sport Egyesület új weboldalához.',
+    'Két tervezési irány az Árpád Népe Hagyományőrző, Kulturális és Sport Egyesület új weboldalához.',
   robots: { index: false, follow: false },
 };
 

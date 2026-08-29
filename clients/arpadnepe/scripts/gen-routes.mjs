@@ -1,8 +1,9 @@
 /**
- * A hat aloldal útvonalfájljait generálja mindhárom változathoz.
+ * Az aloldalak útvonalfájljait generálja mindhárom változathoz.
  * A tényleges felület a components/pages/* alatt él; az aloldalak
  * változattól és színsémától függetlenül azonosak — a keretet a szülő layout
- * (components/ValtozatLayout.tsx) adja.
+ * (components/ValtozatLayout.tsx) adja. A változatot (`v`) mégis megkapják,
+ * hogy változaton belüli hivatkozást (/a/foglalkozasok#…) tudjanak építeni.
  *
  * Futtatás: node scripts/gen-routes.mjs
  */
@@ -12,6 +13,30 @@ import { dirname, join } from 'node:path';
 const gyoker = join(process.cwd(), 'app');
 
 const oldalak = [
+  {
+    utvonal: 'foglalkozasok',
+    komponens: 'FoglalkozasokPage',
+    modul: 'Foglalkozasok',
+    cim: 'Foglalkozások és edzések 2026–27',
+    leiras:
+      'Gyermek, ifjúsági és felnőtt hagyományőrző foglalkozások, íjász- és vívóedzések, kézművesség és társasjáték a XIV. és XVI. kerületben — heti rend, árak, eszközbérlés, beiratkozás.',
+  },
+  {
+    utvonal: 'galeria',
+    komponens: 'GaleriaPage',
+    modul: 'Galeria',
+    cim: 'Galéria',
+    leiras:
+      'Fotók az Árpád Népe Egyesület foglalkozásairól, edzéseiről, jurtás kiállításairól és rendezvényeiről.',
+  },
+  {
+    utvonal: 'szabalyzatok',
+    komponens: 'SzabalyzatokPage',
+    modul: 'Szabalyzatok',
+    cim: 'Szabályzatok',
+    leiras:
+      'Az Árpád Népe Egyesület érték- és magatartási szabályzata, valamint az íjászati és vívó foglalkozások biztonsági szabályzata — teljes szöveggel, letölthető változattal.',
+  },
   {
     utvonal: 'eredmenyek',
     komponens: 'EredmenyekPage',
@@ -62,7 +87,7 @@ const oldalak = [
   },
 ];
 
-const valtozatok = ['a', 'b', 'c'];
+const valtozatok = ['a', 'b'];
 
 let db = 0;
 for (const v of valtozatok) {
@@ -70,6 +95,7 @@ for (const v of valtozatok) {
     const cel = join(gyoker, v, o.utvonal, 'page.tsx');
     const tartalom = `import type { Metadata } from 'next';
 import { ${o.komponens} } from '@/components/pages/${o.modul}';
+import { variants } from '@/variants/config';
 
 export const metadata: Metadata = {
   title: '${o.cim} — Árpád Népe Egyesület',
@@ -78,7 +104,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <${o.komponens} />;
+  return <${o.komponens} v={variants.${v}} />;
 }
 `;
     mkdirSync(dirname(cel), { recursive: true });

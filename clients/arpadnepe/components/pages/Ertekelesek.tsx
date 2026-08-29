@@ -1,8 +1,9 @@
 import { egyesulet, linkek, mintaErtekelesek, referenciaOsszegzes } from '@/content';
 import { Minta, MintaSav } from '../Minta';
+import type { VariantConfig } from '@/variants/config';
 import { Card, CardCim, CardSzoveg, Gomb, PageHeader, Section } from '../ui';
 
-export function ErtekelesekPage() {
+export function ErtekelesekPage(_props: { v: VariantConfig }) {
   return (
     <>
       <PageHeader

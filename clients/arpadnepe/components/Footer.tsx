@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { egyesulet, helyszinek, linkek, menu } from '@/content';
 import { variantHref, type VariantConfig } from '@/variants/config';
+import { LogoKep } from './Logo';
 import { Ornament } from './Ornament';
 
 export function Footer({ v }: { v: VariantConfig }) {
@@ -10,16 +11,19 @@ export function Footer({ v }: { v: VariantConfig }) {
         <Ornament className="mb-10" />
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <p className="font-display text-lg font-bold leading-tight text-ink">
-              {egyesulet.rovidNev}
-            </p>
-            <p className="mt-2 font-body text-sm leading-relaxed text-ink2">
-              {egyesulet.teljesNev}
-            </p>
-            <p className="mt-4 font-body text-sm text-ink2">
-              Elnök: <strong className="font-semibold text-ink">{egyesulet.elnok}</strong>
-            </p>
+          <div className="flex items-start gap-4">
+            <LogoKep className="h-14 w-14" meret={56} />
+            <div>
+              <p className="font-display text-lg font-bold leading-tight text-ink">
+                {egyesulet.rovidNev}
+              </p>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink2">
+                {egyesulet.teljesNev}
+              </p>
+              <p className="mt-4 font-body text-sm text-ink2">
+                Elnök: <strong className="font-semibold text-ink">{egyesulet.elnok}</strong>
+              </p>
+            </div>
           </div>
 
           <div>

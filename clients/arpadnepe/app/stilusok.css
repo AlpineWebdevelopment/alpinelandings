@@ -1,7 +1,9 @@
 /* ==========================================================================
    FORMANYELVEK — a hero ALATTI oldal karaktere.
 
-   Három hatókörosztály a burkolón: `stil-alap | stil-sztyeppe | stil-kodex`.
+   Hatókörosztályok a burkolón: `stil-alap | stil-sztyeppe`. A `stil-kodex`
+   EGYELŐRE NEM AKTÍV — a 3. változattal együtt kivettük, de a szabályai itt
+   maradtak, hogy a visszahozásához csak a változat bejegyzése kelljen.
    A SZÍNTŐL függetlenek: mindhárom formanyelv mindhárom színsémában működik,
    mert csak formát, ritmust és díszítést állítanak — ahol szín kell, ott is a
    `--v-*` tokeneket használják.
@@ -264,4 +266,10 @@
   box-shadow:
     0 0 0 1px var(--v-onaccent) inset,
     0 0 0 2px var(--v-accent) inset;
+}
+
+/* Galéria — a sztyeppe formanyelv a bélyegképeket is korongra fogja,
+   ahogy a kezdőlap fotósorát. */
+.stil-sztyeppe .galeria-kep {
+  border-radius: 9999px;
 }

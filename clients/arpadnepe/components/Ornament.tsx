@@ -12,7 +12,7 @@ export function Ornament({ className = '' }: { className?: string }) {
   return (
     <div aria-hidden="true" className={`flex items-center gap-4 ${className}`}>
       <PecsetLec className="min-w-0 flex-1 text-accent2" />
-      <LogoJel className="h-9 w-8 shrink-0 text-accent" strokeWidth={7} />
+      <LogoJel className="h-9 w-9 shrink-0 text-accent" />
       <PecsetLec className="min-w-0 flex-1 text-accent2" />
     </div>
   );

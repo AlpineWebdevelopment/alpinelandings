@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { ArTetel } from '@/content';
 import { Ornament, Rubrum } from './Ornament';
 import { PecsetMezo } from './Logo';
 import { Szemcse } from './Texture';
@@ -10,7 +11,7 @@ import { Szemcse } from './Texture';
 function FejlecHatter() {
   return (
     <>
-      <PecsetMezo id="fejlec" className="text-accent2" opacity={0.11} />
+      <PecsetMezo className="text-accent2" opacity={0.11} />
       <Szemcse id="fejlec" opacity={0.35} />
     </>
   );
@@ -122,6 +123,14 @@ export function CardSzoveg({ children }: { children: ReactNode }) {
   return <p className="mt-2.5 font-body text-sm leading-relaxed text-ink2">{children}</p>;
 }
 
+/** A gomb osztályai — a hivatkozás (`Gomb`) és a nyomógomb (`GombNyomo`) ugyanazt kapja. */
+export function gombOsztaly(masodlagos = false, className = ''): string {
+  const stilus = masodlagos
+    ? 'border border-ink text-ink hover:bg-ink hover:text-paper'
+    : 'bg-accent text-onaccent hover:opacity-90';
+  return `gomb inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3 font-body text-sm font-bold transition ${stilus} ${className}`;
+}
+
 export function Gomb({
   href,
   children,
@@ -135,18 +144,36 @@ export function Gomb({
   className?: string;
   kulso?: boolean;
 }) {
-  const stilus = masodlagos
-    ? 'border border-ink text-ink hover:bg-ink hover:text-paper'
-    : 'bg-accent text-onaccent hover:opacity-90';
   return (
     <a
       href={href}
       {...(kulso ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       data-elsodleges={!masodlagos}
-      className={`gomb inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3 font-body text-sm font-bold transition ${stilus} ${className}`}
+      className={gombOsztaly(masodlagos, className)}
     >
       {children}
     </a>
+  );
+}
+
+/** Ugyanaz a gomb `<button>`-ként — űrlap küldéséhez, kliensoldali műveletekhez. */
+export function GombNyomo({
+  children,
+  masodlagos = false,
+  className = '',
+  type = 'button',
+  onClick,
+}: {
+  children: ReactNode;
+  masodlagos?: boolean;
+  className?: string;
+  type?: 'button' | 'submit';
+  onClick?: () => void;
+}) {
+  return (
+    <button type={type} onClick={onClick} data-elsodleges={!masodlagos} className={gombOsztaly(masodlagos, className)}>
+      {children}
+    </button>
   );
 }
 
@@ -159,5 +186,56 @@ export function AdatSor({ cimke, ertek }: { cimke: string; ertek: string }) {
       </dt>
       <dd className="font-body text-sm text-ink">{ertek}</dd>
     </div>
+  );
+}
+
+/**
+ * Semleges címke valós, forrásból vett tartalom mellé, amelyhez megjegyzés
+ * tartozik: „Tervezet" (a dokumentum maga mondja magáról, hogy munkaváltozat)
+ * vagy „Egyeztetendő" (a forrásban ellentmondás vagy csonka szöveg van).
+ * NEM a MINTA jelvény — az a kitalált helykitöltő tartalomé.
+ */
+export function Cimke({
+  children,
+  magyarazat,
+  className = '',
+}: {
+  children: ReactNode;
+  /** Mi a megjegyzés — title-ként és képernyőolvasónak is. */
+  magyarazat: string;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center border border-line bg-paper2 px-2 py-0.5 font-body text-xs font-bold uppercase tracking-[0.14em] text-ink2 ${className}`}
+      title={magyarazat}
+    >
+      {children}
+      <span className="sr-only"> — {magyarazat}</span>
+    </span>
+  );
+}
+
+/** Árlista — cím + megjegyzés bal oldalt, összeg jobb oldalt. */
+export function ArLista({ tetelek, className = '' }: { tetelek: ArTetel[]; className?: string }) {
+  return (
+    <dl className={`border-t border-line ${className}`}>
+      {tetelek.map((a) => (
+        <div
+          key={a.id}
+          className="flex flex-col gap-2 border-b border-line py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+        >
+          <div className="min-w-0">
+            <dt className="font-display text-lg font-semibold text-ink">{a.cim}</dt>
+            {a.megjegyzes ? (
+              <dd className="mt-1 font-body text-sm leading-relaxed text-ink2">{a.megjegyzes}</dd>
+            ) : null}
+          </div>
+          <dd className="shrink-0 font-display text-xl font-bold tabular-nums text-accent">
+            {a.ertek}
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }

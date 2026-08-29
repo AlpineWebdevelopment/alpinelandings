@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ErtekelesekPage } from '@/components/pages/Ertekelesek';
+import { variants } from '@/variants/config';
 
 export const metadata: Metadata = {
   title: 'Referenciák és értékelések — Árpád Népe Egyesület',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ErtekelesekPage />;
+  return <ErtekelesekPage v={variants.a} />;
 }

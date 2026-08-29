@@ -1,0 +1,410 @@
+{
+  "ij-tegez-fokos-szablya": {
+    "w": 1600,
+    "h": 1200
+  },
+  "ijaszok-lovonalon-pincelo": {
+    "w": 1600,
+    "h": 1600
+  },
+  "ijaszcsoport-lovonalon": {
+    "w": 1321,
+    "h": 1191
+  },
+  "telitalalat-orom": {
+    "w": 1254,
+    "h": 1254
+  },
+  "kislany-ijat-feszit": {
+    "w": 1600,
+    "h": 1200
+  },
+  "kisfiu-celoz-jurta-elott": {
+    "w": 1600,
+    "h": 1600
+  },
+  "ijaszat-gyerekek-nyilt-nap": {
+    "w": 1400,
+    "h": 1123
+  },
+  "ket-lany-ijjal-tornaterem": {
+    "w": 1600,
+    "h": 1494
+  },
+  "ijaszat-anyukaval": {
+    "w": 1254,
+    "h": 1254
+  },
+  "ijaszat-erzsebet-liget": {
+    "w": 1600,
+    "h": 1071
+  },
+  "kislany-ijjal-standnal": {
+    "w": 1600,
+    "h": 1600
+  },
+  "vivoedzes-sisakban": {
+    "w": 1512,
+    "h": 1040
+  },
+  "vivas-udvaron-fakard": {
+    "w": 1600,
+    "h": 1472
+  },
+  "vivas-nyilt-nap": {
+    "w": 1561,
+    "h": 1007
+  },
+  "vivoedzes-pincelo-parok": {
+    "w": 1600,
+    "h": 1600
+  },
+  "parharc-balta-kard": {
+    "w": 1535,
+    "h": 1024
+  },
+  "oktato-fakarddal-gyerekekkel-fesztival": {
+    "w": 1600,
+    "h": 1600
+  },
+  "fokosok-szalma-celtabla": {
+    "w": 1600,
+    "h": 1600
+  },
+  "dobobaltak-kesek-csatacsillag": {
+    "w": 1414,
+    "h": 1113
+  },
+  "dobokesek-ronk-celtabla": {
+    "w": 1600,
+    "h": 1600
+  },
+  "fiu-dobokeseket-huz-ki": {
+    "w": 1600,
+    "h": 1600
+  },
+  "csatacsillag-talalat-ronk": {
+    "w": 1600,
+    "h": 1600
+  },
+  "dardadobas-taborban": {
+    "w": 1397,
+    "h": 1126
+  },
+  "gyakorloszablyak-asztalon": {
+    "w": 1200,
+    "h": 1600
+  },
+  "pajzs-kardok-landzsak-sisak": {
+    "w": 1600,
+    "h": 1525
+  },
+  "pajzs-kard-kes-szablya-foldon": {
+    "w": 1600,
+    "h": 1600
+  },
+  "vedofelszereles-sisak-kesztyu-lancing": {
+    "w": 1600,
+    "h": 1600
+  },
+  "sisak-nyakvedovel-pajzs": {
+    "w": 1204,
+    "h": 1136
+  },
+  "bor-pikkelyvert-keszul": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kezmuves-nagyok-bor": {
+    "w": 1150,
+    "h": 1368
+  },
+  "fiatal-bort-lyukaszt": {
+    "w": 1055,
+    "h": 1491
+  },
+  "bormintazas-lyukaszto": {
+    "w": 1600,
+    "h": 1600
+  },
+  "szulok-gyerekek-bort-lyukasztanak": {
+    "w": 1600,
+    "h": 1600
+  },
+  "bordarabok-valogatasa": {
+    "w": 843,
+    "h": 756
+  },
+  "lancing-probaja": {
+    "w": 1378,
+    "h": 1141
+  },
+  "nemez-tulipanok-gyerekkezben": {
+    "w": 1600,
+    "h": 1200
+  },
+  "nemezgolyo-karkoto": {
+    "w": 1600,
+    "h": 1600
+  },
+  "rovasiras-lugas-alatt": {
+    "w": 1600,
+    "h": 1066
+  },
+  "rovasiras-kisfiu-tinta": {
+    "w": 1067,
+    "h": 1600
+  },
+  "kislany-rovasjeleket-ir": {
+    "w": 1600,
+    "h": 1180
+  },
+  "zsinegsodras": {
+    "w": 1600,
+    "h": 1066
+  },
+  "kislany-varr": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kislany-szalmababokkal": {
+    "w": 1200,
+    "h": 1600
+  },
+  "gyongyfuzes-fiatalok": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kezmuves-asztal-facsovek": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kezmuves-asztal-jurtaban": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kezmuves-tanteremben": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kezmuves-asztal-rendezvenyen": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kezmuves-asztal-nyari-rendezveny": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kis-jurta-majalis-2014": {
+    "w": 1600,
+    "h": 1200
+  },
+  "nagy-jurta-belseje": {
+    "w": 1600,
+    "h": 1600
+  },
+  "nagy-jurta-parkban": {
+    "w": 1600,
+    "h": 1600
+  },
+  "viseletek-pancelok-jurta-mellett": {
+    "w": 1600,
+    "h": 1200
+  },
+  "nagy-es-kis-jurta-parkban": {
+    "w": 1600,
+    "h": 1200
+  },
+  "jurta-racsfal-allitas": {
+    "w": 1600,
+    "h": 1060
+  },
+  "jurtak-parkban": {
+    "w": 1600,
+    "h": 1200
+  },
+  "jurtak-ligetben": {
+    "w": 1600,
+    "h": 899
+  },
+  "latogatok-nagy-jurtaban": {
+    "w": 1600,
+    "h": 1200
+  },
+  "kiallitas-nagy-jurtaban": {
+    "w": 1219,
+    "h": 1290
+  },
+  "jurtak-palmafak-kosaras-hinta": {
+    "w": 1600,
+    "h": 941
+  },
+  "fiatal-voros-kaftanban-szablyaval": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kosaras-korhinta-parkban": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kosaras-korhinta-jurtak": {
+    "w": 1600,
+    "h": 1200
+  },
+  "kosaras-korhinta-nadtetos-haz": {
+    "w": 1600,
+    "h": 1200
+  },
+  "lancinges-harcos-pajzzsal": {
+    "w": 1600,
+    "h": 1600
+  },
+  "ket-gyerek-pikkelypancelban": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kisfiu-pikkelypancelban-harcossal": {
+    "w": 1600,
+    "h": 1600
+  },
+  "kisfiu-pikkelypancel-szablyaval": {
+    "w": 1600,
+    "h": 1600
+  },
+  "lancinges-hagyomanyorzo-fesztival": {
+    "w": 1600,
+    "h": 1600
+  },
+  "hagyomanyorzok-lancing": {
+    "w": 1600,
+    "h": 1600
+  },
+  "sisakok-rendezvenyi-asztalon": {
+    "w": 1600,
+    "h": 1600
+  },
+  "gabonaorles-szitalas-jurta": {
+    "w": 1600,
+    "h": 1600
+  },
+  "gabonaorles-kis-jurta": {
+    "w": 1600,
+    "h": 1600
+  },
+  "utcai-rendezveny-jurta-viseletek": {
+    "w": 1600,
+    "h": 1600
+  },
+  "nepi-jatekok-fuvon": {
+    "w": 1600,
+    "h": 1200
+  },
+  "nepi-jatekok-sorban-jurta-elott": {
+    "w": 1600,
+    "h": 1200
+  },
+  "jatszohaz-nepi-jatekok": {
+    "w": 1600,
+    "h": 1600
+  },
+  "majalis-jatszohaz": {
+    "w": 1600,
+    "h": 1200
+  },
+  "nepi-jatekok-nyari-rendezveny": {
+    "w": 1600,
+    "h": 1200
+  },
+  "viseletek-fesztivali-asztalon": {
+    "w": 1600,
+    "h": 1440
+  },
+  "hagyomanyorzo-kiallitas-rendezvenyen": {
+    "w": 1315,
+    "h": 1196
+  },
+  "csaladok-kezmuves-asztal-osz": {
+    "w": 1600,
+    "h": 1200
+  },
+  "kezmuves-asztal-jurta-mogott": {
+    "w": 1600,
+    "h": 1200
+  },
+  "lany-korhu-viseletben-tornaterem": {
+    "w": 1600,
+    "h": 1200
+  },
+  "iskolai-bemutato-sisakproba": {
+    "w": 1254,
+    "h": 1254
+  },
+  "iskolai-bemutato-aula": {
+    "w": 1600,
+    "h": 1600
+  },
+  "oktato-mesel-ijrol-tegezrol": {
+    "w": 1326,
+    "h": 1186
+  },
+  "tarsasjatek-nyilt-nap": {
+    "w": 1344,
+    "h": 1170
+  },
+  "tarsasjatek-jurta-mellett": {
+    "w": 898,
+    "h": 1600
+  },
+  "tabor-oktato-gyerekek": {
+    "w": 1600,
+    "h": 1200
+  },
+  "bogracs-szabadtuzon": {
+    "w": 1600,
+    "h": 1600
+  },
+  "lepenysutes-cinkotan": {
+    "w": 1600,
+    "h": 1200
+  },
+  "mezeskalacs-gyuras": {
+    "w": 1254,
+    "h": 1254
+  },
+  "tuzugras-este": {
+    "w": 1600,
+    "h": 1102
+  },
+  "esti-tuz-dobbal": {
+    "w": 1600,
+    "h": 1083
+  },
+  "dob-es-furulya-jurta-elott": {
+    "w": 1600,
+    "h": 1600
+  },
+  "ket-kislany-furulyazik": {
+    "w": 1600,
+    "h": 1600
+  },
+  "szuret-pres-daralo": {
+    "w": 1600,
+    "h": 1600
+  },
+  "szuret-daralas-korhu-ingben": {
+    "w": 1600,
+    "h": 1600
+  },
+  "szolodobas-daralo": {
+    "w": 1600,
+    "h": 1200
+  },
+  "szuret-feher-szolo": {
+    "w": 1080,
+    "h": 608
+  },
+  "szolopres": {
+    "w": 1600,
+    "h": 1600
+  }
+}

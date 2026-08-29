@@ -1,8 +1,13 @@
+import Link from 'next/link';
 import { dokumentumok, egyesulet, linkek, nyilvanosAdatok, tamogatas } from '@/content';
 import { Minta } from '../Minta';
-import { AdatSor, Card, CardCim, CardSzoveg, PageHeader, Section } from '../ui';
+import { variantHref, type VariantConfig } from '@/variants/config';
+import { AdatSor, Card, CardCim, CardSzoveg, Cimke, PageHeader, Section } from '../ui';
 
-export function DokumentumokPage() {
+const gombKeret =
+  'flex min-h-11 shrink-0 items-center justify-center gap-1.5 border border-ink px-4 py-2.5 text-center font-body text-sm font-bold text-ink transition hover:bg-ink hover:text-paper';
+
+export function DokumentumokPage({ v }: { v: VariantConfig }) {
   const elerheto = dokumentumok.filter((d) => d.allapot === 'elerheto');
   const minta = dokumentumok.filter((d) => d.allapot === 'minta');
 
@@ -11,7 +16,7 @@ export function DokumentumokPage() {
       <PageHeader
         cimke="Egyesületi papírok"
         cim="Dokumentumok"
-        lead="Az egyesület nyilvános adatai és iratai. Ami már megvan, az a jelenlegi weboldalon szkennelt képként érhető el — a végleges oldalra egységes, letölthető PDF-eket javaslunk."
+        lead="Az egyesület nyilvános adatai és iratai. A szabályzatok és a beiratkozó lap letölthetők, a szabályzatok teljes szövege a weboldalon is olvasható; az alapszabály és a közgyűlési iratok a jelenlegi weboldalon szkennelt képként érhetők el — a végleges oldalra ezekből egységes PDF-eket javaslunk."
       />
 
       <Section cimke="Nyilvános adatok" cim="Az egyesület adatai">
@@ -30,24 +35,34 @@ export function DokumentumokPage() {
               className="flex flex-col gap-3 border-b border-line py-6 sm:flex-row sm:items-center sm:gap-8"
             >
               <div className="min-w-0 flex-1">
-                <h3 className="font-display text-lg font-semibold text-ink">{d.cim}</h3>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="font-display text-lg font-semibold text-ink">{d.cim}</h3>
+                  {d.jelzes ? <Cimke magyarazat={d.jelzes.forras}>{d.jelzes.cimke}</Cimke> : null}
+                </div>
                 <p className="mt-1.5 font-body text-sm leading-relaxed text-ink2">
                   {d.leiras}
                 </p>
               </div>
-              <p className="shrink-0 font-body text-xs uppercase tracking-[0.14em] text-muted sm:w-48">
+              <p className="shrink-0 font-body text-xs uppercase tracking-[0.14em] text-muted sm:w-40">
                 {d.formatum}
               </p>
-              {d.href ? (
-                <a
-                  href={d.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex min-h-11 shrink-0 items-center justify-center border border-ink px-4 py-2.5 text-center font-body text-sm font-bold text-ink transition hover:bg-ink hover:text-paper"
-                >
-                  Megtekintés
-                </a>
-              ) : null}
+              <div className="flex shrink-0 flex-wrap gap-2">
+                {d.oldal ? (
+                  <Link href={variantHref(v.key, d.oldal)} className={gombKeret}>
+                    Olvasás a weboldalon
+                  </Link>
+                ) : null}
+                {d.letoltesek?.map((l) => (
+                  <a key={l.href} href={l.href} download className={gombKeret}>
+                    {l.cimke} <span aria-hidden="true">↓</span>
+                  </a>
+                ))}
+                {d.href ? (
+                  <a href={d.href} target="_blank" rel="noopener noreferrer" className={gombKeret}>
+                    Megtekintés
+                  </a>
+                ) : null}
+              </div>
             </li>
           ))}
         </ul>
@@ -92,7 +107,7 @@ export function DokumentumokPage() {
       </Section>
 
       <Section alt cimke="Támogatás" cim={tamogatas.cim}>
-        <div className="grid gap-5 sm:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {tamogatas.modok.map((m) => (
             <Card key={m.cim}>
               <CardCim>{m.cim}</CardCim>

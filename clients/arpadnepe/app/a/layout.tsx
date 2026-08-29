@@ -4,7 +4,7 @@ import { variants } from '@/variants/config';
 
 /**
  * 1. változat — Hírcsík: a bejegyzés teljes szélességű csíkban, a fejléc alatt.
- * Alapból Pergamen színben nyílik; a jobb alsó sarki váltóval mind a három
+ * Alapból Arany–fekete színben nyílik; a jobb alsó sarki váltóval mindkét
  * színséma kipróbálható rajta.
  */
 export default function Layout({ children }: { children: ReactNode }) {

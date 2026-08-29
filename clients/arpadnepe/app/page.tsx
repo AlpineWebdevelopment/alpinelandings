@@ -6,9 +6,9 @@ import { semak, variantKeys, variants, type SemaKulcs, type VariantKey } from '@
  * Változatválasztó. Semleges felület — szándékosan nem visel egyik séma
  * arculatát sem, és nincs rajta ügynökségi jelzés.
  *
- * A három kártya HÁROM FELÉPÍTÉST + FORMANYELVET kínál. A színséma ettől
+ * A két kártya KÉT FELÉPÍTÉST + FORMANYELVET kínál. A színséma ettől
  * független: mindegyik oldalon a jobb alsó sarki lebegő váltóval cserélhető
- * (öt séma), és ugyanaz a váltó visz át a másik két változatra is.
+ * (két séma), és ugyanaz a váltó visz át a másik változatra is.
  */
 export default function Valaszto() {
   return (
@@ -16,27 +16,26 @@ export default function Valaszto() {
       <main className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
         <header className="max-w-3xl">
           <p className="font-body text-xs font-bold uppercase tracking-[0.22em] text-[#726c66]">
-            Bemutató · három változat, öt színséma
+            Bemutató · két változat, két színséma
           </p>
           <h1 className="mt-5 font-body text-4xl font-bold leading-tight sm:text-5xl">
             {egyesulet.teljesNev}
           </h1>
           <p className="mt-6 font-body text-lg leading-relaxed text-[#55504a]">
-            Mindhárom oldalon ugyanaz a tartalom és ugyanaz a szerkezeti váz. Ami
+            Mindkét oldalon ugyanaz a tartalom és ugyanaz a szerkezeti váz. Ami
             különbözik: a <strong className="font-semibold text-[#17150f]">hero
             felépítése</strong> (hol áll a fotó, hol ül a legfrissebb Facebook-bejegyzés)
             és a hero alatti oldal{' '}
             <strong className="font-semibold text-[#17150f]">formanyelve</strong> — az
-            első visszafogott kódexlap, a második honfoglalás előtti sztyeppei, a harmadik
-            középkori kódex. A{' '}
+            első visszafogott kódexlap, a második honfoglalás előtti sztyeppei. A{' '}
             <strong className="font-semibold text-[#17150f]">színséma ettől független</strong>:
-            minden oldal jobb alsó sarkában van egy váltó, amivel mindhárom változat
-            mind az öt színben megnézhető — és amivel a három demó között is át lehet
+            minden oldal jobb alsó sarkában van egy váltó, amivel mindkét változat
+            mindkét színben megnézhető — és amivel a két demó között is át lehet
             lépni, az aktuális aloldalt megtartva.
           </p>
         </header>
 
-        <ul className="mt-14 grid gap-8 md:grid-cols-3">
+        <ul className="mt-14 grid gap-8 md:grid-cols-2">
           {variantKeys.map((k) => (
             <li key={k}>
               <Link
@@ -100,7 +99,7 @@ export default function Valaszto() {
 
         <section className="mt-20 grid gap-10 border-t border-[#e2ded6] pt-12 sm:grid-cols-2">
           <div>
-            <h2 className="font-body text-lg font-bold">Mind a három változatban</h2>
+            <h2 className="font-body text-lg font-bold">Mind a két változatban</h2>
             <ul className="mt-4 space-y-2 font-body text-sm text-[#55504a]">
               {menu.map((m) => (
                 <li key={m.href || 'kezdolap'} className="border-b border-[#e2ded6] pb-2">
@@ -109,28 +108,28 @@ export default function Valaszto() {
               ))}
             </ul>
             <p className="mt-5 font-body text-sm leading-relaxed text-[#55504a]">
-              A támogatói hirdetősáv mindhárom változatban a hero tetején fut vízszintesen.
+              A támogatói hirdetősáv mindkét változatban a hero tetején fut vízszintesen.
               A hero fotója és a legfrissebb Facebook-bejegyzés viszont változatonként
               másképp találkozik: az elsőben külön hírcsík fut a fejléc alatt, a
-              másodikban a fotó adja a hero teljes hátterét és a kártya azon ül, a
-              harmadikban a kártya a fotó alsó részére kerül.
+              másodikban a fotó adja a hero teljes hátterét, és a kártya azon ül.
             </p>
             <p className="mt-4 font-body text-sm leading-relaxed text-[#55504a]">
               <span className="font-semibold text-[#17150f]">Formanyelv:</span> a hero alatti
-              oldal karaktere változatonként más — a Sztyeppén palmettás szalagok, korongok
-              és nemezmezők, a Kódexen vonalazott írástükör, rubrikák, iniciálék és
-              kéthasábos szedés. A címbetű is követi: Cormorant Unicase, illetve gótikus
-              textúra. A kenyérbetű mindenhol EB Garamond marad, az olvashatóság miatt.
+              oldal karaktere változatonként más — az elsőn visszafogott, mai kódexlap
+              (keretes lapok, vonalas pecsétmotívum), a másodikon, a Sztyeppén palmettás
+              szalagok, korongok és nemezmezők. A címbetű is követi: Cormorant Unicase.
+              A kenyérbetű mindkettőn EB Garamond marad, az olvashatóság miatt.
             </p>
             <p className="mt-4 font-body text-sm leading-relaxed text-[#55504a]">
               <span className="font-semibold text-[#17150f]">Váltó:</span> minden oldal
-              jobb alsó sarkában ott a lebegő kezelőszerv. Fent a három{' '}
+              jobb alsó sarkában ott a lebegő kezelőszerv. Fent a két{' '}
               <strong className="font-semibold text-[#17150f]">változat</strong> — átlép
-              rájuk úgy, hogy az aktuális aloldalon marad. Alatta az öt{' '}
-              <strong className="font-semibold text-[#17150f]">színséma</strong>: Pergamen,
-              Indigó, Posztó, Parázs, Szattyán. A szín az aloldalakra és a többi
-              változatra is átjön, tehát mind a tizenöt kombináció megnézhető. A váltó a
-              bemutató kezelőszerve, az éles oldalra nem kerül rá.
+              rájuk úgy, hogy az aktuális aloldalon marad. Alatta a két{' '}
+              <strong className="font-semibold text-[#17150f]">színséma</strong>:
+              Arany–fekete és Arany–vörös — mindkettő világos alapon, fekete betűvel, az
+              egyesület kérése szerint. A szín az aloldalakra és a másik változatra is
+              átjön, tehát mind a négy kombináció megnézhető. A váltó a bemutató
+              kezelőszerve, az éles oldalra nem kerül rá.
             </p>
           </div>
 
@@ -178,55 +177,28 @@ export default function Valaszto() {
  * az igazi oldalak a globals.css tokenjeiből élnek.
  */
 const SEMA_SZINEK: Record<SemaKulcs, Record<string, string>> = {
-  pergamen: {
-    hatter: '#f2e8d2',
-    sav: '#e8dcc0',
-    lap: '#fbf5e7',
-    tinta: '#221d16',
-    kiemel: '#a32e17',
+  'arany-fekete': {
+    hatter: '#fcfaf2',
+    sav: '#f3ecdc',
+    lap: '#fffef9',
+    tinta: '#14120c',
+    kiemel: '#806700',
+    masodik: '#e0b81c',
+    vonal: '#e2d49f',
+  },
+  'arany-voros': {
+    hatter: '#f8f1e0',
+    sav: '#eee3ca',
+    lap: '#fefbf2',
+    tinta: '#15110b',
+    kiemel: '#a32912',
     masodik: '#9e772b',
-    vonal: '#d3c19b',
-  },
-  indigo: {
-    hatter: '#1b2e52',
-    sav: '#152440',
-    lap: '#f7f2e6',
-    tinta: '#eef2f8',
-    kiemel: '#dfa08e',
-    masodik: '#e8eef7',
-    vonal: '#3a4f7a',
-  },
-  poszto: {
-    hatter: '#f0ede3',
-    sav: '#e2ded0',
-    lap: '#faf8f1',
-    tinta: '#1f231d',
-    kiemel: '#2c4a38',
-    masodik: '#91742c',
-    vonal: '#c6c4b0',
-  },
-  parazs: {
-    hatter: '#ffffff',
-    sav: '#f4efe7',
-    lap: '#ffffff',
-    tinta: '#121212',
-    kiemel: '#b04405',
-    masodik: '#e8891f',
-    vonal: '#e0d8ca',
-  },
-  szattyan: {
-    hatter: '#2b1f17',
-    sav: '#221812',
-    lap: '#372822',
-    tinta: '#f4ead9',
-    kiemel: '#e3a877',
-    masodik: '#f2e4cd',
-    vonal: '#4f3c30',
+    vonal: '#dbc8a2',
   },
 };
 
 /**
- * Miniatűr előnézet — UGYANAZ az elrendezés mindhárom kártyán: fent a
+ * Miniatűr előnézet — UGYANAZ az elrendezés mindkét kártyán: fent a
  * támogatói sáv, alatta az iniciálés címblokk. Ami VÁLTOZATONKÉNT eltér, az a
  * hero fotójának szerepe és a hírkártya helye — ezt mutatja a rajz. A színek
  * a változat alapértelmezett sémájából jönnek. Háttérben a pecsét vízjelmezője.
@@ -298,7 +270,7 @@ function Elonezet({ valtozat }: { valtozat: VariantKey }) {
         <rect x="228" y="7" width="22" height="4" fill={t.vonal} />
         <rect x="258" y="4" width="52" height="11" fill={t.kiemel} />
 
-        {/* támogatói hirdetősáv — a hero tetején, mindhárom sémán */}
+        {/* támogatói hirdetősáv — a hero tetején, mindkét sémán */}
         <rect x="0" y="22" width="320" height="14" fill={t.lap} stroke={t.vonal} />
         <rect x="0" y="22" width="60" height="14" fill={t.kiemel} opacity="0.16" />
         <rect x="8" y="27" width="42" height="4" fill={t.kiemel} />
@@ -361,16 +333,6 @@ function Elonezet({ valtozat }: { valtozat: VariantKey }) {
           </>
         ) : null}
 
-        {valtozat === 'c' ? (
-          <>
-            {/* a kártya a fotó ALSÓ RÉSZÉN ül, a kép szélétől behúzva */}
-            <rect x="196" y="44" width="112" height="126" fill={t.vonal} />
-            <rect x="202" y="120" width="100" height="44" fill={t.lap} stroke={t.masodik} />
-            <rect x="209" y="128" width="38" height="4" fill={t.kiemel} />
-            <rect x="209" y="140" width="86" height="3.5" fill={t.vonal} />
-            <rect x="209" y="149" width="64" height="3.5" fill={t.vonal} />
-          </>
-        ) : null}
       </svg>
     </div>
   );

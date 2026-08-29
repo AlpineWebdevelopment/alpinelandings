@@ -4,11 +4,13 @@ import {
   jelentkezesLepesek,
   kozossegiSzolgalat,
   linkek,
+  szolgalatiAlkalmak,
 } from '@/content';
+import type { VariantConfig } from '@/variants/config';
 import { Minta } from '../Minta';
 import { Card, CardCim, CardSzoveg, Gomb, PageHeader, Section } from '../ui';
 
-export function KozossegiSzolgalatPage() {
+export function KozossegiSzolgalatPage(_props: { v: VariantConfig }) {
   return (
     <>
       <PageHeader
@@ -102,14 +104,17 @@ export function KozossegiSzolgalatPage() {
               </tr>
             </thead>
             <tbody>
-              {kozossegiSzolgalat.allando.map((a, i) => (
+              {szolgalatiAlkalmak().map((a, i) => (
                 <tr key={`${a.nap}-${a.ido}-${i}`} className="border-b border-line">
                   <td className="py-3.5 pr-4 font-display text-base font-semibold text-ink">
-                    {a.nap}
+                    {a.napNev}
                   </td>
                   <td className="py-3.5 pr-4 font-body text-sm text-ink2">{a.ker}</td>
                   <td className="py-3.5 pr-4 font-body text-sm tabular-nums text-ink">{a.ido}</td>
-                  <td className="py-3.5 font-body text-sm text-ink2">{a.leiras}</td>
+                  <td className="py-3.5 font-body text-sm text-ink2">
+                    {a.foglalkozas.nev}
+                    {a.foglalkozas.korosztaly ? ` — ${a.foglalkozas.korosztaly}` : ''}
+                  </td>
                 </tr>
               ))}
             </tbody>

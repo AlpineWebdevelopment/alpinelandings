@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { egyesulet, menu } from '@/content';
 import { variantHref, type VariantConfig } from '@/variants/config';
-import { LogoKor } from './Logo';
+import { LogoKep } from './Logo';
 
 /**
- * Fejléc — mindhárom változatban ugyanaz a 7 menüpont + egy elsődleges CTA.
- * A mobilmenü <details>/<summary> elemre épül: billentyűzettel kezelhető,
- * és nem igényel kliensoldali JS-t.
+ * Fejléc — mindkét változatban ugyanaz a menü + egy elsődleges CTA.
+ * Az asztali sorban a Kezdőlap nem szerepel (a logó a kezdőlap hivatkozása),
+ * így a nyolc aloldal xl-től elfér; alatta a <details>/<summary> mobilmenü
+ * hozza mind a kilenc pontot — billentyűzettel kezelhető, JS nélkül.
  */
 export function Nav({ v }: { v: VariantConfig }) {
   const cta = { cimke: 'Válassz edzést', href: variantHref(v.key, '#kapcsolat') };
@@ -24,9 +25,7 @@ export function Nav({ v }: { v: VariantConfig }) {
           href={variantHref(v.key)}
           className="group flex shrink-0 items-center gap-3 py-2"
         >
-          {/* Kör alakú jelvény — HELYKITÖLTŐ: a végleges oldalra az egyesület
-              eredeti, vektoros logója kerül a helyére. */}
-          <LogoKor className="h-11 w-11 sm:h-12 sm:w-12" />
+          <LogoKep className="h-11 w-11 sm:h-12 sm:w-12" betolt="eager" />
           <span className="flex flex-col">
             <span className="font-display text-lg font-bold leading-none text-ink">
               Árpád Népe
@@ -37,9 +36,9 @@ export function Nav({ v }: { v: VariantConfig }) {
           </span>
         </Link>
 
-        <nav aria-label="Fő navigáció" className="hidden lg:block">
-          <ul className="flex items-center gap-6">
-            {menu.map((m) => (
+        <nav aria-label="Fő navigáció" className="hidden xl:block">
+          <ul className="flex items-center gap-5">
+            {menu.filter((m) => m.href !== '').map((m) => (
               <li key={m.href || 'kezdolap'}>
                 <Link href={variantHref(v.key, m.href)} className={link}>
                   {m.cimke}
@@ -52,7 +51,7 @@ export function Nav({ v }: { v: VariantConfig }) {
         <div className="flex items-center gap-3">
           <a
             href={egyesulet.telefonHref}
-            className="hidden min-h-11 items-center font-body text-sm font-semibold text-ink md:inline-flex"
+            className="hidden min-h-11 items-center font-body text-sm font-semibold text-ink 2xl:inline-flex"
           >
             {egyesulet.telefon}
           </a>
@@ -63,7 +62,7 @@ export function Nav({ v }: { v: VariantConfig }) {
             {cta.cimke}
           </Link>
 
-          <details className="relative lg:hidden">
+          <details className="relative xl:hidden">
             <summary
               className="flex min-h-11 cursor-pointer list-none items-center gap-2 border border-line px-3.5 py-2 font-body text-sm font-semibold text-ink [&::-webkit-details-marker]:hidden"
               aria-label="Menü megnyitása"

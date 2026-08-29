@@ -19,15 +19,15 @@ import {
  *
  * Két dolgot kapcsol, a jobb alsó sarokból:
  *
- *   VÁLTOZAT — átvisz a másik két demóra (/a, /b, /c), és MEGTARTJA az
- *   aktuális aloldalt: a /a/akciok-ról a /c/akciok-ra lép, nem a kezdőlapra.
+ *   VÁLTOZAT — átvisz a másik demóra (/a, /b), és MEGTARTJA az aktuális
+ *   aloldalt: a /a/akciok-ról a /b/akciok-ra lép, nem a kezdőlapra.
  *
  *   SZÍNSÉMA — a <html> elemre tesz egy felülíró osztályt (`valaszt-*`).
  *   Mivel a teljes paletta CSS-változókból jön, ez az egy osztály átszínezi
  *   az egész oldalt. A változat saját alapértelmezett sémája a burkolón
  *   marad; a felülírás csak fajsúlyban veri.
  *
- * A választás localStorage-ba kerül, tehát aloldalra lépve és a három
+ * A választás localStorage-ba kerül, tehát aloldalra lépve és a két
  * változat között váltogatva is megmarad. Az első festés előtt a layoutba
  * ágyazott `SEMA_INIT_SCRIPT` állítja be, hogy ne legyen színvillanás.
  *
@@ -49,7 +49,7 @@ export function SemaValto({ alap }: { alap: SemaKulcs }) {
     Az aktuális változat és az alatta lévő aloldal az útvonalból. Így a
     változatváltás ugyanarra az aloldalra visz át, nem a kezdőlapra.
   */
-  const egyezes = /^\/([abc])(\/.*)?$/.exec(utvonal ?? '');
+  const egyezes = /^\/([ab])(\/.*)?$/.exec(utvonal ?? '');
   const aktivValtozat = (egyezes?.[1] ?? '') as VariantKey | '';
   const alUtvonal = egyezes?.[2] ?? '';
 

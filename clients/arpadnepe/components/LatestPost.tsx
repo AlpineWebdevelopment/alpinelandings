@@ -1,5 +1,5 @@
 import { egyesulet, linkek, mockFacebookPoszt } from '@/content';
-import { LogoNapJel } from './Logo';
+import { LogoKep, LogoNapJel } from './Logo';
 import { Minta } from './Minta';
 
 /**
@@ -8,12 +8,12 @@ import { Minta } from './Minta';
  * Mindhárom séma ugyanazt a tartalmat mutatja, de más helyen — hogy az
  * egyesület össze tudja hasonlítani, melyik a jó kompromisszum:
  *
- *   LatestPostSav      (Pergamen) — teljes szélességű csík közvetlenül a
+ *   LatestPostSav      (1. változat) — teljes szélességű csík közvetlenül a
  *                       fejléc alatt; ez a legfelső lehetséges hely.
- *   LatestPostCard     (Indigó)   — kártya a hero HÁTTÉRFOTÓJÁN, a jobb
+ *   LatestPostCard     (2. változat) — kártya a hero HÁTTÉRFOTÓJÁN, a jobb
  *                       hasábban. `kepen` móddal enyhén áttetsző, hogy a
  *                       kép átüssön alatta.
- *   LatestPostKepAlja  (Posztó)   — kártya a hero fotójának ALSÓ RÉSZÉRE
+ *   LatestPostKepAlja  (3. változat) — kártya a hero fotójának ALSÓ RÉSZÉRE
  *                       ültetve, a kép szélétől behúzva.
  *
  * ────────────────────────────────────────────────────────────────────────────
@@ -26,7 +26,7 @@ import { Minta } from './Minta';
  *         legyen. Cserébe a Facebook saját kinézetét hozza, és blokkolók
  *         mellett üres marad — ezért a demóban alapból ki van kapcsolva.
  *
- * Egyetlen sor átállítása mindhárom változatban élesíti.
+ * Egyetlen sor átállítása mindkét változatban élesíti.
  * ────────────────────────────────────────────────────────────────────────────
  */
 export const ELES_FB_BEAGYAZAS = false;
@@ -72,12 +72,7 @@ function PostBody({
 }) {
   const fej = (
     <div className="flex items-center gap-3">
-      <span
-        aria-hidden="true"
-        className="grid h-9 w-9 shrink-0 place-items-center border border-accent2/60 bg-accent/10 font-display text-xs font-bold text-accent"
-      >
-        ÁN
-      </span>
+      <LogoKep className="h-9 w-9" meret={36} />
       <div className="min-w-0">
         <p className="truncate font-body text-xs font-semibold leading-tight">
           {mockFacebookPoszt.szerzo}

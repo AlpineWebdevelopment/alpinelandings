@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { EredmenyekPage } from '@/components/pages/Eredmenyek';
+import { variants } from '@/variants/config';
 
 export const metadata: Metadata = {
   title: 'Eredmények — Árpád Népe Egyesület',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <EredmenyekPage />;
+  return <EredmenyekPage v={variants.a} />;
 }

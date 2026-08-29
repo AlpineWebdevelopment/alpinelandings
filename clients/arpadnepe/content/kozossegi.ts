@@ -12,13 +12,11 @@ export const kozossegiSzolgalat = {
     'Segíthetsz a programjainkon, a különböző rendezvényeken, ahova meghívnak minket.',
   ],
   allandoCim: 'Állandó programjaink',
-  allando: [
-    { nap: 'Hétfő', ker: 'XVI. ker.', ido: '17:00–19:00', leiras: 'Gyerek hagyományőrző foglalkozás' },
-    { nap: 'Szerda', ker: 'XIV. ker.', ido: '13:00–15:00', leiras: 'Alsós gyerekekkel hagyományőrző foglalkozás' },
-    { nap: 'Szerda', ker: 'XIV. ker.', ido: '16:00–18:00', leiras: 'Gyerekek és ifi hagyományőrző foglalkozás' },
-    { nap: 'Péntek', ker: 'XIV. ker.', ido: '13:00–15:00', leiras: 'Gyerek hagyományőrző foglalkozás' },
-    { nap: 'Péntek', ker: 'XIV. ker.', ido: '16:00–18:00', leiras: 'Gyerekek és ifi hagyományőrző foglalkozás' },
-  ],
+  /*
+    Az állandó foglalkozások listája NEM itt van: a content/edzesek.ts
+    `szolgalatiAlkalmak()` segédje adja a 2026–27-es táblázatból (a két
+    gyermekfoglalkozás sorai), hogy ne legyen két, egymástól elcsúszó lista.
+  */
   alkalmi: {
     cim: 'Alkalmi programlehetőségek, tervek',
     szoveg:

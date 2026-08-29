@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { DokumentumokPage } from '@/components/pages/Dokumentumok';
+import { variants } from '@/variants/config';
 
 export const metadata: Metadata = {
   title: 'Egyesületi papírok — Árpád Népe Egyesület',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <DokumentumokPage />;
+  return <DokumentumokPage v={variants.a} />;
 }

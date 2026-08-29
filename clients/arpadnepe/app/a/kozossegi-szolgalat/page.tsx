@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { KozossegiSzolgalatPage } from '@/components/pages/KozossegiSzolgalat';
+import { variants } from '@/variants/config';
 
 export const metadata: Metadata = {
   title: '50 órás közösségi szolgálat — Árpád Népe Egyesület',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <KozossegiSzolgalatPage />;
+  return <KozossegiSzolgalatPage v={variants.a} />;
 }

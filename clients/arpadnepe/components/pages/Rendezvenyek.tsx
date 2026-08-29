@@ -1,18 +1,24 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   ajanlatkeresMezok,
   arajanlatSzempontok,
   egyesulet,
   eszkozberles,
+  galeriaKep,
+  hirmondo,
   korhinta,
+  linkek,
   programelemek,
   rendezvenyBevezeto,
   szolgaltatasok,
   tovabbiProgramelemek,
 } from '@/content';
+import { variantHref, type VariantConfig } from '@/variants/config';
+import { Lap } from '../Texture';
 import { Card, CardCim, CardSzoveg, Gomb, PageHeader, Section } from '../ui';
 
-export function RendezvenyekPage() {
+export function RendezvenyekPage({ v }: { v: VariantConfig }) {
   return (
     <>
       <PageHeader
@@ -24,6 +30,48 @@ export function RendezvenyekPage() {
           {rendezvenyBevezeto.nyitottsag}
         </p>
       </PageHeader>
+
+      {/* Hírmondó — az egyesület nyár végi körlevele, a rendezvényszervezőknek */}
+      <Section cimke="Hírmondó" cim={hirmondo.cim} lead={hirmondo.alcim}>
+        <Lap className="p-5 sm:p-8">
+          <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-12">
+            <div>
+              <p className="font-body text-xs font-bold uppercase tracking-[0.16em] text-muted">
+                {hirmondo.datum}
+              </p>
+              <div className="mt-4 space-y-4">
+                {hirmondo.bekezdesek.map((b) => (
+                  <p key={b} className="font-body text-base leading-relaxed text-ink2">
+                    {b}
+                  </p>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Gomb href={linkek.hirlevel} kulso>
+                  Iratkozz fel a hírlevélre
+                </Gomb>
+                <Gomb href={linkek.googleErtekeles} kulso masodlagos>
+                  {hirmondo.felhivas}
+                </Gomb>
+              </div>
+            </div>
+            <figure className="self-start">
+              <div className="relative aspect-[4/3] w-full overflow-hidden border border-line">
+                <Image
+                  src={galeriaKep(hirmondo.kep).src}
+                  alt={galeriaKep(hirmondo.kep).alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 22rem"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 font-body text-xs italic text-muted">
+                {galeriaKep(hirmondo.kep).alt}
+              </figcaption>
+            </figure>
+          </div>
+        </Lap>
+      </Section>
 
       <Section
         cimke="Amit kérhet tőlünk"
@@ -95,6 +143,21 @@ export function RendezvenyekPage() {
               {korhinta.vizsga}
             </p>
           </div>
+          <div className="flex flex-col gap-5">
+            <figure>
+              <div className="relative aspect-[4/3] w-full overflow-hidden border border-line">
+                <Image
+                  src={galeriaKep('kosaras-korhinta-parkban').src}
+                  alt={galeriaKep('kosaras-korhinta-parkban').alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 font-body text-xs italic text-muted">
+                {galeriaKep('kosaras-korhinta-parkban').alt}
+              </figcaption>
+            </figure>
           <Card>
             <CardCim>Ajánlott kiegészítő programok</CardCim>
             <ul className="mt-4 space-y-3">
@@ -109,12 +172,24 @@ export function RendezvenyekPage() {
               ))}
             </ul>
           </Card>
+          </div>
         </div>
       </Section>
 
       <Section alt cimke="Eszközbérlés" cim={eszkozberles.cim}>
         <p className="max-w-3xl font-body text-base leading-relaxed text-ink2">
           {eszkozberles.szoveg}
+        </p>
+        <p className="mt-4 max-w-3xl font-body text-sm leading-relaxed text-ink2">
+          Az egyesület tagjainak szóló edzésfelszerelés-bérlés (íj, vessző, gyakorlófegyver,
+          védőfelszerelés) díjait a{' '}
+          <Link
+            href={variantHref(v.key, '/foglalkozasok#eszkozberles')}
+            className="font-semibold text-link underline-offset-4 hover:underline"
+          >
+            Foglalkozások oldalon
+          </Link>{' '}
+          találod.
         </p>
       </Section>
 

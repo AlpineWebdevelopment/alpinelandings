@@ -1,15 +1,20 @@
 /**
  * KÉT FÜGGETLEN TENGELY: VÁLTOZAT és SZÍNSÉMA.
  *
- *   1. VÁLTOZAT (/a, /b, /c) — a hero FELÉPÍTÉSE: mi a fotó szerepe, és hol ül
+ *   1. VÁLTOZAT (/a, /b) — a hero FELÉPÍTÉSE: mi a fotó szerepe, és hol ül
  *      a legfrissebb Facebook-bejegyzés. Ezt az útvonal dönti el. A szerkezet,
- *      a tipográfia és a motívumtár egyébként mindhárom változatban azonos.
+ *      a tipográfia és a motívumtár egyébként mindkét változatban azonos.
  *
- *   2. SZÍNSÉMA (Pergamen, Indigó, Posztó, Parázs, Szattyán) — kizárólag a
+ *      A 3. változat (/c — „Cédula a képen", kódex formanyelv) EGYELŐRE KI VAN
+ *      VÉVE: az egyesület elé csak az A és a B kerül. A `kepAlja` poszthely és
+ *      a `kodex` stílus alatta megmaradt (Landing.tsx, stilusok.css), így a
+ *      visszahozásához csak ez a bejegyzés és az `app/c` útvonalfa kell.
+ *
+ *   2. SZÍNSÉMA (Arany–fekete, Arany–vörös) — kizárólag a
  *      tokenek értéke. A jobb alsó sarokban lévő lebegő váltóval BÁRMELYIK
- *      oldalon cserélhető, tehát mindhárom változat mind az öt színben
- *      megnézhető (3 × 5 = 15 nézet). Ugyanez a váltó visz át a másik két
- *      változatra is — az aktuális aloldalt megtartva.
+ *      oldalon cserélhető, tehát mindkét változat mindkét színben megnézhető
+ *      (2 × 2 = 4 nézet). Ugyanez a váltó visz át a másik változatra is — az
+ *      aktuális aloldalt megtartva.
  *      A választás localStorage-ban marad, így aloldalra lépve is megőrződik.
  *
  * Tényeket ez a fájl nem tartalmaz; azok a /content rétegben vannak.
@@ -19,7 +24,7 @@
    1 — SZÍNSÉMÁK
    ========================================================================== */
 
-export type SemaKulcs = 'pergamen' | 'indigo' | 'poszto' | 'parazs' | 'szattyan';
+export type SemaKulcs = 'arany-fekete' | 'arany-voros';
 
 export type Sema = {
   kulcs: SemaKulcs;
@@ -38,90 +43,39 @@ export type Sema = {
 };
 
 export const semak: Record<SemaKulcs, Sema> = {
-  pergamen: {
-    kulcs: 'pergamen',
-    nev: 'Pergamen',
+  'arany-fekete': {
+    kulcs: 'arany-fekete',
+    nev: 'Arany–fekete',
     leiras:
-      'Világos pergamen alap, cinóbervörös kiemelés, aranyfüst díszítés és lazúrkék linkek. A középkori kódexlap festékei.',
-    forras: 'Kódexfestékek — pergamen, cinóber, aranyfüst, lazúr',
+      'Csontfehér lap, fekete betű, meleg sárgás arany kiemelés és fényes aranyfüst díszítés. A logó aranya viszi az egész oldalt.',
+    forras: 'Az egyesület kérése — arany–fekete, világos alapon',
     paletta: [
-      { nev: 'Pergamen', hex: '#F2E8D2' },
-      { nev: 'Cinóber', hex: '#A32E17' },
-      { nev: 'Aranyfüst', hex: '#9E772B' },
-      { nev: 'Lazúr', hex: '#2C4A7C' },
+      { nev: 'Csontfehér', hex: '#FCFAF2' },
+      { nev: 'Fekete', hex: '#14120C' },
+      { nev: 'Mély arany', hex: '#806700' },
+      { nev: 'Aranyfüst', hex: '#E0B81C' },
     ],
-    scope: 'sema-pergamen',
+    scope: 'sema-arany-fekete',
     sotet: false,
   },
-  indigo: {
-    kulcs: 'indigo',
-    nev: 'Indigó',
+  'arany-voros': {
+    kulcs: 'arany-voros',
+    nev: 'Arany–vörös',
     leiras:
-      'Sötét indigó alap fehér mintanyomással, a tartalom vászonszínű lapokon, krappvörös kiemeléssel. A kékfestő vászon színei.',
-    forras: 'Kékfestő vászon — indigó, fehér mintanyomás, krappvörös',
+      'Ugyanaz a világos alap fekete betűvel, de a kiemelés a logó vöröse, a díszítés az aranya. Ez áll a legközelebb magához a logóhoz.',
+    forras: 'Az egyesület kérése — arany–vörös, fekete betűvel',
     paletta: [
-      { nev: 'Indigó', hex: '#1B2E52' },
-      { nev: 'Vászon', hex: '#F7F2E6' },
-      { nev: 'Krappvörös', hex: '#AE3B2C' },
-      { nev: 'Mintafehér', hex: '#E8EEF7' },
+      { nev: 'Pergamen', hex: '#F8F1E0' },
+      { nev: 'Fekete', hex: '#15110B' },
+      { nev: 'Vörös', hex: '#A32912' },
+      { nev: 'Arany', hex: '#9E772B' },
     ],
-    scope: 'sema-indigo',
-    sotet: true,
-  },
-  poszto: {
-    kulcs: 'poszto',
-    nev: 'Posztó',
-    leiras:
-      'Fehér gyapjú alap, posztózöld kiemelés és sárgaréz díszítés. A szűrhímzés színei — szándékosan piros nélkül.',
-    forras: 'Szűrposztó — fehér gyapjú, posztózöld, sárgaréz',
-    paletta: [
-      { nev: 'Gyapjú', hex: '#F0EDE3' },
-      { nev: 'Posztózöld', hex: '#2C4A38' },
-      { nev: 'Sárgaréz', hex: '#91742C' },
-      { nev: 'Fakó zöld', hex: '#4F6248' },
-    ],
-    scope: 'sema-poszto',
+    scope: 'sema-arany-voros',
     sotet: false,
-  },
-  parazs: {
-    kulcs: 'parazs',
-    nev: 'Parázs',
-    leiras:
-      'Fehér mészfelület, parázsnarancs kiemelés, fekete tinta. A tábortűz színei — a készlet legerősebb kontrasztú, legvilágosabb sémája.',
-    forras: 'Tábortűz — mészfehér, parázsnarancs, fekete',
-    paletta: [
-      { nev: 'Mészfehér', hex: '#FFFFFF' },
-      { nev: 'Parázs', hex: '#B04405' },
-      { nev: 'Láng', hex: '#E8891F' },
-      { nev: 'Korom', hex: '#121212' },
-    ],
-    scope: 'sema-parazs',
-    sotet: false,
-  },
-  szattyan: {
-    kulcs: 'szattyan',
-    nev: 'Szattyán',
-    leiras:
-      'Cserzett bőr: a nomád tarsoly és a kódexkötés ugyanabból az anyagból készült. Sötét bőralap, csontszín tinta, vörösréz és patinazöld.',
-    forras: 'Szattyánbőr — cserzett bőr, csont, vörösréz, patina',
-    paletta: [
-      { nev: 'Szattyán', hex: '#2B1F17' },
-      { nev: 'Csont', hex: '#F4EAD9' },
-      { nev: 'Vörösréz', hex: '#E3A877' },
-      { nev: 'Patina', hex: '#93BDA8' },
-    ],
-    scope: 'sema-szattyan',
-    sotet: true,
   },
 };
 
-export const semaKulcsok: SemaKulcs[] = [
-  'pergamen',
-  'indigo',
-  'poszto',
-  'parazs',
-  'szattyan',
-];
+export const semaKulcsok: SemaKulcs[] = ['arany-fekete', 'arany-voros'];
 
 /** A lebegő váltó ide menti a választást. */
 export const SEMA_TAROLO = 'arpadnepe-sema';
@@ -159,7 +113,7 @@ if(o.indexOf(t)>-1)e.classList.add("valaszt-"+t);
    2 — VÁLTOZATOK (a hero felépítése)
    ========================================================================== */
 
-export type VariantKey = 'a' | 'b' | 'c';
+export type VariantKey = 'a' | 'b';
 
 export type VariantConfig = {
   key: VariantKey;
@@ -180,27 +134,30 @@ export type VariantConfig = {
    * Hol ül a legfrissebb Facebook-bejegyzés.
    *   'sav'         — teljes szélességű csík közvetlenül a fejléc alatt
    *   'hatterkepen' — kártya a hero háttérfotóján, a jobb hasábban
-   *   'kepAlja'     — kártya a hero fotójának alsó részére ültetve
+   *   'kepAlja'     — kártya a hero fotójának alsó részére ültetve; JELENLEG
+   *                     NEM HASZNÁLT (a 3. változattal együtt kivéve)
    */
   posztHely: 'sav' | 'hatterkepen' | 'kepAlja';
   /** Egysoros leírás a választóoldalra. */
   posztLeiras: string;
   /**
    * Ebben a színben nyílik meg először — hogy a választóoldalon egymás mellett
-   * mindhárom séma látszódjon. A váltóval bármelyikre cserélhető.
+   * mindkét séma látszódjon. A váltóval bármelyikre cserélhető.
    */
   alapSema: SemaKulcs;
   /**
    * A hero ALATTI oldal formanyelve. Hatókörosztályként kerül a burkolóra
    * (`stil-*`), és az egész oldalt átformálja — szakaszkeret, lapforma,
-   * díszítmény, ritmus. A SZÍNTŐL független: mindhárom stílus mindhárom
+   * díszítmény, ritmus. A SZÍNTŐL független: mindegyik stílus mindkét
    * színsémában működik.
    *
    *   'alap'     — a visszafogott kódexlap-formanyelv (1. változat)
    *   'sztyeppe' — honfoglalás ELŐTTI, nomád formavilág: palmetta, rovásjel,
    *                jurtakarika, tarsolylemez. Kör és sáv, nem doboz.
    *   'kodex'    — középkori magyar kódexlap: vonalazott tükör, rubrikák,
-   *                iniciálék, marginália, kéthasábos szedés.
+   *                iniciálék, marginália, kéthasábos szedés. JELENLEG NEM
+   *                HASZNÁLT — a 3. változattal együtt kivéve, de a stíluslap
+   *                megmaradt.
    */
   stilus: 'alap' | 'sztyeppe' | 'kodex';
   /** A formanyelv neve és egysoros leírása a választóoldalra. */
@@ -219,7 +176,7 @@ export const variants: Record<VariantKey, VariantConfig> = {
     posztHely: 'sav',
     posztLeiras:
       'Teljes szélességű hírcsík közvetlenül a fejléc alatt — a legfelső lehetséges hely.',
-    alapSema: 'pergamen',
+    alapSema: 'arany-fekete',
     stilus: 'alap',
     stilusNev: 'Visszafogott kódexlap',
     stilusLeiras:
@@ -234,30 +191,15 @@ export const variants: Record<VariantKey, VariantConfig> = {
     heroHatter: 'kep',
     posztHely: 'hatterkepen',
     posztLeiras: 'Kártya a hero háttérfotóján, a jobb hasábban.',
-    alapSema: 'indigo',
+    alapSema: 'arany-voros',
     stilus: 'sztyeppe',
     stilusNev: 'Sztyeppe — honfoglalás előtti',
     stilusLeiras:
       'A 890 előtti nomád formavilág: palmettás szalagok, rovásjelek, jurtakarika-rács, tarsolylemez alakú mezők. Doboz helyett kör és sáv.',
   },
-  c: {
-    key: 'c',
-    cimke: '3. változat',
-    alcim: 'Cédula a képen',
-    leiras:
-      'A fotó külön mezőben, a hero jobb hasábjában áll. A bejegyzéskártya a kép alsó részére ül rá, a szélétől behúzva — mint egy múzeumi tárgycédula.',
-    heroHatter: 'lap',
-    posztHely: 'kepAlja',
-    posztLeiras: 'Kártya a hero fotójának alsó részére ültetve, a kép szélétől behúzva.',
-    alapSema: 'poszto',
-    stilus: 'kodex',
-    stilusNev: 'Kódex — középkori magyar',
-    stilusLeiras:
-      'Középkori kódexlap: vonalazott tükör, rubrikák, iniciálék, lapszéli jegyzetek, kéthasábos szedés és oklevélszerű táblázatok.',
-  },
 };
 
-export const variantKeys: VariantKey[] = ['a', 'b', 'c'];
+export const variantKeys: VariantKey[] = ['a', 'b'];
 
 /** A formanyelv hatókörosztálya a burkolón. */
 export function stilusOsztaly(v: VariantConfig): string {

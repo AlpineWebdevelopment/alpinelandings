@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { AkciokPage } from '@/components/pages/Akciok';
+import { variants } from '@/variants/config';
 
 export const metadata: Metadata = {
   title: 'Akciók — Árpád Népe Egyesület',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <AkciokPage />;
+  return <AkciokPage v={variants.b} />;
 }

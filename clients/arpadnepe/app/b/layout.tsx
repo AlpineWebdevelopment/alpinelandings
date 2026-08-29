@@ -4,7 +4,7 @@ import { variants } from '@/variants/config';
 
 /**
  * 2. változat — Képes hero: a fotó a hero háttere, a szöveg és a kártya a képen.
- * Alapból Indigó színben nyílik; a jobb alsó sarki váltóval mind a három
+ * Alapból Arany–vörös színben nyílik; a jobb alsó sarki váltóval mindkét
  * színséma kipróbálható rajta.
  */
 export default function Layout({ children }: { children: ReactNode }) {
