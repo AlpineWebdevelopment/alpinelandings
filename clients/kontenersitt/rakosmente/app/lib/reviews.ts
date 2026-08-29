@@ -21,20 +21,23 @@ export const reviews: Review[] = [
   {
     name: "Levente Szapula",
     text: "Nagyon gyors és precíz szállitás! Kávéval is megkínáltam.",
+    photo: "/velemeny-1.webp",
   },
   {
     name: "Mark Miskolczi",
     text: "Nagyon gyorsak, precízek.",
+    photo: "/velemeny-2.webp",
   },
   {
     name: "Mercédesz Kovács",
     text: "Zoli időben hozta a konténert a megbeszéltek szerint.",
+    photo: "/velemeny-3.webp",
   },
 ];
 
 /** A cégprofil a Google Térképen — a „több vélemény” link ide mutat. */
 export const googleProfileUrl =
-  "https://www.google.com/maps/place/?q=place_id:ChIJD13NnpAW-yERlCRtnsMvAak";
+  "https://maps.google.com/?cid=12178067384609612948";
 
 export const googleRating = "5,0";
-export const googleReviewCount = 62;
+export const googleReviewCount = 63;

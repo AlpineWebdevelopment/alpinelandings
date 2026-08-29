@@ -21,20 +21,23 @@ export const reviews: Review[] = [
   {
     name: "Máté Zwick",
     text: "Nagyon segítőkész volt az úriember, nem problémázott!",
+    photo: "/velemeny-1.webp",
   },
   {
     name: "Pap Márton",
     text: "NEF sofôrje a legszebb",
+    photo: "/velemeny-2.webp",
   },
   {
     name: "Tutor Evelin",
     text: "Nagyon segítőkészek a kollégák, minden rendben volt!",
+    photo: "/velemeny-3.webp",
   },
 ];
 
 /** A cégprofil a Google Térképen — a „több vélemény” link ide mutat. */
 export const googleProfileUrl =
-  "https://www.google.com/maps/place/?q=place_id:ChIJD13NnpAW-yERlCRtnsMvAak";
+  "https://maps.google.com/?cid=12178067384609612948";
 
 export const googleRating = "5,0";
-export const googleReviewCount = 62;
+export const googleReviewCount = 63;

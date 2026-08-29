@@ -21,20 +21,23 @@ export const reviews: Review[] = [
   {
     name: "gábor acsai",
     text: "Nagyon jokepuek a szallito kollegak gyorsak precizek csak ajanlani tudom oket",
+    photo: "/velemeny-1.webp",
   },
   {
     name: "János Sajti",
     text: "Meg vagyok elégedve a szolgáltatással",
+    photo: "/velemeny-2.webp",
   },
   {
     name: "Zsuzsanna Sajti",
     text: "Precizen végezte a munkáját csak ajánlani tudom",
+    photo: "/velemeny-3.webp",
   },
 ];
 
 /** A cégprofil a Google Térképen — a „több vélemény” link ide mutat. */
 export const googleProfileUrl =
-  "https://www.google.com/maps/place/?q=place_id:ChIJD13NnpAW-yERlCRtnsMvAak";
+  "https://maps.google.com/?cid=12178067384609612948";
 
 export const googleRating = "5,0";
-export const googleReviewCount = 62;
+export const googleReviewCount = 63;
