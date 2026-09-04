@@ -187,8 +187,18 @@
     .review .src{color:var(--ink-3)}
     .review p{color:var(--ink-2);max-width:64ch}
 
-    /* folyamat */
+    /* folyamat: zöld sáv */
+    .steps-band{background:var(--pine);color:var(--on-pine)}
+    .steps-band .kicker{color:var(--mint)}
+    .steps-band h2{color:#fff}
+    .steps-band .hl{color:var(--mint)}
     .steps{border-top:2px solid var(--ink)}
+    .steps-band .steps{border-top-color:var(--mint)}
+    .steps-band .stp{border-bottom-color:var(--rule-pine)}
+    .steps-band .stp .n{color:var(--mint)}
+    .steps-band .stp h3{color:#fff}
+    .steps-band .stp p{color:var(--on-pine-2)}
+    .steps-band .stp b{color:var(--mint)}
     .stp{display:grid;grid-template-columns:96px 1fr;gap:clamp(16px,4vw,44px);padding:30px 0;border-bottom:1px solid var(--rule);align-items:start}
     .stp .n{font-weight:800;font-size:clamp(2.6rem,6vw,4rem);line-height:.95;letter-spacing:-.03em;color:var(--leaf)}
     .stp h3{font-size:1.4rem;margin-bottom:8px}
@@ -392,7 +402,7 @@
   </section>
 
   <!-- ═══ FOLYAMAT ═══ -->
-  <section class="sec" style="padding-top:0">
+  <section class="sec steps-band">
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="kicker">Így megy</p>
@@ -425,7 +435,7 @@
   </section>
 
   <!-- ═══ GYIK ═══ -->
-  <section class="sec" id="gyik" style="padding-top:0">
+  <section class="sec" id="gyik">
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="kicker">Gyakori kérdések</p>
