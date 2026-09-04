@@ -5,238 +5,228 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Váradi Lakásszerviz — Víz, villany, festés, dugulás | Budapest</title>
   <meta name="description" content="Vízszerelés, villanyszerelés, duguláselhárítás, festés, burkolás, kisjavítások Budapesten és 25 km-es körzetben. Fix ár előre, számlával, 1 év garanciával. Hívjon: +36 30 123 4567">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23191B1D'/><text x='16' y='23' font-family='Arial Narrow,Arial,sans-serif' font-weight='700' font-size='20' fill='%23F2A900' text-anchor='middle'>V</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231E4636'/><text x='16' y='22' font-family='Arial,sans-serif' font-weight='700' font-size='18' fill='%23FAF6EE' text-anchor='middle'>V</text></svg>">
 
   <!-- ═══════════════════════════════════════════════════════════
        ALPINE LANDINGS DEMO. Fiktív ügyfél, nem valós vállalkozás.
        Ez az oldal megy a hirdetés-kreatívba (screen record).
-       Minden elérhetőség kamu. Design: műhely/ipari plakát,
-       grafit + munkavédelmi sárga, veszélycsíkos elválasztók,
-       éles sarkok, nincs árnyék, nincs blur, nincs ikonkészlet.
+       Minden elérhetőség kamu. Design: fenyőzöld + krém,
+       Schibsted Grotesk, kisbetűs címsorok, léniás szerkezet,
+       éles sarkok, nincs árnyék, nincs ikonkészlet, nincs blur.
        Fotó nincs, önhordó CSS.
        ═══════════════════════════════════════════════════════════ -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
     :root{
-      --coal:#191B1D;
-      --coal-2:#212427;
-      --bone:#F0EEE7;
-      --bone-2:#E7E4DB;
-      --ink:#1B1D1F;
-      --ink-2:#54585C;
-      --ink-3:#83878B;
-      --amber:#F2A900;
-      --amber-dk:#D89700;
-      --rule:#D3CFC4;
-      --rule-dk:#33373B;
-      --on-coal:#EDEBE3;
-      --on-coal-2:#A9ACA9;
+      --cream:#FAF6EE;
+      --cream-2:#F0EADC;
+      --ink:#1D2B24;
+      --ink-2:#54635A;
+      --ink-3:#84928A;
+      --pine:#1E4636;
+      --pine-2:#183A2C;
+      --leaf:#2E7D57;
+      --rule:#DFD8C8;
+      --rule-pine:#2E5847;
+      --on-pine:#F2EFE5;
+      --on-pine-2:#A9BFB0;
+      --mint:#8FD0AC;
     }
 
     html{scroll-behavior:smooth}
     body{
-      font-family:'Barlow',system-ui,sans-serif;
-      font-size:17px;line-height:1.62;
-      color:var(--ink);background:var(--bone);
+      font-family:'Schibsted Grotesk',system-ui,sans-serif;
+      font-size:17px;line-height:1.65;font-weight:400;
+      color:var(--ink);background:var(--cream);
       -webkit-font-smoothing:antialiased;overflow-x:hidden;
     }
-    ::selection{background:var(--amber);color:var(--coal)}
+    ::selection{background:var(--pine);color:var(--cream)}
     a{color:inherit;text-decoration:none}
 
-    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-    h1,h2,h3,.cond{
-      font-family:'Barlow Condensed',sans-serif;
-      font-weight:700;line-height:1.02;letter-spacing:.005em;text-transform:uppercase;
-    }
-    h2{font-size:clamp(2.2rem,5.2vw,3.6rem)}
-    .amb{color:var(--amber)}
+    h1,h2,h3{font-weight:700;line-height:1.08;letter-spacing:-.025em}
+    h2{font-size:clamp(2rem,4.6vw,3.1rem)}
+    .hl{color:var(--leaf)}
+    .hl-m{color:var(--mint)}
 
-    .tag{
-      display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:600;
-      font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;
-      background:var(--amber);color:var(--coal);padding:5px 12px;margin-bottom:20px;
-    }
-    .tag.ghost{background:transparent;color:var(--amber);border:2px solid var(--amber)}
+    .kicker{font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin-bottom:16px}
+    .on-dark .kicker{color:var(--mint)}
 
-    /* veszélycsík elválasztó */
-    .hz{height:9px;background:repeating-linear-gradient(-45deg,var(--amber) 0 14px,var(--coal) 14px 28px)}
-
-    .sec{padding:88px 0}
-    .sec-head{max-width:700px;margin-bottom:44px}
+    .sec{padding:92px 0}
+    .sec-head{max-width:680px;margin-bottom:44px}
     .sec-head p{color:var(--ink-2);margin-top:14px;max-width:56ch}
 
     /* gombok: éles, tömör */
     .btn{
-      display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;
-      font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;text-align:center;
-      padding:16px 34px;cursor:pointer;border:2px solid var(--amber);
-      background:var(--amber);color:var(--coal);
+      display:inline-block;font-weight:700;font-size:1rem;letter-spacing:.01em;text-align:center;
+      padding:16px 32px;cursor:pointer;border:2px solid var(--pine);
+      background:var(--pine);color:var(--cream);
       transition:background .15s,color .15s,border-color .15s;white-space:nowrap;
     }
-    .btn:hover{background:var(--coal);color:var(--amber);border-color:var(--coal)}
-    .btn-out{background:transparent;color:var(--on-coal);border-color:var(--rule-dk)}
-    .btn-out:hover{background:transparent;border-color:var(--amber);color:var(--amber)}
-    .btn-out.on-light{color:var(--ink);border-color:var(--ink)}
-    .btn-out.on-light:hover{background:var(--ink);color:var(--bone)}
+    .btn:hover{background:var(--pine-2);border-color:var(--pine-2)}
+    .btn-out{background:transparent;color:var(--ink);border-color:var(--ink)}
+    .btn-out:hover{background:var(--ink);color:var(--cream)}
+    .on-dark .btn{background:var(--cream);border-color:var(--cream);color:var(--pine)}
+    .on-dark .btn:hover{background:var(--mint);border-color:var(--mint)}
+    .on-dark .btn-out{background:transparent;border-color:var(--rule-pine);color:var(--on-pine)}
+    .on-dark .btn-out:hover{border-color:var(--mint);color:var(--mint)}
 
-    /* fejléc: tömör grafit sáv */
-    header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--coal);border-bottom:1px solid var(--rule-dk)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}
-    .brand{color:var(--on-coal);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.35rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;line-height:1}
-    .brand b{color:var(--amber)}
-    .brand small{display:block;font-family:'Barlow',sans-serif;font-weight:500;font-size:9.5px;letter-spacing:.24em;color:var(--on-coal-2);margin-top:4px}
-    .nav-links{display:flex;gap:26px;font-weight:500;font-size:.92rem;color:var(--on-coal-2)}
-    .nav-links a:hover{color:var(--amber)}
-    .nav-tel{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:.05em;color:var(--amber);white-space:nowrap}
-    .nav-tel:hover{color:var(--on-coal)}
+    /* fejléc */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--rule)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:18px}
+    .brand{font-weight:800;font-size:1.2rem;letter-spacing:-.02em;white-space:nowrap;line-height:1.1}
+    .brand b{color:var(--leaf);font-weight:800}
+    .brand small{display:block;font-weight:500;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-top:3px}
+    .nav-links{display:flex;gap:26px;font-weight:500;font-size:.92rem;color:var(--ink-2)}
+    .nav-links a:hover{color:var(--leaf)}
+    .nav-tel{font-weight:800;font-size:1.05rem;letter-spacing:-.01em;color:var(--pine);white-space:nowrap}
+    .nav-tel:hover{color:var(--leaf)}
     @media(max-width:940px){.nav-links{display:none}}
-    @media(max-width:560px){.nav{height:62px}.brand{font-size:1.05rem}.brand small{font-size:8px;letter-spacing:.18em}.nav-tel{font-size:1rem}}
+    @media(max-width:560px){.nav{height:64px}.brand{font-size:1rem}.brand small{font-size:8.5px;letter-spacing:.14em}.nav-tel{font-size:.92rem}}
 
-    /* hero: grafit tábla */
-    .hero{background:var(--coal);color:var(--on-coal);padding:150px 0 72px;position:relative}
-    .hero .tag{margin-bottom:26px}
-    .hero h1{font-size:clamp(3rem,9vw,6.2rem);max-width:14ch;color:var(--on-coal)}
-    .hero h1 .amb{display:inline}
-    .hero-sub{color:var(--on-coal-2);font-size:1.15rem;max-width:54ch;margin:26px 0 34px}
-    .hero-sub strong{color:var(--on-coal);font-weight:600}
+    /* hero: fenyőzöld tábla */
+    .hero{background:var(--pine);color:var(--on-pine);padding:150px 0 72px}
+    .avail{display:inline-block;font-size:.88rem;font-weight:700;color:var(--pine);background:var(--mint);padding:7px 14px;margin-bottom:26px}
+    .hero h1{font-size:clamp(2.5rem,6.8vw,4.7rem);max-width:16ch;color:#FFFFFF;font-weight:800}
+    .hero-sub{color:var(--on-pine-2);font-size:1.14rem;max-width:54ch;margin:24px 0 32px}
+    .hero-sub strong{color:var(--on-pine);font-weight:700}
     .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
-    .rating{color:var(--on-coal-2);font-size:.95rem;margin-bottom:46px}
-    .rating b{color:var(--on-coal)}
-    .rating .st{color:var(--amber);letter-spacing:2px}
+    .rating{color:var(--on-pine-2);font-size:.94rem;margin-bottom:44px}
+    .rating b{color:var(--on-pine)}
+    .rating .st{color:var(--mint);letter-spacing:2px}
 
-    .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule-dk)}
-    .fact{padding:24px clamp(14px,2.5vw,30px) 4px;border-left:1px solid var(--rule-dk)}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule-pine)}
+    .fact{padding:24px clamp(14px,2.5vw,30px) 4px;border-left:1px solid var(--rule-pine)}
     .fact:first-child{padding-left:0;border-left:none}
-    .fact b{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(2.2rem,4.5vw,3.2rem);line-height:1;color:var(--amber)}
-    .fact span{display:block;font-size:.85rem;color:var(--on-coal-2);margin-top:6px}
+    .fact b{display:block;font-weight:800;font-size:clamp(1.9rem,4vw,2.7rem);line-height:1;letter-spacing:-.02em;color:var(--mint)}
+    .fact span{display:block;font-size:.85rem;color:var(--on-pine-2);margin-top:7px}
     @media(max-width:720px){
-      .hero{padding:116px 0 54px}
+      .hero{padding:118px 0 54px}
       .facts{grid-template-columns:1fr 1fr;gap:18px 0}
       .fact{padding:18px 0 0;border-left:none}
-      .fact:nth-child(even){padding-left:20px;border-left:1px solid var(--rule-dk)}
+      .fact:nth-child(even){padding-left:20px;border-left:1px solid var(--rule-pine)}
     }
 
     /* futó sáv */
-    .marquee{background:var(--coal);color:var(--on-coal);border-top:1px solid var(--rule-dk);padding:13px 0;overflow:hidden}
-    .marquee-track{display:flex;gap:38px;width:max-content;animation:mq 32s linear infinite}
-    .marquee span{display:flex;align-items:center;gap:38px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
-    .marquee i{font-style:normal;color:var(--amber)}
+    .marquee{background:var(--pine-2);color:var(--on-pine-2);padding:13px 0;overflow:hidden}
+    .marquee-track{display:flex;gap:40px;width:max-content;animation:mq 32s linear infinite}
+    .marquee span{display:flex;align-items:center;gap:40px;font-weight:500;font-size:.98rem;white-space:nowrap}
+    .marquee i{font-style:normal;color:var(--mint)}
     @keyframes mq{to{transform:translateX(-50%)}}
 
-    /* szolgáltatások: műhelyi ártábla */
+    /* szolgáltatások: árlista */
     .list{border-top:2px solid var(--ink)}
     .item{
-      display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;
+      display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:baseline;
       padding:24px 0 22px;border-bottom:1px solid var(--rule);
     }
-    .item .no{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.1rem;color:var(--ink-3)}
-    .item h3{font-size:1.7rem;margin-bottom:4px;letter-spacing:.02em}
+    .item .no{font-weight:700;font-size:.95rem;color:var(--ink-3)}
+    .item h3{font-size:1.45rem;margin-bottom:5px}
     .item p{color:var(--ink-2);font-size:.94rem;max-width:54ch}
-    .item .price{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:var(--ink);white-space:nowrap;background:var(--bone-2);padding:4px 12px}
+    .item .price{font-weight:800;font-size:1.12rem;letter-spacing:-.01em;color:var(--pine);white-space:nowrap;background:var(--cream-2);padding:6px 14px}
     @media(max-width:700px){
-      .item{grid-template-columns:40px 1fr;gap:0 14px;padding:20px 0 18px}
+      .item{grid-template-columns:38px 1fr;gap:0 14px;padding:20px 0 18px}
       .item .price{grid-column:2;justify-self:start;margin-top:10px}
     }
 
-    /* garancia: grafit tábla veszélycsíkkal */
-    .guar-band{background:var(--coal);color:var(--on-coal)}
+    /* garancia: zöld tábla */
+    .guar-band{background:var(--pine);color:var(--on-pine)}
     .guar-inner{padding:72px 0}
     .guar-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,72px);align-items:start}
-    .guar-grid h3{font-size:clamp(2rem,4.6vw,3.2rem);color:var(--on-coal)}
-    .guar-grid .lead{color:var(--on-coal-2);margin-top:16px;max-width:46ch}
-    .plist{list-style:none;border-top:1px solid var(--rule-dk)}
-    .plist li{display:grid;grid-template-columns:14px 1fr;gap:14px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--rule-dk);color:var(--on-coal-2)}
-    .plist .sq{width:9px;height:9px;background:var(--amber);align-self:center}
-    .plist strong{color:var(--on-coal);font-weight:600}
+    .guar-grid h3{font-size:clamp(1.8rem,4.2vw,2.8rem);color:#fff;font-weight:800;letter-spacing:-.02em}
+    .guar-grid .lead{color:var(--on-pine-2);margin-top:16px;max-width:46ch}
+    .plist{list-style:none;border-top:1px solid var(--rule-pine)}
+    .plist li{display:grid;grid-template-columns:12px 1fr;gap:14px;padding:15px 0;border-bottom:1px solid var(--rule-pine);color:var(--on-pine-2)}
+    .plist .sq{width:8px;height:8px;background:var(--mint);align-self:center}
+    .plist strong{color:var(--on-pine);font-weight:700}
     @media(max-width:820px){.guar-grid{grid-template-columns:1fr;gap:34px}}
 
     /* körzet */
-    .kerulet{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(1.35rem,3vw,2rem);letter-spacing:.03em;text-transform:uppercase;line-height:1.9;color:var(--ink-2);max-width:64ch}
-    .kerulet b{color:var(--coal);background:var(--amber);padding:1px 8px;font-weight:700}
-    .kerulet .sep{color:var(--rule);margin:0 .28em}
+    .kerulet{font-weight:500;font-size:clamp(1.15rem,2.6vw,1.65rem);line-height:2;color:var(--ink-2);max-width:62ch}
+    .kerulet b{color:var(--cream);background:var(--pine);padding:2px 10px;font-weight:700}
+    .kerulet .sep{color:var(--rule);margin:0 .3em}
     .kerulet-note{margin-top:20px;color:var(--ink-2);font-size:.94rem;max-width:54ch}
 
     /* Google-vélemények */
     .reviews{border-top:2px solid var(--ink);max-width:820px}
     .review{padding:26px 0;border-bottom:1px solid var(--rule)}
     .review .meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:8px;font-size:.9rem}
-    .review .st{color:var(--amber);letter-spacing:2px;font-size:.85rem}
-    .review .who{font-weight:600}
+    .review .st{color:var(--leaf);letter-spacing:2px;font-size:.85rem}
+    .review .who{font-weight:700}
     .review .src{color:var(--ink-3)}
     .review p{color:var(--ink-2);max-width:64ch}
 
-    /* folyamat: számozott sorok */
+    /* folyamat */
     .steps{border-top:2px solid var(--ink)}
-    .stp{display:grid;grid-template-columns:110px 1fr;gap:clamp(16px,4vw,44px);padding:30px 0;border-bottom:1px solid var(--rule);align-items:start}
-    .stp .n{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(3rem,7vw,4.6rem);line-height:.9;color:var(--amber)}
-    .stp h3{font-size:1.6rem;margin-bottom:8px}
+    .stp{display:grid;grid-template-columns:96px 1fr;gap:clamp(16px,4vw,44px);padding:30px 0;border-bottom:1px solid var(--rule);align-items:start}
+    .stp .n{font-weight:800;font-size:clamp(2.6rem,6vw,4rem);line-height:.95;letter-spacing:-.03em;color:var(--leaf)}
+    .stp h3{font-size:1.4rem;margin-bottom:8px}
     .stp p{color:var(--ink-2);max-width:60ch}
-    .stp b{color:var(--ink);font-weight:600}
-    @media(max-width:560px){.stp{grid-template-columns:64px 1fr}}
+    .stp b{color:var(--ink);font-weight:700}
+    @media(max-width:560px){.stp{grid-template-columns:56px 1fr}}
 
     /* GYIK */
     .faq{max-width:760px;border-top:2px solid var(--ink)}
     .faq details{border-bottom:1px solid var(--rule)}
     .faq summary{
       list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;
-      padding:20px 0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.4rem;letter-spacing:.02em;text-transform:uppercase;
+      padding:20px 0;font-weight:700;font-size:1.12rem;letter-spacing:-.01em;
     }
     .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:"+";font-family:'Barlow',sans-serif;font-weight:500;font-size:1.5rem;color:var(--amber);transition:transform .25s;flex:none}
+    .faq summary::after{content:"+";font-weight:400;font-size:1.5rem;color:var(--leaf);transition:transform .25s;flex:none}
     .faq details[open] summary::after{transform:rotate(45deg)}
     .faq .body{padding:0 0 22px;color:var(--ink-2);max-width:60ch}
 
-    /* kapcsolat: grafit */
-    .contact{background:var(--coal);color:var(--on-coal)}
+    /* kapcsolat: zöld */
+    .contact{background:var(--pine);color:var(--on-pine)}
     .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
-    .cgrid h2{color:var(--on-coal)}
-    .tel-big{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;
-      font-size:clamp(2.4rem,5.5vw,3.6rem);letter-spacing:.02em;margin:22px 0 6px;color:var(--amber)}
-    .tel-big:hover{color:var(--on-coal)}
-    .hours{color:var(--on-coal-2);font-size:.92rem}
-    .cnote{color:var(--on-coal-2);margin-top:22px;max-width:44ch}
-    .cnote strong{color:var(--on-coal);font-weight:600}
+    .cgrid h2{color:#fff;font-weight:800}
+    .tel-big{display:inline-block;font-weight:800;font-size:clamp(2rem,4.8vw,3rem);letter-spacing:-.02em;margin:22px 0 6px;color:var(--mint)}
+    .tel-big:hover{color:#fff}
+    .hours{color:var(--on-pine-2);font-size:.92rem}
+    .cnote{color:var(--on-pine-2);margin-top:22px;max-width:44ch}
+    .cnote strong{color:var(--on-pine);font-weight:700}
 
-    .form h3{font-size:1.9rem;margin-bottom:4px;color:var(--on-coal)}
-    .form .sub{color:var(--on-coal-2);font-size:.92rem;margin-bottom:26px}
+    .form h3{font-size:1.7rem;margin-bottom:4px;color:#fff;font-weight:800}
+    .form .sub{color:var(--on-pine-2);font-size:.92rem;margin-bottom:26px}
     .field{margin-bottom:20px}
-    .field label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-coal-2);margin-bottom:6px}
+    .field label{display:block;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-pine-2);margin-bottom:6px}
     .field input,.field textarea{
-      width:100%;background:var(--coal-2);border:1px solid var(--rule-dk);
-      padding:13px 14px;color:var(--on-coal);font-family:'Barlow',sans-serif;font-size:1rem;
+      width:100%;background:var(--pine-2);border:1px solid var(--rule-pine);
+      padding:13px 14px;color:var(--on-pine);font-family:'Schibsted Grotesk',sans-serif;font-size:1rem;
       transition:border-color .15s;resize:vertical;border-radius:0;
     }
-    .field input::placeholder,.field textarea::placeholder{color:#6C7074}
-    .field input:focus,.field textarea:focus{outline:none;border-color:var(--amber)}
+    .field input::placeholder,.field textarea::placeholder{color:#6E8577}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--mint)}
     .form .btn{width:100%;margin-top:6px}
     .form-ok{display:none;padding:30px 0}
-    .form-ok h3{color:var(--amber);font-size:2.4rem;margin-bottom:10px}
-    .form-ok p{color:var(--on-coal-2)}
-    .form-ok strong{color:var(--on-coal)}
+    .form-ok h3{color:var(--mint);font-size:2rem;margin-bottom:10px}
+    .form-ok p{color:var(--on-pine-2)}
+    .form-ok strong{color:var(--on-pine)}
     .form.done form{display:none}
     .form.done .form-ok{display:block}
     @media(max-width:820px){.cgrid{grid-template-columns:1fr;gap:42px}}
 
     /* footer */
-    footer{background:var(--coal);color:var(--on-coal-2);border-top:1px solid var(--rule-dk);padding:26px 0 104px;font-size:.85rem}
+    footer{background:var(--pine-2);color:var(--on-pine-2);padding:26px 0 102px;font-size:.85rem}
     .foot{display:flex;justify-content:space-between;gap:14px 26px;flex-wrap:wrap}
     .foot-links{display:flex;gap:22px;flex-wrap:wrap}
-    .foot-links a{border-bottom:1px solid var(--rule-dk);padding-bottom:1px}
-    .foot-links a:hover{color:var(--amber);border-color:var(--amber)}
+    .foot-links a{border-bottom:1px solid var(--rule-pine);padding-bottom:1px}
+    .foot-links a:hover{color:var(--mint);border-color:var(--mint)}
     @media(min-width:821px){footer{padding-bottom:26px}}
 
     /* sticky mobil sáv */
-    .stickybar{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;background:var(--coal);border-top:2px solid var(--amber)}
-    .stickybar a{flex:1;padding:16px 10px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase}
-    .stickybar .call{background:var(--amber);color:var(--coal)}
-    .stickybar .ask{color:var(--on-coal)}
+    .stickybar{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;background:var(--cream);border-top:1px solid var(--rule)}
+    .stickybar a{flex:1;padding:16px 10px;text-align:center;font-weight:700;font-size:1rem}
+    .stickybar .call{background:var(--pine);color:var(--cream)}
+    .stickybar .ask{color:var(--ink)}
     @media(max-width:820px){.stickybar{display:flex}}
 
     /* reveal */
@@ -253,7 +243,7 @@
 
   <header>
     <div class="wrap nav">
-      <a href="#" class="brand">Váradi <b>Lakásszerviz</b><small>BUDAPEST ÉS KÖRNYÉKE</small></a>
+      <a href="#" class="brand">Váradi <b>Lakásszerviz</b><small>Budapest és környéke</small></a>
       <nav class="nav-links">
         <a href="#szolgaltatasok">Szolgáltatások</a>
         <a href="#korzet">Körzet</a>
@@ -265,10 +255,10 @@
   </header>
 
   <!-- ═══ HERO ═══ -->
-  <section class="hero">
+  <section class="hero on-dark">
     <div class="wrap">
-      <span class="tag">Ma még tudunk időpontot adni</span>
-      <h1>Víz. Villany. Dugulás. Festés. <span class="amb">Egy hívás,</span> és intézzük.</h1>
+      <span class="avail">Ma még tudunk időpontot adni</span>
+      <h1>Víz, villany, dugulás, festés. <span class="hl-m">Egy hívás,</span> és intézzük.</h1>
       <p class="hero-sub">Lakásszerviz Budapesten és 25 km-es körzetben. <strong>Fix ár a munka előtt, számlával, 1 év garanciával.</strong> Egy szám az összes lakáshibára.</p>
       <div class="hero-ctas">
         <a href="tel:+36301234567" class="btn">Hívom a szervizt</a>
@@ -284,13 +274,11 @@
     </div>
   </section>
 
-  <div class="hz" aria-hidden="true"></div>
-
   <!-- ═══ FUTÓ SÁV ═══ -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Vízszerelés <i>▪</i> Villanyszerelés <i>▪</i> Duguláselhárítás <i>▪</i> Festés, glettelés <i>▪</i> Burkolás <i>▪</i> Klíma-karbantartás <i>▪</i> Kisjavítások <i>▪</i></span>
-      <span>Vízszerelés <i>▪</i> Villanyszerelés <i>▪</i> Duguláselhárítás <i>▪</i> Festés, glettelés <i>▪</i> Burkolás <i>▪</i> Klíma-karbantartás <i>▪</i> Kisjavítások <i>▪</i></span>
+      <span>Vízszerelés <i>·</i> Villanyszerelés <i>·</i> Duguláselhárítás <i>·</i> Festés, glettelés <i>·</i> Burkolás <i>·</i> Klíma-karbantartás <i>·</i> Kisjavítások <i>·</i></span>
+      <span>Vízszerelés <i>·</i> Villanyszerelés <i>·</i> Duguláselhárítás <i>·</i> Festés, glettelés <i>·</i> Burkolás <i>·</i> Klíma-karbantartás <i>·</i> Kisjavítások <i>·</i></span>
     </div>
   </div>
 
@@ -298,8 +286,8 @@
   <section class="sec" id="szolgaltatasok">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="tag">Szolgáltatások és árak</span>
-        <h2>Amit a lakásban el lehet rontani, <span class="amb">mi megjavítjuk</span></h2>
+        <p class="kicker">Szolgáltatások és árak</p>
+        <h2>Amit a lakásban el lehet rontani, <span class="hl">mi megjavítjuk</span></h2>
         <p>Saját csapat, nem alvállalkozók. Az árak munkadíjak, kiszállással együtt. A pontos, fix árat a munka megkezdése előtt mondjuk meg.</p>
       </div>
       <div class="list">
@@ -338,13 +326,12 @@
   </section>
 
   <!-- ═══ GARANCIA ═══ -->
-  <div class="hz" aria-hidden="true"></div>
-  <section class="guar-band">
+  <section class="guar-band on-dark">
     <div class="wrap guar-inner">
       <div class="guar-grid">
         <div class="reveal">
-          <span class="tag">Garancia</span>
-          <h3>Fix ár a munka előtt. Ha mégse annyi, <span class="amb">a különbség a mi bajunk.</span></h3>
+          <p class="kicker">Garancia</p>
+          <h3>Fix ár a munka előtt. Ha mégse annyi, <span class="hl-m">a különbség a mi bajunk.</span></h3>
           <p class="lead">A helyszínen, a munka megkezdése előtt megmondjuk a pontos árat. Amit akkor mondunk, annyit fizet. Minden munkánkra 1 év írásos garanciát adunk.</p>
         </div>
         <ul class="plist reveal">
@@ -356,14 +343,13 @@
       </div>
     </div>
   </section>
-  <div class="hz" aria-hidden="true"></div>
 
   <!-- ═══ KÖRZET ═══ -->
   <section class="sec" id="korzet">
     <div class="wrap">
       <div class="sec-head reveal" style="margin-bottom:30px">
-        <span class="tag">Hol dolgozunk</span>
-        <h2>Budapest összes kerülete <span class="amb">+ 25 km</span></h2>
+        <p class="kicker">Hol dolgozunk</p>
+        <h2>Budapest összes kerülete <span class="hl">+ 25 km</span></h2>
       </div>
       <p class="kerulet reveal">
         I. <span class="sep">/</span> II. <span class="sep">/</span> III. <span class="sep">/</span> IV. <span class="sep">/</span> V. <span class="sep">/</span> VI. <span class="sep">/</span> VII. <span class="sep">/</span> VIII. <span class="sep">/</span> IX. <span class="sep">/</span> X. <span class="sep">/</span> <b>XI.</b> <span class="sep">/</span> XII. <span class="sep">/</span> <b>XIII.</b> <span class="sep">/</span> <b>XIV.</b> <span class="sep">/</span> XV. <span class="sep">/</span> XVI. <span class="sep">/</span> XVII. <span class="sep">/</span> XVIII. <span class="sep">/</span> XIX. <span class="sep">/</span> XX. <span class="sep">/</span> XXI. <span class="sep">/</span> XXII. <span class="sep">/</span> XXIII. <span class="sep">/</span> Budaörs <span class="sep">/</span> Dunakeszi <span class="sep">/</span> Szentendre <span class="sep">/</span> Vecsés <span class="sep">/</span> Érd
@@ -376,8 +362,8 @@
   <section class="sec" id="velemenyek" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="tag">Google-vélemények</span>
-        <h2>231 értékelés, <span class="amb">4,9 csillag</span></h2>
+        <p class="kicker">Google-vélemények</p>
+        <h2>231 értékelés, <span class="hl">4,9 csillag</span></h2>
       </div>
       <div class="reviews">
         <div class="review reveal">
@@ -400,8 +386,8 @@
   <section class="sec" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="tag">Így megy</span>
-        <h2>Hívástól a <span class="amb">kész munkáig</span></h2>
+        <p class="kicker">Így megy</p>
+        <h2>Hívástól a <span class="hl">kész munkáig</span></h2>
       </div>
       <div class="steps reveal">
         <div class="stp">
@@ -433,8 +419,8 @@
   <section class="sec" id="gyik" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="tag">Gyakori kérdések</span>
-        <h2>Amit érdemes <span class="amb">előre tudni</span></h2>
+        <p class="kicker">Gyakori kérdések</p>
+        <h2>Amit érdemes <span class="hl">előre tudni</span></h2>
       </div>
       <div class="faq reveal">
         <details>
@@ -462,12 +448,11 @@
   </section>
 
   <!-- ═══ KAPCSOLAT ═══ -->
-  <div class="hz" aria-hidden="true"></div>
-  <section class="sec contact" id="kapcsolat">
+  <section class="sec contact on-dark" id="kapcsolat">
     <div class="wrap cgrid">
       <div class="reveal">
-        <span class="tag">Kapcsolat</span>
-        <h2>Egy szám, amit <span class="amb">érdemes elmenteni</span></h2>
+        <p class="kicker">Kapcsolat</p>
+        <h2>Egy szám, amit <span class="hl-m">érdemes elmenteni</span></h2>
         <a class="tel-big" href="tel:+36301234567">06 30 123 4567</a>
         <p class="hours">Hétfő–szombat, 7:00–19:00. Ha nem tudjuk felvenni, egy órán belül visszahívjuk.</p>
         <p class="cnote">Vagy írja meg az űrlapon, mi a gond. Egy fotó a hibáról sokat segít, de egy mondat is elég. <strong>1 órán belül jelentkezünk</strong> a várható árral.</p>
