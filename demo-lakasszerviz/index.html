@@ -92,16 +92,16 @@
     @media(max-width:560px){.nav{height:64px}.brand{font-size:1rem}.brand small{font-size:8.5px;letter-spacing:.14em}.nav-tel{font-size:.92rem}}
 
     /* hero: fenyőzöld tábla */
-    .hero{background:var(--pine);color:var(--on-pine);padding:150px 0 72px}
+    .hero{background:var(--cream);color:var(--ink);padding:150px 0 64px}
     .avail{display:inline-block;font-size:.88rem;font-weight:700;color:var(--pine);background:var(--mint);padding:7px 14px;margin-bottom:26px}
     .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;grid-template-areas:"head card" "rest card";
       gap:20px clamp(32px,5vw,64px);align-items:center;margin-bottom:52px}
     .hero-head{grid-area:head;align-self:end}
     .hero-rest{grid-area:rest;align-self:start}
-    .hero h1{font-size:clamp(2.6rem,7vw,5rem);max-width:15ch;color:#FFFFFF;font-weight:800}
+    .hero h1{font-size:clamp(2.6rem,7vw,5rem);max-width:15ch;color:var(--ink);font-weight:800}
     .worksheet{
       grid-area:card;
-      background:var(--cream);color:var(--ink);border:1px solid var(--rule);
+      background:#FFFDF7;color:var(--ink);border:2px solid var(--ink);
       padding:24px 26px 28px;transform:rotate(-2deg);max-width:400px;justify-self:end;width:100%;
     }
     .ws-row{transition:opacity .4s ease,transform .4s ease}
@@ -124,25 +124,25 @@
       .avail{font-size:.8rem;padding:6px 12px;margin-bottom:18px}
       .hero{padding:104px 0 50px}
     }
-    .hero .rot{display:block;color:var(--mint);min-height:1.12em;transition:opacity .28s ease,transform .28s ease}
+    .hero .rot{display:block;color:var(--leaf);min-height:1.12em;transition:opacity .28s ease,transform .28s ease}
     .hero .rot.out{opacity:0;transform:translateY(10px)}
-    .hero-sub{color:var(--on-pine-2);font-size:1.14rem;max-width:54ch;margin:24px 0 32px}
-    .hero-sub strong{color:var(--on-pine);font-weight:700}
+    .hero-sub{color:var(--ink-2);font-size:1.14rem;max-width:54ch;margin:24px 0 32px}
+    .hero-sub strong{color:var(--ink);font-weight:700}
     .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
-    .rating{color:var(--on-pine-2);font-size:.94rem;margin-bottom:44px}
-    .rating b{color:var(--on-pine)}
-    .rating .st{color:var(--mint);letter-spacing:2px}
+    .rating{color:var(--ink-3);font-size:.94rem;margin-bottom:44px}
+    .rating b{color:var(--ink)}
+    .rating .st{color:var(--leaf);letter-spacing:2px}
 
-    .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule-pine)}
-    .fact{padding:24px clamp(14px,2.5vw,30px) 4px;border-left:1px solid var(--rule-pine)}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+    .fact{padding:24px clamp(14px,2.5vw,30px) 4px;border-left:1px solid var(--rule)}
     .fact:first-child{padding-left:0;border-left:none}
-    .fact b{display:block;font-weight:800;font-size:clamp(1.9rem,4vw,2.7rem);line-height:1;letter-spacing:-.02em;color:var(--mint)}
-    .fact span{display:block;font-size:.85rem;color:var(--on-pine-2);margin-top:7px}
+    .fact b{display:block;font-weight:800;font-size:clamp(1.9rem,4vw,2.7rem);line-height:1;letter-spacing:-.02em;color:var(--leaf)}
+    .fact span{display:block;font-size:.85rem;color:var(--ink-3);margin-top:7px}
     @media(max-width:720px){
       .hero{padding:118px 0 54px}
       .facts{grid-template-columns:1fr 1fr;gap:18px 0}
       .fact{padding:18px 0 0;border-left:none}
-      .fact:nth-child(even){padding-left:20px;border-left:1px solid var(--rule-pine)}
+      .fact:nth-child(even){padding-left:20px;border-left:1px solid var(--rule)}
     }
 
     /* futó sáv */
@@ -279,7 +279,7 @@
   </header>
 
   <!-- ═══ HERO ═══ -->
-  <section class="hero on-dark">
+  <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-head">
         <span class="avail">Ma még tudunk időpontot adni</span>
