@@ -94,7 +94,9 @@
     /* hero: fenyőzöld tábla */
     .hero{background:var(--pine);color:var(--on-pine);padding:150px 0 72px}
     .avail{display:inline-block;font-size:.88rem;font-weight:700;color:var(--pine);background:var(--mint);padding:7px 14px;margin-bottom:26px}
-    .hero h1{font-size:clamp(2.5rem,6.8vw,4.7rem);max-width:16ch;color:#FFFFFF;font-weight:800}
+    .hero h1{font-size:clamp(2.6rem,7vw,5rem);max-width:15ch;color:#FFFFFF;font-weight:800}
+    .hero .rot{display:block;color:var(--mint);min-height:1.12em;transition:opacity .28s ease,transform .28s ease}
+    .hero .rot.out{opacity:0;transform:translateY(10px)}
     .hero-sub{color:var(--on-pine-2);font-size:1.14rem;max-width:54ch;margin:24px 0 32px}
     .hero-sub strong{color:var(--on-pine);font-weight:700}
     .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
@@ -269,7 +271,7 @@
   <section class="hero on-dark">
     <div class="wrap">
       <span class="avail">Ma még tudunk időpontot adni</span>
-      <h1>Víz, villany, dugulás, festés. <span class="hl-m">Egy hívás,</span> és intézzük.</h1>
+      <h1><span class="rot" id="rot">Csöpög a csap?</span>Egy hívás, és intézzük.</h1>
       <p class="hero-sub">Lakásszerviz Budapesten és 25 km-es körzetben. <strong>Fix ár a munka előtt, számlával, 1 év garanciával.</strong> Egy szám az összes lakáshibára.</p>
       <div class="hero-ctas">
         <a href="tel:+36301234567" class="btn">Hívom a szervizt</a>
@@ -318,23 +320,8 @@
           <span class="price">16 900 Ft-tól</span>
         </div>
         <div class="midcta reveal">
-          <p>Nincs a listában? Mondja el, megmondjuk, tudjuk-e.</p>
+          <p>Festés, burkolás, kisjavítás vagy bármi más? Arra is fix árat mondunk.</p>
           <a href="tel:+36301234567">06 30 123 4567</a>
-        </div>
-        <div class="item reveal">
-          <span class="no">04</span>
-          <div><h3>Festés, glettelés</h3><p>Szobafestés fóliázással, éllel, az utolsó napon kitakarított lakással.</p></div>
-          <span class="price">3 500 Ft/m²-től</span>
-        </div>
-        <div class="item reveal">
-          <span class="no">05</span>
-          <div><h3>Burkolás</h3><p>Hidegburkolat, laminált padló, lábazat. Milliméterre pontosan.</p></div>
-          <span class="price">9 000 Ft/m²-től</span>
-        </div>
-        <div class="item reveal">
-          <span class="no">06</span>
-          <div><h3>Kisjavítások</h3><p>Bútorszerelés, zárcsere, karnis, ajtó-ablak beállítás, szilikonozás.</p></div>
-          <span class="price">9 900 Ft-tól</span>
         </div>
       </div>
     </div>
@@ -538,6 +525,16 @@
       });
     },{threshold:.6});
     document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});
+
+    // hero probléma-rotátor
+    var words=['Csöpög a csap?','Dugul a lefolyó?','Ugrott a FI-relé?','Törött a csempe?','Szorul az ajtó?','Málik a fal?'];
+    var rot=document.getElementById('rot'),wi=0;
+    if(!reduce){
+      setInterval(function(){
+        rot.classList.add('out');
+        setTimeout(function(){wi=(wi+1)%words.length;rot.textContent=words[wi];rot.classList.remove('out')},290);
+      },2500);
+    }
 
     // demó űrlap, siker állapot
     document.getElementById('leadform').addEventListener('submit',function(e){
