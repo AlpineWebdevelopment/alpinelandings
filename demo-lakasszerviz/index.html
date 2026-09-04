@@ -94,7 +94,24 @@
     /* hero: fenyőzöld tábla */
     .hero{background:var(--pine);color:var(--on-pine);padding:150px 0 72px}
     .avail{display:inline-block;font-size:.88rem;font-weight:700;color:var(--pine);background:var(--mint);padding:7px 14px;margin-bottom:26px}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(32px,5vw,64px);align-items:center;margin-bottom:52px}
     .hero h1{font-size:clamp(2.6rem,7vw,5rem);max-width:15ch;color:#FFFFFF;font-weight:800}
+    .worksheet{
+      background:var(--cream);color:var(--ink);border:1px solid var(--rule);
+      padding:24px 26px 28px;transform:rotate(-2deg);max-width:400px;justify-self:end;width:100%;
+    }
+    .ws-head{display:flex;justify-content:space-between;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);
+      border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:4px}
+    .ws-row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--rule)}
+    .ws-row span{color:var(--ink-2);font-size:.9rem}
+    .ws-row b{font-weight:700;font-size:.95rem;text-align:right}
+    .ws-stamp{margin:20px auto 0;width:max-content;transform:rotate(-6deg);
+      border:3px double var(--leaf);color:var(--leaf);font-weight:800;text-transform:uppercase;
+      letter-spacing:.14em;padding:8px 18px;font-size:.95rem}
+    @media(max-width:880px){
+      .hero-grid{grid-template-columns:1fr;gap:40px;margin-bottom:40px}
+      .worksheet{justify-self:center;transform:rotate(-1.5deg)}
+    }
     .hero .rot{display:block;color:var(--mint);min-height:1.12em;transition:opacity .28s ease,transform .28s ease}
     .hero .rot.out{opacity:0;transform:translateY(10px)}
     .hero-sub{color:var(--on-pine-2);font-size:1.14rem;max-width:54ch;margin:24px 0 32px}
@@ -251,15 +268,28 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero on-dark">
-    <div class="wrap">
-      <span class="avail">Ma még tudunk időpontot adni</span>
-      <h1><span class="rot" id="rot">Csöpög a csap?</span>Egy hívás, és intézzük.</h1>
-      <p class="hero-sub">Lakásszerviz Budapesten és 25 km-es körzetben. <strong>Fix ár a munka előtt, számlával, 1 év garanciával.</strong> Egy szám az összes lakáshibára.</p>
-      <div class="hero-ctas">
-        <a href="tel:+36301234567" class="btn">Hívom a szervizt</a>
-        <a href="#kapcsolat" class="btn btn-out">Árajánlatot kérek</a>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="avail">Ma még tudunk időpontot adni</span>
+        <h1><span class="rot" id="rot">Csöpög a csap?</span>Egy hívás, és intézzük.</h1>
+        <p class="hero-sub">Lakásszerviz Budapesten és 25 km-es körzetben. <strong>Fix ár a munka előtt, számlával, 1 év garanciával.</strong> Egy szám az összes lakáshibára.</p>
+        <div class="hero-ctas">
+          <a href="tel:+36301234567" class="btn">Hívom a szervizt</a>
+          <a href="#kapcsolat" class="btn btn-out">Árajánlatot kérek</a>
+        </div>
+        <p class="rating"><span class="st">★★★★★</span> <b>4,9</b> · 231 Google-értékelés</p>
       </div>
-      <p class="rating"><span class="st">★★★★★</span> <b>4,9</b> · 231 Google-értékelés</p>
+      <aside class="worksheet" aria-hidden="true">
+        <div class="ws-head"><span>Munkalap</span><span>№ 2481</span></div>
+        <div class="ws-row"><span>Bejelentés</span><b>ma, 9:41</b></div>
+        <div class="ws-row"><span>Hiba</span><b>csöpögő csaptelep</b></div>
+        <div class="ws-row"><span>Fix ár előre</span><b>12 900 Ft</b></div>
+        <div class="ws-row"><span>Kiszállás</span><b>ma, 14:00–14:30</b></div>
+        <div class="ws-row"><span>Elkészült</span><b>ma, 14:52</b></div>
+        <div class="ws-stamp">1 év garancia</div>
+      </aside>
+    </div>
+    <div class="wrap">
       <div class="facts">
         <div class="fact"><b data-count="15">0</b><span>év tapasztalat</span></div>
         <div class="fact"><b data-count="4800">0</b><span>elvégzett munka</span></div>
@@ -278,7 +308,7 @@
   </div>
 
   <!-- ═══ SZOLGÁLTATÁSOK ═══ -->
-  <section class="sec" id="szolgaltatasok">
+  <section class="sec" id="szolgaltatasok" style="padding-bottom:0">
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="kicker">Szolgáltatások és árak</p>
