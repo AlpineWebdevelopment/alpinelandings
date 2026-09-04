@@ -4,305 +4,277 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Váradi Lakásszerviz — Víz, villany, festés, dugulás | Budapest</title>
-  <meta name="description" content="Vízszerelés, villanyszerelés, duguláselhárítás, festés, burkolás, kisjavítások — Budapesten és 25 km-es körzetben. Fix ár előre, számlával, 1 év garanciával. Hívjon: +36 30 123 4567">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231F1B16'/><text x='16' y='22' font-family='Georgia,serif' font-size='19' fill='%23F7F4EF' text-anchor='middle'>V</text><rect x='10' y='25' width='12' height='2' fill='%23A8452B'/></svg>">
+  <meta name="description" content="Vízszerelés, villanyszerelés, duguláselhárítás, festés, burkolás, kisjavítások Budapesten és 25 km-es körzetben. Fix ár előre, számlával, 1 év garanciával. Hívjon: +36 30 123 4567">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23191B1D'/><text x='16' y='23' font-family='Arial Narrow,Arial,sans-serif' font-weight='700' font-size='20' fill='%23F2A900' text-anchor='middle'>V</text></svg>">
 
   <!-- ═══════════════════════════════════════════════════════════
-       ALPINE LANDINGS DEMO — fiktív ügyfél, nem valós vállalkozás.
-       Ez az oldal megy a hirdetés-kreatívba (screen record), úgy
-       néz ki, mintha referencia-munka lenne: általános lakásszerviz,
-       minden lakossági szakma lefedve. Minden elérhetőség kamu.
-       Design: nyomdai/szerkesztőségi — papír alap, szerif címsorok,
-       dobozok helyett léniák. Fotó nincs, önhordó CSS.
+       ALPINE LANDINGS DEMO. Fiktív ügyfél, nem valós vállalkozás.
+       Ez az oldal megy a hirdetés-kreatívba (screen record).
+       Minden elérhetőség kamu. Design: műhely/ipari plakát,
+       grafit + munkavédelmi sárga, veszélycsíkos elválasztók,
+       éles sarkok, nincs árnyék, nincs blur, nincs ikonkészlet.
+       Fotó nincs, önhordó CSS.
        ═══════════════════════════════════════════════════════════ -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
     :root{
-      --paper:#F7F4EF;
-      --paper-2:#FFFDF9;
-      --ink:#1F1B16;
-      --ink-2:#5A5148;
-      --ink-3:#8B8177;
-      --brick:#A8452B;
-      --brick-dk:#8A3721;
-      --brick-soft:#F0E4DE;
-      --rule:#DED6C9;
-      --rule-2:#C4B9A7;
-      --ok:#4A7C59;
+      --coal:#191B1D;
+      --coal-2:#212427;
+      --bone:#F0EEE7;
+      --bone-2:#E7E4DB;
+      --ink:#1B1D1F;
+      --ink-2:#54585C;
+      --ink-3:#83878B;
+      --amber:#F2A900;
+      --amber-dk:#D89700;
+      --rule:#D3CFC4;
+      --rule-dk:#33373B;
+      --on-coal:#EDEBE3;
+      --on-coal-2:#A9ACA9;
     }
 
     html{scroll-behavior:smooth}
     body{
-      font-family:'Karla',system-ui,sans-serif;
-      font-weight:400;
-      font-size:17px;line-height:1.68;
-      color:var(--ink);background:var(--paper);
+      font-family:'Barlow',system-ui,sans-serif;
+      font-size:17px;line-height:1.62;
+      color:var(--ink);background:var(--bone);
       -webkit-font-smoothing:antialiased;overflow-x:hidden;
     }
-    ::selection{background:var(--brick);color:var(--paper)}
+    ::selection{background:var(--amber);color:var(--coal)}
     a{color:inherit;text-decoration:none}
 
-    .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
 
-    h1,h2,h3,.disp{
-      font-family:'Newsreader',Georgia,serif;
-      font-weight:400;line-height:1.13;letter-spacing:-.015em;
+    h1,h2,h3,.cond{
+      font-family:'Barlow Condensed',sans-serif;
+      font-weight:700;line-height:1.02;letter-spacing:.005em;text-transform:uppercase;
     }
-    h2{font-size:clamp(2rem,4.4vw,3.05rem)}
-    em.b{font-style:italic;color:var(--brick)}
+    h2{font-size:clamp(2.2rem,5.2vw,3.6rem)}
+    .amb{color:var(--amber)}
 
-    .kicker{
-      font-family:'Karla',sans-serif;
-      font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brick);
-      display:flex;align-items:center;gap:12px;margin-bottom:18px;
+    .tag{
+      display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:600;
+      font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;
+      background:var(--amber);color:var(--coal);padding:5px 12px;margin-bottom:20px;
     }
-    .kicker::before{content:"";width:26px;height:1px;background:var(--brick);flex:none}
+    .tag.ghost{background:transparent;color:var(--amber);border:2px solid var(--amber)}
 
-    .sec{padding:92px 0}
-    .sec-head{max-width:660px;margin-bottom:44px}
-    .sec-head p{color:var(--ink-2);margin-top:14px}
+    /* veszélycsík elválasztó */
+    .hz{height:9px;background:repeating-linear-gradient(-45deg,var(--amber) 0 14px,var(--coal) 14px 28px)}
 
-    /* ── gombok: szögletes, tömör, nem pill ── */
+    .sec{padding:88px 0}
+    .sec-head{max-width:700px;margin-bottom:44px}
+    .sec-head p{color:var(--ink-2);margin-top:14px;max-width:56ch}
+
+    /* gombok: éles, tömör */
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      font-family:'Karla',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.01em;
-      padding:15px 28px;border-radius:2px;cursor:pointer;border:1px solid transparent;
-      transition:background .18s,color .18s,border-color .18s;white-space:nowrap;
+      display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+      font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;text-align:center;
+      padding:16px 34px;cursor:pointer;border:2px solid var(--amber);
+      background:var(--amber);color:var(--coal);
+      transition:background .15s,color .15s,border-color .15s;white-space:nowrap;
     }
-    .btn svg{width:16px;height:16px;flex:none}
-    .btn-brick{background:var(--brick);color:var(--paper-2)}
-    .btn-brick:hover{background:var(--brick-dk)}
-    .btn-line{border-color:var(--rule-2);color:var(--ink)}
-    .btn-line:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+    .btn:hover{background:var(--coal);color:var(--amber);border-color:var(--coal)}
+    .btn-out{background:transparent;color:var(--on-coal);border-color:var(--rule-dk)}
+    .btn-out:hover{background:transparent;border-color:var(--amber);color:var(--amber)}
+    .btn-out.on-light{color:var(--ink);border-color:var(--ink)}
+    .btn-out.on-light:hover{background:var(--ink);color:var(--bone)}
 
-    /* aláhúzott szöveglink */
-    .ulink{border-bottom:1px solid var(--rule-2);padding-bottom:2px;transition:border-color .2s,color .2s}
-    .ulink:hover{border-color:var(--brick);color:var(--brick)}
-
-    /* ── fejléc ── */
-    header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
-    header.scrolled{background:rgba(247,244,239,.93);backdrop-filter:blur(10px);border-color:var(--rule)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
-    .brand{font-family:'Newsreader',serif;font-size:1.3rem;letter-spacing:-.01em;white-space:nowrap;line-height:1.1}
-    .brand i{font-style:italic}
-    .brand small{display:block;font-family:'Karla',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--ink-3);margin-top:3px}
-    .nav-links{display:flex;gap:28px;font-size:.9rem;color:var(--ink-2)}
-    .nav-links a{transition:color .2s}
-    .nav-links a:hover{color:var(--brick)}
-    .nav-tel{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.95rem;white-space:nowrap;
-      border-bottom:1.5px solid var(--brick);padding-bottom:3px;transition:color .2s}
-    .nav-tel:hover{color:var(--brick)}
-    .nav-tel svg{width:14px;height:14px}
+    /* fejléc: tömör grafit sáv */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--coal);border-bottom:1px solid var(--rule-dk)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}
+    .brand{color:var(--on-coal);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.35rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;line-height:1}
+    .brand b{color:var(--amber)}
+    .brand small{display:block;font-family:'Barlow',sans-serif;font-weight:500;font-size:9.5px;letter-spacing:.24em;color:var(--on-coal-2);margin-top:4px}
+    .nav-links{display:flex;gap:26px;font-weight:500;font-size:.92rem;color:var(--on-coal-2)}
+    .nav-links a:hover{color:var(--amber)}
+    .nav-tel{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:.05em;color:var(--amber);white-space:nowrap}
+    .nav-tel:hover{color:var(--on-coal)}
     @media(max-width:940px){.nav-links{display:none}}
-    @media(max-width:560px){
-      .nav{height:66px}
-      .brand{font-size:1.05rem}.brand small{font-size:8.5px;letter-spacing:.15em}
-      .nav-tel{font-size:.84rem}
-    }
+    @media(max-width:560px){.nav{height:62px}.brand{font-size:1.05rem}.brand small{font-size:8px;letter-spacing:.18em}.nav-tel{font-size:1rem}}
 
-    /* ── hero ── */
-    .hero{padding:150px 0 76px}
-    .avail{display:flex;align-items:center;gap:10px;font-family:'Newsreader',serif;font-style:italic;
-      font-size:1.02rem;color:var(--ink-2);margin-bottom:22px}
-    .avail .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none;position:relative}
-    .avail .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--ok);opacity:.5;animation:pulse 2.4s ease-out infinite}
-    @keyframes pulse{0%{transform:scale(.6);opacity:.7}100%{transform:scale(1.7);opacity:0}}
-    .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:15ch;margin-bottom:22px}
-    .hero-sub{color:var(--ink-2);font-size:1.13rem;max-width:52ch;margin-bottom:32px}
-    .hero-sub strong{color:var(--ink);font-weight:700}
-    .hero-ctas{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-bottom:26px}
-    .rating{display:flex;align-items:center;gap:12px;color:var(--ink-3);font-size:.92rem;margin-bottom:44px}
-    .stars{color:var(--brick);letter-spacing:2px;font-size:.9rem}
-    .rating b{color:var(--ink);font-weight:700}
+    /* hero: grafit tábla */
+    .hero{background:var(--coal);color:var(--on-coal);padding:150px 0 72px;position:relative}
+    .hero .tag{margin-bottom:26px}
+    .hero h1{font-size:clamp(3rem,9vw,6.2rem);max-width:14ch;color:var(--on-coal)}
+    .hero h1 .amb{display:inline}
+    .hero-sub{color:var(--on-coal-2);font-size:1.15rem;max-width:54ch;margin:26px 0 34px}
+    .hero-sub strong{color:var(--on-coal);font-weight:600}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+    .rating{color:var(--on-coal-2);font-size:.95rem;margin-bottom:46px}
+    .rating b{color:var(--on-coal)}
+    .rating .st{color:var(--amber);letter-spacing:2px}
 
-    .facts{display:flex;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:26px;gap:0}
-    .fact{padding:0 clamp(18px,3.6vw,42px);border-left:1px solid var(--rule)}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule-dk)}
+    .fact{padding:24px clamp(14px,2.5vw,30px) 4px;border-left:1px solid var(--rule-dk)}
     .fact:first-child{padding-left:0;border-left:none}
-    .fact b{display:block;font-family:'Newsreader',serif;font-weight:400;font-size:2rem;line-height:1;color:var(--brick)}
-    .fact span{display:block;font-size:.84rem;color:var(--ink-3);margin-top:6px}
+    .fact b{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(2.2rem,4.5vw,3.2rem);line-height:1;color:var(--amber)}
+    .fact span{display:block;font-size:.85rem;color:var(--on-coal-2);margin-top:6px}
     @media(max-width:720px){
-      .hero{padding:112px 0 56px}
-      .facts{display:grid;grid-template-columns:1fr 1fr;gap:22px 0}
-      .fact{padding:0;border-left:none}
-      .fact:nth-child(even){padding-left:22px;border-left:1px solid var(--rule)}
+      .hero{padding:116px 0 54px}
+      .facts{grid-template-columns:1fr 1fr;gap:18px 0}
+      .fact{padding:18px 0 0;border-left:none}
+      .fact:nth-child(even){padding-left:20px;border-left:1px solid var(--rule-dk)}
     }
 
-    /* ── futó sáv ── */
-    .marquee{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:15px 0;overflow:hidden;background:var(--paper-2)}
-    .marquee-track{display:flex;gap:44px;width:max-content;animation:mq 34s linear infinite}
-    .marquee span{display:flex;align-items:center;gap:44px;font-family:'Newsreader',serif;font-style:italic;font-size:1.12rem;color:var(--ink-2);white-space:nowrap}
-    .marquee i{font-style:normal;color:var(--brick);font-size:.7rem}
+    /* futó sáv */
+    .marquee{background:var(--coal);color:var(--on-coal);border-top:1px solid var(--rule-dk);padding:13px 0;overflow:hidden}
+    .marquee-track{display:flex;gap:38px;width:max-content;animation:mq 32s linear infinite}
+    .marquee span{display:flex;align-items:center;gap:38px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+    .marquee i{font-style:normal;color:var(--amber)}
     @keyframes mq{to{transform:translateX(-50%)}}
 
-    /* ── szolgáltatások: árlista, nem kártya ── */
-    .list{border-top:1px solid var(--rule)}
+    /* szolgáltatások: műhelyi ártábla */
+    .list{border-top:2px solid var(--ink)}
     .item{
-      display:grid;grid-template-columns:56px 1fr auto;gap:24px;align-items:baseline;
-      padding:26px 0 24px;border-bottom:1px solid var(--rule);
-      transition:padding-left .22s ease,background .22s ease;
+      display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;
+      padding:24px 0 22px;border-bottom:1px solid var(--rule);
     }
-    .item:hover{padding-left:12px;background:linear-gradient(90deg,rgba(168,69,43,.045),rgba(168,69,43,0))}
-    .item .no{font-family:'Newsreader',serif;font-size:.95rem;color:var(--ink-3);letter-spacing:.04em}
-    .item:hover .no{color:var(--brick)}
-    .item h3{font-size:1.42rem;margin-bottom:5px}
-    .item p{color:var(--ink-2);font-size:.94rem;max-width:52ch}
-    .item .price{font-family:'Newsreader',serif;font-size:1.16rem;color:var(--brick);white-space:nowrap}
+    .item .no{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.1rem;color:var(--ink-3)}
+    .item h3{font-size:1.7rem;margin-bottom:4px;letter-spacing:.02em}
+    .item p{color:var(--ink-2);font-size:.94rem;max-width:54ch}
+    .item .price{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:var(--ink);white-space:nowrap;background:var(--bone-2);padding:4px 12px}
     @media(max-width:700px){
-      .item{grid-template-columns:34px 1fr;gap:0 14px;padding:22px 0 20px}
-      .item .price{grid-column:2;margin-top:9px}
+      .item{grid-template-columns:40px 1fr;gap:0 14px;padding:20px 0 18px}
+      .item .price{grid-column:2;justify-self:start;margin-top:10px}
     }
 
-    /* ── garancia: lénia, nem doboz ── */
-    .pull{border-left:3px solid var(--brick);padding:6px 0 6px clamp(22px,4vw,40px);max-width:30ch}
-    .pull h3{font-size:clamp(1.6rem,3.2vw,2.35rem);margin-bottom:14px}
-    .pull p{color:var(--ink-2);max-width:44ch}
-    .prom{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,72px);align-items:start}
-    .checks{list-style:none;display:flex;flex-direction:column}
-    .checks li{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--rule);color:var(--ink-2)}
-    .checks li:first-child{padding-top:0}
-    .checks li:last-child{border-bottom:none}
-    .checks .m{font-family:'Newsreader',serif;color:var(--brick);flex:none}
-    .checks strong{color:var(--ink);font-weight:700}
-    @media(max-width:820px){.prom{grid-template-columns:1fr;gap:36px}.pull{max-width:none}}
+    /* garancia: grafit tábla veszélycsíkkal */
+    .guar-band{background:var(--coal);color:var(--on-coal)}
+    .guar-inner{padding:72px 0}
+    .guar-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,72px);align-items:start}
+    .guar-grid h3{font-size:clamp(2rem,4.6vw,3.2rem);color:var(--on-coal)}
+    .guar-grid .lead{color:var(--on-coal-2);margin-top:16px;max-width:46ch}
+    .plist{list-style:none;border-top:1px solid var(--rule-dk)}
+    .plist li{display:grid;grid-template-columns:14px 1fr;gap:14px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--rule-dk);color:var(--on-coal-2)}
+    .plist .sq{width:9px;height:9px;background:var(--amber);align-self:center}
+    .plist strong{color:var(--on-coal);font-weight:600}
+    @media(max-width:820px){.guar-grid{grid-template-columns:1fr;gap:34px}}
 
-    /* ── körzet: folyó szöveg, nem chip-rács ── */
-    .kerulet{font-family:'Newsreader',serif;font-size:clamp(1.15rem,2.4vw,1.6rem);line-height:1.85;color:var(--ink-2);max-width:60ch}
-    .kerulet b{color:var(--brick);font-weight:500}
-    .kerulet .sep{color:var(--rule-2);margin:0 .35em}
-    .kerulet-note{margin-top:22px;color:var(--ink-3);font-size:.92rem;max-width:52ch}
+    /* körzet */
+    .kerulet{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(1.35rem,3vw,2rem);letter-spacing:.03em;text-transform:uppercase;line-height:1.9;color:var(--ink-2);max-width:64ch}
+    .kerulet b{color:var(--coal);background:var(--amber);padding:1px 8px;font-weight:700}
+    .kerulet .sep{color:var(--rule);margin:0 .28em}
+    .kerulet-note{margin-top:20px;color:var(--ink-2);font-size:.94rem;max-width:54ch}
 
-    /* ── vélemények: pull-quote, nem kártya ── */
-    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,44px)}
-    .quote{border-left:2px solid var(--rule-2);padding-left:24px;transition:border-color .25s}
-    .quote:hover{border-color:var(--brick)}
-    .quote .stars{font-size:.8rem;margin-bottom:12px;display:block}
-    .quote p{font-family:'Newsreader',serif;font-size:1.16rem;line-height:1.55;margin-bottom:16px}
-    .quote cite{font-style:normal;display:block}
-    .quote cite b{display:block;font-family:'Karla',sans-serif;font-weight:700;font-size:.92rem}
-    .quote cite span{font-size:.82rem;color:var(--ink-3)}
-    @media(max-width:820px){.quotes{grid-template-columns:1fr;gap:30px}}
+    /* Google-vélemények */
+    .reviews{border-top:2px solid var(--ink);max-width:820px}
+    .review{padding:26px 0;border-bottom:1px solid var(--rule)}
+    .review .meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:8px;font-size:.9rem}
+    .review .st{color:var(--amber);letter-spacing:2px;font-size:.85rem}
+    .review .who{font-weight:600}
+    .review .src{color:var(--ink-3)}
+    .review p{color:var(--ink-2);max-width:64ch}
 
-    /* ── folyamat: oszlopok léniával ── */
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
-    .stp{padding:34px clamp(20px,3vw,36px) 8px;border-left:1px solid var(--rule)}
-    .stp:first-child{padding-left:0;border-left:none}
-    .stp .n{font-family:'Newsreader',serif;font-size:2.4rem;color:var(--brick-soft);line-height:1;display:block;margin-bottom:14px}
-    .stp h3{font-size:1.28rem;margin-bottom:10px}
-    .stp p{color:var(--ink-2);font-size:.94rem}
-    .stp b{color:var(--brick-dk);font-weight:700}
-    @media(max-width:820px){
-      .steps{grid-template-columns:1fr}
-      .stp{padding:28px 0 24px;border-left:none;border-bottom:1px solid var(--rule)}
-      .stp:last-child{border-bottom:none}
-    }
+    /* folyamat: számozott sorok */
+    .steps{border-top:2px solid var(--ink)}
+    .stp{display:grid;grid-template-columns:110px 1fr;gap:clamp(16px,4vw,44px);padding:30px 0;border-bottom:1px solid var(--rule);align-items:start}
+    .stp .n{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(3rem,7vw,4.6rem);line-height:.9;color:var(--amber)}
+    .stp h3{font-size:1.6rem;margin-bottom:8px}
+    .stp p{color:var(--ink-2);max-width:60ch}
+    .stp b{color:var(--ink);font-weight:600}
+    @media(max-width:560px){.stp{grid-template-columns:64px 1fr}}
 
-    /* ── GYIK ── */
-    .faq{max-width:740px;border-top:1px solid var(--rule)}
+    /* GYIK */
+    .faq{max-width:760px;border-top:2px solid var(--ink)}
     .faq details{border-bottom:1px solid var(--rule)}
     .faq summary{
       list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;
-      padding:22px 0;font-family:'Newsreader',serif;font-size:1.28rem;transition:color .2s;
+      padding:20px 0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.4rem;letter-spacing:.02em;text-transform:uppercase;
     }
     .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:"+";font-family:'Karla',sans-serif;font-weight:300;font-size:1.5rem;color:var(--brick);transition:transform .3s;flex:none}
-    .faq details[open] summary{color:var(--brick)}
+    .faq summary::after{content:"+";font-family:'Barlow',sans-serif;font-weight:500;font-size:1.5rem;color:var(--amber);transition:transform .25s;flex:none}
     .faq details[open] summary::after{transform:rotate(45deg)}
-    .faq .body{padding:0 0 24px;color:var(--ink-2);max-width:60ch}
+    .faq .body{padding:0 0 22px;color:var(--ink-2);max-width:60ch}
 
-    /* ── kapcsolat ── */
-    .contact{background:var(--paper-2);border-top:1px solid var(--rule)}
+    /* kapcsolat: grafit */
+    .contact{background:var(--coal);color:var(--on-coal)}
     .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
-    .tel-big{display:inline-flex;align-items:center;gap:14px;font-family:'Newsreader',serif;
-      font-size:clamp(1.8rem,3.6vw,2.6rem);margin:22px 0 8px;color:var(--brick);
-      border-bottom:1px solid var(--rule-2);padding-bottom:6px;transition:border-color .2s}
-    .tel-big:hover{border-color:var(--brick)}
-    .tel-big svg{width:22px;height:22px}
-    .hours{color:var(--ink-3);font-size:.92rem}
-    .cnote{color:var(--ink-2);margin-top:22px;max-width:42ch}
+    .cgrid h2{color:var(--on-coal)}
+    .tel-big{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+      font-size:clamp(2.4rem,5.5vw,3.6rem);letter-spacing:.02em;margin:22px 0 6px;color:var(--amber)}
+    .tel-big:hover{color:var(--on-coal)}
+    .hours{color:var(--on-coal-2);font-size:.92rem}
+    .cnote{color:var(--on-coal-2);margin-top:22px;max-width:44ch}
+    .cnote strong{color:var(--on-coal);font-weight:600}
 
-    /* űrlap: aláhúzott mezők, nem dobozok */
-    .form h3{font-size:1.7rem;margin-bottom:4px}
-    .form .sub{color:var(--ink-3);font-size:.9rem;margin-bottom:28px}
-    .field{margin-bottom:22px}
-    .field label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+    .form h3{font-size:1.9rem;margin-bottom:4px;color:var(--on-coal)}
+    .form .sub{color:var(--on-coal-2);font-size:.92rem;margin-bottom:26px}
+    .field{margin-bottom:20px}
+    .field label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-coal-2);margin-bottom:6px}
     .field input,.field textarea{
-      width:100%;background:transparent;border:none;border-bottom:1px solid var(--rule-2);
-      padding:10px 2px;color:var(--ink);font-family:'Karla',sans-serif;font-size:1.02rem;
-      transition:border-color .2s;resize:vertical;
+      width:100%;background:var(--coal-2);border:1px solid var(--rule-dk);
+      padding:13px 14px;color:var(--on-coal);font-family:'Barlow',sans-serif;font-size:1rem;
+      transition:border-color .15s;resize:vertical;border-radius:0;
     }
-    .field input::placeholder,.field textarea::placeholder{color:var(--ink-3);opacity:.7}
-    .field input:focus,.field textarea:focus{outline:none;border-color:var(--brick)}
-    .form .btn{width:100%;margin-top:8px}
-    .form-ok{display:none;padding:34px 0}
-    .form-ok .mark{font-family:'Newsreader',serif;font-size:2.6rem;color:var(--brick);line-height:1;margin-bottom:14px}
-    .form-ok h3{margin-bottom:8px}
+    .field input::placeholder,.field textarea::placeholder{color:#6C7074}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--amber)}
+    .form .btn{width:100%;margin-top:6px}
+    .form-ok{display:none;padding:30px 0}
+    .form-ok h3{color:var(--amber);font-size:2.4rem;margin-bottom:10px}
+    .form-ok p{color:var(--on-coal-2)}
+    .form-ok strong{color:var(--on-coal)}
     .form.done form{display:none}
     .form.done .form-ok{display:block}
-    @media(max-width:820px){.cgrid{grid-template-columns:1fr;gap:44px}}
+    @media(max-width:820px){.cgrid{grid-template-columns:1fr;gap:42px}}
 
-    /* ── footer + sticky ── */
-    footer{border-top:1px solid var(--rule);padding:30px 0 104px;color:var(--ink-3);font-size:.85rem;background:var(--paper-2)}
-    .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-    @media(min-width:821px){footer{padding-bottom:30px}}
+    /* footer */
+    footer{background:var(--coal);color:var(--on-coal-2);border-top:1px solid var(--rule-dk);padding:26px 0 104px;font-size:.85rem}
+    .foot{display:flex;justify-content:space-between;gap:14px 26px;flex-wrap:wrap}
+    .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+    .foot-links a{border-bottom:1px solid var(--rule-dk);padding-bottom:1px}
+    .foot-links a:hover{color:var(--amber);border-color:var(--amber)}
+    @media(min-width:821px){footer{padding-bottom:26px}}
 
-    .stickybar{
-      position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;gap:0;
-      background:var(--paper-2);border-top:1px solid var(--rule-2);
-    }
-    .stickybar a{flex:1;padding:17px 10px;text-align:center;font-weight:700;font-size:.94rem}
-    .stickybar .call{background:var(--brick);color:var(--paper-2)}
-    .stickybar .quote-cta{color:var(--ink);border-left:1px solid var(--rule-2)}
+    /* sticky mobil sáv */
+    .stickybar{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;background:var(--coal);border-top:2px solid var(--amber)}
+    .stickybar a{flex:1;padding:16px 10px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase}
+    .stickybar .call{background:var(--amber);color:var(--coal)}
+    .stickybar .ask{color:var(--on-coal)}
     @media(max-width:820px){.stickybar{display:flex}}
 
-    /* ── reveal ── */
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
     .reveal.in{opacity:1;transform:none}
     @media(prefers-reduced-motion:reduce){
       .reveal{opacity:1;transform:none;transition:none}
       .marquee-track{animation:none}
-      .avail .dot::after{animation:none}
       html{scroll-behavior:auto}
     }
   </style>
 </head>
 <body>
 
-  <header id="hdr">
+  <header>
     <div class="wrap nav">
-      <a href="#" class="brand"><i>Váradi</i> Lakásszerviz<small>Budapest és környéke</small></a>
+      <a href="#" class="brand">Váradi <b>Lakásszerviz</b><small>BUDAPEST ÉS KÖRNYÉKE</small></a>
       <nav class="nav-links">
         <a href="#szolgaltatasok">Szolgáltatások</a>
         <a href="#korzet">Körzet</a>
         <a href="#velemenyek">Vélemények</a>
         <a href="#gyik">Kérdések</a>
       </nav>
-      <a href="tel:+36301234567" class="nav-tel">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>
-        +36 30 123 4567
-      </a>
+      <a href="tel:+36301234567" class="nav-tel">06 30 123 4567</a>
     </div>
   </header>
 
   <!-- ═══ HERO ═══ -->
   <section class="hero">
     <div class="wrap">
-      <p class="avail"><span class="dot"></span> Ma még tudunk időpontot adni</p>
-      <h1>Víz, villany, dugulás, festés — <em class="b">egy hívás,</em> és intézzük.</h1>
-      <p class="hero-sub">Lakásszerviz Budapesten és 25 km-es körzetben. <strong>Fix ár a munka előtt, számlával, 1 év garanciával.</strong> Nem kell öt szakembert keresgélnie — egy szám, amit érdemes elmenteni.</p>
+      <span class="tag">Ma még tudunk időpontot adni</span>
+      <h1>Víz. Villany. Dugulás. Festés. <span class="amb">Egy hívás,</span> és intézzük.</h1>
+      <p class="hero-sub">Lakásszerviz Budapesten és 25 km-es körzetben. <strong>Fix ár a munka előtt, számlával, 1 év garanciával.</strong> Egy szám az összes lakáshibára.</p>
       <div class="hero-ctas">
-        <a href="tel:+36301234567" class="btn btn-brick">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>
-          Hívom a szervizt
-        </a>
-        <a href="#kapcsolat" class="ulink">vagy árajánlatot kérek →</a>
+        <a href="tel:+36301234567" class="btn">Hívom a szervizt</a>
+        <a href="#kapcsolat" class="btn btn-out">Árajánlatot kérek</a>
       </div>
-      <p class="rating"><span class="stars">★★★★★</span> <span><b>4,9</b> · 231 Google-értékelés</span></p>
+      <p class="rating"><span class="st">★★★★★</span> <b>4,9</b> · 231 Google-értékelés</p>
       <div class="facts">
         <div class="fact"><b data-count="15">0</b><span>év tapasztalat</span></div>
         <div class="fact"><b data-count="4800">0</b><span>elvégzett munka</span></div>
@@ -312,11 +284,13 @@
     </div>
   </section>
 
+  <div class="hz" aria-hidden="true"></div>
+
   <!-- ═══ FUTÓ SÁV ═══ -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Vízszerelés <i>✦</i> Villanyszerelés <i>✦</i> Duguláselhárítás <i>✦</i> Festés, glettelés <i>✦</i> Burkolás <i>✦</i> Klíma-karbantartás <i>✦</i> Kisjavítások <i>✦</i></span>
-      <span>Vízszerelés <i>✦</i> Villanyszerelés <i>✦</i> Duguláselhárítás <i>✦</i> Festés, glettelés <i>✦</i> Burkolás <i>✦</i> Klíma-karbantartás <i>✦</i> Kisjavítások <i>✦</i></span>
+      <span>Vízszerelés <i>▪</i> Villanyszerelés <i>▪</i> Duguláselhárítás <i>▪</i> Festés, glettelés <i>▪</i> Burkolás <i>▪</i> Klíma-karbantartás <i>▪</i> Kisjavítások <i>▪</i></span>
+      <span>Vízszerelés <i>▪</i> Villanyszerelés <i>▪</i> Duguláselhárítás <i>▪</i> Festés, glettelés <i>▪</i> Burkolás <i>▪</i> Klíma-karbantartás <i>▪</i> Kisjavítások <i>▪</i></span>
     </div>
   </div>
 
@@ -324,9 +298,9 @@
   <section class="sec" id="szolgaltatasok">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="kicker">Szolgáltatások</p>
-        <h2>Amit a lakásban el lehet rontani, <em class="b">mi megjavítjuk</em></h2>
-        <p>Saját csapat, nem alvállalkozók. Az árak munkadíjak, kiszállással együtt — a pontos, fix árat a munka megkezdése előtt mondjuk meg.</p>
+        <span class="tag">Szolgáltatások és árak</span>
+        <h2>Amit a lakásban el lehet rontani, <span class="amb">mi megjavítjuk</span></h2>
+        <p>Saját csapat, nem alvállalkozók. Az árak munkadíjak, kiszállással együtt. A pontos, fix árat a munka megkezdése előtt mondjuk meg.</p>
       </div>
       <div class="list">
         <div class="item reveal">
@@ -341,7 +315,7 @@
         </div>
         <div class="item reveal">
           <span class="no">03</span>
-          <div><h3>Duguláselhárítás</h3><p>Mosogató, lefolyó, WC — géppel, falbontás nélkül, akár aznap.</p></div>
+          <div><h3>Duguláselhárítás</h3><p>Mosogató, lefolyó, WC. Géppel, falbontás nélkül, akár aznap.</p></div>
           <span class="price">16 900 Ft-tól</span>
         </div>
         <div class="item reveal">
@@ -351,7 +325,7 @@
         </div>
         <div class="item reveal">
           <span class="no">05</span>
-          <div><h3>Burkolás</h3><p>Hidegburkolat, laminált padló, lábazat — milliméterre pontosan.</p></div>
+          <div><h3>Burkolás</h3><p>Hidegburkolat, laminált padló, lábazat. Milliméterre pontosan.</p></div>
           <span class="price">9 000 Ft/m²-től</span>
         </div>
         <div class="item reveal">
@@ -364,122 +338,103 @@
   </section>
 
   <!-- ═══ GARANCIA ═══ -->
-  <section class="sec" style="padding-top:0">
-    <div class="wrap prom">
-      <div class="pull reveal">
-        <h3>Fix ár a munka előtt. Ha mégse annyi — <em class="b">a különbség a mi bajunk.</em></h3>
-        <p>A helyszínen, a munka megkezdése előtt megmondjuk a pontos árat. Amit akkor mondunk, annyit fizet — és minden munkánkra 1 év írásos garanciát adunk.</p>
+  <div class="hz" aria-hidden="true"></div>
+  <section class="guar-band">
+    <div class="wrap guar-inner">
+      <div class="guar-grid">
+        <div class="reveal">
+          <span class="tag">Garancia</span>
+          <h3>Fix ár a munka előtt. Ha mégse annyi, <span class="amb">a különbség a mi bajunk.</span></h3>
+          <p class="lead">A helyszínen, a munka megkezdése előtt megmondjuk a pontos árat. Amit akkor mondunk, annyit fizet. Minden munkánkra 1 év írásos garanciát adunk.</p>
+        </div>
+        <ul class="plist reveal">
+          <li><span class="sq"></span><span><strong>Pontos érkezés:</strong> 30 perces idősávot mondunk, nem fél napot</span></li>
+          <li><span class="sq"></span><span><strong>Tiszta munka:</strong> lábzsák, fóliázás, a szemetet visszük</span></li>
+          <li><span class="sq"></span><span><strong>Számla mindig:</strong> kártyával, készpénzzel, átutalással</span></li>
+          <li><span class="sq"></span><span><strong>Egy kapcsolattartó:</strong> akkor is, ha több szakma kell a munkához</span></li>
+        </ul>
       </div>
-      <ul class="checks reveal">
-        <li><span class="m">✦</span><span><strong>Pontos érkezés</strong> — 30 perces idősávot mondunk, nem fél napot</span></li>
-        <li><span class="m">✦</span><span><strong>Tiszta munka</strong> — lábzsák, fóliázás, a szemetet visszük</span></li>
-        <li><span class="m">✦</span><span><strong>Számla mindig</strong> — kártyával, készpénzzel, átutalással</span></li>
-        <li><span class="m">✦</span><span><strong>Egy kapcsolattartó</strong> — akkor is, ha több szakma kell a munkához</span></li>
-      </ul>
     </div>
   </section>
+  <div class="hz" aria-hidden="true"></div>
 
   <!-- ═══ KÖRZET ═══ -->
-  <section class="sec" id="korzet" style="padding-top:0">
+  <section class="sec" id="korzet">
     <div class="wrap">
-      <div class="sec-head reveal" style="margin-bottom:32px">
-        <p class="kicker">Hol dolgozunk</p>
-        <h2>Budapest összes kerülete <em class="b">+ 25 km</em></h2>
+      <div class="sec-head reveal" style="margin-bottom:30px">
+        <span class="tag">Hol dolgozunk</span>
+        <h2>Budapest összes kerülete <span class="amb">+ 25 km</span></h2>
       </div>
       <p class="kerulet reveal">
-        I. <span class="sep">·</span>
-        II. <span class="sep">·</span>
-        III. <span class="sep">·</span>
-        IV. <span class="sep">·</span>
-        V. <span class="sep">·</span>
-        VI. <span class="sep">·</span>
-        VII. <span class="sep">·</span>
-        VIII. <span class="sep">·</span>
-        IX. <span class="sep">·</span>
-        X. <span class="sep">·</span>
-        <b>XI.</b> <span class="sep">·</span>
-        XII. <span class="sep">·</span>
-        <b>XIII.</b> <span class="sep">·</span>
-        <b>XIV.</b> <span class="sep">·</span>
-        XV. <span class="sep">·</span>
-        XVI. <span class="sep">·</span>
-        XVII. <span class="sep">·</span>
-        XVIII. <span class="sep">·</span>
-        XIX. <span class="sep">·</span>
-        XX. <span class="sep">·</span>
-        XXI. <span class="sep">·</span>
-        XXII. <span class="sep">·</span>
-        XXIII. <span class="sep">·</span>
-        Budaörs <span class="sep">·</span>
-        Dunakeszi <span class="sep">·</span>
-        Szentendre <span class="sep">·</span>
-        Vecsés <span class="sep">·</span>
-        Érd
+        I. <span class="sep">/</span> II. <span class="sep">/</span> III. <span class="sep">/</span> IV. <span class="sep">/</span> V. <span class="sep">/</span> VI. <span class="sep">/</span> VII. <span class="sep">/</span> VIII. <span class="sep">/</span> IX. <span class="sep">/</span> X. <span class="sep">/</span> <b>XI.</b> <span class="sep">/</span> XII. <span class="sep">/</span> <b>XIII.</b> <span class="sep">/</span> <b>XIV.</b> <span class="sep">/</span> XV. <span class="sep">/</span> XVI. <span class="sep">/</span> XVII. <span class="sep">/</span> XVIII. <span class="sep">/</span> XIX. <span class="sep">/</span> XX. <span class="sep">/</span> XXI. <span class="sep">/</span> XXII. <span class="sep">/</span> XXIII. <span class="sep">/</span> Budaörs <span class="sep">/</span> Dunakeszi <span class="sep">/</span> Szentendre <span class="sep">/</span> Vecsés <span class="sep">/</span> Érd
       </p>
       <p class="kerulet-note reveal">A kiemelt kerületekben aznapi kiszállást is tudunk vállalni, ha a naptár engedi.</p>
     </div>
   </section>
 
   <!-- ═══ VÉLEMÉNYEK ═══ -->
-  <section class="sec" id="velemenyek" style="border-top:1px solid var(--rule);background:var(--paper-2)">
+  <section class="sec" id="velemenyek" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="kicker">Vélemények</p>
-        <h2>231 értékelés, <em class="b">4,9 csillag</em></h2>
+        <span class="tag">Google-vélemények</span>
+        <h2>231 értékelés, <span class="amb">4,9 csillag</span></h2>
       </div>
-      <div class="quotes">
-        <blockquote class="quote reveal">
-          <span class="stars">★★★★★</span>
+      <div class="reviews">
+        <div class="review reveal">
+          <p class="meta"><span class="st">★★★★★</span> <span class="who">Kovácsné Erika</span> <span class="src">2 hete · Google</span></p>
           <p>„Reggel hívtam a csöpögő csap miatt, délután már itt voltak. Előre megmondták az árat, annyi is lett, forintra pontosan."</p>
-          <cite><b>Kovácsné Erika</b><span>vízszerelés · XIII. kerület</span></cite>
-        </blockquote>
-        <blockquote class="quote reveal">
-          <span class="stars">★★★★★</span>
+        </div>
+        <div class="review reveal">
+          <p class="meta"><span class="st">★★★★★</span> <span class="who">Balogh Márton</span> <span class="src">1 hónapja · Google</span></p>
           <p>„Festés, két csillár és egy zárcsere. Egy csapat, egy időpont, egy számla. Nem hittem, hogy ez így is tud menni."</p>
-          <cite><b>Balogh Márton</b><span>több szakma · Újbuda</span></cite>
-        </blockquote>
-        <blockquote class="quote reveal">
-          <span class="stars">★★★★★</span>
+        </div>
+        <div class="review reveal">
+          <p class="meta"><span class="st">★★★★★</span> <span class="who">Szabó Petra</span> <span class="src">3 hónapja · Google</span></p>
           <p>„A dugulást fél óra alatt megoldották, és tisztábban hagyták a fürdőt, mint ahogy találták. Azóta a szüleimhez is ők járnak."</p>
-          <cite><b>Szabó Petra</b><span>duguláselhárítás · Zugló</span></cite>
-        </blockquote>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ═══ FOLYAMAT ═══ -->
-  <section class="sec">
+  <section class="sec" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="kicker">Így megy</p>
-        <h2>Hívástól a <em class="b">kész munkáig</em></h2>
+        <span class="tag">Így megy</span>
+        <h2>Hívástól a <span class="amb">kész munkáig</span></h2>
       </div>
       <div class="steps reveal">
         <div class="stp">
-          <span class="n">01</span>
-          <h3>Hívja vagy írja meg</h3>
-          <p>Elmondja (vagy lefotózza), mi a gond. <b>1 órán belül</b> visszajelzünk a várható árral és a legkorábbi időponttal.</p>
+          <span class="n">1</span>
+          <div>
+            <h3>Hívja vagy írja meg</h3>
+            <p>Elmondja vagy lefotózza, mi a gond. <b>1 órán belül</b> visszajelzünk a várható árral és a legkorábbi időponttal.</p>
+          </div>
         </div>
         <div class="stp">
-          <span class="n">02</span>
-          <h3>Fix ár a helyszínen</h3>
-          <p>Érkezéskor felmérjük, és a munka előtt <b>megmondjuk a pontos árat.</b> Ha nem tetszik, nem fizet semmit — a kiszállás ingyenes.</p>
+          <span class="n">2</span>
+          <div>
+            <h3>Fix ár a helyszínen</h3>
+            <p>Érkezéskor felmérjük, és a munka előtt <b>megmondjuk a pontos árat.</b> Ha nem tetszik, nem fizet semmit. A kiszállás ingyenes.</p>
+          </div>
         </div>
         <div class="stp">
-          <span class="n">03</span>
-          <h3>Megcsináljuk</h3>
-          <p>Tisztán, számlával. <b>1 év garancia</b> minden munkánkra, írásban.</p>
+          <span class="n">3</span>
+          <div>
+            <h3>Megcsináljuk</h3>
+            <p>Tisztán, számlával. <b>1 év garancia</b> minden munkánkra, írásban.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══ GYIK ═══ -->
-  <section class="sec" style="padding-top:0">
+  <section class="sec" id="gyik" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="kicker">Gyakori kérdések</p>
-        <h2>Amit érdemes <em class="b">előre tudni</em></h2>
+        <span class="tag">Gyakori kérdések</span>
+        <h2>Amit érdemes <span class="amb">előre tudni</span></h2>
       </div>
       <div class="faq reveal">
         <details>
@@ -492,7 +447,7 @@
         </details>
         <details>
           <summary>Több szakma is kell a munkámhoz. Az hogy megy?</summary>
-          <div class="body">Ez a mi terepünk: egy kapcsolattartó, egy időpont-sor, egy számla. A csapatban van vízszerelő, villanyszerelő, festő és burkoló — nem Önnek kell összehangolnia őket.</div>
+          <div class="body">Ez a mi terepünk: egy kapcsolattartó, egy időpont-sor, egy számla. A csapatban van vízszerelő, villanyszerelő, festő és burkoló. Nem Önnek kell összehangolnia őket.</div>
         </details>
         <details>
           <summary>Adnak számlát? Lehet kártyával fizetni?</summary>
@@ -507,21 +462,19 @@
   </section>
 
   <!-- ═══ KAPCSOLAT ═══ -->
+  <div class="hz" aria-hidden="true"></div>
   <section class="sec contact" id="kapcsolat">
     <div class="wrap cgrid">
       <div class="reveal">
-        <p class="kicker">Kapcsolat</p>
-        <h2>Egy szám, amit <em class="b">érdemes elmenteni</em></h2>
-        <a class="tel-big" href="tel:+36301234567">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>
-          +36 30 123 4567
-        </a>
-        <p class="hours">Hétfő–szombat, 7:00–19:00 · Ha nem tudjuk felvenni, egy órán belül visszahívjuk.</p>
-        <p class="cnote">Vagy írja meg az űrlapon, mi a gond — egy fotó a hibáról sokat segít, de egy mondat is elég. <strong>1 órán belül jelentkezünk</strong> a várható árral.</p>
+        <span class="tag">Kapcsolat</span>
+        <h2>Egy szám, amit <span class="amb">érdemes elmenteni</span></h2>
+        <a class="tel-big" href="tel:+36301234567">06 30 123 4567</a>
+        <p class="hours">Hétfő–szombat, 7:00–19:00. Ha nem tudjuk felvenni, egy órán belül visszahívjuk.</p>
+        <p class="cnote">Vagy írja meg az űrlapon, mi a gond. Egy fotó a hibáról sokat segít, de egy mondat is elég. <strong>1 órán belül jelentkezünk</strong> a várható árral.</p>
       </div>
       <div class="form reveal" id="formbox">
         <h3>Árajánlatot kérek</h3>
-        <p class="sub">Egy perc az egész — utána mi jelentkezünk.</p>
+        <p class="sub">Egy perc az egész, utána mi jelentkezünk.</p>
         <form id="leadform">
           <div class="field">
             <label for="f-nev">Név</label>
@@ -529,18 +482,17 @@
           </div>
           <div class="field">
             <label for="f-tel">Telefonszám</label>
-            <input id="f-tel" type="tel" name="telefon" required autocomplete="tel" placeholder="+36 …">
+            <input id="f-tel" type="tel" name="telefon" required autocomplete="tel" placeholder="+36 30 000 0000">
           </div>
           <div class="field">
             <label for="f-msg">Mi a gond?</label>
-            <textarea id="f-msg" name="uzenet" rows="3" placeholder="Pl. csöpög a konyhai csap / dugul a lefolyó / két szoba festése…"></textarea>
+            <textarea id="f-msg" name="uzenet" rows="3" placeholder="Pl. csöpög a konyhai csap / dugul a lefolyó / két szoba festése"></textarea>
           </div>
-          <button type="submit" class="btn btn-brick">Elküldöm</button>
+          <button type="submit" class="btn">Elküldöm</button>
         </form>
         <div class="form-ok">
-          <div class="mark">✦</div>
-          <h3>Megkaptuk!</h3>
-          <p style="color:var(--ink-2)"><strong>Egy órán belül hívjuk</strong> a várható árral és a legkorábbi időponttal.</p>
+          <h3>Megkaptuk.</h3>
+          <p><strong>Egy órán belül hívjuk</strong> a várható árral és a legkorábbi időponttal.</p>
         </div>
       </div>
     </div>
@@ -548,21 +500,21 @@
 
   <footer>
     <div class="wrap foot">
-      <span>© 2026 Váradi Lakásszerviz · Budapest és környéke</span>
-      <span>Weboldal: Alpine Landings</span>
+      <span>© 2026 Váradi Lakásszerviz · Budapest és környéke · Weboldal: Alpine Landings</span>
+      <span class="foot-links">
+        <a href="#">Adatkezelési tájékoztató</a>
+        <a href="#">Impresszum</a>
+      </span>
     </div>
   </footer>
 
   <!-- sticky mobil sáv -->
   <div class="stickybar">
     <a href="tel:+36301234567" class="call">Hívás most</a>
-    <a href="#kapcsolat" class="quote-cta">Árajánlatot kérek</a>
+    <a href="#kapcsolat" class="ask">Árajánlatot kérek</a>
   </div>
 
   <script>
-    var hdr=document.getElementById('hdr');
-    addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)},{passive:true});
-
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
     },{threshold:.12});
@@ -578,7 +530,7 @@
         var t0=null;
         function tick(t){
           if(!t0)t0=t;
-          var p=Math.min((t-t0)/1200,1);
+          var p=Math.min((t-t0)/1100,1);
           el.textContent=fmt(Math.round(end*(1-Math.pow(1-p,3))));
           if(p<1)requestAnimationFrame(tick);
         }
@@ -587,7 +539,7 @@
     },{threshold:.6});
     document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});
 
-    // demó űrlap — siker állapot
+    // demó űrlap, siker állapot
     document.getElementById('leadform').addEventListener('submit',function(e){
       e.preventDefault();
       document.getElementById('formbox').classList.add('done');
