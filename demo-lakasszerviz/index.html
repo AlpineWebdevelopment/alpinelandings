@@ -65,7 +65,7 @@
 
     /* gombok: éles, tömör */
     .btn{
-      display:inline-block;font-weight:700;font-size:1rem;letter-spacing:.01em;text-align:center;
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:1rem;letter-spacing:.01em;text-align:center;
       padding:16px 32px;cursor:pointer;border:2px solid var(--pine);
       background:var(--pine);color:var(--cream);
       transition:background .15s,color .15s,border-color .15s;white-space:nowrap;
@@ -88,6 +88,12 @@
     .nav-links a:hover{color:var(--leaf)}
     .nav-tel{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:1.05rem;letter-spacing:-.01em;color:var(--pine);white-space:nowrap}
     .nav-tel svg{width:16px;height:16px;flex:none;color:var(--leaf)}
+    .btn svg{width:16px;height:16px;flex:none}
+    .midcta a{display:inline-flex;align-items:center;gap:10px}
+    .midcta a svg{width:18px;height:18px;flex:none}
+    .tel-big svg{width:26px;height:26px;flex:none;margin-right:4px;vertical-align:-2px}
+    .stickybar .call{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+    .stickybar .call svg{width:16px;height:16px;flex:none}
     .nav-tel:hover{color:var(--leaf)}
     @media(max-width:940px){.nav-links{display:none}}
     @media(max-width:560px){.nav{height:64px}.brand{font-size:1rem}.brand small{font-size:8.5px;letter-spacing:.14em}.nav-tel{font-size:.92rem}}
@@ -223,7 +229,7 @@
     .contact{background:var(--pine);color:var(--on-pine)}
     .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
     .cgrid h2{color:#fff;font-weight:800}
-    .tel-big{display:inline-block;font-weight:800;font-size:clamp(2rem,4.8vw,3rem);letter-spacing:-.02em;margin:22px 0 6px;color:var(--mint)}
+    .tel-big{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:clamp(2rem,4.8vw,3rem);letter-spacing:-.02em;margin:22px 0 6px;color:var(--mint)}
     .tel-big:hover{color:#fff}
     .hours{color:var(--on-pine-2);font-size:.92rem}
     .cnote{color:var(--on-pine-2);margin-top:22px;max-width:44ch}
@@ -299,7 +305,7 @@
       <div class="hero-rest">
         <p class="hero-sub">Lakásszerviz Budapesten és 25 km-es körzetben. <strong>Fix ár a munka előtt, számlával, 1 év garanciával.</strong> Egy szám az összes lakáshibára.</p>
         <div class="hero-ctas">
-          <a href="tel:+36301234567" class="btn">Hívom a szervizt</a>
+          <a href="tel:+36301234567" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>Hívom a szervizt</a>
           <a href="#kapcsolat" class="btn btn-out">Árajánlatot kérek</a>
         </div>
         <p class="rating"><span class="st">★★★★★</span> <b>4,9</b> · 231 Google-értékelés</p>
@@ -358,7 +364,7 @@
         </div>
         <div class="midcta reveal">
           <p>Festés, burkolás, kisjavítás vagy bármi más? Arra is fix árat mondunk.</p>
-          <a href="tel:+36301234567">06 30 123 4567</a>
+          <a href="tel:+36301234567"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>06 30 123 4567</a>
         </div>
       </div>
     </div>
@@ -473,7 +479,7 @@
       <div class="reveal">
         <p class="kicker">Kapcsolat</p>
         <h2>Egy szám, amit <span class="hl-m">érdemes elmenteni</span></h2>
-        <a class="tel-big" href="tel:+36301234567">06 30 123 4567</a>
+        <a class="tel-big" href="tel:+36301234567"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>06 30 123 4567</a>
         <p class="hours">Hétfő–szombat, 7:00–19:00. Ha nem tudjuk felvenni, egy órán belül visszahívjuk.</p>
         <p class="cnote">Vagy írja meg az űrlapon, mi a gond. Egy fotó a hibáról sokat segít, de egy mondat is elég. <strong>1 órán belül jelentkezünk</strong> a várható árral.</p>
       </div>
@@ -515,7 +521,7 @@
 
   <!-- sticky mobil sáv -->
   <div class="stickybar">
-    <a href="tel:+36301234567" class="call">Hívás most</a>
+    <a href="tel:+36301234567" class="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.81 19.79 19.79 0 0 1 0 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.574 2.81.7A2 2 0 0 1 22 16z"/></svg>Hívás most</a>
     <a href="#kapcsolat" class="ask">Árajánlatot kérek</a>
   </div>
 
