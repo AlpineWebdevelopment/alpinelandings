@@ -143,24 +143,6 @@
       .item .price{grid-column:2;justify-self:start;margin-top:10px}
     }
 
-    /* garancia: zöld tábla */
-    .guar-band{background:var(--pine);color:var(--on-pine)}
-    .guar-inner{padding-top:72px;padding-bottom:72px}
-    .guar-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,72px);align-items:start}
-    .guar-grid h3{font-size:clamp(1.8rem,4.2vw,2.8rem);color:#fff;font-weight:800;letter-spacing:-.02em}
-    .guar-grid .lead{color:var(--on-pine-2);margin-top:16px;max-width:46ch}
-    .plist{list-style:none;border-top:1px solid var(--rule-pine)}
-    .plist li{display:grid;grid-template-columns:12px 1fr;gap:14px;padding:15px 0;border-bottom:1px solid var(--rule-pine);color:var(--on-pine-2)}
-    .plist .sq{width:8px;height:8px;background:var(--mint);align-self:start;margin-top:9px}
-    .plist strong{color:var(--on-pine);font-weight:700}
-    @media(max-width:820px){.guar-grid{grid-template-columns:1fr;gap:34px}}
-    @media(max-width:560px){
-      .guar-inner{padding-top:56px;padding-bottom:56px}
-      .plist li{grid-template-columns:1fr;gap:2px;padding:14px 0}
-      .plist .sq{display:none}
-      .plist strong{display:block}
-    }
-
     /* körzet */
     .kerulet{font-weight:500;font-size:clamp(1.15rem,2.6vw,1.65rem);line-height:2;color:var(--ink-2);max-width:62ch}
     .kerulet b{color:var(--cream);background:var(--pine);padding:2px 10px;font-weight:700}
@@ -323,25 +305,6 @@
           <p>Festés, burkolás, kisjavítás vagy bármi más? Arra is fix árat mondunk.</p>
           <a href="tel:+36301234567">06 30 123 4567</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ GARANCIA ═══ -->
-  <section class="guar-band on-dark">
-    <div class="wrap guar-inner">
-      <div class="guar-grid">
-        <div class="reveal">
-          <p class="kicker">Garancia</p>
-          <h3>Fix ár a munka előtt. Ha mégse annyi, <span class="hl-m">a különbség a mi bajunk.</span></h3>
-          <p class="lead">A helyszínen, a munka megkezdése előtt megmondjuk a pontos árat. Amit akkor mondunk, annyit fizet. Minden munkánkra 1 év írásos garanciát adunk.</p>
-        </div>
-        <ul class="plist reveal">
-          <li><span class="sq"></span><span><strong>Pontos érkezés:</strong> 30 perces idősávot mondunk, nem fél napot</span></li>
-          <li><span class="sq"></span><span><strong>Tiszta munka:</strong> lábzsák, fóliázás, a szemetet visszük</span></li>
-          <li><span class="sq"></span><span><strong>Számla mindig:</strong> kártyával, készpénzzel, átutalással</span></li>
-          <li><span class="sq"></span><span><strong>Egy kapcsolattartó:</strong> akkor is, ha több szakma kell a munkához</span></li>
-        </ul>
       </div>
     </div>
   </section>
