@@ -94,12 +94,22 @@
     /* hero: fenyőzöld tábla */
     .hero{background:var(--pine);color:var(--on-pine);padding:150px 0 72px}
     .avail{display:inline-block;font-size:.88rem;font-weight:700;color:var(--pine);background:var(--mint);padding:7px 14px;margin-bottom:26px}
-    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(32px,5vw,64px);align-items:center;margin-bottom:52px}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;grid-template-areas:"head card" "rest card";
+      gap:20px clamp(32px,5vw,64px);align-items:center;margin-bottom:52px}
+    .hero-head{grid-area:head;align-self:end}
+    .hero-rest{grid-area:rest;align-self:start}
     .hero h1{font-size:clamp(2.6rem,7vw,5rem);max-width:15ch;color:#FFFFFF;font-weight:800}
     .worksheet{
+      grid-area:card;
       background:var(--cream);color:var(--ink);border:1px solid var(--rule);
       padding:24px 26px 28px;transform:rotate(-2deg);max-width:400px;justify-self:end;width:100%;
     }
+    .ws-row{transition:opacity .4s ease,transform .4s ease}
+    .ws-anim .ws-row{opacity:0;transform:translateY(8px)}
+    .ws-anim .ws-row.on{opacity:1;transform:none}
+    .ws-stamp{transition:opacity .3s ease,transform .35s cubic-bezier(.2,1.5,.4,1)}
+    .ws-anim .ws-stamp{opacity:0;transform:rotate(-6deg) scale(1.6)}
+    .ws-anim .ws-stamp.on{opacity:1;transform:rotate(-6deg) scale(1)}
     .ws-head{display:flex;justify-content:space-between;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);
       border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:4px}
     .ws-row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--rule)}
@@ -109,8 +119,10 @@
       border:3px double var(--leaf);color:var(--leaf);font-weight:800;text-transform:uppercase;
       letter-spacing:.14em;padding:8px 18px;font-size:.95rem}
     @media(max-width:880px){
-      .hero-grid{grid-template-columns:1fr;gap:40px;margin-bottom:40px}
-      .worksheet{justify-self:center;transform:rotate(-1.5deg)}
+      .hero-grid{grid-template-columns:1fr;grid-template-areas:"head" "card" "rest";gap:28px;margin-bottom:40px}
+      .worksheet{justify-self:center;transform:rotate(-1.5deg);max-width:360px;padding:20px 22px 24px}
+      .avail{font-size:.8rem;padding:6px 12px;margin-bottom:18px}
+      .hero{padding:104px 0 50px}
     }
     .hero .rot{display:block;color:var(--mint);min-height:1.12em;transition:opacity .28s ease,transform .28s ease}
     .hero .rot.out{opacity:0;transform:translateY(10px)}
@@ -269,9 +281,11 @@
   <!-- ═══ HERO ═══ -->
   <section class="hero on-dark">
     <div class="wrap hero-grid">
-      <div>
+      <div class="hero-head">
         <span class="avail">Ma még tudunk időpontot adni</span>
         <h1><span class="rot" id="rot">Csöpög a csap?</span>Egy hívás, és intézzük.</h1>
+      </div>
+      <div class="hero-rest">
         <p class="hero-sub">Lakásszerviz Budapesten és 25 km-es körzetben. <strong>Fix ár a munka előtt, számlával, 1 év garanciával.</strong> Egy szám az összes lakáshibára.</p>
         <div class="hero-ctas">
           <a href="tel:+36301234567" class="btn">Hívom a szervizt</a>
@@ -279,7 +293,7 @@
         </div>
         <p class="rating"><span class="st">★★★★★</span> <b>4,9</b> · 231 Google-értékelés</p>
       </div>
-      <aside class="worksheet" aria-hidden="true">
+      <aside class="worksheet ws-anim" aria-hidden="true">
         <div class="ws-head"><span>Munkalap</span><span>№ 2481</span></div>
         <div class="ws-row"><span>Bejelentés</span><b>ma, 9:41</b></div>
         <div class="ws-row"><span>Hiba</span><b>csöpögő csaptelep</b></div>
@@ -518,6 +532,25 @@
       });
     },{threshold:.6});
     document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});
+
+    // munkalap kitöltés-animáció
+    var ws=document.querySelector('.worksheet');
+    if(ws){
+      if(reduce){ws.classList.remove('ws-anim')}
+      else{
+        var rows=ws.querySelectorAll('.ws-row');
+        var stamp=ws.querySelector('.ws-stamp');
+        var wsio=new IntersectionObserver(function(es){
+          es.forEach(function(e){
+            if(!e.isIntersecting)return;
+            wsio.unobserve(ws);
+            rows.forEach(function(r,i){setTimeout(function(){r.classList.add('on')},450+i*330)});
+            setTimeout(function(){stamp.classList.add('on')},450+rows.length*330+260);
+          });
+        },{threshold:.4});
+        wsio.observe(ws);
+      }
+    }
 
     // hero probléma-rotátor
     var words=['Csöpög a csap?','Dugul a lefolyó?','Ugrott a FI-relé?','Törött a csempe?','Szorul az ajtó?','Málik a fal?'];
