@@ -235,7 +235,7 @@ section{position:relative}
 /* ═══ SZOLGÁLTATÁSOK ═══ */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .svc{
-  position:relative;padding:28px 24px 26px;border-radius:var(--radius);
+  position:relative;padding:26px 22px 24px;border-radius:var(--radius);
   background:var(--card);border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow-s);
   transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;
 }
@@ -332,9 +332,13 @@ section{position:relative}
   display:flex;gap:20px;align-items:flex-start;box-shadow:var(--shadow-s);
   transition:border-color .3s,transform .3s,box-shadow .3s;
 }
-.ref:hover{border-color:var(--cy-bdr);transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(9,45,60,.45)}
+.ref:hover{border-color:rgba(190,146,44,.38);transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(96,70,10,.34)}
 .ref-ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;flex:none;
-  background:rgba(0,190,228,.12);border:1px solid var(--cy-bdr);color:var(--cy)}
+  background:linear-gradient(145deg,rgba(238,201,110,.42),rgba(190,146,44,.12));
+  border:1px solid rgba(190,146,44,.40);color:#8F6A12;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 2px 8px rgba(150,110,20,.14)}
+.ref:hover .ref-ic{background:linear-gradient(145deg,rgba(240,206,120,.60),rgba(190,146,44,.18));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 4px 14px rgba(150,110,20,.22)}
 .ref-ic .ic{width:22px;height:22px}
 .ref h4{font-family:'Outfit',sans-serif;font-size:18.5px;font-weight:600;letter-spacing:-.01em}
 .ref p{font-size:14.6px;color:var(--w-2);margin-top:7px}
@@ -740,49 +744,49 @@ footer{background:#fff;border-top:1px solid var(--line);padding:56px 0 30px}
       <article class="svc rv" data-d="0">
         <div class="svc-ic"><svg class="ic"><use href="#i-home"/></svg></div>
         <h3>Lakástakarítás</h3>
-        <p>Otthona tisztasága és kényelme számunkra is fontos. Alaposan és gyorsan elvégezzük a lakások napi vagy időszakos takarítását, hogy Önnek csak a pihenésre kelljen koncentrálnia.</p>
+        <p>Napi vagy időszakos takarítás — Önnek csak a pihenés marad.</p>
       </article>
 
       <article class="svc rv" data-d="80">
         <div class="svc-ic"><svg class="ic"><use href="#i-house"/></svg></div>
         <h3>Családi ház és kert</h3>
-        <p>Nemcsak a belső terek, hanem a kert is hozzájárul a rendezett környezethez. Teljes körű szolgáltatásunkkal gondoskodunk otthona és udvara makulátlan állapotáról.</p>
+        <p>Belső terek és udvar egy kézben, makulátlan állapotban.</p>
       </article>
 
       <article class="svc rv" data-d="160">
         <div class="svc-ic"><svg class="ic"><use href="#i-office"/></svg></div>
         <h3>Irodatakarítás</h3>
-        <p>A tiszta iroda a hatékony munkavégzés alapja. Napi vagy heti takarítás, az Ön munkaidejéhez és igényeihez alkalmazkodva, kizárólag környezetbarát szerekkel.</p>
+        <p>Napi vagy heti takarítás az Ön munkaidejéhez igazítva.</p>
       </article>
 
       <article class="svc rv" data-d="240">
         <div class="svc-ic"><svg class="ic"><use href="#i-building"/></svg></div>
         <h3>Társasház takarítás</h3>
-        <p>A közös terek tisztasága minden lakó számára fontos. Lépcsőházak, folyosók, liftek és közös területek szakszerű, higiénikus karbantartása.</p>
+        <p>Lépcsőházak, folyosók, liftek és közös terek higiénikusan.</p>
       </article>
 
       <article class="svc rv" data-d="0">
         <div class="svc-ic"><svg class="ic"><use href="#i-window"/></svg></div>
         <h3>Ablaktisztítás</h3>
-        <p>Időigényes és kihívást jelentő feladat, amit mi hatékonyan és csíkmentesen végzünk el — hogy otthona vagy irodája még világosabb és hívogatóbb legyen.</p>
+        <p>Csíkmentes üvegfelületek, nagy belmagasságban is.</p>
       </article>
 
       <article class="svc rv" data-d="80">
         <div class="svc-ic"><svg class="ic"><use href="#i-carpet"/></svg></div>
         <h3>Szőnyegtisztítás</h3>
-        <p>A szőnyegek ápolása nemcsak esztétikai kérdés. Korszerű tisztítási módszereinkkel megszabadítjuk őket a szennyeződésektől és az allergénektől.</p>
+        <p>Mélytisztítás a szennyeződések és az allergének ellen.</p>
       </article>
 
       <article class="svc rv" data-d="160">
         <div class="svc-ic"><svg class="ic"><use href="#i-solar"/></svg></div>
         <h3>Napelem takarítás</h3>
-        <p>A panelek hatékonyságának megőrzéséhez elengedhetetlen a rendszeres tisztítás. Gondoskodunk róla, hogy napelemei maximális teljesítményt nyújtsanak.</p>
+        <p>Tiszta panelek, maximális termelés egész évben.</p>
       </article>
 
       <article class="svc rv" data-d="240">
         <div class="svc-ic"><svg class="ic"><use href="#i-spark"/></svg></div>
         <h3>Speciális munkák</h3>
-        <p>Építkezés utáni takarítás, ipari szennyeződések eltávolítása vagy egyedi igények — a különleges feladatokhoz különleges megoldásokat hozunk.</p>
+        <p>Építkezés utáni és ipari tisztítás, egyedi igényekre.</p>
       </article>
     </div>
   </div>
