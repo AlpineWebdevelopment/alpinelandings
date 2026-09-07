@@ -176,19 +176,21 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px
   100%     {-webkit-mask-position:100% 0;mask-position:100% 0;opacity:1}
 }
 .squeegee{
-  position:absolute;top:-14%;left:0;width:16px;height:128%;
-  transform:translateX(-14%) rotate(6deg);transform-origin:top center;
-  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.85),rgba(255,255,255,.05));
+  position:absolute;top:-14%;left:-8%;width:16px;height:128%;
+  transform:rotate(6deg);transform-origin:center;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.9),rgba(255,255,255,.05));
   box-shadow:0 0 26px 10px rgba(140,240,255,.5),0 0 70px 26px rgba(0,194,232,.28);
   filter:blur(.4px);opacity:0;
   animation:squee 12s cubic-bezier(.55,.05,.3,1) infinite;
-  will-change:transform,opacity;
+  will-change:left,opacity;
 }
+/* a lehúzó a kártya teljes szélességén átfut: a left % a .glass szélességéhez igazodik */
 @keyframes squee{
-  0%,10%{transform:translateX(-14%) rotate(6deg);opacity:0}
+  0%,10%{left:-8%;opacity:0}
   13%{opacity:.95}
-  32%{transform:translateX(1560%) rotate(6deg);opacity:.95}
-  36%,100%{transform:translateX(1560%) rotate(6deg);opacity:0}
+  30%{opacity:.95}
+  32%{left:104%;opacity:.9}
+  36%,100%{left:104%;opacity:0}
 }
 .glass .frame{position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(118deg,rgba(255,255,255,.18),transparent 34%,transparent 66%,rgba(255,255,255,.08));
