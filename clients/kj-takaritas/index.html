@@ -376,6 +376,7 @@ section{position:relative}
 .garden p{color:var(--w-2);margin-top:16px;font-size:16.5px}
 .garden .kicker{color:#158A5C}
 .garden .kicker::before{background:linear-gradient(90deg,transparent,#158A5C)}
+.garden .svc{--a:#12946A}
 .gtags{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
 .gtag{padding:8px 15px;border-radius:999px;font-size:13.5px;font-weight:500;
   background:#fff;border:1px solid rgba(28,150,100,.24);color:var(--w-2)}
@@ -478,8 +479,9 @@ footer{background:#fff;border-top:1px solid var(--line);padding:56px 0 30px}
   .svc{display:grid;grid-template-columns:46px 1fr;column-gap:15px;align-items:start;padding:20px 18px}
   .svc-ic{grid-row:1/3;grid-column:1;margin-bottom:0;width:46px;height:46px;border-radius:13px;align-self:start}
   .svc-ic .ic{width:23px;height:23px}
-  .svc h3{grid-column:2;font-size:17px}
-  .svc p{grid-column:2;font-size:14px;line-height:1.55;margin-top:6px}
+  .svc > *:not(.svc-ic){grid-column:2;justify-self:start}
+  .svc h3{font-size:17px}
+  .svc p{font-size:14px;line-height:1.55;margin-top:6px}
   .svc::before{left:18px;right:18px}
   .svc.wide{grid-column:span 1}
   /* az érvek két hasábos, tömör csempékké válnak */
