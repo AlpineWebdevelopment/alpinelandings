@@ -72,7 +72,13 @@ export default function SittPage() {
           <h2>Hogyan zajlik?</h2>
           <ul>
             <li>Felhív, elmondja, mit bont és hol — azonnal árat mondunk.</li>
-            <li>Kihozzuk a konténert, jellemzően 24 órán belül.</li>
+            <li>
+              Kihozzuk a konténert, jellemzően 24 órán belül —{" "}
+              <Link href="/surgos-kontener-rendeles">
+                sürgős esetben akár pár órán belül
+              </Link>
+              .
+            </li>
             <li>Megpakolja; a konténer akár 1 hétig felár nélkül kint maradhat.</li>
             <li>Hívásra elszállítjuk, és engedélyes lerakóban adjuk le.</li>
           </ul>

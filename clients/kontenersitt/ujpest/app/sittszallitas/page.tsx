@@ -81,7 +81,9 @@ export default function SittPage() {
             <Link href="/lomtalanitas-zoldhulladek">
               lomot és zöldhulladékot
             </Link>{" "}
-            is elszállítunk. Közterületre kerülne a konténer? Lásd a{" "}
+            is elszállítunk. Nem biztos benne, mi mehet a konténerbe? Lásd a{" "}
+            <Link href="/mi-mehet-a-kontenerbe">hulladéktípusok</Link> listáját.
+            Közterületre kerülne a konténer? Lásd a{" "}
             <Link href="/kozterulet-engedely">közterület-engedély</Link>{" "}
             útmutatót.
           </p>

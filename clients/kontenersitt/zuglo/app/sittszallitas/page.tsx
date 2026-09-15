@@ -68,7 +68,10 @@ export default function SittPage() {
             a <b>6 m³</b>, társasházi vagy több lakásos munkához a{" "}
             <b>8 m³</b> a jellemző. Ha bizonytalan, telefonon egy perc alatt
             segítünk választani, hogy ne fizessen feleslegesen nagyobbért. Az
-            árakról bővebben az <Link href="/arak">Árak</Link> oldalon.
+            árakról bővebben az <Link href="/arak">Árak</Link> oldalon, a méretek
+            részletes összevetését pedig a{" "}
+            <Link href="/mekkora-kontener-kell">Mekkora konténer kell?</Link>{" "}
+            útmutatóban találja.
           </p>
 
           <h2>Hogyan zajlik a sittszállítás?</h2>

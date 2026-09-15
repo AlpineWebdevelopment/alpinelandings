@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/sittszallitas", priority: 0.8 },
     { path: "/lomtalanitas-zoldhulladek", priority: 0.8 },
     { path: "/kozterulet-engedely", priority: 0.7 },
+    { path: "/mi-mehet-a-kontenerbe", priority: 0.7 },
     { path: "/adatkezeles", priority: 0.3 },
   ];
   return paths.map((p) => ({

@@ -193,7 +193,8 @@ export default function Home() {
               konténerre). Nem tudja, mennyi a törmelék? Hívjon:{" "}
               <PhoneNote /> — a helyszín és a munka alapján megmondjuk, melyik
               méret lesz elég, hogy ne fizessen feleslegesen nagyobbért. Részletes
-              árakért lásd az <Link href="/arak">Árak</Link> oldalt.
+              árakért lásd az <Link href="/arak">Árak</Link> oldalt, a méretek összevetését a{" "}
+              <Link href="/mekkora-kontener-kell">méretválasztó</Link> oldalon.
             </p>
           </div>
         </section>

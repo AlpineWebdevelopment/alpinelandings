@@ -66,7 +66,10 @@ export default function SittPage() {
             konyhafelújításhoz a <b>4 m³</b>, teljes lakásfelújításhoz a{" "}
             <b>6 m³</b>, bontáshoz a <b>8 m³</b> a jellemző. Ha bizonytalan,
             telefonon segítünk választani. Az árakról bővebben az{" "}
-            <Link href="/arak">Árak</Link> oldalon.
+            <Link href="/arak">Árak</Link> oldalon, egy teljes felújítás
+            hulladékáról pedig a{" "}
+            <Link href="/lakasfelujitas-hulladek">lakásfelújítás hulladéka</Link>{" "}
+            útmutatóban írunk részletesen.
           </p>
 
           <h2>Hogyan zajlik?</h2>

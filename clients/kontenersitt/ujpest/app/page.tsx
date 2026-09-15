@@ -326,7 +326,8 @@ export default function Home() {
                 </ul>
                 <div className="foot">
                   Bizonytalan? Hívjon minket, mielőtt pakolna — megmondjuk, mi
-                  mehet a konténerbe, és mit hova lehet szabályosan leadni.
+                  mehet a konténerbe, és mit hova lehet szabályosan leadni.{" "}
+                  <Link href="/mi-mehet-a-kontenerbe">Részletes lista</Link>
                 </div>
               </div>
             </div>
