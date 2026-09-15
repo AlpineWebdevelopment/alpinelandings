@@ -278,6 +278,27 @@ Minden projektnél (5 db, ugyanaz a repo):
       riport, (b) belső lista, hogy melyik kulcsszavakra érdemes a következő 5 aloldalt írni
       (a GSC-ben a 2–3. oldalon lévő kifejezések mozdulnak leggyorsabban). Dashboard csak 3+
       SEO-ügyfélnél, vagy ha ügyfélnek adnánk oda (megtartási érv a havi díjhoz).
+- [x] ~~**Szeptemberi havi aloldalak (2026-09)**~~ — **ÉLESBEN (2026-09-15)**, a Tamásnak
+      elküldött szeptemberi terv szerint:
+
+      | Oldal | Aloldal | Célzott keresés |
+      |---|---|---|
+      | Zugló | `/mekkora-kontener-kell` | mekkora konténer kell, konténer méretek |
+      | Rákosmente | `/soder-homok-termofold` | sóder / homok / termőföld szállítás |
+      | Angyalföld | `/surgos-kontener-rendeles` | sürgős, aznapi, szombati konténer |
+      | Újbuda | `/lakasfelujitas-hulladek` | lakásfelújítás hulladék, törmelék elszállítás |
+      | Újpest | `/mi-mehet-a-kontenerbe` | mi mehet a konténerbe, hulladéktípusok |
+
+      Bekötés mindegyiknél: sitemap (priority 0.7), lábléc-link a `SiteHeader.tsx`
+      `guideLinks` tömbjéből (**a fejléc menübe szándékosan NEM** — 768 px-en a menü
+      szélessége már okozott kilógást), belső link a saját `/sittszallitas` oldalról,
+      Zuglón és Újpesten a főoldalról is. **Következő hónapokban:** az új aloldalt a
+      `guideLinks` tömbhöz kell hozzáfűzni, a lábléc automatikusan megjeleníti.
+      Tartalmi korlátok, amikre figyeltünk: csak 4/6/8 m³; vasárnap zárva, ezért
+      „szombati", nem „hétvégi"; sóder/homok/termőföldnél **nincs kiírt ár vagy
+      mennyiség** (nincs rá adatunk — Tamással érdemes egyeztetni a részleteket).
+      **TEENDŐ (Simon):** Search Console → URL-ellenőrzés → „Indexelés kérése" mind az 5
+      új címre.
 - [ ] **Havi szolgáltatás — indul 2026. SZEPTEMBER 1-jén** (szerződés 2.3, 4.2): minden hónapban
       oldalanként +1 új, kulcsszóra célzott aloldal + havi riport (pozíciók, kattintások,
       hívások, űrlapok) + teljesítésigazolás. **75.000 Ft/hó** (15.000 Ft/oldal).
