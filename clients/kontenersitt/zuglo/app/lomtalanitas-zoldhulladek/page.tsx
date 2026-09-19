@@ -3,10 +3,9 @@ import Link from "next/link";
 import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
-  title:
-    "Lomtalanítás és zöldhulladék Zugló — lom és kerti hulladék elszállítás 14. kerület",
+  title: "Lomtalanítás Zugló — bútor és lom elszállítása konténerrel, 14. kerület",
   description:
-    "Lomtalanítás és zöldhulladék elszállítás Zuglóban: bútor, lom, gally és nyesedék elvitele konténerrel a 14. kerület társasházaiból és kertes utcáiból. ☎ +36 21 3355 222",
+    "Lomtalanítás Zuglóban: bútor, ajtó, ablak, szőnyeg és háztartási lom elszállítása konténerrel a 14. kerület társasházaiból, panellakásaiból és kertes utcáiból. ☎ +36 21 3355 222",
   alternates: { canonical: "/lomtalanitas-zoldhulladek" },
 };
 
@@ -18,12 +17,12 @@ export default function LomPage() {
           <div className="crumb">
             <Link href="/">Főoldal</Link>
             <span>/</span>
-            <span>Lomtalanítás · Zöldhulladék</span>
+            <span>Lomtalanítás</span>
           </div>
-          <span className="k">Lomtalanítás · Zöldhulladék · XIV. kerület</span>
-          <h1>Lomtalanítás és zöldhulladék Zuglóban</h1>
+          <span className="k">Lomtalanítás · XIV. kerület</span>
+          <h1>Lomtalanítás Zuglóban</h1>
           <p className="lead">
-            Bútor, lom és kerti zöldhulladék elszállítása konténerrel — Zugló
+            Bútor, lom és háztartási kacat elszállítása konténerrel — Zugló
             társasházaiból, panellakásaiból és kertes utcáiból, egyeztetett
             időpontban.
           </p>
@@ -59,26 +58,17 @@ export default function LomPage() {
             kerüljön.
           </p>
 
-          <h2>Zöldhulladék elszállítás</h2>
+          <h2>Kerti zöldhulladék</h2>
           <p>
             Zugló kertes részein — <b>Alsórákos</b>, <b>Rákosfalva</b>,{" "}
-            <b>Nagyzugló</b> — gyűlik a kerti zöldhulladék. Ezt előzetes
-            egyeztetéssel szintén elszállítjuk:
-          </p>
-          <ul>
-            <li>
-              <b>Gally, nyesedék, ág</b> — metszésből, fakivágásból
-            </li>
-            <li>
-              <b>Sövény- és bozótnyesedék</b>
-            </li>
-            <li>
-              <b>Kerti hulladék</b> nagytakarításból
-            </li>
-          </ul>
-          <p>
-            A zöldhulladékot érdemes külön kérni, mert más lerakóba kerül —
-            telefonon egyeztetjük a pontos részleteket és az árat.
+            <b>Nagyzugló</b> — a gallyat, a nyesedéket és a lombot is
+            elszállítjuk. A zöldhulladékot érdemes külön kérni, mert más
+            lerakóba kerül. Hogy mit vihetünk el, mekkora konténer kell hozzá,
+            és mire figyeljen, azt a{" "}
+            <Link href="/zoldhulladek-elszallitas">
+              zöldhulladék-elszállítás
+            </Link>{" "}
+            oldalon írjuk le részletesen.
           </p>
 
           <h2>Mit nem szállítunk el?</h2>

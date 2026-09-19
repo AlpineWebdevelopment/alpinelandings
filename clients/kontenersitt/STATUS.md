@@ -299,6 +299,20 @@ Minden projektnél (5 db, ugyanaz a repo):
       mennyiség** (nincs rá adatunk — Tamással érdemes egyeztetni a részleteket).
       **TEENDŐ (Simon):** Search Console → URL-ellenőrzés → „Indexelés kérése" mind az 5
       új címre.
+- [x] ~~**Októberi Zugló-aloldal — ELŐRE HOZVA (2026-09-19)**~~: `/zoldhulladek-elszallitas`.
+      Ez a **Zugló októberi** havi aloldala (szerződés 2.3: oldalanként 1/hó), csak két héttel
+      korábban élesítve a szezon miatt (lombhullás, őszi metszés szept–nov). **Októberben
+      Zuglóra már NEM kell újabb aloldal**, a másik négy oldalra igen. A havi riportban
+      októberi teljesítésként szerepeltetni.
+      Ok: a Google automatikus kiegészítése kifejezetten felajánlja a „zöldhulladék elszállítás
+      zugló" keresést, és Zugló a leggyengébb oldal. **Kannibalizáció ellen:** a régi
+      `/lomtalanitas-zoldhulladek` oldal címe/H1-e a lomtalanításra lett hangolva (az URL maradt,
+      a fejléc-menü linkje változatlan), a zöldhulladékos rész onnan az új oldalra linkel.
+      Kockázatmentes volt, mert a régi oldalt a Google még nem indexelte.
+- [x] ~~**Arab számos kerületnév (2026-09-19)**~~: „konténer rendelés 17. kerület" keresésre nem
+      jöttünk fel, mert az oldalakon csak „XVII. kerület" állt (0× arab alak). Most főoldali cím,
+      meta-leírás, aloldali címek/leírások, hero, lábléc: arab alak; JSON-LD `alternateName`
+      mindkettővel; a szövegtörzsben a római marad. Főoldalanként 18× arab alak.
 - [ ] **Havi szolgáltatás — indul 2026. SZEPTEMBER 1-jén** (szerződés 2.3, 4.2): minden hónapban
       oldalanként +1 új, kulcsszóra célzott aloldal + havi riport (pozíciók, kattintások,
       hívások, űrlapok) + teljesítésigazolás. **75.000 Ft/hó** (15.000 Ft/oldal).
