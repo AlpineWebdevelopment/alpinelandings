@@ -73,7 +73,9 @@ export default function ArakPage() {
           <p>
             Kisebb mennyiséget személyesen is leadhat a telephelyünkön:{" "}
             <b>{site.address}</b> A telephelyi hulladékátvétel ára{" "}
-            <b>{site.droppOffPrice}</b>.
+            <b>{site.droppOffPrice}</b>. Részletek: mit hozhat, és mikor éri
+            meg jobban a konténer — lásd a{" "}
+            <Link href="/sitt-leadas">sitt leadás</Link> oldalt.
           </p>
           <table className="ptable">
             <thead>

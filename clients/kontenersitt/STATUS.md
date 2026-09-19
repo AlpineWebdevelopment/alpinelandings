@@ -309,6 +309,17 @@ Minden projektnél (5 db, ugyanaz a repo):
       `/lomtalanitas-zoldhulladek` oldal címe/H1-e a lomtalanításra lett hangolva (az URL maradt,
       a fejléc-menü linkje változatlan), a zöldhulladékos rész onnan az új oldalra linkel.
       Kockázatmentes volt, mert a régi oldalt a Google még nem indexelte.
+- [x] ~~**Októberi Rákosmente-aloldal — ELŐRE HOZVA (2026-09-19)**~~: `/sitt-leadas`
+      (személyes hulladékleadás a Vidor utcai telephelyen). Ez a **Rákosmente októberi**
+      havi aloldala — **októberben Rákosmentére már NEM kell újabb**. Ok: a kapcsolódó
+      keresésekben „sitt leadás árak", „zsákos sitt leadás", „sitt leadás ingyen budapest";
+      a telephely a 17. kerületben van. Belső link az /arak oldalról + lábléc.
+      **TISZTÁZANDÓ Tamással:** (1) mire vonatkozik a 12.700 Ft (alkalom? m³? tonna?) —
+      az oldal ezért nem részletezi, telefonos egyeztetésre kér; (2) a telephely átvételi
+      ideje — a site.ts nyitvatartása (7–20) a rendelésfelvételé, a Google-profilok szerint
+      a Vidor utcai telephely 15:00-kor zár, ezért az oldal NEM ír ki átvételi időt.
+      Ha megvan a válasz, érdemes kiírni: az ár egysége és az átvételi idő a két
+      legfontosabb információ egy ilyen oldalon.
 - [x] ~~**Arab számos kerületnév (2026-09-19)**~~: „konténer rendelés 17. kerület" keresésre nem
       jöttünk fel, mert az oldalakon csak „XVII. kerület" állt (0× arab alak). Most főoldali cím,
       meta-leírás, aloldali címek/leírások, hero, lábléc: arab alak; JSON-LD `alternateName`

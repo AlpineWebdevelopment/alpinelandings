@@ -12,6 +12,7 @@ export const navLinks = [
 /** Havi SEO-útmutatók — csak a láblécben jelennek meg, a fejléc menüt nem terhelik. */
 export const guideLinks = [
   { href: "/soder-homok-termofold", label: "Sóder, homok, termőföld" },
+  { href: "/sitt-leadas", label: "Sitt leadás" },
 ];
 
 export function BrandMark() {
