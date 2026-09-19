@@ -6,7 +6,7 @@ import { site } from "../lib/site";
 export const metadata: Metadata = {
   title: "Sürgős konténer rendelés Angyalföld — akár pár órán belül, szombaton is",
   description:
-    "Sürgősen kell konténer a XIII. kerületben? Szabad kapacitás esetén akár pár órán belül kiszállítjuk, szombaton is 7 és 18 óra között. Telt konténer cseréje 24 órán belül. ☎ +36 21 3355 233",
+    "Sürgősen kell konténer a 13. kerületben? Szabad kapacitás esetén akár pár órán belül kiszállítjuk, szombaton is 7 és 18 óra között. Telt konténer cseréje 24 órán belül. ☎ +36 21 3355 233",
   alternates: { canonical: "/surgos-kontener-rendeles" },
 };
 

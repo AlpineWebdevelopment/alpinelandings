@@ -125,7 +125,7 @@ export default function Home() {
                 Konténer rendelés <em>Angyalföldön</em> — gyorsan, a helyszínre
               </h1>
               <p className="hero-lead">
-                Panellakást újít, lakóparkban épít vagy lomtalanít a XIII.
+                Panellakást újít, lakóparkban épít vagy lomtalanít a 13.
                 kerületben? 4–8 m³-es konténereinket kihozzuk Angyalföld bármelyik
                 részébe — Újlipótvárostól a Marina-partig —, a telit pedig
                 elszállítjuk és szabályosan leadjuk.

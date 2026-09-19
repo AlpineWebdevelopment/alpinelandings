@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Lomtalanítás és zöldhulladék Rákosmente — lom és kerti hulladék elszállítás XVII. kerület",
+    "Lomtalanítás és zöldhulladék Rákosmente — lom és kerti hulladék elszállítás 17. kerület",
   description:
-    "Lomtalanítás és zöldhulladék elszállítás Rákosmentén: bútor, lom, gally és nyesedék elvitele konténerrel a XVII. kerület kertes házaiból. ☎ +36 21 3355 211",
+    "Lomtalanítás és zöldhulladék elszállítás Rákosmentén: bútor, lom, gally és nyesedék elvitele konténerrel a 17. kerület kertes házaiból. ☎ +36 21 3355 211",
   alternates: { canonical: "/lomtalanitas-zoldhulladek" },
 };
 

@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Lomtalanítás és zöldhulladék Újpest — lom és kerti hulladék elszállítás IV. kerület",
+    "Lomtalanítás és zöldhulladék Újpest — lom és kerti hulladék elszállítás 4. kerület",
   description:
-    "Lomtalanítás és zöldhulladék elszállítás Újpesten: bútor, lom, gally és nyesedék elvitele konténerrel a IV. kerület panelházaiból, társasházaiból és kertes utcáiból. ☎ +36 21 3355 255",
+    "Lomtalanítás és zöldhulladék elszállítás Újpesten: bútor, lom, gally és nyesedék elvitele konténerrel a 4. kerület panelházaiból, társasházaiból és kertes utcáiból. ☎ +36 21 3355 255",
   alternates: { canonical: "/lomtalanitas-zoldhulladek" },
 };
 

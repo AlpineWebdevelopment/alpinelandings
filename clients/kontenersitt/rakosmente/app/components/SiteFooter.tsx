@@ -17,7 +17,7 @@ export default function SiteFooter() {
               </span>
               <p>
                 Konténeres sittszállítás, lomtalanítás és zöldhulladék-elszállítás
-                Budapest XVII. kerületében — Rákoskeresztúrtól Rákoscsabáig.
+                Budapest 17. kerületében — Rákoskeresztúrtól Rákoscsabáig.
               </p>
             </div>
             <div className="foot-col">

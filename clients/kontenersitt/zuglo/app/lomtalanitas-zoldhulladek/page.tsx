@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Lomtalanítás és zöldhulladék Zugló — lom és kerti hulladék elszállítás XIV. kerület",
+    "Lomtalanítás és zöldhulladék Zugló — lom és kerti hulladék elszállítás 14. kerület",
   description:
-    "Lomtalanítás és zöldhulladék elszállítás Zuglóban: bútor, lom, gally és nyesedék elvitele konténerrel a XIV. kerület társasházaiból és kertes utcáiból. ☎ +36 21 3355 222",
+    "Lomtalanítás és zöldhulladék elszállítás Zuglóban: bútor, lom, gally és nyesedék elvitele konténerrel a 14. kerület társasházaiból és kertes utcáiból. ☎ +36 21 3355 222",
   alternates: { canonical: "/lomtalanitas-zoldhulladek" },
 };
 

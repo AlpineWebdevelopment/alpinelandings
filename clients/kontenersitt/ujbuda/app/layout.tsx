@@ -24,15 +24,15 @@ const body = Archivo({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kontenerrendelesujbuda.hu"),
-  title: "Konténer rendelés Újbuda — sittszállítás a XI. kerületben | 11.875 Ft/m³-tól",
+  title: "Konténer rendelés Újbuda, 11. kerület — sittszállítás | 11.875 Ft/m³-tól",
   description:
-    "Konténer rendelés Újbudán gyors kiszállítással: sitt, lom és vegyes hulladék elszállítása a XI. kerület minden részébe — Kelenföld, Lágymányos, Gazdagrét, Sasad. 11.875 Ft/m³-tól. ☎ +36 21 3355 244",
+    "Konténer rendelés Újbudán gyors kiszállítással: sitt, lom és vegyes hulladék elszállítása a 11. kerület minden részébe — Kelenföld, Lágymányos, Gazdagrét, Sasad. 11.875 Ft/m³-tól. ☎ +36 21 3355 244",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "hu_HU",
     url: "https://kontenerrendelesujbuda.hu/",
-    title: "Konténer rendelés Újbuda — sitt, lom, vegyes hulladék a XI. kerületben",
+    title: "Konténer rendelés Újbuda, 11. kerület — sitt, lom, vegyes hulladék",
     description:
       "Konténer lakásfelújításhoz, panelhez és budai villához Újbudán. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 244",
   },
@@ -43,7 +43,7 @@ const localBusinessLd = {
   "@type": "LocalBusiness",
   name: "Konténer Rendelés Újbuda",
   description:
-    "Konténeres sittszállítás, lomtalanítás és hulladékszállítás Újbudán (Budapest XI. kerület). 4–8 m³ konténerek gyors kiszállítással Kelenföld, Lágymányos, Gazdagrét, Őrmező, Sasad, Sashegy és Albertfalva területén.",
+    "Konténeres sittszállítás, lomtalanítás és hulladékszállítás Újbudán (Budapest XI., azaz 11. kerület). 4–8 m³ konténerek gyors kiszállítással Kelenföld, Lágymányos, Gazdagrét, Őrmező, Sasad, Sashegy és Albertfalva területén.",
   url: "https://kontenerrendelesujbuda.hu/",
   telephone: "+36213355244",
   email: "info@kontenersitt.hu",
@@ -55,7 +55,7 @@ const localBusinessLd = {
     addressCountry: "HU",
   },
   areaServed: [
-    { "@type": "Place", name: "Újbuda (Budapest XI. kerület)" },
+    { "@type": "Place", name: "Újbuda (Budapest XI. kerület)", alternateName: ["Budapest 11. kerület", "11. kerület"] },
     { "@type": "Place", name: "Kelenföld" },
     { "@type": "Place", name: "Lágymányos" },
     { "@type": "Place", name: "Gazdagrét" },

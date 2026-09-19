@@ -17,7 +17,7 @@ export default function SiteFooter() {
               </span>
               <p>
                 Konténeres sittszállítás, lomtalanítás és hulladékszállítás
-                Budapest IV. kerületében — Újpest-központtól Káposztásmegyerig.
+                Budapest 4. kerületében — Újpest-központtól Káposztásmegyerig.
               </p>
             </div>
             <div className="foot-col">

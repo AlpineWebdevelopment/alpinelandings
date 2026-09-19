@@ -17,7 +17,7 @@ export default function SiteFooter() {
             </span>
             <p>
               Konténeres sittszállítás, lomtalanítás és hulladékszállítás
-              Budapest XIV. kerületében.
+              Budapest 14. kerületében.
             </p>
           </div>
           <nav className="foot-links" aria-label="Oldaltérkép">

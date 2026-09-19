@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Közterület-használati engedély konténerhez Angyalföld — útmutató a XIII. kerületben",
+    "Közterület-használati engedély konténerhez Angyalföld — útmutató a 13. kerületben",
   description:
-    "Mikor kell közterület-használati engedély a konténerhez Angyalföldön, és hogyan intézzük? Útmutató a XIII. kerületi engedélyhez — a sűrű beépítés miatt gyakran szükséges. ☎ +36 21 3355 233",
+    "Mikor kell közterület-használati engedély a konténerhez Angyalföldön, és hogyan intézzük? Útmutató a 13. kerületi engedélyhez — a sűrű beépítés miatt gyakran szükséges. ☎ +36 21 3355 233",
   alternates: { canonical: "/kozterulet-engedely" },
 };
 

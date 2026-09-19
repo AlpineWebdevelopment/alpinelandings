@@ -3,9 +3,9 @@ import Link from "next/link";
 import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Sittszállítás Angyalföld — építési törmelék elszállítása a XIII. kerületben",
+  title: "Sittszállítás Angyalföld — építési törmelék elszállítása a 13. kerületben",
   description:
-    "Sittszállítás Angyalföldön: tégla, beton, csempe, vakolat elszállítása panellakás- és lakópark-felújításból. 4–8 m³-es konténer, gyors kiszállítás a XIII. kerületbe. ☎ +36 21 3355 233",
+    "Sittszállítás Angyalföldön: tégla, beton, csempe, vakolat elszállítása panellakás- és lakópark-felújításból. 4–8 m³-es konténer, gyors kiszállítás a 13. kerületbe. ☎ +36 21 3355 233",
   alternates: { canonical: "/sittszallitas" },
 };
 

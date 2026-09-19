@@ -3,9 +3,9 @@ import Link from "next/link";
 import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Sittszállítás Rákosmente — építési törmelék elszállítása a XVII. kerületben",
+  title: "Sittszállítás Rákosmente — építési törmelék elszállítása a 17. kerületben",
   description:
-    "Sittszállítás Rákosmentén: tégla, beton, csempe, vakolat elszállítása felújításból, bontásból. 4–8 m³-es konténer, gyors kiszállítás a XVII. kerület kertes házaihoz. ☎ +36 21 3355 211",
+    "Sittszállítás Rákosmentén: tégla, beton, csempe, vakolat elszállítása felújításból, bontásból. 4–8 m³-es konténer, gyors kiszállítás a 17. kerület kertes házaihoz. ☎ +36 21 3355 211",
   alternates: { canonical: "/sittszallitas" },
 };
 

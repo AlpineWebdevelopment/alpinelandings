@@ -17,7 +17,7 @@ export default function SiteFooter() {
               </span>
               <p>
                 Konténeres sittszállítás, lomtalanítás és hulladékszállítás
-                Budapest XI. kerületében — Kelenföldtől Sasadig.
+                Budapest 11. kerületében — Kelenföldtől Sasadig.
               </p>
             </div>
             <div className="foot-col">

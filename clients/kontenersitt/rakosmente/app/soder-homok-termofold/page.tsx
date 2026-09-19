@@ -4,7 +4,7 @@ import CtaBand from "../components/CtaBand";
 import { site } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Sóder, homok, termőföld szállítás Rákosmentén — XVII. kerület",
+  title: "Sóder, homok, termőföld szállítás Rákosmentén — 17. kerület",
   description:
     "Sóder, homok és termőföld kiszállítása Rákosmentére: betonozáshoz, térkövezéshez, gyepesítéshez és kertépítéshez. Rákoskeresztúr, Rákoscsaba, Rákoshegy. Mennyiség és ár telefonon. ☎ +36 21 3355 211",
   alternates: { canonical: "/soder-homok-termofold" },

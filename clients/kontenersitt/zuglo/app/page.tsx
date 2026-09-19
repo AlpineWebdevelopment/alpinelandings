@@ -109,7 +109,7 @@ export default function Home() {
               Konténer rendelés <em>Zuglóban</em> — akár aznapra
             </h1>
             <p className="hero-sub">
-              Felújít, bont vagy lomtalanít a XIV. kerületben?{" "}
+              Felújít, bont vagy lomtalanít a 14. kerületben?{" "}
               <b>4–8 m³-es konténereinket</b> gyorsan kiszállítjuk Zugló
               bármelyik városrészébe, a teli konténert pedig elszállítjuk és
               szabályosan leadjuk. Egy telefon, és megy a konténer.

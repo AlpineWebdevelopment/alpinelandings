@@ -5,7 +5,7 @@ import CtaBand from "../components/CtaBand";
 export const metadata: Metadata = {
   title: "Mi mehet a konténerbe és mi nem? — hulladéktípusok Újpesten",
   description:
-    "Mit tehet a konténerbe? Sitt, lom, vegyes építési hulladék és egyeztetéssel zöldhulladék igen — festék, azbeszt, gumiabroncs, elektronika és háztartási szemét nem. Újpest, IV. kerület. ☎ +36 21 3355 255",
+    "Mit tehet a konténerbe? Sitt, lom, vegyes építési hulladék és egyeztetéssel zöldhulladék igen — festék, azbeszt, gumiabroncs, elektronika és háztartási szemét nem. Újpest, 4. kerület. ☎ +36 21 3355 255",
   alternates: { canonical: "/mi-mehet-a-kontenerbe" },
 };
 

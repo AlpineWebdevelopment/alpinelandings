@@ -17,15 +17,15 @@ const body = Urbanist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kontenerrendelesangyalfold.hu"),
   title:
-    "Konténer rendelés Angyalföld — sittszállítás a XIII. kerületben | 4–8 m³",
+    "Konténer rendelés Angyalföld, 13. kerület — sittszállítás | 4–8 m³",
   description:
-    "Konténer rendelés Angyalföldön gyors kiszállítással: sitt, lom és vegyes hulladék elszállítása a XIII. kerület minden részébe — Újlipótváros, Vizafogó, Gyöngyösi, Marina-part. 10.250 Ft/m³-tól. ☎ +36 21 3355 233",
+    "Konténer rendelés Angyalföldön gyors kiszállítással: sitt, lom és vegyes hulladék elszállítása a 13. kerület minden részébe — Újlipótváros, Vizafogó, Gyöngyösi, Marina-part. 10.250 Ft/m³-tól. ☎ +36 21 3355 233",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "hu_HU",
     url: "https://kontenerrendelesangyalfold.hu/",
-    title: "Konténer rendelés Angyalföld — sitt, lom, vegyes hulladék a XIII. kerületben",
+    title: "Konténer rendelés Angyalföld, 13. kerület — sitt, lom, vegyes hulladék",
     description:
       "Konténer panellakáshoz, új lakóparkhoz és felújításhoz Angyalföldön. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 233",
   },
@@ -36,7 +36,7 @@ const localBusinessLd = {
   "@type": "LocalBusiness",
   name: "Konténer Rendelés Angyalföld",
   description:
-    "Konténeres sittszállítás, lomtalanítás és hulladékszállítás Angyalföldön (Budapest XIII. kerület). 4–8 m³ konténerek gyors kiszállítással Újlipótváros, Vizafogó, Népsziget, Gyöngyösi-lakótelep, Béke tér, Dagály és Marina-part területén.",
+    "Konténeres sittszállítás, lomtalanítás és hulladékszállítás Angyalföldön (Budapest XIII., azaz 13. kerület). 4–8 m³ konténerek gyors kiszállítással Újlipótváros, Vizafogó, Népsziget, Gyöngyösi-lakótelep, Béke tér, Dagály és Marina-part területén.",
   url: "https://kontenerrendelesangyalfold.hu/",
   telephone: "+36213355233",
   email: "info@kontenersitt.hu",
@@ -48,7 +48,7 @@ const localBusinessLd = {
     addressCountry: "HU",
   },
   areaServed: [
-    { "@type": "Place", name: "Angyalföld (Budapest XIII. kerület)" },
+    { "@type": "Place", name: "Angyalföld (Budapest XIII. kerület)", alternateName: ["Budapest 13. kerület", "13. kerület"] },
     { "@type": "Place", name: "Újlipótváros" },
     { "@type": "Place", name: "Vizafogó" },
     { "@type": "Place", name: "Népsziget" },

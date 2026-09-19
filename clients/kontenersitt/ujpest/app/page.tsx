@@ -124,7 +124,7 @@ export default function Home() {
                 Konténer rendelés <em>Újpesten</em> — gyorsan, a kapu elé
               </h1>
               <p className="hero-lead">
-                Panellakást újít, kertet rendez vagy bont a IV. kerületben? 4–8
+                Panellakást újít, kertet rendez vagy bont a 4. kerületben? 4–8
                 m³-es konténereinket kihozzuk Újpest bármelyik részébe —
                 Újpest-központtól Káposztásmegyerig —, a telit pedig elszállítjuk
                 és szabályosan leadjuk.

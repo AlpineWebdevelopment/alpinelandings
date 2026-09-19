@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Lomtalanítás és zöldhulladék Újbuda — lom és kerti hulladék elszállítás XI. kerület",
+    "Lomtalanítás és zöldhulladék Újbuda — lom és kerti hulladék elszállítás 11. kerület",
   description:
-    "Lomtalanítás és zöldhulladék elszállítás Újbudán: bútor, lom, gally és nyesedék elvitele konténerrel a XI. kerület panelházaiból, társasházaiból és villáiból. ☎ +36 21 3355 244",
+    "Lomtalanítás és zöldhulladék elszállítás Újbudán: bútor, lom, gally és nyesedék elvitele konténerrel a 11. kerület panelházaiból, társasházaiból és villáiból. ☎ +36 21 3355 244",
   alternates: { canonical: "/lomtalanitas-zoldhulladek" },
 };
 

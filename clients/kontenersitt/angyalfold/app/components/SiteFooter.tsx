@@ -17,7 +17,7 @@ export default function SiteFooter() {
               </span>
               <p>
                 Konténeres sittszállítás, lomtalanítás és hulladékszállítás
-                Budapest XIII. kerületében — Újlipótvárostól a Marina-partig.
+                Budapest 13. kerületében — Újlipótvárostól a Marina-partig.
               </p>
             </div>
             <div className="foot-col">

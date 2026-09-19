@@ -125,7 +125,7 @@ export default function Home() {
                 villáig
               </h1>
               <p className="hero-lead">
-                Lakást újít, kertet rendez vagy bont a XI. kerületben? 4–8 m³-es
+                Lakást újít, kertet rendez vagy bont a 11. kerületben? 4–8 m³-es
                 konténereinket kihozzuk Újbuda bármelyik részébe — Kelenföldtől
                 Sasadig —, a telit pedig elszállítjuk és szabályosan leadjuk.
               </p>
