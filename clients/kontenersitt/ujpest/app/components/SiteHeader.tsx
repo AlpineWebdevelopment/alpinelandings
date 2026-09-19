@@ -12,6 +12,7 @@ export const navLinks = [
 /** Havi SEO-útmutatók — csak a láblécben jelennek meg, a fejléc menüt nem terhelik. */
 export const guideLinks = [
   { href: "/mi-mehet-a-kontenerbe", label: "Mi mehet a konténerbe?" },
+  { href: "/lakossagi-lomtalanitas", label: "Lakossági lomtalanítás" },
 ];
 
 export function BrandMark() {

@@ -33,9 +33,10 @@ export default function LomPage() {
         <div className="wrap prose">
           <h2>Lomtalanítás Újpesten</h2>
           <p>
-            Nem kell megvárnia a kerületi lomtalanítást — konténert biztosítunk,
-            és a lomot szabályosan elszállítjuk. Elvisszük a jellemző háztartási
-            és felújítási lomot:
+            Nem kell megvárnia a{" "}
+            <Link href="/lakossagi-lomtalanitas">kerületi lomtalanítást</Link> —
+            konténert biztosítunk, és a lomot szabályosan elszállítjuk. Elvisszük
+            a jellemző háztartási és felújítási lomot:
           </p>
           <ul>
             <li>

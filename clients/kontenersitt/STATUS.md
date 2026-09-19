@@ -320,6 +320,16 @@ Minden projektnél (5 db, ugyanaz a repo):
       a Vidor utcai telephely 15:00-kor zár, ezért az oldal NEM ír ki átvételi időt.
       Ha megvan a válasz, érdemes kiírni: az ár egysége és az átvételi idő a két
       legfontosabb információ egy ilyen oldalon.
+- [x] ~~**Októberi Újpest-aloldal — ELŐRE HOZVA (2026-09-19)**~~: `/lakossagi-lomtalanitas`
+      („Lemaradt az újpesti lomtalanításról?"). Ez az **Újpest októberi** havi aloldala —
+      **októberben Újpestre már NEM kell újabb**. Más keresési szándékot céloz, mint a
+      `/lomtalanitas-zoldhulladek` (az a konténeres szolgáltatás, és a fő kulcsszóra ez az
+      egyetlen újpesti oldal az 1. oldalon — ezért ahhoz csak egy link került, más nem).
+      Célzott keresések: „lomtalanítás újpest 2026", „mikor lesz lomtalanítás újpesten"
+      (autocomplete). **ÉVENTE FRISSÍTENDŐ:** a 2026-os időpont (július 19. – augusztus 2.,
+      forrás: MOHU + Újpest Önkormányzata, 2026-09-19-i állapot) a címben, a leírásban és az
+      első szakaszban szerepel; a 2027-es kihirdetés után át kell írni.
+      **Októberre így már csak Angyalföld és Újbuda aloldala van hátra.**
 - [x] ~~**Arab számos kerületnév (2026-09-19)**~~: „konténer rendelés 17. kerület" keresésre nem
       jöttünk fel, mert az oldalakon csak „XVII. kerület" állt (0× arab alak). Most főoldali cím,
       meta-leírás, aloldali címek/leírások, hero, lábléc: arab alak; JSON-LD `alternateName`
