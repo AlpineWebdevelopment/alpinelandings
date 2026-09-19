@@ -297,8 +297,13 @@ Minden projektnél (5 db, ugyanaz a repo):
       Tartalmi korlátok, amikre figyeltünk: csak 4/6/8 m³; vasárnap zárva, ezért
       „szombati", nem „hétvégi"; sóder/homok/termőföldnél **nincs kiírt ár vagy
       mennyiség** (nincs rá adatunk — Tamással érdemes egyeztetni a részleteket).
-      **TEENDŐ (Simon):** Search Console → URL-ellenőrzés → „Indexelés kérése" mind az 5
-      új címre.
+      ~~**TEENDŐ (Simon):** Search Console → „Indexelés kérése" az új címekre.~~
+      **2026-09-19: kérve** mind az 5 főoldalra és az összes szeptemberi + előrehozott
+      októberi aloldalra, kivéve Újbudán a főoldalt és a `/lakasfelujitas-hulladek`-et
+      (napi kvóta elfogyott — **2026-09-20-án pótolni**). A webhelytérképeket nem kellett
+      újraküldeni, a Google magától beolvassa (Angyalföld: 2026-09-18, 7 oldal).
+      GA4 kulcsesemény-jelölést (`phone_click`, `generate_lead`) szándékosan kihagytuk —
+      az események jelölés nélkül is rögzülnek; Google Ads indulásakor kell bekapcsolni.
 - [x] ~~**Októberi Zugló-aloldal — ELŐRE HOZVA (2026-09-19)**~~: `/zoldhulladek-elszallitas`.
       Ez a **Zugló októberi** havi aloldala (szerződés 2.3: oldalanként 1/hó), csak két héttel
       korábban élesítve a szezon miatt (lombhullás, őszi metszés szept–nov). **Októberben
