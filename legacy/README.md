@@ -8,7 +8,9 @@ and nothing here should be edited — it is kept for reference and asset salvage
 The previous agency site (**Alpine Webdevelopment / Alpine Studios**, the English-language
 portfolio that predates the Hungarian Belluna Studios pitch page at the repo root).
 Imported on 2026-08-25 from `R:\z_jeskoserver\alpinestudios`, files only — that repo keeps
-its own git history (last commit `8d1c6c6`) **and the original PNG/PSD assets**.
+its own git history (last commit `8d1c6c6`, pushed to
+`github.com/AlpineWebdevelopment/alpinestudios`). The original PNG/PSD assets now live in
+`alpinestudios/originals/` (gitignored, local only).
 
 - `index.html` — desktop page; `mobile.html` — separate mobile page (served via the
   `.htaccess` rewrites `^en$ → index.html`, `^en-en$ → mobile.html`).
@@ -25,8 +27,9 @@ its own git history (last commit `8d1c6c6`) **and the original PNG/PSD assets**.
 
 To keep the repo light, all 36 PNGs (47.8 MB) were re-encoded to WebP (9.4 MB) on import
 and every `<img src>` was repointed to `.webp`. **The originals were deliberately not
-committed** — they remain in `R:\z_jeskoserver\alpinestudios\assets\`, along with
-`assets/logo/Alpine Webdevelopment LOGO (AW).psd`, which was dropped here entirely.
+committed** — on 2026-09-21 they were moved into `alpinestudios/originals/assets/` (same
+subpaths), along with `assets/logo/Alpine Webdevelopment LOGO (AW).psd`. That folder is
+gitignored, so it exists only on the local machine.
 
 Encoding: each file was tried both lossless and lossy q95 (`method=6`), keeping lossless
 whenever it cost ≤25% more bytes. Screenshots were fully opaque, so alpha was dropped to
@@ -39,5 +42,4 @@ the safer format for a `rel="icon"`. The nine `AW_*.webp` / `Alpine Webdevelopme
 logo variants are unreferenced by either page; they were unreferenced as PNGs too and are
 kept only as reusable brand assets.
 
-Re-run or adjust the conversion by pointing a WebP encoder at the originals in the source
-folder — nothing in this repo depends on the PNGs any more.
+Re-run or adjust the conversion by pointing a WebP encoder at `alpinestudios/originals/` — nothing in this repo depends on the PNGs any more.

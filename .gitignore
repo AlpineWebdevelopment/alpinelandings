@@ -28,3 +28,6 @@ node_modules/
 
 # Claude Code
 .claude/
+
+# Original PNG/PSD sources for legacy/alpinestudios (kept locally, too heavy for git)
+legacy/alpinestudios/originals/
