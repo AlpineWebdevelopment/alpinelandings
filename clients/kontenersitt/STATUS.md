@@ -300,7 +300,7 @@ Minden projektnél (5 db, ugyanaz a repo):
       ~~**TEENDŐ (Simon):** Search Console → „Indexelés kérése" az új címekre.~~
       **2026-09-19: kérve** mind az 5 főoldalra és az összes szeptemberi + előrehozott
       októberi aloldalra, kivéve Újbudán a főoldalt és a `/lakasfelujitas-hulladek`-et
-      (napi kvóta elfogyott — **2026-09-20-án pótolni**). A webhelytérképeket nem kellett
+      (napi kvóta elfogyott) — **ezt a kettőt is pótolta, 2026-09-21: minden cím kérve.** A webhelytérképeket nem kellett
       újraküldeni, a Google magától beolvassa (Angyalföld: 2026-09-18, 7 oldal).
       GA4 kulcsesemény-jelölést (`phone_click`, `generate_lead`) szándékosan kihagytuk —
       az események jelölés nélkül is rögzülnek; Google Ads indulásakor kell bekapcsolni.
