@@ -3,9 +3,9 @@ import Link from "next/link";
 import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Sittszállítás Újpest — építési törmelék elszállítása a IV. kerületben",
+  title: "Sittszállítás Újpest — építési törmelék elszállítása a 4. kerületben",
   description:
-    "Sittszállítás Újpesten: tégla, beton, csempe, vakolat elszállítása panellakás- és kertes házi felújításból. 4–8 m³-es konténer, gyors kiszállítás a IV. kerületbe. ☎ +36 21 3355 255",
+    "Sittszállítás Újpesten: tégla, beton, csempe, vakolat elszállítása panellakás- és kertes házi felújításból. 4–8 m³-es konténer, gyors kiszállítás a 4. kerületbe. ☎ +36 21 3355 255",
   alternates: { canonical: "/sittszallitas" },
 };
 
@@ -81,7 +81,9 @@ export default function SittPage() {
             <Link href="/lomtalanitas-zoldhulladek">
               lomot és zöldhulladékot
             </Link>{" "}
-            is elszállítunk. Közterületre kerülne a konténer? Lásd a{" "}
+            is elszállítunk. Nem biztos benne, mi mehet a konténerbe? Lásd a{" "}
+            <Link href="/mi-mehet-a-kontenerbe">hulladéktípusok</Link> listáját.
+            Közterületre kerülne a konténer? Lásd a{" "}
             <Link href="/kozterulet-engedely">közterület-engedély</Link>{" "}
             útmutatót.
           </p>

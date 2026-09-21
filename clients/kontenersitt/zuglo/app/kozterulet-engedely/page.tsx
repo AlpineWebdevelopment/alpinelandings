@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Közterület-használati engedély konténerhez Zugló — útmutató a XIV. kerületben",
+    "Közterület-használati engedély konténerhez Zugló — útmutató a 14. kerületben",
   description:
-    "Mikor kell közterület-használati engedély a konténerhez Zuglóban, és mikor nem? Útmutató a XIV. kerületi engedélyhez — a zuglói önkormányzatnál. Az ügyintézésben segítünk. ☎ +36 21 3355 222",
+    "Mikor kell közterület-használati engedély a konténerhez Zuglóban, és mikor nem? Útmutató a 14. kerületi engedélyhez — a zuglói önkormányzatnál. Az ügyintézésben segítünk. ☎ +36 21 3355 222",
   alternates: { canonical: "/kozterulet-engedely" },
 };
 

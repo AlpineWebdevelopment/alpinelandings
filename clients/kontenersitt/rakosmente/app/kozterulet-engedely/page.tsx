@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Közterület-használati engedély konténerhez Rákosmente — útmutató a XVII. kerületben",
+    "Közterület-használati engedély konténerhez Rákosmente — útmutató a 17. kerületben",
   description:
-    "Mikor kell közterület-használati engedély a konténerhez Rákosmentén, és mikor nem? Útmutató a XVII. kerületi engedélyhez — az ügyintézésben segítünk. ☎ +36 21 3355 211",
+    "Mikor kell közterület-használati engedély a konténerhez Rákosmentén, és mikor nem? Útmutató a 17. kerületi engedélyhez — az ügyintézésben segítünk. ☎ +36 21 3355 211",
   alternates: { canonical: "/kozterulet-engedely" },
 };
 

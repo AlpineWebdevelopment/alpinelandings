@@ -3,9 +3,9 @@ import Link from "next/link";
 import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Sittszállítás Angyalföld — építési törmelék elszállítása a XIII. kerületben",
+  title: "Sittszállítás Angyalföld — építési törmelék elszállítása a 13. kerületben",
   description:
-    "Sittszállítás Angyalföldön: tégla, beton, csempe, vakolat elszállítása panellakás- és lakópark-felújításból. 4–8 m³-es konténer, gyors kiszállítás a XIII. kerületbe. ☎ +36 21 3355 233",
+    "Sittszállítás Angyalföldön: tégla, beton, csempe, vakolat elszállítása panellakás- és lakópark-felújításból. 4–8 m³-es konténer, gyors kiszállítás a 13. kerületbe. ☎ +36 21 3355 233",
   alternates: { canonical: "/sittszallitas" },
 };
 
@@ -72,7 +72,13 @@ export default function SittPage() {
           <h2>Hogyan zajlik?</h2>
           <ul>
             <li>Felhív, elmondja, mit bont és hol — azonnal árat mondunk.</li>
-            <li>Kihozzuk a konténert, jellemzően 24 órán belül.</li>
+            <li>
+              Kihozzuk a konténert, jellemzően 24 órán belül —{" "}
+              <Link href="/surgos-kontener-rendeles">
+                sürgős esetben akár pár órán belül
+              </Link>
+              .
+            </li>
             <li>Megpakolja; a konténer akár 1 hétig felár nélkül kint maradhat.</li>
             <li>Hívásra elszállítjuk, és engedélyes lerakóban adjuk le.</li>
           </ul>

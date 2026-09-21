@@ -124,7 +124,7 @@ export default function Home() {
                 Konténer rendelés <em>Újpesten</em> — gyorsan, a kapu elé
               </h1>
               <p className="hero-lead">
-                Panellakást újít, kertet rendez vagy bont a IV. kerületben? 4–8
+                Panellakást újít, kertet rendez vagy bont a 4. kerületben? 4–8
                 m³-es konténereinket kihozzuk Újpest bármelyik részébe —
                 Újpest-központtól Káposztásmegyerig —, a telit pedig elszállítjuk
                 és szabályosan leadjuk.
@@ -326,7 +326,8 @@ export default function Home() {
                 </ul>
                 <div className="foot">
                   Bizonytalan? Hívjon minket, mielőtt pakolna — megmondjuk, mi
-                  mehet a konténerbe, és mit hova lehet szabályosan leadni.
+                  mehet a konténerbe, és mit hova lehet szabályosan leadni.{" "}
+                  <Link href="/mi-mehet-a-kontenerbe">Részletes lista</Link>
                 </div>
               </div>
             </div>

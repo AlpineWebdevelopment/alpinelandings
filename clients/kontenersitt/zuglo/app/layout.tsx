@@ -24,15 +24,15 @@ const body = Saira({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kontenerrendeleszuglo.hu"),
-  title: "Konténer rendelés Zugló — sittszállítás a XIV. kerületben | 4–8 m³",
+  title: "Konténer rendelés Zugló, 14. kerület — sittszállítás | 4–8 m³",
   description:
-    "Konténer rendelés Zuglóban akár aznapi kiszállítással: sitt, lom és vegyes hulladék elszállítása a XIV. kerület minden városrészébe — Alsórákos, Herminamező, Rákosfalva, Törökőr. 4–8 m³ konténerek. ☎ +36 21 3355 222",
+    "Konténer rendelés Zuglóban akár aznapi kiszállítással: sitt, lom és vegyes hulladék elszállítása a 14. kerület minden városrészébe — Alsórákos, Herminamező, Rákosfalva, Törökőr. 4–8 m³ konténerek. ☎ +36 21 3355 222",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "hu_HU",
     url: "https://kontenerrendeleszuglo.hu/",
-    title: "Konténer rendelés Zugló — sittszállítás a XIV. kerületben",
+    title: "Konténer rendelés Zugló, 14. kerület — sittszállítás",
     description:
       "4–8 m³ konténerek sitthez, lomhoz, vegyes hulladékhoz Zugló minden városrészébe. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 222",
   },
@@ -43,7 +43,7 @@ const localBusinessLd = {
   "@type": "LocalBusiness",
   name: "Konténer Rendelés Zugló",
   description:
-    "Konténeres sittszállítás, lomtalanítás és hulladékszállítás Zuglóban (Budapest XIV. kerület). 4–8 m³ konténerek gyors kiszállítással Alsórákos, Herminamező, Istvánmező, Kiszugló, Nagyzugló, Rákosfalva és Törökőr területén.",
+    "Konténeres sittszállítás, lomtalanítás és hulladékszállítás Zuglóban (Budapest XIV., azaz 14. kerület). 4–8 m³ konténerek gyors kiszállítással Alsórákos, Herminamező, Istvánmező, Kiszugló, Nagyzugló, Rákosfalva és Törökőr területén.",
   url: "https://kontenerrendeleszuglo.hu/",
   telephone: "+36213355222",
   email: "info@kontenersitt.hu",
@@ -55,7 +55,7 @@ const localBusinessLd = {
     addressCountry: "HU",
   },
   areaServed: [
-    { "@type": "Place", name: "Zugló (Budapest XIV. kerület)" },
+    { "@type": "Place", name: "Zugló (Budapest XIV. kerület)", alternateName: ["Budapest 14. kerület", "14. kerület"] },
     { "@type": "Place", name: "Alsórákos" },
     { "@type": "Place", name: "Herminamező" },
     { "@type": "Place", name: "Istvánmező" },

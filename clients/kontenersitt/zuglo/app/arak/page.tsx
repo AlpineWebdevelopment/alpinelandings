@@ -4,7 +4,7 @@ import CtaBand from "../components/CtaBand";
 import { site } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Konténer árak Zugló — m³ ár és díjak a XIV. kerületben | 9.875 Ft/m³-tól",
+  title: "Konténer árak Zugló — m³ ár és díjak a 14. kerületben | 9.875 Ft/m³-tól",
   description:
     "Konténer rendelés árak Zuglóban: 9.875 Ft/m³-tól (nettó, 8 m³-es vegyes konténer). Kiszállítás, elszállítás és lerakási díj együtt, rejtett költség nélkül. Személyes hulladékleadás 12.700 Ft. ☎ +36 21 3355 222",
   alternates: { canonical: "/arak" },

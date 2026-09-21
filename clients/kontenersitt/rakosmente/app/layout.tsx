@@ -25,15 +25,15 @@ const body = Libre_Franklin({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kontenerrendelesrakosmente.hu"),
   title:
-    "Konténer rendelés Rákosmente — sittszállítás és lomtalanítás a XVII. kerületben",
+    "Konténer rendelés Rákosmente, 17. kerület — sittszállítás és lomtalanítás",
   description:
-    "Konténer rendelés Rákosmentén gyors kiszállítással: sitt, lom és zöldhulladék elszállítása a XVII. kerület minden városrészébe — Rákoskeresztúr, Rákoscsaba, Rákoshegy, Rákosliget. 9.375 Ft/m³-tól. ☎ +36 21 3355 211",
+    "Konténer rendelés Rákosmentén gyors kiszállítással: sitt, lom és zöldhulladék elszállítása a 17. kerület minden városrészébe — Rákoskeresztúr, Rákoscsaba, Rákoshegy, Rákosliget. 9.375 Ft/m³-tól. ☎ +36 21 3355 211",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "hu_HU",
     url: "https://kontenerrendelesrakosmente.hu/",
-    title: "Konténer rendelés Rákosmente — sitt, lom, zöldhulladék a XVII. kerületben",
+    title: "Konténer rendelés Rákosmente, 17. kerület — sitt, lom, zöldhulladék",
     description:
       "Konténer kertes házhoz és társasházhoz Rákosmentén — sitt, lom és zöldhulladék elszállítása. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 211",
   },
@@ -44,7 +44,7 @@ const localBusinessLd = {
   "@type": "LocalBusiness",
   name: "Konténer Rendelés Rákosmente",
   description:
-    "Konténeres sittszállítás, lomtalanítás és zöldhulladék-elszállítás Rákosmentén (Budapest XVII. kerület). 4–8 m³ konténerek gyors kiszállítással Rákoskeresztúr, Rákoscsaba, Rákoscsaba-Újtelep, Rákoshegy, Rákoskert, Rákosliget és Madárdomb területén.",
+    "Konténeres sittszállítás, lomtalanítás és zöldhulladék-elszállítás Rákosmentén (Budapest XVII., azaz 17. kerület). 4–8 m³ konténerek gyors kiszállítással Rákoskeresztúr, Rákoscsaba, Rákoscsaba-Újtelep, Rákoshegy, Rákoskert, Rákosliget és Madárdomb területén.",
   url: "https://kontenerrendelesrakosmente.hu/",
   telephone: "+36213355211",
   email: "info@kontenersitt.hu",
@@ -56,7 +56,7 @@ const localBusinessLd = {
     addressCountry: "HU",
   },
   areaServed: [
-    { "@type": "Place", name: "Rákosmente (Budapest XVII. kerület)" },
+    { "@type": "Place", name: "Rákosmente (Budapest XVII. kerület)", alternateName: ["Budapest 17. kerület", "17. kerület"] },
     { "@type": "Place", name: "Rákoskeresztúr" },
     { "@type": "Place", name: "Rákoscsaba" },
     { "@type": "Place", name: "Rákoscsaba-Újtelep" },

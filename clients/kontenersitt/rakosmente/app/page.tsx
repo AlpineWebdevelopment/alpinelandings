@@ -125,7 +125,7 @@ export default function Home() {
               </h1>
               <p className="hero-lead">
                 Felújít, bont vagy rendet tesz a kertben? 4–8 m³-es
-                konténereinket kihozzuk a XVII. kerület bármelyik városrészébe —
+                konténereinket kihozzuk a 17. kerület bármelyik városrészébe —
                 Rákoskeresztúrtól Rákoscsabáig —, a telit pedig elszállítjuk és
                 szabályosan leadjuk.
               </p>

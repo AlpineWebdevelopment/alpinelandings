@@ -335,3 +335,10 @@ a[href^="tel:"]{white-space:nowrap}
 .review-photo{display:block;width:calc(100% + 48px);margin:-24px -24px 0;height:auto;border-bottom:2px solid var(--ink)}
 .review-card{overflow:hidden}
 .review-grid{align-items:start}
+
+/* Többoszlopos táblázat (pl. /sitt-leadas összevetés) mobilon: kisebb belső margó és
+   szűkebb fejléc, hogy 375 px-en se lógjon ki; asztali nézetben nem változik. */
+@media(max-width:480px){
+  .ptable th,.ptable td{padding:10px 9px;font-size:.86rem;overflow-wrap:anywhere}
+  .ptable thead th{letter-spacing:.02em;font-size:.72rem}
+}

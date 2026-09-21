@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CookieSettingsLink } from "./CookieConsent";
 import { site } from "../lib/site";
 import { PhoneIcon } from "./PhoneIcon";
-import { navLinks } from "./SiteHeader";
+import { navLinks, guideLinks } from "./SiteHeader";
 
 export default function SiteFooter() {
   const tel = `tel:${site.phoneHref}`;
@@ -17,7 +17,7 @@ export default function SiteFooter() {
               </span>
               <p>
                 Konténeres sittszállítás, lomtalanítás és hulladékszállítás
-                Budapest XIII. kerületében — Újlipótvárostól a Marina-partig.
+                Budapest 13. kerületében — Újlipótvárostól a Marina-partig.
               </p>
             </div>
             <div className="foot-col">
@@ -29,6 +29,11 @@ export default function SiteFooter() {
                     : l.label === "Engedély"
                       ? "Közterület-engedély"
                       : l.label}
+                </Link>
+              ))}
+              {guideLinks.map((l) => (
+                <Link key={l.href} href={l.href}>
+                  {l.label}
                 </Link>
               ))}
             </div>

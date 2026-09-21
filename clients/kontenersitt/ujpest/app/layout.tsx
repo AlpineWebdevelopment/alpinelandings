@@ -17,15 +17,15 @@ const body = Rubik({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kontenerrendelesujpest.hu"),
-  title: "Konténer rendelés Újpest — sittszállítás a IV. kerületben | 10.125 Ft/m³-tól",
+  title: "Konténer rendelés Újpest, 4. kerület — sittszállítás | 10.125 Ft/m³-tól",
   description:
-    "Konténer rendelés Újpesten gyors kiszállítással: sitt, lom és vegyes hulladék elszállítása a IV. kerület minden részébe — Újpest-központ, Káposztásmegyer, Megyer, Istvántelek. 10.125 Ft/m³-tól. ☎ +36 21 3355 255",
+    "Konténer rendelés Újpesten gyors kiszállítással: sitt, lom és vegyes hulladék elszállítása a 4. kerület minden részébe — Újpest-központ, Káposztásmegyer, Megyer, Istvántelek. 10.125 Ft/m³-tól. ☎ +36 21 3355 255",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "hu_HU",
     url: "https://kontenerrendelesujpest.hu/",
-    title: "Konténer rendelés Újpest — sitt, lom, vegyes hulladék a IV. kerületben",
+    title: "Konténer rendelés Újpest, 4. kerület — sitt, lom, vegyes hulladék",
     description:
       "Konténer panellakáshoz, kertes házhoz és felújításhoz Újpesten. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 255",
   },
@@ -36,7 +36,7 @@ const localBusinessLd = {
   "@type": "LocalBusiness",
   name: "Konténer Rendelés Újpest",
   description:
-    "Konténeres sittszállítás, lomtalanítás és hulladékszállítás Újpesten (Budapest IV. kerület). 4–8 m³ konténerek gyors kiszállítással Újpest-központ, Káposztásmegyer, Megyer, Istvántelek, Népsziget és Városkapu területén.",
+    "Konténeres sittszállítás, lomtalanítás és hulladékszállítás Újpesten (Budapest IV., azaz 4. kerület). 4–8 m³ konténerek gyors kiszállítással Újpest-központ, Káposztásmegyer, Megyer, Istvántelek, Népsziget és Városkapu területén.",
   url: "https://kontenerrendelesujpest.hu/",
   telephone: "+36213355255",
   email: "info@kontenersitt.hu",
@@ -48,7 +48,7 @@ const localBusinessLd = {
     addressCountry: "HU",
   },
   areaServed: [
-    { "@type": "Place", name: "Újpest (Budapest IV. kerület)" },
+    { "@type": "Place", name: "Újpest (Budapest IV. kerület)", alternateName: ["Budapest 4. kerület", "4. kerület"] },
     { "@type": "Place", name: "Újpest-központ" },
     { "@type": "Place", name: "Káposztásmegyer" },
     { "@type": "Place", name: "Megyer" },

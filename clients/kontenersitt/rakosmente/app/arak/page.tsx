@@ -4,7 +4,7 @@ import CtaBand from "../components/CtaBand";
 import { site } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Konténer árak Rákosmente — díjak és m³ ár a XVII. kerületben",
+  title: "Konténer árak Rákosmente — díjak és m³ ár a 17. kerületben",
   description:
     "Konténer rendelés árak Rákosmentén: átlátható, m³-alapú árazás a kiszállítással, elszállítással és lerakási díjjal együtt, rejtett költség nélkül. Személyes hulladékleadás 12.700 Ft. ☎ +36 21 3355 211",
   alternates: { canonical: "/arak" },
@@ -73,7 +73,9 @@ export default function ArakPage() {
           <p>
             Kisebb mennyiséget személyesen is leadhat a telephelyünkön:{" "}
             <b>{site.address}</b> A telephelyi hulladékátvétel ára{" "}
-            <b>{site.droppOffPrice}</b>.
+            <b>{site.droppOffPrice}</b>. Részletek: mit hozhat, és mikor éri
+            meg jobban a konténer — lásd a{" "}
+            <Link href="/sitt-leadas">sitt leadás</Link> oldalt.
           </p>
           <table className="ptable">
             <thead>

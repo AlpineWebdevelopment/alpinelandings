@@ -3,9 +3,9 @@ import Link from "next/link";
 import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Sittszállítás Újbuda — építési törmelék elszállítása a XI. kerületben",
+  title: "Sittszállítás Újbuda — építési törmelék elszállítása a 11. kerületben",
   description:
-    "Sittszállítás Újbudán: tégla, beton, csempe, vakolat elszállítása lakásfelújításból, panelből és budai villából. 4–8 m³-es konténer, gyors kiszállítás a XI. kerületbe. ☎ +36 21 3355 244",
+    "Sittszállítás Újbudán: tégla, beton, csempe, vakolat elszállítása lakásfelújításból, panelből és budai villából. 4–8 m³-es konténer, gyors kiszállítás a 11. kerületbe. ☎ +36 21 3355 244",
   alternates: { canonical: "/sittszallitas" },
 };
 
@@ -66,7 +66,10 @@ export default function SittPage() {
             konyhafelújításhoz a <b>4 m³</b>, teljes lakásfelújításhoz a{" "}
             <b>6 m³</b>, bontáshoz a <b>8 m³</b> a jellemző. Ha bizonytalan,
             telefonon segítünk választani. Az árakról bővebben az{" "}
-            <Link href="/arak">Árak</Link> oldalon.
+            <Link href="/arak">Árak</Link> oldalon, egy teljes felújítás
+            hulladékáról pedig a{" "}
+            <Link href="/lakasfelujitas-hulladek">lakásfelújítás hulladéka</Link>{" "}
+            útmutatóban írunk részletesen.
           </p>
 
           <h2>Hogyan zajlik?</h2>

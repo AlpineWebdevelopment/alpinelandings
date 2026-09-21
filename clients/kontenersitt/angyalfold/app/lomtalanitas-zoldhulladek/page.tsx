@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Lomtalanítás és zöldhulladék Angyalföld — lom elszállítás a XIII. kerületben",
+    "Lomtalanítás és zöldhulladék Angyalföld — lom elszállítás a 13. kerületben",
   description:
-    "Lomtalanítás és zöldhulladék elszállítás Angyalföldön: bútor, lom, gally és nyesedék elvitele konténerrel a XIII. kerület panelházaiból, társasházaiból és lakóparkjaiból. ☎ +36 21 3355 233",
+    "Lomtalanítás és zöldhulladék elszállítás Angyalföldön: bútor, lom, gally és nyesedék elvitele konténerrel a 13. kerület panelházaiból, társasházaiból és lakóparkjaiból. ☎ +36 21 3355 233",
   alternates: { canonical: "/lomtalanitas-zoldhulladek" },
 };
 

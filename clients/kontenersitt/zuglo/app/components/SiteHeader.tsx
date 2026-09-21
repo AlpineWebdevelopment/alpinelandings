@@ -9,6 +9,12 @@ export const navLinks = [
   { href: "/kozterulet-engedely", label: "Engedély" },
 ];
 
+/** Havi SEO-útmutatók — csak a láblécben jelennek meg, a fejléc menüt nem terhelik. */
+export const guideLinks = [
+  { href: "/mekkora-kontener-kell", label: "Mekkora konténer kell?" },
+  { href: "/zoldhulladek-elszallitas", label: "Zöldhulladék-elszállítás" },
+];
+
 export default function SiteHeader() {
   const tel = `tel:${site.phoneHref}`;
   return (

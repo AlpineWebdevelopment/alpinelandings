@@ -278,6 +278,67 @@ Minden projektnél (5 db, ugyanaz a repo):
       riport, (b) belső lista, hogy melyik kulcsszavakra érdemes a következő 5 aloldalt írni
       (a GSC-ben a 2–3. oldalon lévő kifejezések mozdulnak leggyorsabban). Dashboard csak 3+
       SEO-ügyfélnél, vagy ha ügyfélnek adnánk oda (megtartási érv a havi díjhoz).
+- [x] ~~**Szeptemberi havi aloldalak (2026-09)**~~ — **ÉLESBEN (2026-09-15)**, a Tamásnak
+      elküldött szeptemberi terv szerint:
+
+      | Oldal | Aloldal | Célzott keresés |
+      |---|---|---|
+      | Zugló | `/mekkora-kontener-kell` | mekkora konténer kell, konténer méretek |
+      | Rákosmente | `/soder-homok-termofold` | sóder / homok / termőföld szállítás |
+      | Angyalföld | `/surgos-kontener-rendeles` | sürgős, aznapi, szombati konténer |
+      | Újbuda | `/lakasfelujitas-hulladek` | lakásfelújítás hulladék, törmelék elszállítás |
+      | Újpest | `/mi-mehet-a-kontenerbe` | mi mehet a konténerbe, hulladéktípusok |
+
+      Bekötés mindegyiknél: sitemap (priority 0.7), lábléc-link a `SiteHeader.tsx`
+      `guideLinks` tömbjéből (**a fejléc menübe szándékosan NEM** — 768 px-en a menü
+      szélessége már okozott kilógást), belső link a saját `/sittszallitas` oldalról,
+      Zuglón és Újpesten a főoldalról is. **Következő hónapokban:** az új aloldalt a
+      `guideLinks` tömbhöz kell hozzáfűzni, a lábléc automatikusan megjeleníti.
+      Tartalmi korlátok, amikre figyeltünk: csak 4/6/8 m³; vasárnap zárva, ezért
+      „szombati", nem „hétvégi"; sóder/homok/termőföldnél **nincs kiírt ár vagy
+      mennyiség** (nincs rá adatunk — Tamással érdemes egyeztetni a részleteket).
+      ~~**TEENDŐ (Simon):** Search Console → „Indexelés kérése" az új címekre.~~
+      **2026-09-19: kérve** mind az 5 főoldalra és az összes szeptemberi + előrehozott
+      októberi aloldalra, kivéve Újbudán a főoldalt és a `/lakasfelujitas-hulladek`-et
+      (napi kvóta elfogyott) — **ezt a kettőt is pótolta, 2026-09-21: minden cím kérve.** A webhelytérképeket nem kellett
+      újraküldeni, a Google magától beolvassa (Angyalföld: 2026-09-18, 7 oldal).
+      GA4 kulcsesemény-jelölést (`phone_click`, `generate_lead`) szándékosan kihagytuk —
+      az események jelölés nélkül is rögzülnek; Google Ads indulásakor kell bekapcsolni.
+- [x] ~~**Októberi Zugló-aloldal — ELŐRE HOZVA (2026-09-19)**~~: `/zoldhulladek-elszallitas`.
+      Ez a **Zugló októberi** havi aloldala (szerződés 2.3: oldalanként 1/hó), csak két héttel
+      korábban élesítve a szezon miatt (lombhullás, őszi metszés szept–nov). **Októberben
+      Zuglóra már NEM kell újabb aloldal**, a másik négy oldalra igen. A havi riportban
+      októberi teljesítésként szerepeltetni.
+      Ok: a Google automatikus kiegészítése kifejezetten felajánlja a „zöldhulladék elszállítás
+      zugló" keresést, és Zugló a leggyengébb oldal. **Kannibalizáció ellen:** a régi
+      `/lomtalanitas-zoldhulladek` oldal címe/H1-e a lomtalanításra lett hangolva (az URL maradt,
+      a fejléc-menü linkje változatlan), a zöldhulladékos rész onnan az új oldalra linkel.
+      Kockázatmentes volt, mert a régi oldalt a Google még nem indexelte.
+- [x] ~~**Októberi Rákosmente-aloldal — ELŐRE HOZVA (2026-09-19)**~~: `/sitt-leadas`
+      (személyes hulladékleadás a Vidor utcai telephelyen). Ez a **Rákosmente októberi**
+      havi aloldala — **októberben Rákosmentére már NEM kell újabb**. Ok: a kapcsolódó
+      keresésekben „sitt leadás árak", „zsákos sitt leadás", „sitt leadás ingyen budapest";
+      a telephely a 17. kerületben van. Belső link az /arak oldalról + lábléc.
+      **TISZTÁZANDÓ Tamással:** (1) mire vonatkozik a 12.700 Ft (alkalom? m³? tonna?) —
+      az oldal ezért nem részletezi, telefonos egyeztetésre kér; (2) a telephely átvételi
+      ideje — a site.ts nyitvatartása (7–20) a rendelésfelvételé, a Google-profilok szerint
+      a Vidor utcai telephely 15:00-kor zár, ezért az oldal NEM ír ki átvételi időt.
+      Ha megvan a válasz, érdemes kiírni: az ár egysége és az átvételi idő a két
+      legfontosabb információ egy ilyen oldalon.
+- [x] ~~**Októberi Újpest-aloldal — ELŐRE HOZVA (2026-09-19)**~~: `/lakossagi-lomtalanitas`
+      („Lemaradt az újpesti lomtalanításról?"). Ez az **Újpest októberi** havi aloldala —
+      **októberben Újpestre már NEM kell újabb**. Más keresési szándékot céloz, mint a
+      `/lomtalanitas-zoldhulladek` (az a konténeres szolgáltatás, és a fő kulcsszóra ez az
+      egyetlen újpesti oldal az 1. oldalon — ezért ahhoz csak egy link került, más nem).
+      Célzott keresések: „lomtalanítás újpest 2026", „mikor lesz lomtalanítás újpesten"
+      (autocomplete). **ÉVENTE FRISSÍTENDŐ:** a 2026-os időpont (július 19. – augusztus 2.,
+      forrás: MOHU + Újpest Önkormányzata, 2026-09-19-i állapot) a címben, a leírásban és az
+      első szakaszban szerepel; a 2027-es kihirdetés után át kell írni.
+      **Októberre így már csak Angyalföld és Újbuda aloldala van hátra.**
+- [x] ~~**Arab számos kerületnév (2026-09-19)**~~: „konténer rendelés 17. kerület" keresésre nem
+      jöttünk fel, mert az oldalakon csak „XVII. kerület" állt (0× arab alak). Most főoldali cím,
+      meta-leírás, aloldali címek/leírások, hero, lábléc: arab alak; JSON-LD `alternateName`
+      mindkettővel; a szövegtörzsben a római marad. Főoldalanként 18× arab alak.
 - [ ] **Havi szolgáltatás — indul 2026. SZEPTEMBER 1-jén** (szerződés 2.3, 4.2): minden hónapban
       oldalanként +1 új, kulcsszóra célzott aloldal + havi riport (pozíciók, kattintások,
       hívások, űrlapok) + teljesítésigazolás. **75.000 Ft/hó** (15.000 Ft/oldal).

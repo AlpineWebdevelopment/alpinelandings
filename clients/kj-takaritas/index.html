@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KJ Takarítás — Társasház, lakás és irodatakarítás Budapesten</title>
+<meta name="description" content="KJ Takarítás — társasházi, lakás-, iroda- és intézménytakarítás Budapesten és Pest megyében. Ingyenes helyszíni szemle, átlátható árajánlat. Hívjon: +36 30 891 0143">
+<meta name="theme-color" content="#F4FAFC">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2306131A'/><text x='15' y='22' font-family='Arial,sans-serif' font-weight='bold' font-size='15' fill='%23FFFFFF' text-anchor='middle'>KJ</text><circle cx='25' cy='8' r='4' fill='%2300C2E8'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* felületek — világos téma */
+  --ink:        #F4FAFC;   /* oldal háttér */
+  --ink-2:      #FFFFFF;
+  --ink-3:      #E7F3F8;
+  --card:       #FFFFFF;
+  --card-2:     #F3FAFD;
+  --line:       #E0EBF1;
+  --line-2:     #C9DDE7;
+  /* szöveg */
+  --w:          #0A2532;
+  --w-2:        #4C6B7A;
+  --w-3:        #86A0AC;
+  /* márka */
+  --cy:         #0093B8;
+  --cy-2:       #00BEE4;
+  --cy-deep:    #016E8E;
+  --cy-dim:     rgba(0,190,228,0.10);
+  --cy-bdr:     rgba(0,147,184,0.28);
+  --gold:       #E9A21B;
+  --radius:     20px;
+  --shadow:     0 26px 60px -30px rgba(9,45,60,0.35);
+  --shadow-s:   0 2px 10px rgba(9,45,60,0.05);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--w);
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  font-size:16.5px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,textarea,select{font:inherit;color:inherit}
+::selection{background:var(--cy-2);color:#04222C}
+
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.disp{font-family:'Outfit',sans-serif;font-weight:700;line-height:1.03;letter-spacing:-0.025em}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ═══ KICKER ═══ */
+.kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'Outfit',sans-serif;font-weight:700;
+  font-size:12.5px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--cy);
+}
+.kicker::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--cy))}
+
+/* ═══ BUTTONS ═══ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 26px;border-radius:999px;border:1px solid transparent;
+  font-family:'Outfit',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:0.01em;
+  cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,border-color .25s,color .25s;
+  white-space:nowrap;
+}
+.btn .ic{width:18px;height:18px}
+.btn-p{background:linear-gradient(135deg,#00B3DA,var(--cy) 55%,var(--cy-deep));color:#fff;box-shadow:0 12px 26px -12px rgba(0,147,184,.75)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 20px 38px -14px rgba(0,147,184,.85)}
+.btn-g{background:#fff;border-color:var(--line-2);color:var(--w);box-shadow:var(--shadow-s)}
+.btn-g:hover{transform:translateY(-2px);border-color:var(--cy-bdr);background:var(--card-2);color:var(--cy-deep)}
+.btn-lg{padding:18px 32px;font-size:16.5px}
+
+/* ═══ TOPBAR ═══ */
+.topbar{background:#FFFFFF;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--w-2)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+.topbar .grp{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.topbar span{display:inline-flex;align-items:center;gap:7px}
+.topbar .ic{width:14px;height:14px;color:var(--cy)}
+.pip{width:7px;height:7px;border-radius:50%;background:#18B97A;box-shadow:0 0 0 0 rgba(24,185,122,.6);animation:pip 2.4s infinite}
+@keyframes pip{70%{box-shadow:0 0 0 8px rgba(24,185,122,0)}100%{box-shadow:0 0 0 0 rgba(24,185,122,0)}}
+.topbar a.tel{color:var(--w);font-weight:700}
+.topbar a.tel:hover{color:var(--cy-deep)}
+
+/* ═══ NAV ═══ */
+nav{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.82);backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--line);transition:box-shadow .3s,background .3s}
+nav.stuck{box-shadow:0 10px 30px -22px rgba(9,45,60,.55);background:rgba(255,255,255,.95)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:13px;padding-bottom:13px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:42px;height:42px;object-fit:contain}
+.brand b{font-family:'Outfit',sans-serif;font-weight:700;font-size:18px;letter-spacing:.01em;display:block;line-height:1.15}
+.brand small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--w-3);font-weight:600}
+.nav-links{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}
+.nav-links a{color:var(--w-2);position:relative;padding:4px 0;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--cy);transition:width .28s cubic-bezier(.2,.8,.2,1)}
+.nav-links a:hover{color:var(--w)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line-2);background:#fff;align-items:center;justify-content:center;color:var(--w)}
+.burger .ic{width:20px;height:20px}
+.mobile-menu{display:none;flex-direction:column;gap:2px;padding:10px 24px 22px;border-bottom:1px solid var(--line);background:#fff}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:13px 4px;border-bottom:1px solid var(--line);color:var(--w-2);font-weight:500}
+.mobile-menu .btn{margin-top:14px}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;overflow:hidden;padding:78px 0 90px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#EFF8FC 55%,var(--ink) 100%)}
+.hero::before{
+  content:"";position:absolute;inset:-30% -20% auto -20%;height:820px;
+  background:radial-gradient(52% 62% at 20% 22%,rgba(0,190,228,.18),transparent 66%),
+             radial-gradient(48% 58% at 84% 10%,rgba(0,147,184,.14),transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(0,90,120,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,90,120,.07) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(74% 62% at 50% 26%,#000,transparent 76%);
+  mask-image:radial-gradient(74% 62% at 50% 26%,#000,transparent 76%);
+  opacity:.8;
+}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;gap:56px;align-items:center}
+.h1{font-size:clamp(40px,5.6vw,72px);margin:20px 0 0}
+.h1 .gl{
+  background:linear-gradient(105deg,var(--cy-2),var(--cy) 45%,var(--cy-deep) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{margin-top:22px;font-size:18.5px;color:var(--w-2);max-width:560px}
+.hero-sub b{color:var(--w);font-weight:600}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-mini{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;color:var(--w-2)}
+.hero-mini span{display:inline-flex;align-items:center;gap:8px}
+.hero-mini .ic{width:17px;height:17px;color:var(--cy)}
+
+/* ── Üvegtisztítás animáció ── */
+.glass-wrap{position:relative}
+.glass{
+  position:relative;border-radius:26px;overflow:hidden;
+  border:1px solid rgba(9,45,60,.10);
+  box-shadow:var(--shadow),0 2px 0 rgba(255,255,255,.9);
+  aspect-ratio:4/3.15;background:#04222F;
+}
+.glass svg.view{position:absolute;inset:0;width:100%;height:100%;display:block}
+.grime{
+  position:absolute;inset:0;
+  backdrop-filter:blur(7px) saturate(.35) brightness(.72);
+  -webkit-backdrop-filter:blur(7px) saturate(.35) brightness(.72);
+  background:
+    radial-gradient(38% 30% at 22% 30%,rgba(140,150,130,.30),transparent 70%),
+    radial-gradient(30% 26% at 74% 62%,rgba(120,135,120,.26),transparent 72%),
+    radial-gradient(20% 18% at 52% 18%,rgba(150,150,140,.22),transparent 70%),
+    linear-gradient(180deg,rgba(90,105,100,.30),rgba(60,75,80,.34));
+  -webkit-mask-image:linear-gradient(102deg,transparent 0 38%,#000 54%,#000 100%);
+  mask-image:linear-gradient(102deg,transparent 0 38%,#000 54%,#000 100%);
+  -webkit-mask-size:260% 100%;mask-size:260% 100%;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  animation:wipe 12s cubic-bezier(.55,.05,.3,1) infinite;
+  will-change:mask-position,opacity;
+}
+@keyframes wipe{
+  0%,10%   {-webkit-mask-position:100% 0;mask-position:100% 0;opacity:1}
+  32%,74%  {-webkit-mask-position:-2% 0;mask-position:-2% 0;opacity:1}
+  78%      {-webkit-mask-position:-2% 0;mask-position:-2% 0;opacity:0}
+  79%      {-webkit-mask-position:100% 0;mask-position:100% 0;opacity:0}
+  100%     {-webkit-mask-position:100% 0;mask-position:100% 0;opacity:1}
+}
+.squeegee{
+  position:absolute;top:-14%;left:-8%;width:16px;height:128%;
+  transform:rotate(6deg);transform-origin:center;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.9),rgba(255,255,255,.05));
+  box-shadow:0 0 26px 10px rgba(140,240,255,.5),0 0 70px 26px rgba(0,194,232,.28);
+  filter:blur(.4px);opacity:0;
+  animation:squee 12s cubic-bezier(.55,.05,.3,1) infinite;
+  will-change:left,opacity;
+}
+/* a lehúzó a kártya teljes szélességén átfut: a left % a .glass szélességéhez igazodik */
+@keyframes squee{
+  0%,10%{left:-8%;opacity:0}
+  13%{opacity:.95}
+  30%{opacity:.95}
+  32%{left:104%;opacity:.9}
+  36%,100%{left:104%;opacity:0}
+}
+.glass .frame{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(118deg,rgba(255,255,255,.18),transparent 34%,transparent 66%,rgba(255,255,255,.08));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);border-radius:26px}
+.glass .mullion{position:absolute;background:#F4FAFC;box-shadow:0 0 14px rgba(0,0,0,.28)}
+.glass .mullion.v{top:0;bottom:0;left:calc(50% - 4px);width:8px}
+.glass .mullion.h{left:0;right:0;top:calc(56% - 4px);height:8px}
+
+.glass-badge{
+  position:absolute;left:-14px;bottom:-22px;z-index:3;
+  display:flex;align-items:center;gap:13px;
+  padding:14px 20px 14px 15px;border-radius:18px;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.glass-badge img{width:44px;height:44px;object-fit:contain}
+.glass-badge .t{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;line-height:1.25}
+.glass-badge .s{font-size:12.5px;color:var(--w-3)}
+.glass-tag{
+  position:absolute;right:-10px;top:24px;z-index:3;
+  padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;
+  background:#fff;border:1px solid var(--cy-bdr);color:var(--cy-deep);
+  box-shadow:var(--shadow-s);
+}
+
+/* ═══ MARQUEE ═══ */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;overflow:hidden;padding:18px 0}
+.marq-track{display:flex;gap:52px;width:max-content;animation:slide 34s linear infinite}
+.marq:hover .marq-track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.marq-item{display:inline-flex;align-items:center;gap:11px;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;color:var(--w-2);white-space:nowrap}
+.marq-item .ic{width:16px;height:16px;color:var(--cy)}
+
+/* ═══ SECTION ═══ */
+section{position:relative}
+.sec{padding:96px 0}
+.sec-head{max-width:720px;margin-bottom:52px}
+.sec-head.mid{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(30px,3.9vw,48px);margin:16px 0 0}
+.sec-head p{margin-top:18px;color:var(--w-2);font-size:17.5px}
+.alt{background:linear-gradient(180deg,#FFFFFF,#EAF5FA 50%,#FFFFFF)}
+
+/* ═══ SZOLGÁLTATÁSOK ═══ */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc{
+  position:relative;padding:26px 22px 24px;border-radius:var(--radius);
+  background:var(--card);border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow-s);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;
+}
+.svc::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(70% 60% at 30% 0%,rgba(0,190,228,.10),transparent 72%);
+}
+.svc:hover{transform:translateY(-6px);border-color:var(--cy-bdr);box-shadow:0 22px 44px -26px rgba(9,45,60,.45)}
+.svc:hover::after{opacity:1}
+.svc-ic{
+  width:52px;height:52px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px;
+  background:linear-gradient(140deg,rgba(0,190,228,.16),rgba(0,190,228,.05));
+  border:1px solid var(--cy-bdr);color:var(--cy);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.svc:hover .svc-ic{transform:scale(1.07) rotate(-4deg)}
+.svc-ic .ic{width:25px;height:25px}
+.svc h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:600;letter-spacing:-.01em;position:relative;z-index:1}
+.svc p{margin-top:9px;font-size:14.8px;color:var(--w-2);line-height:1.6;position:relative;z-index:1}
+.svc.wide{grid-column:span 2;display:flex;gap:24px;align-items:center;
+  background:linear-gradient(120deg,rgba(0,190,228,.10),#fff);border-color:var(--cy-bdr)}
+.svc.wide .svc-ic{margin-bottom:0;width:64px;height:64px;border-radius:19px}
+.svc.wide .svc-ic .ic{width:31px;height:31px}
+
+/* ── kártya-akcentusok: minden szolgáltatás saját, halvány színt kap ── */
+.svc-grid .svc{--a:#0093B8;--a-bg:rgba(0,147,184,.10);--a-bd:rgba(0,147,184,.28)}
+.svc-grid .svc:nth-child(2){--a:#12946A;--a-bg:rgba(18,148,106,.10);--a-bd:rgba(18,148,106,.28)}
+.svc-grid .svc:nth-child(3){--a:#2E6AD1;--a-bg:rgba(46,106,209,.10);--a-bd:rgba(46,106,209,.26)}
+.svc-grid .svc:nth-child(4){--a:#6A54CE;--a-bg:rgba(106,84,206,.10);--a-bd:rgba(106,84,206,.26)}
+.svc-grid .svc:nth-child(5){--a:#0E97A0;--a-bg:rgba(14,151,160,.11);--a-bd:rgba(14,151,160,.28)}
+.svc-grid .svc:nth-child(6){--a:#C8506B;--a-bg:rgba(200,80,107,.10);--a-bd:rgba(200,80,107,.26)}
+.svc-grid .svc:nth-child(7){--a:#C08010;--a-bg:rgba(192,128,16,.12);--a-bd:rgba(192,128,16,.30)}
+.svc-grid .svc:nth-child(8){--a:#8B47B8;--a-bg:rgba(139,71,184,.10);--a-bd:rgba(139,71,184,.26)}
+.svc::before{
+  content:"";position:absolute;top:0;left:22px;right:22px;height:3px;
+  background:var(--a,var(--cy));border-radius:0 0 4px 4px;opacity:.92;
+  transition:left .35s cubic-bezier(.2,.8,.2,1),right .35s cubic-bezier(.2,.8,.2,1);
+}
+.svc:hover::before{left:0;right:0}
+.svc-grid .svc-ic{background:var(--a-bg);border-color:var(--a-bd);color:var(--a)}
+.svc-grid .svc::after{background:radial-gradient(72% 62% at 30% 0%,var(--a-bg),transparent 74%)}
+.svc-grid .svc:hover{border-color:var(--a-bd)}
+
+/* ═══ MIÉRT MINKET ═══ */
+.why{display:grid;grid-template-columns:.86fr 1.14fr;gap:60px;align-items:start}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--line);box-shadow:var(--shadow-s)}
+.why-item{background:#fff;padding:26px 24px;transition:background .3s}
+.why-item:hover{background:var(--a-bg,var(--card-2))}
+.why-list .why-item{--a:#0093B8;--a-bg:rgba(0,147,184,.06)}
+.why-list .why-item:nth-child(2){--a:#12946A;--a-bg:rgba(18,148,106,.06)}
+.why-list .why-item:nth-child(3){--a:#2E6AD1;--a-bg:rgba(46,106,209,.06)}
+.why-list .why-item:nth-child(4){--a:#6A54CE;--a-bg:rgba(106,84,206,.06)}
+.why-list .why-item:nth-child(5){--a:#0E97A0;--a-bg:rgba(14,151,160,.07)}
+.why-list .why-item:nth-child(6){--a:#C8506B;--a-bg:rgba(200,80,107,.06)}
+.why-list .why-item:nth-child(7){--a:#C08010;--a-bg:rgba(192,128,16,.08)}
+.why-list .why-item:nth-child(8){--a:#8B47B8;--a-bg:rgba(139,71,184,.06)}
+.why-item .n{font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:var(--a,var(--cy));letter-spacing:.1em;display:flex;align-items:center;gap:9px}
+.why-item .n::before{content:"";width:9px;height:9px;border-radius:3px;background:var(--a,var(--cy));flex:none}
+.why-item h4{font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:600;margin-top:10px}
+.why-item p{font-size:14.5px;color:var(--w-2);margin-top:7px;line-height:1.58}
+.quote{
+  border-radius:var(--radius);padding:34px 32px;
+  background:linear-gradient(150deg,rgba(0,190,228,.12),#fff 70%);
+  border:1px solid var(--cy-bdr);position:relative;box-shadow:var(--shadow-s);
+}
+.quote .mark{font-family:'Outfit',sans-serif;font-size:76px;line-height:.7;color:var(--cy);opacity:.4}
+.quote p{margin-top:14px;font-size:18px;line-height:1.62;color:var(--w)}
+.quote .who{display:flex;align-items:center;gap:13px;margin-top:26px;padding-top:22px;border-top:1px solid var(--cy-bdr)}
+.quote .who img{width:46px;height:46px;object-fit:contain}
+.quote .who b{font-family:'Outfit',sans-serif;font-size:15.5px;display:block}
+.quote .who span{font-size:13px;color:var(--w-3)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.stat{padding:20px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-s)}
+.stat b{font-family:'Outfit',sans-serif;font-size:30px;font-weight:700;display:block;line-height:1;
+  background:linear-gradient(120deg,var(--cy-2),var(--cy-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:13.5px;color:var(--w-2);display:block;margin-top:8px}
+
+/* ═══ FOLYAMAT ═══ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+.step{padding:32px 26px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);position:relative;box-shadow:var(--shadow-s)}
+.step .num{
+  font-family:'Outfit',sans-serif;font-weight:700;font-size:52px;line-height:1;
+  color:transparent;-webkit-text-stroke:1.5px rgba(0,147,184,.55);
+}
+.step h4{font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;margin-top:16px}
+.step p{color:var(--w-2);font-size:15px;margin-top:9px}
+.step .dash{position:absolute;top:44px;right:-14px;color:var(--cy);opacity:.6}
+.step .dash .ic{width:22px;height:22px}
+
+/* ═══ REFERENCIÁK ═══ */
+.refs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ref{
+  padding:30px 28px;border-radius:var(--radius);border:1px solid var(--line);background:#fff;
+  display:flex;gap:20px;align-items:flex-start;box-shadow:var(--shadow-s);
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+}
+.ref:hover{border-color:rgba(190,146,44,.38);transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(96,70,10,.34)}
+.ref-ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;flex:none;
+  background:linear-gradient(145deg,rgba(238,201,110,.42),rgba(190,146,44,.12));
+  border:1px solid rgba(190,146,44,.40);color:#8F6A12;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 2px 8px rgba(150,110,20,.14)}
+.ref:hover .ref-ic{background:linear-gradient(145deg,rgba(240,206,120,.60),rgba(190,146,44,.18));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 4px 14px rgba(150,110,20,.22)}
+.ref-ic .ic{width:22px;height:22px}
+.ref h4{font-family:'Outfit',sans-serif;font-size:18.5px;font-weight:600;letter-spacing:-.01em}
+.ref p{font-size:14.6px;color:var(--w-2);margin-top:7px}
+.ref .tag{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--cy-deep);padding:5px 11px;border-radius:999px;background:var(--cy-dim);border:1px solid var(--cy-bdr)}
+
+/* ═══ ÁRAK ═══ */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.factors{display:grid;gap:12px}
+.factor{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:16px;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-s);transition:border-color .3s,transform .3s}
+.factor:hover{border-color:var(--cy-bdr);transform:translateX(4px)}
+.factor .ic{width:21px;height:21px;color:var(--cy);margin-top:3px}
+.factor b{font-family:'Outfit',sans-serif;font-size:16.5px;font-weight:600;display:block}
+.factor span{font-size:14.4px;color:var(--w-2)}
+.price-cta{border-radius:var(--radius);padding:36px 34px;border:1px solid var(--cy-bdr);
+  background:linear-gradient(150deg,rgba(0,190,228,.14),#fff 65%);box-shadow:var(--shadow)}
+.price-cta h3{font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em}
+.price-cta p{color:var(--w-2);margin-top:14px;font-size:15.5px}
+.price-cta ul{list-style:none;margin:22px 0 26px;display:grid;gap:11px}
+.price-cta li{display:flex;gap:11px;align-items:flex-start;font-size:15px}
+.price-cta li .ic{width:19px;height:19px;color:var(--cy);margin-top:3px}
+
+/* ═══ KERT ═══ */
+.garden{
+  border-radius:26px;padding:52px 48px;position:relative;overflow:hidden;
+  border:1px solid rgba(28,150,100,.22);
+  background:linear-gradient(130deg,rgba(30,175,115,.13),rgba(0,190,228,.07) 55%,#FFFFFF);
+  box-shadow:var(--shadow-s);
+}
+.garden::before{content:"";position:absolute;right:-60px;top:-70px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(30,175,115,.16),transparent 68%)}
+.garden .in{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.garden h3{font-family:'Outfit',sans-serif;font-size:clamp(26px,3.2vw,38px);font-weight:700;letter-spacing:-.025em;margin-top:16px}
+.garden p{color:var(--w-2);margin-top:16px;font-size:16.5px}
+.garden .kicker{color:#158A5C}
+.garden .kicker::before{background:linear-gradient(90deg,transparent,#158A5C)}
+.garden .svc{--a:#12946A}
+.gtags{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.gtag{padding:8px 15px;border-radius:999px;font-size:13.5px;font-weight:500;
+  background:#fff;border:1px solid rgba(28,150,100,.24);color:var(--w-2)}
+
+/* ═══ TERÜLET ═══ */
+.area{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.districts{display:flex;flex-wrap:wrap;gap:8px}
+.districts span{padding:9px 14px;border-radius:11px;font-size:14px;font-weight:600;
+  background:#fff;border:1px solid var(--line);color:var(--w-2);box-shadow:var(--shadow-s);transition:.25s}
+.districts span:hover{border-color:var(--cy-bdr);color:var(--cy-deep);background:var(--cy-dim)}
+
+/* ═══ GYIK ═══ */
+.faq{max-width:840px;margin:0 auto;display:grid;gap:12px}
+.q{border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden;box-shadow:var(--shadow-s);transition:border-color .3s}
+.q.open{border-color:var(--cy-bdr)}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:22px 24px;background:none;border:0;cursor:pointer;text-align:left;color:var(--w);
+  font-family:'Outfit',sans-serif;font-weight:600;font-size:17px;letter-spacing:-.01em}
+.q .sign{width:28px;height:28px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;flex:none;
+  color:var(--cy);transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,border-color .3s}
+.q .sign .ic{width:14px;height:14px}
+.q.open .sign{transform:rotate(45deg);background:var(--cy-dim);border-color:var(--cy-bdr)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.2,.8,.2,1)}
+.q .a p{padding:0 24px 22px;color:var(--w-2);font-size:15.5px}
+
+/* ═══ KAPCSOLAT ═══ */
+.contact{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:start}
+.cbox{display:grid;gap:12px;margin-top:30px}
+.crow{display:flex;gap:16px;align-items:center;padding:18px 20px;border-radius:16px;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-s);transition:.28s}
+.crow:hover{border-color:var(--cy-bdr);transform:translateX(4px)}
+.crow .cic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;flex:none;
+  background:rgba(0,190,228,.12);border:1px solid var(--cy-bdr);color:var(--cy)}
+.crow .cic .ic{width:20px;height:20px}
+.crow small{display:block;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--w-3);font-weight:700}
+.crow b{font-family:'Outfit',sans-serif;font-size:17px;font-weight:600}
+form.cf{padding:34px 32px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+form.cf h3{font-family:'Outfit',sans-serif;font-size:23px;font-weight:700;letter-spacing:-.02em}
+form.cf .sub{color:var(--w-2);font-size:14.6px;margin-top:8px;margin-bottom:24px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.field label{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--w-2)}
+.field input,.field textarea,.field select{
+  padding:14px 16px;border-radius:13px;background:var(--card-2);
+  border:1px solid var(--line-2);color:var(--w);font-size:15px;transition:.25s;font-family:inherit}
+.field textarea{min-height:118px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--w-3)}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--cy);box-shadow:0 0 0 4px rgba(0,190,228,.16);background:#fff}
+.fnote{font-size:12.6px;color:var(--w-3);margin-top:14px;text-align:center}
+
+/* ═══ FOOTER ═══ */
+footer{background:#fff;border-top:1px solid var(--line);padding:56px 0 30px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px}
+.fgrid p{color:var(--w-2);font-size:14.6px;margin-top:16px;max-width:340px}
+.fcol h5{font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--w-3);font-weight:700}
+.fcol ul{list-style:none;margin-top:16px;display:grid;gap:10px}
+.fcol a{color:var(--w-2);font-size:15px;transition:color .2s}
+.fcol a:hover{color:var(--cy-deep)}
+.fbot{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.4px;color:var(--w-3)}
+
+/* ═══ MOBIL HÍVÁS SÁV ═══ */
+.callbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:95;
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom));gap:10px;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);
+  box-shadow:0 -8px 26px -18px rgba(9,45,60,.6)}
+.callbar .btn{flex:1;padding:14px 12px;font-size:15px}
+
+/* ═══ REVEAL ═══ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv-l{opacity:0;transform:translateX(-30px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv-r{opacity:0;transform:translateX(30px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv-s{opacity:0;transform:scale(.955);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.vis{opacity:1;transform:none}
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width:1080px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{grid-template-columns:1fr;gap:52px}
+  .why,.price,.area,.contact,.garden .in{grid-template-columns:1fr;gap:36px}
+  .steps{grid-template-columns:1fr}
+  .step .dash{display:none}
+}
+@media (max-width:860px){
+  .nav-links,.nav-cta .btn{display:none}
+  .burger{display:flex}
+  .topbar .hide-s{display:none}
+  .refs{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr;gap:32px}
+  .callbar{display:flex}
+  body{padding-bottom:74px}
+  .sec{padding:70px 0}
+  .hero{padding:56px 0 74px}
+  .garden{padding:36px 26px}
+  .glass-badge{left:8px;bottom:-18px}
+}
+@media (max-width:560px){
+  /* a kártyák fekvő elrendezésbe váltanak: fele akkora görgetés */
+  .svc-grid{grid-template-columns:1fr;gap:12px}
+  .svc{display:grid;grid-template-columns:46px 1fr;column-gap:15px;align-items:start;padding:20px 18px}
+  .svc-ic{grid-row:1/3;grid-column:1;margin-bottom:0;width:46px;height:46px;border-radius:13px;align-self:start}
+  .svc-ic .ic{width:23px;height:23px}
+  .svc > *:not(.svc-ic){grid-column:2;justify-self:start}
+  .svc h3{font-size:17px}
+  .svc p{font-size:14px;line-height:1.55;margin-top:6px}
+  .svc::before{left:18px;right:18px}
+  .svc.wide{grid-column:span 1}
+  /* az érvek két hasábos, tömör csempékké válnak */
+  .why-list{grid-template-columns:1fr 1fr}
+  .why-item{padding:18px 15px}
+  .why-item h4{font-size:15.5px;margin-top:9px;line-height:1.28}
+  .why-item p{display:none}
+  .frow{grid-template-columns:1fr}
+  .wrap{padding:0 18px}
+  .stats{grid-template-columns:1fr}
+  form.cf{padding:26px 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .grime{opacity:0}
+  .squeegee{display:none}
+  .rv,.rv-l,.rv-r,.rv-s{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ IKON SPRITE ═══════════ -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 21v-7h6v7"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/><path d="M9 11h.01M15 11h.01"/></symbol>
+  <symbol id="i-office" viewBox="0 0 24 24"><rect x="3" y="3" width="12" height="18" rx="1"/><path d="M15 9h5a1 1 0 0 1 1 1v11H15"/><path d="M7 7h4M7 11h4M7 15h4M18 13h.01M18 17h.01"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M16 9h3a1 1 0 0 1 1 1v11"/><path d="M2 21h20"/><path d="M8 7h4M8 11h4M8 15h4"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18"/><path d="m6.5 8.5 2 2"/></symbol>
+  <symbol id="i-carpet" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 6v12M18 6v12"/><path d="M9.5 10.5h5v3h-5z"/></symbol>
+  <symbol id="i-solar" viewBox="0 0 24 24"><path d="M4 16h16l-2-9H6Z"/><path d="M12 7v9M5 11.5h14"/><path d="M12 20v2M8 20l-1 2M16 20l1 2"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/><circle cx="12" cy="12" r="2.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13c0-6 8-10 16-10 0 8-4 15-9 15Z"/><path d="M4 21c3-6 7-9 11-11"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.5S5.5 10 5.5 14.5a6.5 6.5 0 0 0 13 0C18.5 10 12 2.5 12 2.5Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3 15 15 3l6 6L9 21Z"/><path d="m7 11 2 2M10 8l2 2M13 5l2 2"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5l-9.4 9.4a2.8 2.8 0 0 1-4-4Z"/><path d="m18 2 4 4-2.5 2.5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 9h3V5.5h-2.6C12 5.5 10.5 7 10.5 9.4V11H8v3.5h2.5V22h3.5v-7.5h2.6L17 11h-3V9.6c0-.4.3-.6.7-.6Z" stroke-width="1.4"/></symbol>
+</svg>
+
+<!-- ═══════════ TOPBAR ═══════════ -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="grp">
+      <span><i class="pip"></i> Hétköznap 7–19 óráig hívható</span>
+      <span class="hide-s"><svg class="ic"><use href="#i-pin"/></svg> Budapest &amp; Pest megye</span>
+    </div>
+    <div class="grp">
+      <span class="hide-s"><svg class="ic"><use href="#i-check"/></svg> Ingyenes helyszíni szemle</span>
+      <a class="tel" href="tel:+36308910143"><svg class="ic"><use href="#i-phone"/></svg> +36 30 891 0143</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="/clients/kj-takaritas/assets/mark.png" alt="KJ Takarítás logó">
+      <span>
+        <b>KJ Takarítás</b>
+        <small>A tisztaság nem luxus</small>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#szolgaltatasok">Szolgáltatások</a>
+      <a href="#miert">Miért minket</a>
+      <a href="#referenciak">Referenciák</a>
+      <a href="#arak">Árak</a>
+      <a href="#kert">Kertgondozás</a>
+      <a href="#gyik">GYIK</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-p" href="#kapcsolat">Árajánlatot kérek <svg class="ic"><use href="#i-arrow"/></svg></a>
+      <button class="burger" id="burger" aria-label="Menü megnyitása" aria-expanded="false">
+        <svg class="ic"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="#szolgaltatasok">Szolgáltatások</a>
+  <a href="#miert">Miért minket</a>
+  <a href="#referenciak">Referenciák</a>
+  <a href="#arak">Árak</a>
+  <a href="#kert">Kertgondozás</a>
+  <a href="#gyik">GYIK</a>
+  <a href="#kapcsolat">Kapcsolat</a>
+  <a class="btn btn-p" href="tel:+36308910143"><svg class="ic"><use href="#i-phone"/></svg> +36 30 891 0143</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="kicker rv">A tisztaság nem luxus!</span>
+      <h1 class="disp h1 rv" data-d="80">Takarítás Budapesten,<br><span class="gl">kifogástalan</span> eredménnyel.</h1>
+      <p class="hero-sub rv" data-d="160">
+        Társasházak, lakások, irodák és intézmények takarítása —
+        <b>cégeknek és magánszemélyeknek</b> egyaránt.
+        Bízza a piszkos munkát profikra: lelkiismeretes, átvilágított brigád, modern felszereléssel.
+      </p>
+      <div class="hero-cta rv" data-d="240">
+        <a class="btn btn-p btn-lg" href="#kapcsolat">Ingyenes helyszíni szemle <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-g btn-lg" href="tel:+36308910143"><svg class="ic"><use href="#i-phone"/></svg> +36 30 891 0143</a>
+      </div>
+      <div class="hero-mini rv" data-d="320">
+        <span><svg class="ic"><use href="#i-shield"/></svg> Átvilágított munkaerő</span>
+        <span><svg class="ic"><use href="#i-leaf"/></svg> Környezetbarát technikák</span>
+        <span><svg class="ic"><use href="#i-repeat"/></svg> Rugalmas időbeosztás</span>
+      </div>
+    </div>
+
+    <div class="glass-wrap rv-s" data-d="200">
+      <div class="glass">
+        <!-- Budapest látkép az ablak mögött -->
+        <svg class="view" viewBox="0 0 800 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#04364F"/>
+              <stop offset="26%" stop-color="#1379A6"/>
+              <stop offset="48%" stop-color="#3FB6DC"/>
+              <stop offset="60%" stop-color="#8CE4F7"/>
+              <stop offset="68%" stop-color="#EDFCFF"/>
+            </linearGradient>
+            <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#12536E"/><stop offset="100%" stop-color="#2E93B4"/>
+            </linearGradient>
+            <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#031A24"/><stop offset="100%" stop-color="#052B39"/>
+            </linearGradient>
+            <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#93E4F8"/><stop offset="100%" stop-color="#0C4F6B"/>
+            </linearGradient>
+            <radialGradient id="sun" cx="50%" cy="50%">
+              <stop offset="0%" stop-color="#FFF6D6"/><stop offset="55%" stop-color="#FFD79A" stop-opacity=".7"/><stop offset="100%" stop-color="#FFC46B" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <rect width="800" height="620" fill="url(#sky)"/>
+          <circle cx="596" cy="392" r="168" fill="url(#sun)"/>
+          <circle cx="596" cy="392" r="38" fill="#FFFAE6"/>
+
+          <!-- távoli budai hegyek -->
+          <path d="M0 372 L96 316 L176 358 L262 300 L344 356 L420 330 L500 366 L590 336 L680 372 L800 340 L800 420 L0 420Z" fill="url(#far)" opacity=".55"/>
+
+          <!-- Halászbástya / Budai vár sziluett (bal) -->
+          <g fill="url(#near)" opacity=".92">
+            <rect x="52" y="330" width="132" height="90"/>
+            <path d="M96 330a26 26 0 0 1 52 0Z"/>
+            <rect x="118" y="286" width="8" height="26"/>
+            <path d="M112 300 L122 276 L132 300Z"/>
+            <rect x="60" y="312" width="14" height="20"/><rect x="162" y="312" width="14" height="20"/>
+          </g>
+
+          <!-- Parlament -->
+          <g fill="url(#near)">
+            <rect x="286" y="366" width="228" height="56"/>
+            <rect x="336" y="330" width="128" height="40"/>
+            <path d="M368 332q0-56 32-70 32 14 32 70Z"/>
+            <rect x="396" y="228" width="8" height="40"/>
+            <path d="M388 262 L400 214 L412 262Z"/>
+            <path d="M344 336 L352 300 L360 336Z"/>
+            <path d="M440 336 L448 300 L456 336Z"/>
+            <path d="M310 370 L318 336 L326 370Z"/>
+            <path d="M474 370 L482 336 L490 370Z"/>
+            <rect x="286" y="356" width="228" height="8"/>
+          </g>
+
+          <!-- Bazilika kupola (jobb) -->
+          <g fill="url(#near)" opacity=".95">
+            <rect x="612" y="360" width="106" height="60"/>
+            <path d="M632 362q0-42 33-52 33 10 33 52Z"/>
+            <rect x="661" y="288" width="7" height="24"/>
+            <path d="M657 294h15" stroke="#031A24" stroke-width="5"/>
+          </g>
+
+          <!-- Duna -->
+          <rect x="0" y="420" width="800" height="200" fill="url(#water)" opacity=".92"/>
+          <g fill="#EAFBFF" opacity=".22">
+            <rect x="0" y="446" width="800" height="2"/><rect x="60" y="470" width="640" height="2"/>
+            <rect x="0" y="498" width="800" height="2"/><rect x="120" y="528" width="560" height="2"/>
+            <rect x="40" y="562" width="720" height="2"/>
+          </g>
+          <rect x="576" y="420" width="40" height="200" fill="#FFF0C8" opacity=".22"/>
+
+          <!-- Lánchíd -->
+          <g stroke="#03161F" fill="none" stroke-width="7" opacity=".95">
+            <path d="M0 470 H800"/>
+            <path d="M0 452 Q110 400 220 452" stroke-width="5"/>
+            <path d="M220 452 Q400 372 580 452" stroke-width="5"/>
+            <path d="M580 452 Q690 400 800 452" stroke-width="5"/>
+          </g>
+          <g fill="#03161F">
+            <rect x="208" y="392" width="24" height="86"/><rect x="568" y="392" width="24" height="86"/>
+            <path d="M204 396h32v8h-32z"/><path d="M564 396h32v8h-32z"/>
+          </g>
+          <g stroke="#03161F" stroke-width="3" opacity=".8">
+            <path d="M60 470V440M120 470V424M180 470V434M300 470V416M380 470V400M460 470V412M660 470V434M720 470V424"/>
+          </g>
+        </svg>
+
+        <div class="grime"></div>
+        <div class="squeegee"></div>
+        <div class="mullion v"></div>
+        <div class="mullion h"></div>
+        <div class="frame"></div>
+      </div>
+      <div class="glass-tag">Csíkmentes. Garantáltan.</div>
+      <div class="glass-badge">
+        <img src="/clients/kj-takaritas/assets/mark.png" alt="KJ Takarítás logó">
+        <div>
+          <div class="t">Kovács József</div>
+          <div class="s">ügyvezető · KJ Takarítás</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ MARQUEE ═══════════ -->
+<div class="marq" aria-hidden="true">
+  <div class="marq-track">
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Planetárium takarítása</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Novastore Kft.</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Ybl-díjas építész családi háza</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Társasházi közös képviseletek</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Puhl Márta díjnyertes háza</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Irodaházak Budapest-szerte</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Planetárium takarítása</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Novastore Kft.</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Ybl-díjas építész családi háza</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Társasházi közös képviseletek</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Puhl Márta díjnyertes háza</span>
+    <span class="marq-item"><svg class="ic"><use href="#i-star"/></svg> Irodaházak Budapest-szerte</span>
+  </div>
+</div>
+
+<!-- ═══════════ SZOLGÁLTATÁSOK ═══════════ -->
+<section class="sec" id="szolgaltatasok">
+  <div class="wrap">
+    <div class="sec-head mid">
+      <span class="kicker rv">Takarítási szolgáltatásaink</span>
+      <h2 class="disp rv" data-d="80">A következő területeken<br>állunk rendelkezésére</h2>
+      <p class="rv" data-d="140">Egyszeri nagytakarítástól a napi rendszerességű karbantartásig — mindig ugyanazzal az igényességgel.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc rv" data-d="0">
+        <div class="svc-ic"><svg class="ic"><use href="#i-home"/></svg></div>
+        <h3>Lakástakarítás</h3>
+        <p>Napi vagy időszakos takarítás — Önnek csak a pihenés marad.</p>
+      </article>
+
+      <article class="svc rv" data-d="80">
+        <div class="svc-ic"><svg class="ic"><use href="#i-house"/></svg></div>
+        <h3>Családi ház és kert</h3>
+        <p>Belső terek és udvar egy kézben, makulátlan állapotban.</p>
+      </article>
+
+      <article class="svc rv" data-d="160">
+        <div class="svc-ic"><svg class="ic"><use href="#i-office"/></svg></div>
+        <h3>Irodatakarítás</h3>
+        <p>Napi vagy heti takarítás az Ön munkaidejéhez igazítva.</p>
+      </article>
+
+      <article class="svc rv" data-d="240">
+        <div class="svc-ic"><svg class="ic"><use href="#i-building"/></svg></div>
+        <h3>Társasház takarítás</h3>
+        <p>Lépcsőházak, folyosók, liftek és közös terek higiénikusan.</p>
+      </article>
+
+      <article class="svc rv" data-d="0">
+        <div class="svc-ic"><svg class="ic"><use href="#i-window"/></svg></div>
+        <h3>Ablaktisztítás</h3>
+        <p>Csíkmentes üvegfelületek, nagy belmagasságban is.</p>
+      </article>
+
+      <article class="svc rv" data-d="80">
+        <div class="svc-ic"><svg class="ic"><use href="#i-carpet"/></svg></div>
+        <h3>Szőnyegtisztítás</h3>
+        <p>Mélytisztítás a szennyeződések és az allergének ellen.</p>
+      </article>
+
+      <article class="svc rv" data-d="160">
+        <div class="svc-ic"><svg class="ic"><use href="#i-solar"/></svg></div>
+        <h3>Napelem takarítás</h3>
+        <p>Tiszta panelek, maximális termelés egész évben.</p>
+      </article>
+
+      <article class="svc rv" data-d="240">
+        <div class="svc-ic"><svg class="ic"><use href="#i-spark"/></svg></div>
+        <h3>Speciális munkák</h3>
+        <p>Építkezés utáni és ipari tisztítás, egyedi igényekre.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MIÉRT MINKET ═══════════ -->
+<section class="sec alt" id="miert">
+  <div class="wrap">
+    <div class="why">
+      <div class="rv-l">
+        <span class="kicker">Miért válasszon minket?</span>
+        <h2 class="disp" style="font-size:clamp(28px,3.6vw,42px);margin-top:16px">Nem a takarítást<br>adjuk el. A nyugalmat.</h2>
+        <div class="quote" style="margin-top:30px">
+          <div class="mark">&bdquo;</div>
+          <p>A professzionális takarítás lényege, hogy egy lelkiismeretes, tapasztalt, szakértő brigád a megfelelő eszközök használatával tökéletes, kifogástalan tisztaságot varázsol az Ön által megjelölt helyszínen. Ha igazán becsületes takarítóbrigádot keres, nálunk megtalálta.</p>
+          <div class="who">
+            <img src="/clients/kj-takaritas/assets/mark.png" alt="KJ Takarítás logó">
+            <div><b>Kovács József</b><span>a KJ Takarítás cég vezetője</span></div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>23</b><span>budapesti kerületben elérhetők vagyunk</span></div>
+          <div class="stat"><b>0 Ft</b><span>a helyszíni szemle és az árajánlat</span></div>
+        </div>
+      </div>
+
+      <div class="why-list rv-r">
+        <div class="why-item"><div class="n">01</div><h4>Hírnév és tapasztalat</h4><p>Évek óta ugyanaz a csapat dolgozik együtt — rutinosan, gyakorlottan, meglepetések nélkül.</p></div>
+        <div class="why-item"><div class="n">02</div><h4>Megbízhatóság</h4><p>Amiben megállapodunk, az megtörténik. Pontosan, a megbeszélt időben, felügyelet nélkül is.</p></div>
+        <div class="why-item"><div class="n">03</div><h4>Számtalan elégedett ügyfél</h4><p>Magánszemélyektől a közös képviseleteken át az intézményekig — évek óta visszatérő partnerekkel.</p></div>
+        <div class="why-item"><div class="n">04</div><h4>Elérhető referenciák</h4><p>Nem ígéreteket kérünk, hogy elhiggye: kérje el a referenciáinkat, és beszéljen az ügyfeleinkkel.</p></div>
+        <div class="why-item"><div class="n">05</div><h4>Képzett, átvilágított munkaerő</h4><p>Csak olyan kollégát engedünk be az Ön otthonába vagy irodájába, akiért mi magunk is jótállunk.</p></div>
+        <div class="why-item"><div class="n">06</div><h4>Sokoldalúság és rugalmasság</h4><p>Hétköznap, hétvégén, munkaidő után is. Az Ön időbeosztásához igazodunk, nem fordítva.</p></div>
+        <div class="why-item"><div class="n">07</div><h4>Környezetbarát technikák</h4><p>Olyan szereket használunk, amelyek biztonságosak a lakók, a munkatársak és a háziállatok számára.</p></div>
+        <div class="why-item"><div class="n">08</div><h4>Modern felszerelés</h4><p>Magasnyomású mosó, felmosógép, professzionális porszívók — a felület igényeihez választva.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOLYAMAT ═══════════ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head mid">
+      <span class="kicker rv">Így dolgozunk</span>
+      <h2 class="disp rv" data-d="80">Három lépés a ragyogó tisztaságig</h2>
+      <p class="rv" data-d="140">Pontos árajánlat csak helyszíni szemle alapján adható — ezért ezt mi mindig ingyen, kötelezettség nélkül vállaljuk.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv" data-d="0">
+        <div class="num">01</div>
+        <svg class="ic dash"><use href="#i-arrow"/></svg>
+        <h4>Felhívjuk egymást</h4>
+        <p>Elmondja, mekkora területről, milyen gyakoriságról és milyen felületekről van szó. Néhány perc az egész.</p>
+      </div>
+      <div class="step rv" data-d="100">
+        <div class="num">02</div>
+        <svg class="ic dash"><use href="#i-arrow"/></svg>
+        <h4>Ingyenes helyszíni szemle</h4>
+        <p>Felmérjük a szennyezettség mértékét, a burkolatok típusát és a szükséges eszközöket — így lesz reális és testreszabott az ajánlat.</p>
+      </div>
+      <div class="step rv" data-d="200">
+        <div class="num">03</div>
+        <h4>Átlátható árajánlat, majd munka</h4>
+        <p>Írásos ajánlatot kap rejtett tételek nélkül. Rendszeres megbízás esetén kedvezményt biztosítunk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ REFERENCIÁK ═══════════ -->
+<section class="sec alt" id="referenciak">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker rv">Referenciamunkáinkból</span>
+      <h2 class="disp rv" data-d="80">Ahol már bizonyítottunk</h2>
+      <p class="rv" data-d="140">Középületektől a díjnyertes építészek otthonáig — ugyanaz a precizitás, függetlenül a helyszíntől.</p>
+    </div>
+    <div class="refs">
+      <article class="ref rv" data-d="0">
+        <div class="ref-ic"><svg class="ic"><use href="#i-star"/></svg></div>
+        <div>
+          <h4>Planetárium takarítása</h4>
+          <p>Ablaktisztítás és függönytisztítás nagy belmagasságú, összetett közösségi térben.</p>
+          <span class="tag">Intézmény</span>
+        </div>
+      </article>
+      <article class="ref rv" data-d="80">
+        <div class="ref-ic"><svg class="ic"><use href="#i-house"/></svg></div>
+        <div>
+          <h4>Puhl Márta díjnyertes családi háza</h4>
+          <p>Rendszeres takarítás és kertgondozás, kiemelt figyelemmel az építészeti értékű felületekre.</p>
+          <span class="tag">Rendszeres megbízás</span>
+        </div>
+      </article>
+      <article class="ref rv" data-d="0">
+        <div class="ref-ic"><svg class="ic"><use href="#i-users"/></svg></div>
+        <div>
+          <h4>Prof. Puhl Antal DLA családi háza</h4>
+          <p>Ybl-díjas építész, a MÉK, a MÉSZ és a Cseh Építőművész Szövetség tagja — rendszeres takarítás, kertgondozás.</p>
+          <span class="tag">Rendszeres megbízás</span>
+        </div>
+      </article>
+      <article class="ref rv" data-d="80">
+        <div class="ref-ic"><svg class="ic"><use href="#i-office"/></svg></div>
+        <div>
+          <h4>Novastore Kft.</h4>
+          <p>Céges takarítási munkák: ablaktisztítás és teljes körű nagytakarítás.</p>
+          <span class="tag">Céges partner</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ÁRAK ═══════════ -->
+<section class="sec" id="arak">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker rv">Lépcsőház- és takarítási árak</span>
+      <h2 class="disp rv" data-d="80">Miért nincs kiírva fix ár?</h2>
+      <p class="rv" data-d="140">Mert minden helyszín egyedi — és mi inkább adunk pontos ajánlatot, mint egy szép, de tarthatatlan számot. Ez a négy tényező mozgatja a költséget:</p>
+    </div>
+
+    <div class="price">
+      <div class="factors rv-l">
+        <div class="factor">
+          <svg class="ic"><use href="#i-ruler"/></svg>
+          <div><b>Az ingatlan mérete és kialakítása</b><span>Egy kisebb tömbház kevesebb időt igényel, mint egy több emeletes épület. Számít, van-e lift, és milyen anyaggal burkolták a lépcsőfokokat, falakat.</span></div>
+        </div>
+        <div class="factor">
+          <svg class="ic"><use href="#i-drop"/></svg>
+          <div><b>A szennyezettség mértéke</b><span>Egy ritkán takarított lépcsőház nagyobb kihívás: a beivódott kosz vagy a graffiti jelentős többletmunkát igényel.</span></div>
+        </div>
+        <div class="factor">
+          <svg class="ic"><use href="#i-tool"/></svg>
+          <div><b>Tisztítószerek és eszközök</b><span>Magasnyomású mosó, felmosógép, professzionális porszívó — egyes burkolatok speciális eljárást igényelnek.</span></div>
+        </div>
+        <div class="factor">
+          <svg class="ic"><use href="#i-repeat"/></svg>
+          <div><b>A takarítás gyakorisága</b><span>Rendszeres megbízás esetén kedvezményt biztosítunk. Az alkalmi nagytakarítás több időt és erőforrást igényel.</span></div>
+        </div>
+      </div>
+
+      <div class="price-cta rv-r">
+        <h3 class="disp">Kérjen ingyenes felmérést</h3>
+        <p>Lépcsőház- és társasház-takarítást Budapesten és Budapest vonzáskörzetében vállalunk. A szemle után írásos, tételes ajánlatot kap.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg> Kötelezettség és díj nélkül</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Írásos, átlátható ajánlat rejtett tételek nélkül</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Rendszeres megbízásra kedvezmény</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Referenciákat szívesen adunk</li>
+        </ul>
+        <a class="btn btn-p btn-lg" href="#kapcsolat" style="width:100%">Szemlét kérek <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ KERTGONDOZÁS ═══════════ -->
+<section class="sec alt" id="kert">
+  <div class="wrap">
+    <div class="garden rv-s">
+      <div class="in">
+        <div>
+          <span class="kicker">Kertgondozás Budapesten és Pest megyében</span>
+          <h3>Zöldterülete mindig ápolt és rendezett legyen.</h3>
+          <p>Takarítási szolgáltatásaink mellett zöldterületek gondozását, karbantartását is rendszeresen vállaljuk — folyamatos vagy alkalmi megegyezéssel. Legyen szó családi házak, nyaralók, társasházak, intézmények vagy parkok zöldfelületéről, tapasztalt kertészeink havi rendszerességgel, de akár eseti alkalommal is gondoskodnak kertje szépségéről.</p>
+          <div class="gtags">
+            <span class="gtag">Fűnyírás, gyepápolás</span>
+            <span class="gtag">Sövényvágás</span>
+            <span class="gtag">Szezonális metszés</span>
+            <span class="gtag">Bozótirtás</span>
+            <span class="gtag">Növénygondozás</span>
+            <span class="gtag">Tereprendezés</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc" style="background:#fff;border-color:rgba(28,150,100,.26)">
+            <div class="svc-ic" style="background:linear-gradient(140deg,rgba(30,175,115,.18),rgba(30,175,115,.05));border-color:rgba(28,150,100,.3);color:#158A5C">
+              <svg class="ic"><use href="#i-leaf"/></svg>
+            </div>
+            <h3>Egy csapat, két feladat</h3>
+            <p>Ha a takarítást és a kertfenntartást is ránk bízza, egyetlen kapcsolattartóval, egyetlen ütemezéssel és kedvezőbb feltételekkel intézheti mindkettőt.</p>
+            <a class="btn btn-g" href="#kapcsolat" style="margin-top:18px">Érdekel a csomag <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TERÜLET ═══════════ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="area">
+      <div class="rv-l">
+        <span class="kicker">Szolgáltatási területünk</span>
+        <h2 class="disp" style="font-size:clamp(28px,3.6vw,42px);margin-top:16px">Budapest bármely pontján elérhetőek vagyunk</h2>
+        <p style="color:var(--w-2);margin-top:18px;font-size:17px">
+          Székhelyünk Fóton van, így Budapest egész területén és a főváros vonzáskörzetében — Pest megyében — is gyorsan a helyszínen vagyunk.
+        </p>
+        <div class="crow" style="margin-top:26px;max-width:400px">
+          <div class="cic"><svg class="ic"><use href="#i-pin"/></svg></div>
+          <div><small>Székhely</small><b>2151 Fót, Károlyi István utca 10.</b></div>
+        </div>
+      </div>
+      <div class="districts rv-r">
+        <span>I.</span><span>II.</span><span>III.</span><span>IV.</span><span>V.</span><span>VI.</span>
+        <span>VII.</span><span>VIII.</span><span>IX.</span><span>X.</span><span>XI.</span><span>XII.</span>
+        <span>XIII.</span><span>XIV.</span><span>XV.</span><span>XVI.</span><span>XVII.</span><span>XVIII.</span>
+        <span>XIX.</span><span>XX.</span><span>XXI.</span><span>XXII.</span><span>XXIII.</span>
+        <span>Fót</span><span>Dunakeszi</span><span>Göd</span><span>Veresegyház</span><span>Mogyoród</span><span>Csömör</span><span>Szada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GYIK ═══════════ -->
+<section class="sec alt" id="gyik">
+  <div class="wrap">
+    <div class="sec-head mid">
+      <span class="kicker rv">Gyakori kérdések</span>
+      <h2 class="disp rv" data-d="80">Amit a leggyakrabban kérdeznek</h2>
+    </div>
+    <div class="faq">
+      <div class="q rv" data-d="0">
+        <button type="button">Mennyibe kerül a lépcsőház takarítása?<span class="sign"><svg class="ic"><use href="#i-plus"/></svg></span></button>
+        <div class="a"><p>Pontos árat felelősen csak helyszíni szemle után lehet mondani, mert az épület mérete, a burkolatok típusa, a szennyezettség mértéke és a takarítás gyakorisága mind befolyásolja a költséget. A szemle és az árajánlat nálunk ingyenes és kötelezettségmentes.</p></div>
+      </div>
+      <div class="q rv" data-d="60">
+        <button type="button">Milyen gyakran érdemes takaríttatni a társasházat?<span class="sign"><svg class="ic"><use href="#i-plus"/></svg></span></button>
+        <div class="a"><p>A leggyakoribb a heti egy vagy kétszeri lépcsőházi takarítás, negyedéves nagytakarítással kiegészítve. A rendszeres ütemezés olcsóbb és jobb eredményt ad, mint a ritka, „mentőakció” jellegű takarítás — ezért rendszeres megbízás esetén kedvezményt is biztosítunk.</p></div>
+      </div>
+      <div class="q rv" data-d="0">
+        <button type="button">Milyen tisztítószerekkel dolgoznak?<span class="sign"><svg class="ic"><use href="#i-plus"/></svg></span></button>
+        <div class="a"><p>Környezetbarát technikákat és szereket használunk, amelyek biztonságosak a lakók, az irodai dolgozók és a háziállatok számára is. Speciális burkolatoknál a felület típusához igazítjuk az eljárást, hogy semmiképp ne károsodjon.</p></div>
+      </div>
+      <div class="q rv" data-d="60">
+        <button type="button">Kik jönnek ki takarítani?<span class="sign"><svg class="ic"><use href="#i-plus"/></svg></span></button>
+        <div class="a"><p>Képzett és átvilágított munkatársak, akik évek óta együtt dolgoznak. Ez azért fontos, mert a takarítócsapat sok esetben felügyelet nélkül tartózkodik az ingatlanban — ehhez bizalom kell, amit referenciákkal is alá tudunk támasztani.</p></div>
+      </div>
+      <div class="q rv" data-d="0">
+        <button type="button">Hétvégén vagy munkaidő után is vállalnak munkát?<span class="sign"><svg class="ic"><use href="#i-plus"/></svg></span></button>
+        <div class="a"><p>Igen. Rugalmasan alkalmazkodunk az Ön időbeosztásához: irodák esetében jellemzően munkaidő után vagy kora reggel dolgozunk, lakásoknál pedig hétvégén is tudunk időpontot adni.</p></div>
+      </div>
+      <div class="q rv" data-d="60">
+        <button type="button">Építkezés után is hívhatom Önöket?<span class="sign"><svg class="ic"><use href="#i-plus"/></svg></span></button>
+        <div class="a"><p>Természetesen. Az építkezés utáni takarítás, a festés- és felújítás utáni finomtisztítás, valamint az ipari szennyeződések eltávolítása a speciális tisztítási munkáink közé tartozik — ezekhez külön eszközparkkal érkezünk.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ KAPCSOLAT ═══════════ -->
+<section class="sec" id="kapcsolat">
+  <div class="wrap">
+    <div class="contact">
+      <div class="rv-l">
+        <span class="kicker">Kapcsolat</span>
+        <h2 class="disp" style="font-size:clamp(28px,3.6vw,44px);margin-top:16px">Hívjon minket most, és tapasztalja meg a tisztaság varázsát!</h2>
+        <p style="color:var(--w-2);margin-top:18px;font-size:17px">
+          Írja meg, mire lenne szüksége — 24 órán belül visszahívjuk, és egyeztetünk egy ingyenes helyszíni szemlét.
+        </p>
+        <div class="cbox">
+          <a class="crow" href="tel:+36308910143">
+            <div class="cic"><svg class="ic"><use href="#i-phone"/></svg></div>
+            <div><small>Mobil</small><b>+36 30 891 0143</b></div>
+          </a>
+          <a class="crow" href="mailto:kovijoci71@gmail.com">
+            <div class="cic"><svg class="ic"><use href="#i-mail"/></svg></div>
+            <div><small>E-mail</small><b>kovijoci71@gmail.com</b></div>
+          </a>
+          <div class="crow">
+            <div class="cic"><svg class="ic"><use href="#i-pin"/></svg></div>
+            <div><small>Cím</small><b>2151 Fót, Károlyi István utca 10.</b></div>
+          </div>
+          <a class="crow" href="https://www.facebook.com/p/KJ-takar%C3%ADt%C3%A1s-100041375515905/" target="_blank" rel="noopener">
+            <div class="cic"><svg class="ic"><use href="#i-fb"/></svg></div>
+            <div><small>Facebook</small><b>KJ takarítás</b></div>
+          </a>
+        </div>
+      </div>
+
+      <form class="cf rv-r" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
+        <h3>Kérjen árajánlatot</h3>
+        <p class="sub">Töltse ki az űrlapot, és hamarosan keressük.</p>
+        <input type="hidden" name="_subject" value="Új árajánlatkérés – KJ Takarítás">
+        <div class="frow">
+          <div class="field"><label for="nev">Név</label><input type="text" id="nev" name="nev" placeholder="Hogyan szólíthatjuk?" required></div>
+          <div class="field"><label for="tel">Telefonszám</label><input type="tel" id="tel" name="telefon" placeholder="+36 …" required></div>
+        </div>
+        <div class="field"><label for="email">E-mail cím</label><input type="email" id="email" name="email" placeholder="pelda@email.hu" required></div>
+        <div class="field">
+          <label for="tipus">Mire lenne szüksége?</label>
+          <select id="tipus" name="szolgaltatas">
+            <option>Társasház / lépcsőház takarítás</option>
+            <option>Lakástakarítás</option>
+            <option>Családi ház és kert</option>
+            <option>Irodatakarítás</option>
+            <option>Ablaktisztítás</option>
+            <option>Szőnyegtisztítás</option>
+            <option>Napelem takarítás</option>
+            <option>Építkezés utáni / speciális takarítás</option>
+            <option>Kertgondozás, kertfenntartás</option>
+            <option>Egyéb</option>
+          </select>
+        </div>
+        <div class="field"><label for="uzenet">Üzenet</label><textarea id="uzenet" name="uzenet" placeholder="Cím, alapterület vagy emeletek száma, kívánt gyakoriság, preferált időpont…" required></textarea></div>
+        <button type="submit" class="btn btn-p" style="width:100%">Visszahívást kérek <svg class="ic"><use href="#i-arrow"/></svg></button>
+        <p class="fnote">Adatait kizárólag az ajánlatadáshoz használjuk fel, harmadik félnek nem adjuk ki.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top">
+          <img src="/clients/kj-takaritas/assets/mark.png" alt="KJ Takarítás logó">
+          <span><b>KJ Takarítás</b><small>A tisztaság nem luxus</small></span>
+        </a>
+        <p>Társasházi, lakás- és intézménytakarítás Budapesten és Pest megyében. Cégeknek és magánszemélyeknek egyaránt — ingyenes helyszíni szemlével, átlátható árajánlattal.</p>
+      </div>
+      <div class="fcol">
+        <h5>Szolgáltatások</h5>
+        <ul>
+          <li><a href="#szolgaltatasok">Társasház takarítás</a></li>
+          <li><a href="#szolgaltatasok">Lakástakarítás</a></li>
+          <li><a href="#szolgaltatasok">Irodatakarítás</a></li>
+          <li><a href="#szolgaltatasok">Ablaktisztítás</a></li>
+          <li><a href="#kert">Kertgondozás</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5>Kapcsolat</h5>
+        <ul>
+          <li><a href="tel:+36308910143">+36 30 891 0143</a></li>
+          <li><a href="mailto:kovijoci71@gmail.com">kovijoci71@gmail.com</a></li>
+          <li><a href="#kapcsolat">2151 Fót, Károlyi István u. 10.</a></li>
+          <li><a href="https://www.facebook.com/p/KJ-takar%C3%ADt%C3%A1s-100041375515905/" target="_blank" rel="noopener">Facebook oldalunk</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© <span id="year">2026</span> KJ Takarítás · Kovács József e.v.</span>
+      <span>A tisztaság nem luxus!</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ MOBIL HÍVÁS SÁV ═══════════ -->
+<div class="callbar">
+  <a class="btn btn-p" href="tel:+36308910143"><svg class="ic"><use href="#i-phone"/></svg> Hívás</a>
+  <a class="btn btn-g" href="#kapcsolat">Árajánlat</a>
+</div>
+
+<script>
+(function(){
+  // ── Év
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ── Sticky nav árnyék
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('stuck', window.scrollY > 12); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ── Mobil menü
+  var burger = document.getElementById('burger');
+  var mmenu  = document.getElementById('mmenu');
+  burger.addEventListener('click', function(){
+    var open = mmenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mmenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mmenu.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+
+  // ── GYIK
+  document.querySelectorAll('.q').forEach(function(q){
+    var btn = q.querySelector('button');
+    var ans = q.querySelector('.a');
+    btn.addEventListener('click', function(){
+      var open = q.classList.contains('open');
+      document.querySelectorAll('.q.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.a').style.maxHeight = null;
+      });
+      if(!open){
+        q.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ── Scroll reveal
+  var items = document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s');
+  // Kártyarácsok lépcsőzetes késleltetése
+  document.querySelectorAll('.svc-grid .svc').forEach(function(el,i){
+    if(!el.dataset.d) el.dataset.d = (i % 4) * 80;
+  });
+  if(!('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('vis'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target;
+      var d = parseInt(el.dataset.d || 0, 10);
+      setTimeout(function(){ el.classList.add('vis'); }, d);
+      io.unobserve(el);
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

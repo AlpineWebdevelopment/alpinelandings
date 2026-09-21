@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Közterület-használati engedély konténerhez Újpest — útmutató a IV. kerületben",
+    "Közterület-használati engedély konténerhez Újpest — útmutató a 4. kerületben",
   description:
-    "Mikor kell közterület-használati engedély a konténerhez Újpesten, és mikor nem? Útmutató a IV. kerületi engedélyhez — az ügyintézésben segítünk. ☎ +36 21 3355 255",
+    "Mikor kell közterület-használati engedély a konténerhez Újpesten, és mikor nem? Útmutató a 4. kerületi engedélyhez — az ügyintézésben segítünk. ☎ +36 21 3355 255",
   alternates: { canonical: "/kozterulet-engedely" },
 };
 

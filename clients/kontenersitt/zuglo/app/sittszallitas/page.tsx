@@ -3,9 +3,9 @@ import Link from "next/link";
 import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Sittszállítás Zugló — építési törmelék elszállítása a XIV. kerületben",
+  title: "Sittszállítás Zugló — építési törmelék elszállítása a 14. kerületben",
   description:
-    "Sittszállítás Zuglóban: tégla, beton, csempe, vakolat elszállítása felújításból, bontásból. 4–8 m³-es konténer, gyors kiszállítás a XIV. kerület minden városrészébe. ☎ +36 21 3355 222",
+    "Sittszállítás Zuglóban: tégla, beton, csempe, vakolat elszállítása felújításból, bontásból. 4–8 m³-es konténer, gyors kiszállítás a 14. kerület minden városrészébe. ☎ +36 21 3355 222",
   alternates: { canonical: "/sittszallitas" },
 };
 
@@ -68,7 +68,10 @@ export default function SittPage() {
             a <b>6 m³</b>, társasházi vagy több lakásos munkához a{" "}
             <b>8 m³</b> a jellemző. Ha bizonytalan, telefonon egy perc alatt
             segítünk választani, hogy ne fizessen feleslegesen nagyobbért. Az
-            árakról bővebben az <Link href="/arak">Árak</Link> oldalon.
+            árakról bővebben az <Link href="/arak">Árak</Link> oldalon, a méretek
+            részletes összevetését pedig a{" "}
+            <Link href="/mekkora-kontener-kell">Mekkora konténer kell?</Link>{" "}
+            útmutatóban találja.
           </p>
 
           <h2>Hogyan zajlik a sittszállítás?</h2>

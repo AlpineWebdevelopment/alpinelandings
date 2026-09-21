@@ -4,9 +4,9 @@ import CtaBand from "../components/CtaBand";
 
 export const metadata: Metadata = {
   title:
-    "Lomtalanítás és zöldhulladék Újpest — lom és kerti hulladék elszállítás IV. kerület",
+    "Lomtalanítás és zöldhulladék Újpest — lom és kerti hulladék elszállítás 4. kerület",
   description:
-    "Lomtalanítás és zöldhulladék elszállítás Újpesten: bútor, lom, gally és nyesedék elvitele konténerrel a IV. kerület panelházaiból, társasházaiból és kertes utcáiból. ☎ +36 21 3355 255",
+    "Lomtalanítás és zöldhulladék elszállítás Újpesten: bútor, lom, gally és nyesedék elvitele konténerrel a 4. kerület panelházaiból, társasházaiból és kertes utcáiból. ☎ +36 21 3355 255",
   alternates: { canonical: "/lomtalanitas-zoldhulladek" },
 };
 
@@ -33,9 +33,10 @@ export default function LomPage() {
         <div className="wrap prose">
           <h2>Lomtalanítás Újpesten</h2>
           <p>
-            Nem kell megvárnia a kerületi lomtalanítást — konténert biztosítunk,
-            és a lomot szabályosan elszállítjuk. Elvisszük a jellemző háztartási
-            és felújítási lomot:
+            Nem kell megvárnia a{" "}
+            <Link href="/lakossagi-lomtalanitas">kerületi lomtalanítást</Link> —
+            konténert biztosítunk, és a lomot szabályosan elszállítjuk. Elvisszük
+            a jellemző háztartási és felújítási lomot:
           </p>
           <ul>
             <li>

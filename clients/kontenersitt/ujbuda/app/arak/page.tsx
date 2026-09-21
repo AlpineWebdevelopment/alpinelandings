@@ -4,7 +4,7 @@ import CtaBand from "../components/CtaBand";
 import { site } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Konténer árak Újbuda — m³ ár és díjak a XI. kerületben | 11.875 Ft/m³-tól",
+  title: "Konténer árak Újbuda — m³ ár és díjak a 11. kerületben | 11.875 Ft/m³-tól",
   description:
     "Konténer rendelés árak Újbudán: 11.875 Ft/m³-tól (nettó, 8 m³-es vegyes konténer). Kiszállítás, elszállítás és lerakási díj együtt, rejtett költség nélkül. Személyes hulladékleadás 12.700 Ft. ☎ +36 21 3355 244",
   alternates: { canonical: "/arak" },
