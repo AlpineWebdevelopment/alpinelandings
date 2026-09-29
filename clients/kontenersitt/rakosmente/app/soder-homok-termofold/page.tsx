@@ -6,7 +6,7 @@ import { site } from "../lib/site";
 export const metadata: Metadata = {
   title: "Sóder, homok, termőföld szállítás Rákosmentén — 17. kerület",
   description:
-    "Sóder, homok és termőföld kiszállítása Rákosmentére: betonozáshoz, térkövezéshez, gyepesítéshez és kertépítéshez. Rákoskeresztúr, Rákoscsaba, Rákoshegy. Mennyiség és ár telefonon. ☎ +36 21 3355 211",
+    "Sóder, homok és termőföld kiszállítása Rákosmentére: betonozáshoz, térkövezéshez, gyepesítéshez és kertépítéshez. Minimum 4 m³, Rákoskeresztúr, Rákoscsaba, Rákoshegy. Ár telefonon. ☎ +36 21 3355 211",
   alternates: { canonical: "/soder-homok-termofold" },
 };
 
@@ -56,13 +56,21 @@ export default function SoderPage() {
             utcáról.
           </p>
 
+          <h2>Legalább 4 m³-t szállítunk ki</h2>
+          <p>
+            Az anyagot <b>18 tonnás teherautóval</b> hozzuk, ezért a{" "}
+            <b>minimum rendelés 4 m³</b>. Ennél kevesebbet nem tudunk
+            gazdaságosan kiszállítani. Ha kisebb mennyiségre van szüksége,
+            telefonon megmondjuk, mi a legjobb megoldás.
+          </p>
+
           <h2>Mennyi kell belőle?</h2>
           <p>
             A mennyiséget egyszerű kiszámolni: <b>a felület (m²) szorozva a
-            rétegvastagsággal (m)</b> adja meg, hány köbméter kell. Egy 20 m²-es
-            kocsibeállóhoz például 15 cm vastag sóderágy esetén 20 × 0,15 ={" "}
-            <b>3 m³</b> anyag szükséges. Mivel az anyag bedolgozáskor tömörödik,
-            érdemes kicsit ráhagyni.
+            rétegvastagsággal (m)</b> adja meg, hány köbméter kell. Egy 30 m²-es
+            kocsibeállóhoz például 15 cm vastag sóderágy esetén 30 × 0,15 ={" "}
+            <b>4,5 m³</b> anyag szükséges. Mivel az anyag bedolgozáskor
+            tömörödik, érdemes kicsit ráhagyni.
           </p>
           <p>
             Ha nem biztos a számításban, mondja meg telefonon a felület méretét

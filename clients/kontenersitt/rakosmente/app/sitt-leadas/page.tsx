@@ -6,7 +6,7 @@ import { site } from "../lib/site";
 export const metadata: Metadata = {
   title: "Sitt leadás Rákosmentén — telephelyi hulladékátvétel, 17. kerület",
   description:
-    "Pár zsák sitt vagy egy utánfutónyi törmelék? Személyesen is leadhatja a telephelyünkön: 1172 Budapest, Vidor utca 7. Hulladékátvétel 12.700 Ft (bruttó). Nagyobb mennyiséghez konténert hozunk. ☎ +36 21 3355 211",
+    "Pár zsák sitt vagy egy utánfutónyi törmelék? Személyesen is leadhatja a telephelyünkön: 1172 Budapest, Vidor utca 7. Átvétel H–P 7–17, Szo 7–15, 12.700 Ft/m³ (bruttó), lakcímkártya nélkül. ☎ +36 21 3355 211",
   alternates: { canonical: "/sitt-leadas" },
 };
 
@@ -37,18 +37,31 @@ export default function SittLeadasPage() {
             bármely részéről — Rákoskeresztúrról, Rákoscsabáról, Rákoshegyről
             vagy Rákosligetről — rövid az út.
           </p>
+
+          <h2>Mikor adhatja le?</h2>
+          <ul>
+            <li>
+              <b>Hétfőtől péntekig:</b> {site.dropOffWeekday.replace("H–P ", "")}
+            </li>
+            <li>
+              <b>Szombaton:</b> {site.dropOffSat.replace("Szo ", "")}
+            </li>
+            <li>
+              <b>Vasárnap:</b> zárva
+            </li>
+          </ul>
           <p>
-            <b>Mielőtt elindul, hívjon fel:</b> megmondjuk az aktuális átvételi
-            időt, és azt is, hogy a hozott hulladék leadható-e. Így biztosan nem
-            jár feleslegesen.
+            <b>Lakcímkártya nem kell</b>, és nem kell rákosmentei lakosnak
+            lennie: bárki hozhatja, piaci alapon. Ha nem szokványos hulladékot
+            hozna, indulás előtt érdemes egy telefon.
           </p>
 
           <h2>Mennyibe kerül?</h2>
           <p>
-            A telephelyi hulladékátvétel díja <b>{site.droppOffPrice}</b>. Hogy
-            pontosan mekkora mennyiségre és milyen feltételekkel vonatkozik, azt
-            indulás előtt telefonon egyeztesse — így nem éri meglepetés a
-            helyszínen.
+            A telephelyi hulladékátvétel díja <b>{site.droppOffPrice}</b>, vagyis
+            annyit fizet, amennyi hulladékot hoz. Egy utánfutónyi sitt jellemzően
+            fél-egy köbméter, néhány zsák ennél is kevesebb — ezért éri meg kis
+            mennyiségnél a személyes leadás a konténerhez képest.
           </p>
 
           <h2>Mit hozhat?</h2>
@@ -68,6 +81,15 @@ export default function SittLeadasPage() {
             Ami a konténerbe sem kerülhet — <b>festék, vegyszer, azbeszt, pala,
             gumiabroncs, elektronikai hulladék</b> —, azt jellemzően a
             telephelyen sem tudjuk átvenni. Ha bizonytalan, kérdezzen előre.
+          </p>
+
+          <h2>Zsákos sitt elszállítását nem vállaljuk</h2>
+          <p>
+            Sokan keresnek zsákos sittszállítást, de kisautóval, zsákonként nem
+            tudjuk gazdaságosan megoldani, ezért ezt nem vállaljuk. Kis
+            mennyiségnél a telephelyi leadás a jó megoldás, és{" "}
+            <b>Önnek is olcsóbb</b>, mint bármilyen zsákos elszállítás.
+            Nagyobb mennyiségnél pedig már a konténer éri meg.
           </p>
 
           <h2>Személyes leadás vagy konténer?</h2>
@@ -93,6 +115,13 @@ export default function SittLeadasPage() {
                 </td>
                 <td>Ön hozza be a telephelyre</td>
                 <td>Mi visszük ki és szállítjuk el</td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Díj</b>
+                </td>
+                <td>12.700 Ft/m³ (bruttó), csak amennyit hoz</td>
+                <td>{site.m3Price} (nettó), kiszállítással együtt</td>
               </tr>
               <tr>
                 <td>

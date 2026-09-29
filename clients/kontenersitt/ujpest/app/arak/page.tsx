@@ -6,7 +6,7 @@ import { site } from "../lib/site";
 export const metadata: Metadata = {
   title: "Konténer árak Újpest — m³ ár és díjak a 4. kerületben | 10.125 Ft/m³-tól",
   description:
-    "Konténer rendelés árak Újpesten: 10.125 Ft/m³-tól (nettó, 8 m³-es vegyes konténer). Kiszállítás, elszállítás és lerakási díj együtt, rejtett költség nélkül. Személyes hulladékleadás 12.700 Ft. ☎ +36 21 3355 255",
+    "Konténer rendelés árak Újpesten: 10.125 Ft/m³-tól (nettó, 8 m³-es vegyes konténer). Kiszállítás, elszállítás és lerakási díj együtt, rejtett költség nélkül. Személyes hulladékleadás 12.700 Ft/m³. ☎ +36 21 3355 255",
   alternates: { canonical: "/arak" },
 };
 

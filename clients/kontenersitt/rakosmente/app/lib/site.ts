@@ -8,7 +8,11 @@ export const site = {
   phoneHref: "+36213355211",
   email: "info@kontenersitt.hu",
   address: "1172 Budapest, Vidor utca 7.",
-  droppOffPrice: "12.700 Ft (bruttó)",
+  droppOffPrice: "12.700 Ft/m³ (bruttó)",
+  // Telephelyi átvétel ideje — Tamás erősítette meg (2026-09-29). Ez NEM azonos a
+  // rendelésfelvétel nyitvatartásával (hoursWeekday/hoursSat).
+  dropOffWeekday: "H–P 7:00–17:00",
+  dropOffSat: "Szo 7:00–15:00",
   m3Price: "9.375 Ft/m³-tól",
   hoursWeekday: "H–P: 7:00–20:00",
   hoursSat: "Szo: 7:00–18:00",
