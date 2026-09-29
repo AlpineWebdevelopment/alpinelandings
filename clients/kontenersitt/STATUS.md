@@ -101,7 +101,10 @@ vannak a kerület-konstansok — új oldalnál ezt kell átírni, plusz a tartal
 
 - **E-mail (megjelenítendő):** info@kontenersitt.hu
 - **Űrlap → ide megy:** diszpecser@kontenersitt.hu (a `/api/lead` route Resenddel küldi)
-- **Személyes leadás / telephely:** 1172 Budapest, Vidor utca 7. — átvétel **12.700 Ft (bruttó)**
+- **Személyes leadás / telephely:** 1172 Budapest, Vidor utca 7. — átvétel
+  **12.700 Ft/m³ (bruttó)**, **H–P 7:00–17:00, Szo 7:00–15:00**, lakcímkártya nélkül,
+  bárki hozhatja (Tamás, 2026-09-29). Az átvételi idő NEM azonos a rendelésfelvétel
+  7–20-as nyitvatartásával.
 - **Nyitvatartás:** H–P 7:00–20:00, Szo 7:00–18:00, V zárva
 - **USP-k:** mindig elérhető telefonos ügyfélszolgálat; 2000 konténer; 30 modern autó;
   kirakás pár órán belül / csere 24 órán belül; ~90% újrahasznosítás; 1 hétig díjmentes ottmaradás;
