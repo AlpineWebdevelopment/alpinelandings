@@ -319,12 +319,22 @@ Minden projektnél (5 db, ugyanaz a repo):
       havi aloldala — **októberben Rákosmentére már NEM kell újabb**. Ok: a kapcsolódó
       keresésekben „sitt leadás árak", „zsákos sitt leadás", „sitt leadás ingyen budapest";
       a telephely a 17. kerületben van. Belső link az /arak oldalról + lábléc.
-      **TISZTÁZANDÓ Tamással:** (1) mire vonatkozik a 12.700 Ft (alkalom? m³? tonna?) —
-      az oldal ezért nem részletezi, telefonos egyeztetésre kér; (2) a telephely átvételi
-      ideje — a site.ts nyitvatartása (7–20) a rendelésfelvételé, a Google-profilok szerint
-      a Vidor utcai telephely 15:00-kor zár, ezért az oldal NEM ír ki átvételi időt.
-      Ha megvan a válasz, érdemes kiírni: az ár egysége és az átvételi idő a két
-      legfontosabb információ egy ilyen oldalon.
+      ~~**TISZTÁZANDÓ Tamással:** a 12.700 Ft egysége és a telephelyi átvételi idő.~~
+      **MEGVÁLASZOLVA (Tamás, 2026-09-29), kiírva és élesítve:**
+      - **12.700 Ft/m³ (bruttó)** — nem átalánydíj! A `droppOffPrice` mind az 5 oldalon
+        javítva (eddig „12.700 Ft (bruttó)”-ként átalánynak látszott a főoldalon és az
+        /arak oldalon is).
+      - **Telephelyi átvétel: H–P 7:00–17:00, Szo 7:00–15:00** (ez NEM a rendelésfelvétel
+        7–20-as nyitvatartása) — új `dropOffWeekday`/`dropOffSat` mező a rakosmente
+        `site.ts`-ben, kiírva a `/sitt-leadas` oldalon.
+      - **Lakcímkártya nem kell, bárki hozhatja, piaci alapon.**
+      - **Zsákos sittszállítást NEM vállalnak** (kisautóval nem gazdaságos); kis
+        mennyiségnél a telephelyi leadásra terelik, mert az az ügyfélnek is olcsóbb.
+        A `/sitt-leadas` oldalon külön szakasz válaszolja meg ezt a keresést.
+      - **Sóder/homok/termőföld: minimum 4 m³** (18 tonnás teherautó) — kiírva a
+        `/soder-homok-termofold` oldalon, a számolós példa 4,5 m³-re módosítva.
+      - **Google cégprofil:** 5 fiókjuk van, mind más weboldalra mutat; Tamás maga hoz
+        létre kerületenkénti profilokat és szerez értékeléseket a sofőrökkel.
 - [x] ~~**Októberi Újpest-aloldal — ELŐRE HOZVA (2026-09-19)**~~: `/lakossagi-lomtalanitas`
       („Lemaradt az újpesti lomtalanításról?"). Ez az **Újpest októberi** havi aloldala —
       **októberben Újpestre már NEM kell újabb**. Más keresési szándékot céloz, mint a
