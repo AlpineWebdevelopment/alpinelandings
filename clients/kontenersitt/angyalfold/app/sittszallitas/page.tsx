@@ -89,8 +89,8 @@ export default function SittPage() {
               lomot és zöldhulladékot
             </Link>{" "}
             is elszállítunk. Sűrű beépítésnél gyakran kell{" "}
-            <Link href="/kozterulet-engedely">közterület-engedély</Link> — ezt
-            is intézzük.
+            <Link href="/kozterulet-engedely">közterület-engedély</Link> — hogy
+            hol és hogyan igényelhető, azt az oldalon leírjuk.
           </p>
 
           <CtaBand text="Mondja el, mit bont — azonnal árat mondunk a sittszállításra, kiszállítással és lerakással együtt." />

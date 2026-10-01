@@ -366,3 +366,6 @@ a[href^="tel:"]{white-space:nowrap}
 .review-photo{display:block;width:calc(100% + 52px);margin:-26px -26px 0;height:auto;border-bottom:1.5px solid var(--ink)}
 .review-card{overflow:hidden}
 .review-grid{align-items:start}
+
+/* Tájékoztató megjegyzés az engedély-oldalon (2026-10-01). */
+.prose p.muted-note{font-size:.88rem;line-height:1.6;color:var(--ink-soft);border-left:3px solid var(--line,rgba(0,0,0,.14));padding:.1rem 0 .1rem .85rem;margin:1.4rem 0}

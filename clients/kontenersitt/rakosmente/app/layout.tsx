@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: "https://kontenerrendelesrakosmente.hu/",
     title: "Konténer rendelés Rákosmente, 17. kerület — sitt, lom, zöldhulladék",
     description:
-      "Konténer kertes házhoz és társasházhoz Rákosmentén — sitt, lom és zöldhulladék elszállítása. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 211",
+      "Konténer kertes házhoz és társasházhoz Rákosmentén — sitt, lom és zöldhulladék elszállítása. Gyors kiszállítás, útmutató a közterület-engedélyhez. Hívjon: +36 21 3355 211",
   },
 };
 

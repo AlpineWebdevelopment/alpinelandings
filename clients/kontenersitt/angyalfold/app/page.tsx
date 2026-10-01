@@ -30,7 +30,7 @@ const faqLd = {
       name: "Le tudják tenni a konténert egy sűrűn beépített utcában is?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Igen. Angyalföld sűrű beépítésű kerület, ezért a szűk parkolókat és forgalmas utcákat (pl. Váci út, Béke tér) ismerve időzítjük a kiszállítást. Ha a konténer közterületre kerül, a közterület-használati engedélyt is intézzük.",
+        text: "Igen. Angyalföld sűrű beépítésű kerület, ezért a szűk parkolókat és forgalmas utcákat (pl. Váci út, Béke tér) ismerve időzítjük a kiszállítást. Ha a konténer közterületre kerül, a közterület-használati hozzájárulást a megrendelőnek kell kérnie a XIII. kerületi önkormányzattól — megmondjuk, mikor kell és hol igényelheti.",
       },
     },
     {
@@ -38,7 +38,7 @@ const faqLd = {
       name: "Kell-e engedély a konténerhez Angyalföldön?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A XIII. kerület sűrűn beépített, ezért a konténer gyakran közterületre — járdára, parkolósávba — kerül, ilyenkor közterület-használati hozzájárulás szükséges a XIII. kerületi önkormányzattól. Zárt udvarban, saját területen belül nincs szükség engedélyre. Az ügyintézésben segítünk.",
+        text: "A XIII. kerület sűrűn beépített, ezért a konténer gyakran közterületre — járdára, parkolósávba — kerül, ilyenkor közterület-használati hozzájárulás szükséges a XIII. kerületi önkormányzattól, legalább 8 nappal korábban beadott kérelemmel. Zárt udvarban, saját területen belül nincs szükség engedélyre. A kérelmet a megrendelő adja be; a közterület-engedély oldalon leírjuk, hol és hogyan.",
       },
     },
     {
@@ -101,7 +101,7 @@ const services = [
     href: "/kozterulet-engedely",
     title: "Közterület-engedély",
     icon: <IconDoc />,
-    desc: "Sűrű beépítésnél gyakran kell engedély — a XIII. kerületi ügyintézést helyetted intézzük.",
+    desc: "Sűrű beépítésnél gyakran kell engedély — hol igényelje a XIII. kerületben, és mennyibe kerül.",
   },
 ];
 
@@ -186,7 +186,7 @@ export default function Home() {
             </div>
             <div className="trust-item">
               <b>Engedély</b>
-              <span>ügyintézést vállalunk</span>
+              <span>útmutató kerületre</span>
             </div>
           </div>
         </section>
@@ -355,8 +355,8 @@ export default function Home() {
                 <p>
                   Legyen szó egy régi panel fürdőfelújításáról vagy egy új
                   lakópark építési törmelékéről, a konténer oda és akkor érkezik,
-                  ahogy megbeszéltük — és ha közterületre kerül, az engedélyt is
-                  intézzük.
+                  ahogy megbeszéltük — és megmondjuk, kell-e hozzá
+                  közterület-engedély.
                 </p>
                 <div className="area-tags" aria-label="Angyalföld részei">
                   <span className="area-tag">Újlipótváros</span>
@@ -460,7 +460,8 @@ export default function Home() {
                 <p className="a">
                   Igen. Angyalföld sűrű beépítésű, ezért a szűk parkolókat és a
                   Váci úti forgalmat figyelembe véve időzítjük a kiszállítást. Ha
-                  a konténer közterületre kerül, az engedélyt is intézzük.
+                  a konténer közterületre kerül, a hozzájárulást Önnek kell
+                  kérnie — megmondjuk, hol.
                 </p>
               </details>
               <details className="faq-item">
@@ -468,8 +469,10 @@ export default function Home() {
                 <p className="a">
                   A sűrű beépítés miatt a konténer gyakran közterületre kerül —
                   ilyenkor közterület-használati hozzájárulás kell a XIII.
-                  kerületi önkormányzattól. Zárt udvarban nem kell engedély. Az
-                  ügyintézésben segítünk.
+                  kerületi önkormányzattól, legalább 8 nappal korábban beadott
+                  kérelemmel. Zárt udvarban nem kell engedély. A kérelmet Önnek
+                  kell beadnia — hogy hol, azt a közterület-engedély oldalon
+                  leírjuk.
                 </p>
               </details>
               <details className="faq-item">

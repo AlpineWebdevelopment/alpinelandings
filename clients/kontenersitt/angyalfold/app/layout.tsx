@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "https://kontenerrendelesangyalfold.hu/",
     title: "Konténer rendelés Angyalföld, 13. kerület — sitt, lom, vegyes hulladék",
     description:
-      "Konténer panellakáshoz, új lakóparkhoz és felújításhoz Angyalföldön. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 233",
+      "Konténer panellakáshoz, új lakóparkhoz és felújításhoz Angyalföldön. Gyors kiszállítás, útmutató a közterület-engedélyhez. Hívjon: +36 21 3355 233",
   },
 };
 

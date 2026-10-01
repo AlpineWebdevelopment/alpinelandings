@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: "https://kontenerrendelesujbuda.hu/",
     title: "Konténer rendelés Újbuda, 11. kerület — sitt, lom, vegyes hulladék",
     description:
-      "Konténer lakásfelújításhoz, panelhez és budai villához Újbudán. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 244",
+      "Konténer lakásfelújításhoz, panelhez és budai villához Újbudán. Gyors kiszállítás, útmutató a közterület-engedélyhez. Hívjon: +36 21 3355 244",
   },
 };
 

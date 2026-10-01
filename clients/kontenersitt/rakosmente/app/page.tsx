@@ -100,7 +100,7 @@ const services = [
     href: "/kozterulet-engedely",
     title: "Közterület-engedély",
     icon: <IconDoc />,
-    desc: "Mikor kell engedély a XVII. kerületi önkormányzattól a konténerhez, és hogyan intézzük helyetted.",
+    desc: "Mikor kell engedély a XVII. kerületi önkormányzattól a konténerhez, és hol tudja igényelni.",
   },
 ];
 
@@ -467,9 +467,10 @@ export default function Home() {
                 <summary>Kell-e engedély a konténerhez?</summary>
                 <p className="a">
                   Közterületen — járdán, úttesten — igen: közterület-használati
-                  hozzájárulás kell a XVII. kerületi önkormányzattól. A kertes
-                  házaknál a konténer általában a telken vagy a behajtón elfér,
-                  ilyenkor nem kell engedély. Az ügyintézésben segítünk.
+                  hozzájárulás kell a XVII. kerületi önkormányzattól, a kérelmet
+                  Önnek kell beadnia. A kertes házaknál a konténer általában a
+                  telken vagy a behajtón elfér, ilyenkor nem kell engedély — ez a
+                  gyorsabb megoldás.
                 </p>
               </details>
               <details className="faq-item">

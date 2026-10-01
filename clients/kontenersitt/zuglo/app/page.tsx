@@ -78,7 +78,7 @@ const services = [
   {
     href: "/kozterulet-engedely",
     title: "Közterület-engedély",
-    desc: "Mikor kell közterület-használati engedély a zuglói önkormányzattól, és hogyan intézzük helyetted.",
+    desc: "Mikor kell közterület-használati engedély a zuglói önkormányzattól, hol igényelhető, és mennyibe kerül.",
   },
 ];
 

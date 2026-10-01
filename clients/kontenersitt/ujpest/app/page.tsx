@@ -30,7 +30,7 @@ const faqLd = {
       name: "Kihozzák a konténert a káposztásmegyeri lakótelepre is?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Igen. Káposztásmegyer és az újpesti lakótelepek panelházainál a szűkös parkolókat figyelembe véve tesszük le a konténert. Ha közterületre kerül, a közterület-használati engedélyt is intézzük.",
+        text: "Igen. Káposztásmegyer és az újpesti lakótelepek panelházainál a szűkös parkolókat figyelembe véve tesszük le a konténert. Ha közterületre kerül és egy napnál tovább marad kint, a közterület-használati hozzájárulást a megrendelőnek kell kérnie a IV. kerületi önkormányzattól.",
       },
     },
     {
@@ -38,7 +38,7 @@ const faqLd = {
       name: "Kell-e engedély a konténerhez Újpesten?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ha a konténer közterületre — járdára, úttestre, parkolósávba — kerül, közterület-használati hozzájárulás szükséges az újpesti (IV. kerületi) önkormányzattól. A megyeri kertes házaknál a konténer gyakran a telken belül is elfér, ilyenkor nem kell engedély. Az ügyintézésben segítünk.",
+        text: "Újpesten, ha az ingatlan tulajdonosa legfeljebb 24 órára tesz ki konténert a saját ingatlanához, elég bejelenteni. Ennél hosszabb közterületi használathoz közterület-használati hozzájárulás kell a IV. kerületi önkormányzattól, a kérelmet 15 nappal korábban kell beadni. A megyeri kertes házaknál a konténer gyakran a telken belül is elfér, ilyenkor nem kell engedély.",
       },
     },
     {
@@ -100,7 +100,7 @@ const services = [
     href: "/kozterulet-engedely",
     title: "Közterület-engedély",
     icon: <IconDoc />,
-    desc: "Mikor kell engedély a IV. kerületi önkormányzattól a konténerhez, és hogyan intézzük helyetted.",
+    desc: "24 óráig elég a bejelentés, hosszabb időre kérelem kell — így működik a IV. kerületben.",
   },
 ];
 
@@ -185,7 +185,7 @@ export default function Home() {
             </div>
             <div className="trust-item">
               <b>Engedély</b>
-              <span>ügyintézést vállalunk</span>
+              <span>útmutató kerületre</span>
             </div>
           </div>
         </section>
@@ -353,8 +353,8 @@ export default function Home() {
                 <p>
                   A lakótelepi szűk parkolókat és az <b>Árpád úti</b> forgalmat is
                   ismerjük, ezért a konténer oda és akkor érkezik, ahogy
-                  megbeszéltük — és ha közterületre kerül, az engedélyt is
-                  intézzük.
+                  megbeszéltük — és megmondjuk, kell-e hozzá
+                  közterület-engedély.
                 </p>
                 <div className="area-tags" aria-label="Újpest részei">
                   <span className="area-tag">Újpest-központ</span>
@@ -457,17 +457,19 @@ export default function Home() {
                 <p className="a">
                   Igen. Káposztásmegyer és az újpesti lakótelepek panelházainál a
                   szűkös parkolókat figyelembe véve tesszük le a konténert. Ha
-                  közterületre kerül, a közterület-használati engedélyt is
-                  intézzük.
+                  közterületre kerül egy napnál hosszabb időre, a hozzájárulást
+                  Önnek kell kérnie.
                 </p>
               </details>
               <details className="faq-item">
                 <summary>Kell-e engedély a konténerhez?</summary>
                 <p className="a">
-                  Közterületen — járdán, úttesten — igen: közterület-használati
-                  hozzájárulás kell a IV. kerületi önkormányzattól. A megyeri
-                  kertes házaknál a konténer gyakran a telken belül is elfér,
-                  ilyenkor nem kell engedély. Az ügyintézésben segítünk.
+                  Ha az ingatlan tulajdonosaként legfeljebb 24 órára teszi ki a
+                  konténert a saját ingatlanához, elég bejelenteni. Ennél hosszabb
+                  időre közterület-használati hozzájárulás kell a IV. kerületi
+                  önkormányzattól, 15 nappal korábban beadott kérelemmel. A
+                  megyeri kertes házaknál a konténer gyakran a telken belül is
+                  elfér, ilyenkor nem kell engedély.
                 </p>
               </details>
               <details className="faq-item">

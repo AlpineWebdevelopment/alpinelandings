@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: "https://kontenerrendeleszuglo.hu/",
     title: "Konténer rendelés Zugló, 14. kerület — sittszállítás",
     description:
-      "4–8 m³ konténerek sitthez, lomhoz, vegyes hulladékhoz Zugló minden városrészébe. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 222",
+      "4–8 m³ konténerek sitthez, lomhoz, vegyes hulladékhoz Zugló minden városrészébe. Gyors kiszállítás, útmutató a közterület-engedélyhez. Hívjon: +36 21 3355 222",
   },
 };
 

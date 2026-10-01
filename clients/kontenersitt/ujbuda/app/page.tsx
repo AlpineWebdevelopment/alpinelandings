@@ -38,7 +38,7 @@ const faqLd = {
       name: "Kell-e engedély a konténerhez Újbudán?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ha a konténer közterületre — járdára, úttestre, parkolósávba — kerül, közterület-használati hozzájárulás szükséges az újbudai (XI. kerületi) önkormányzattól. A kertes, villás részeken a konténer gyakran a telken belül is elfér, ilyenkor nem kell engedély. Az ügyintézésben segítünk.",
+        text: "Ha a konténer közterületre — járdára, úttestre, parkolósávba — kerül, közterület-használati hozzájárulás szükséges az újbudai (XI. kerületi) önkormányzattól, és a kérelmet a megrendelő adja be. Sittes konténerre gyorsított eljárás van, lakásfelújításnál pedig díjmentesség kérhető. A kertes, villás részeken a konténer gyakran a telken belül is elfér, ilyenkor nem kell engedély.",
       },
     },
     {
@@ -100,7 +100,7 @@ const services = [
     href: "/kozterulet-engedely",
     title: "Közterület-engedély",
     icon: <IconDoc />,
-    desc: "Mikor kell engedély a XI. kerületi önkormányzattól a konténerhez, és hogyan intézzük helyetted.",
+    desc: "Mikor kell engedély a XI. kerületi önkormányzattól a konténerhez, és hol tudja igényelni.",
   },
 ];
 
@@ -185,7 +185,7 @@ export default function Home() {
             </div>
             <div className="trust-item">
               <b>Engedély</b>
-              <span>ügyintézést vállalunk</span>
+              <span>útmutató kerületre</span>
             </div>
           </div>
         </section>
@@ -465,9 +465,11 @@ export default function Home() {
                 <summary>Kell-e engedély a konténerhez?</summary>
                 <p className="a">
                   Közterületen — járdán, úttesten — igen: közterület-használati
-                  hozzájárulás kell a XI. kerületi önkormányzattól. A kertes,
-                  villás részeken a konténer gyakran a telken belül is elfér,
-                  ilyenkor nem kell engedély. Az ügyintézésben segítünk.
+                  hozzájárulás kell a XI. kerületi önkormányzattól, a kérelmet
+                  Önnek kell beadnia. Sittes konténerre gyorsított eljárás van, és
+                  lakásfelújításnál díjmentesség is kérhető. A kertes, villás
+                  részeken a konténer gyakran a telken belül is elfér, ilyenkor
+                  nem kell engedély.
                 </p>
               </details>
               <details className="faq-item">

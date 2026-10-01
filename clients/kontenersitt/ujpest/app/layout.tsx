@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "https://kontenerrendelesujpest.hu/",
     title: "Konténer rendelés Újpest, 4. kerület — sitt, lom, vegyes hulladék",
     description:
-      "Konténer panellakáshoz, kertes házhoz és felújításhoz Újpesten. Gyors kiszállítás, engedély-ügyintézés. Hívjon: +36 21 3355 255",
+      "Konténer panellakáshoz, kertes házhoz és felújításhoz Újpesten. Gyors kiszállítás, útmutató a közterület-engedélyhez. Hívjon: +36 21 3355 255",
   },
 };
 
