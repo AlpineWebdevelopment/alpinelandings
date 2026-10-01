@@ -359,6 +359,34 @@ Minden projektnél (5 db, ugyanaz a repo):
       az átadás augusztusban volt, ezért szeptember 1. Augusztusra nem jár havi díj (és nem is
       érdemes: azzal 5 aloldal is járna egy féloldalas hónapra, üres riporttal).
 
+- [x] ~~**Közterület-engedély: NEM mi intézzük (2026-10-01, Tamás kérése)**~~ — ÉLES.
+      A diszpécserek hívást kaptak, hogy az oldal szerint a cég intézi az engedélyt.
+      Nem vállalják: nincs rá kapacitás, és az ügyintézés alatt a megrendelő lemondhatja
+      a konténert. Minden „az engedélyt is intézzük” ígéret törölve (főoldali kártyák,
+      GYIK, JSON-LD FAQ, trust-sáv, meta-leírások, angyalföldi /sittszallitas), és a
+      `/kozterulet-engedely` oldalak **útmutatóvá** alakultak: hivatalos ügyleírás- és
+      nyomtatvány-linkek, határidő, benyújtás módja, díj, mentességek.
+      Kerületenként (2026-10-01-én ellenőrizve, **ÉVENTE felülvizsgálandó**):
+      - **Zugló:** zuglo.hu/kozterulet-hasznalat; illetékmentes; 8 nap (≤30 nap és ≤50 m²);
+        400–700 Ft/m²/nap; **24 óra alatt nem kell engedély, csak előző napi bejelentés**.
+      - **Angyalföld:** budapest13.hu ügyleírás (magánszemély/vállalkozás) + DOC űrlap;
+        konténernél 8 nappal korábban; 9.986 Ft/db/nap; nincs rövid idős mentesség.
+        FIGYELEM: a közterület-használat NEM a Közszolgáltató Zrt.-nél van.
+      - **Újbuda:** ujbuda.hu/ugyek/72; gyorsított eljárás konténerre (5. munkanap);
+        300–500 Ft/m²/nap; lakásfelújítási **díjmentesség** évi egyszer, max 30 nap.
+        A régi kozigazgatas.ujbuda.hu linkek a főoldalra visznek — ne azokat használd.
+      - **Újpest:** ujpest.hu/hivatali-ugy/?ugyid=418 + PDF űrlap; kérelem 15 nappal
+        korábban; **tulajdonosként max 9 m³ konténer max 24 órára parkolóhelyre csak
+        bejelentés-köteles**. A rendelet 1. mellékletében szereplő 72.036 Ft/m³/nap
+        tétel valószínűleg elírás — **szándékosan nem írtunk ki árat**, a hivatal
+        Vagyongazdálkodási Osztályára irányítunk (+36 1 231 3101).
+      - **Rákosmente:** a kerület honlapján NINCS élő ügyleírás és űrlap (a régi .aspx
+        oldal megszűnt), ezért a hivatal elérhetősége + a hatályos 29/2025. (XI. 27.)
+        rendelet (NJT) szerepel; 4.000 / 2.500 Ft/nap/db; nincs mentesség, pótdíj akár
+        a díj tízszerese.
+- [ ] **Első megrendelés az új oldalakról: 2026-10-01, Angyalföld** (Tamás jelezte).
+      Érdemes a havi riportban kiemelni, és figyelni, melyik oldal hoz továbbiakat.
+
 ### Pénzügyi ritmus (szerződés 4–5.)
 | | |
 |---|---|
